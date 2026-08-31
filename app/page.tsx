@@ -54,6 +54,9 @@ const researchTracks = [
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
     logoScale: 'large',
+    figure: '/assets/tailin-wu-phase-gradient.png',
+    figureAlt: 'Phase-gradient direction and magnitude visualization on an fMRI-derived cortical map',
+    figureCaption: 'Phase-gradient analysis · open full figure',
   },
   {
     code: 'BEHAVIORAL VISION',
@@ -214,6 +217,7 @@ export default function Home() {
                 <h3>{track.title}</h3>
                 <p className="project-title-zh">{track.titleZh}</p>
                 <p>{track.description}</p>
+                {track.figure && <a className="breadth-figure" href={track.figure} target="_blank" rel="noreferrer"><Image src={track.figure} alt={track.figureAlt} width={962} height={641} /><span>{track.figureCaption} ↗</span></a>}
               </article>
             ))}
           </div>

@@ -116,7 +116,11 @@ a { color: inherit; text-decoration: none; }
 .logo-surface-dark { padding: 9px 13px; border-radius: 4px; background: #07052f; }
 .logo-surface-dark .breadth-logo, .logo-surface-dark .appointment-logo { object-position: center; }
 .breadth-card h3 { max-width: 540px; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(26px, 3vw, 42px); font-weight: 400; letter-spacing: -.035em; line-height: 1.05; }
-.breadth-card > p:last-child { max-width: 620px; margin: 21px 0 0; font-size: 12px; line-height: 1.7; color: var(--ink-soft); }
+.breadth-card > p:last-of-type { max-width: 620px; margin: 21px 0 0; font-size: 12px; line-height: 1.7; color: var(--ink-soft); }
+.breadth-figure { display: block; margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; transition: opacity .2s ease; }
+.breadth-figure:hover { opacity: .78; }
+.breadth-figure img { display: block; width: 100%; height: 168px; object-fit: contain; object-position: center; background: #fff; border: 1px solid #e5ded4; }
+.breadth-figure span { display: block; margin-top: 9px; font-family: var(--font-geist-mono), monospace; font-size: 8px; letter-spacing: .06em; color: var(--accent-dark); text-align: right; text-transform: uppercase; }
 
 .publication-section { background: #f2ede6; }
 .publication-card { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 35px; padding: 34px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
