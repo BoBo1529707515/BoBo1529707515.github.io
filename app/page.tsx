@@ -74,24 +74,36 @@ const appointments = [
     institution: 'Westlake University',
     role: 'Full-time Research Assistant · Professor Ding Liu\'s lab',
     detail: 'Systems social neuroscience, miniscope calcium imaging, naturalistic behavior, and biomimetic social partners.',
+    detailZh: null,
+    logo: '/assets/westlake-logo.png',
+    logoAlt: 'Westlake University logo',
   },
   {
     date: 'NOV 2025 - PRESENT',
     institution: 'Illinois Institute of Technology',
     role: 'Remote Research Collaborator · Prof. Ren Wang',
     detail: 'Trustworthy cross-subject EEG-fNIRS learning, calibration, meta-adaptation, and multimodal fusion.',
+    detailZh: null,
+    logo: null,
+    logoAlt: null,
   },
   {
     date: 'MAR 2026 - PRESENT',
     institution: 'Westlake University',
     role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
     detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
+    detailZh: null,
+    logo: '/assets/westlake-logo.png',
+    logoAlt: 'Westlake University logo',
   },
   {
     date: 'SEP 2021 - JUN 2025',
     institution: "Xi'an Jiaotong University",
     role: 'B.Eng. in Biomedical Engineering',
-    detail: 'Training across biomedical instrumentation, neural engineering, machine learning, and wet-lab research.',
+    detail: 'First year: Chemical Biology in Qian Xuesen Honors College. Subsequently completed a B.Eng. in Biomedical Engineering with training across instrumentation, neural engineering, machine learning, and wet-lab research.',
+    detailZh: '大一就读于钱学森荣誉学院化学生物学方向，之后完成生物医学工程工学学士。',
+    logo: '/assets/xjtu-logo.png',
+    logoAlt: "Xi'an Jiaotong University logo",
   },
 ];
 
@@ -112,6 +124,14 @@ export default function Home() {
             <p className="eyebrow">RESEARCHER · BUILDER</p>
             <h2 className="profile-name">Yibo Yuan</h2>
             <p className="profile-role">Research Assistant<br />Westlake University</p>
+          </div>
+          <div className="institution-marks" aria-label="Academic affiliations">
+            <a href="https://en.westlake.edu.cn/" target="_blank" rel="noreferrer" aria-label="Westlake University website">
+              <Image src="/assets/westlake-logo.png" alt="Westlake University" width={260} height={78} className="institution-logo institution-logo-westlake" />
+            </a>
+            <a href="https://en.xjtu.edu.cn/" target="_blank" rel="noreferrer" aria-label="Xi'an Jiaotong University website">
+              <Image src="/assets/xjtu-logo.png" alt="Xi'an Jiaotong University" width={260} height={70} className="institution-logo institution-logo-xjtu" />
+            </a>
           </div>
           <p className="profile-bio">I connect social neuroscience, embodied AI, and HCI to study whether artificial partners can meet human social needs.</p>
           <nav className="side-nav" aria-label="Primary navigation">
@@ -191,7 +211,15 @@ export default function Home() {
             {appointments.map((appointment) => (
               <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
                 <p className="appointment-date">{appointment.date}</p>
-                <div><h3>{appointment.institution}</h3><p className="appointment-role">{appointment.role}</p><p className="appointment-detail">{appointment.detail}</p></div>
+                <div className="appointment-content">
+                  <div className="appointment-heading">
+                    <h3>{appointment.institution}</h3>
+                    {appointment.logo && <Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" />}
+                  </div>
+                  <p className="appointment-role">{appointment.role}</p>
+                  <p className="appointment-detail">{appointment.detail}</p>
+                  {appointment.detailZh && <p className="appointment-detail-zh">{appointment.detailZh}</p>}
+                </div>
               </article>
             ))}
           </div>
@@ -210,6 +238,10 @@ export default function Home() {
           <p className="eyebrow accent">CONTACT</p><h2>Interested in social need, artificial companions, or bounded AI agency?</h2>
           <p>I’m preparing PhD applications for Fall 2027 and welcome conversations with aligned labs.</p>
           <a className="contact-button" href="mailto:yibo031110@gmail.com">yibo031110@gmail.com <span>↗</span></a>
+          <div className="contact-affiliation">
+            <span>CURRENT AFFILIATION</span>
+            <Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" />
+          </div>
         </section>
         <footer><span>© 2026 Yibo Yuan</span><span>Built around one research question.</span></footer>
       </main>
