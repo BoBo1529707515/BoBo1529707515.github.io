@@ -53,7 +53,6 @@ const researchTracks = [
     description: 'HCP preprocessing, multimodal event regressors, V-JEPA/MAE refactoring, SIREN/INR temporal modeling, and turbulence-oriented visualization for large-scale brain dynamics.',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoTheme: 'dark',
     logoScale: 'large',
   },
   {
@@ -102,7 +101,6 @@ const appointments = [
     detailZh: null,
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoTheme: 'dark',
     logoScale: 'large',
   },
   {
