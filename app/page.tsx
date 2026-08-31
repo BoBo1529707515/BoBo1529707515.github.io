@@ -51,6 +51,8 @@ const researchTracks = [
     title: 'Physics-informed fMRI dynamics',
     titleZh: '物理启发的 fMRI 动力学',
     description: 'HCP preprocessing, multimodal event regressors, V-JEPA/MAE refactoring, SIREN/INR temporal modeling, and turbulence-oriented visualization for large-scale brain dynamics.',
+    logo: '/assets/tailin-wu-lab-logo.png',
+    logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
   },
   {
     code: 'BEHAVIORAL VISION',
@@ -65,6 +67,8 @@ const researchTracks = [
     title: 'Open experimental systems',
     titleZh: '开放式行为神经科学实验系统',
     description: 'An eight-channel STM32 capacitive lickometer, a programmable three-axis motion platform, long-duration behavioral tracking, and reproducible frame-level research workflows.',
+    logo: '/assets/ding-liu-lab-logo.png',
+    logoAlt: 'Ding Liu Lab logo',
   },
 ];
 
@@ -75,8 +79,8 @@ const appointments = [
     role: 'Full-time Research Assistant · Professor Ding Liu\'s lab',
     detail: 'Systems social neuroscience, miniscope calcium imaging, naturalistic behavior, and biomimetic social partners.',
     detailZh: null,
-    logo: '/assets/westlake-logo.png',
-    logoAlt: 'Westlake University logo',
+    logo: '/assets/ding-liu-lab-logo.png',
+    logoAlt: 'Ding Liu Lab logo',
   },
   {
     date: 'NOV 2025 - PRESENT',
@@ -93,8 +97,8 @@ const appointments = [
     role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
     detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
     detailZh: null,
-    logo: '/assets/westlake-logo.png',
-    logoAlt: 'Westlake University logo',
+    logo: '/assets/tailin-wu-lab-logo.png',
+    logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
   },
   {
     date: 'SEP 2021 - JUN 2025',
@@ -104,6 +108,33 @@ const appointments = [
     detailZh: '大一就读于钱学森荣誉学院化学生物学方向，之后完成生物医学工程工学学士。',
     logo: '/assets/xjtu-logo.png',
     logoAlt: "Xi'an Jiaotong University logo",
+  },
+  {
+    date: 'JUN 2024 - JUL 2024',
+    institution: 'Zhen Tec Technology Inc.',
+    role: 'EEG Data Analyst',
+    detail: 'Designed IIR/FIR filters, analyzed time- and frequency-domain EEG features with MNE, and supported PCA/ICA and CNN-LSTM fatigue-model development.',
+    detailZh: '设计 IIR/FIR 滤波器，使用 MNE 分析脑电时域与频域特征，并参与 PCA、ICA 与 CNN-LSTM 疲劳模型开发。',
+    logo: '/assets/zhentec-logo.png',
+    logoAlt: 'Zhen Tec logo',
+  },
+  {
+    date: 'MAY 2023 - JUN 2023',
+    institution: "The First Affiliated Hospital of Xi'an Jiaotong University",
+    role: 'Clinical Laboratory Intern',
+    detail: 'Observed rehabilitation and medical-imaging workflows, assisted routine clinical tasks, and evaluated usability constraints in rehabilitation and portable imaging equipment.',
+    detailZh: '观察康复与医学影像工作流程，协助常规临床任务，并分析康复设备和便携式影像设备的可用性约束。',
+    logo: '/assets/xjtu-first-affiliated-hospital-logo.png',
+    logoAlt: "The First Affiliated Hospital of Xi'an Jiaotong University logo",
+  },
+  {
+    date: 'JAN 2024 - 2025',
+    institution: 'Medical and Engineering Innovators',
+    role: 'Council Member · External Relations',
+    detail: 'Led alumni liaison across biomedical and electrical engineering, supported a Technology and Finance forum, and proposed a hospital-university translational project.',
+    detailZh: '负责生物医学工程和电气工程校友联络，协助举办科技金融论坛，并提出院校转化合作项目。',
+    logo: '/assets/medical-engineering-innovators-logo.png',
+    logoAlt: 'Medical and Engineering Innovators logo',
   },
 ];
 
@@ -171,6 +202,7 @@ export default function Home() {
             {researchTracks.map((track) => (
               <article className="breadth-card" key={track.code}>
                 <div className="breadth-meta"><span>{track.code}</span><span>{track.lab}</span></div>
+                {track.logo && <Image src={track.logo} alt={track.logoAlt} width={280} height={82} className="breadth-logo" />}
                 <h3>{track.title}</h3>
                 <p className="project-title-zh">{track.titleZh}</p>
                 <p>{track.description}</p>
@@ -206,7 +238,7 @@ export default function Home() {
         </section>
 
         <section className="section experience-section" id="experience">
-          <div className="section-heading"><div><p className="eyebrow">EXPERIENCE</p><h2>Research appointments across neuroscience and intelligent systems.</h2></div><p>研究经历集中在一个交叉问题：如何把神经机制、行为测量与人工系统连接起来。</p></div>
+          <div className="section-heading"><div><p className="eyebrow">EXPERIENCE</p><h2>From clinical observation to neural data and intelligent systems.</h2></div><p>从临床观察、脑电分析到社交神经科学与科学智能，这些经历共同塑造了我的跨学科研究路径。</p></div>
           <div className="appointment-list">
             {appointments.map((appointment) => (
               <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
