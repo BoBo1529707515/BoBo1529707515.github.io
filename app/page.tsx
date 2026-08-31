@@ -69,6 +69,7 @@ const researchTracks = [
     description: 'An eight-channel STM32 capacitive lickometer, a programmable three-axis motion platform, long-duration behavioral tracking, and reproducible frame-level research workflows.',
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
+    logoTheme: 'dark',
   },
 ];
 
@@ -81,6 +82,7 @@ const appointments = [
     detailZh: null,
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
+    logoTheme: 'dark',
   },
   {
     date: 'NOV 2025 - PRESENT',
@@ -128,6 +130,7 @@ const appointments = [
     detailZh: '观察康复与医学影像工作流程，协助常规临床任务，并分析康复设备和便携式影像设备的可用性约束。',
     logo: '/assets/xjtu-first-affiliated-hospital-logo.png',
     logoAlt: "The First Affiliated Hospital of Xi'an Jiaotong University logo",
+    href: 'http://www.en.jdyfy.com/Cooperation___Exchange/Medical_Cooperation.htm',
   },
   {
     date: 'JAN 2024 - 2025',
@@ -204,7 +207,7 @@ export default function Home() {
             {researchTracks.map((track) => (
               <article className="breadth-card" key={track.code}>
                 <div className="breadth-meta"><span>{track.code}</span><span>{track.lab}</span></div>
-                {track.logo && <Image src={track.logo} alt={track.logoAlt} width={280} height={82} className="breadth-logo" />}
+                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}`}><Image src={track.logo} alt={track.logoAlt} width={280} height={82} className="breadth-logo" /></span>}
                 <h3>{track.title}</h3>
                 <p className="project-title-zh">{track.titleZh}</p>
                 <p>{track.description}</p>
@@ -250,8 +253,8 @@ export default function Home() {
                     <h3>{appointment.href ? <a href={appointment.href} target="_blank" rel="noreferrer">{appointment.institution}</a> : appointment.institution}</h3>
                     {appointment.logo && (
                       appointment.href
-                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className="appointment-logo-link" aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" /></a>
-                        : <Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" />
+                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" /></a>
+                        : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" /></span>
                     )}
                   </div>
                   <p className="appointment-role">{appointment.role}</p>
