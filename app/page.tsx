@@ -121,6 +121,7 @@ const appointments = [
     logo: '/assets/zhentec-logo.png',
     logoAlt: 'Zhen Tec logo',
     href: 'https://zhentecbci.com/',
+    logoScale: 'large',
   },
   {
     date: 'MAY 2023 - JUN 2023',
@@ -131,6 +132,7 @@ const appointments = [
     logo: '/assets/xjtu-first-affiliated-hospital-logo.png',
     logoAlt: "The First Affiliated Hospital of Xi'an Jiaotong University logo",
     href: 'http://www.en.jdyfy.com/Cooperation___Exchange/Medical_Cooperation.htm',
+    logoScale: 'large',
   },
   {
     date: 'JAN 2024 - 2025',
@@ -140,6 +142,7 @@ const appointments = [
     detailZh: '负责生物医学工程和电气工程校友联络，协助举办科技金融论坛，并提出院校转化合作项目。',
     logo: '/assets/medical-engineering-innovators-logo.png',
     logoAlt: 'Medical and Engineering Innovators logo',
+    href: 'https://yigongxueren.com/',
   },
 ];
 
@@ -253,8 +256,8 @@ export default function Home() {
                     <h3>{appointment.href ? <a href={appointment.href} target="_blank" rel="noreferrer">{appointment.institution}</a> : appointment.institution}</h3>
                     {appointment.logo && (
                       appointment.href
-                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" /></a>
-                        : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" /></span>
+                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={280} height={84} className="appointment-logo" /></a>
+                        : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={280} height={84} className="appointment-logo" /></span>
                     )}
                   </div>
                   <p className="appointment-role">{appointment.role}</p>

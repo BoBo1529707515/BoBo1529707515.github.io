@@ -133,6 +133,7 @@ a { color: inherit; text-decoration: none; }
 .appointment h3 a { transition: color .2s ease; }
 .appointment h3 a:hover { color: var(--accent); }
 .appointment-logo-frame { display: block; width: min(245px, 33%); height: 58px; flex: 0 0 auto; }
+.appointment-logo-frame-large { width: min(280px, 38%); height: 76px; }
 .appointment-logo-link { transition: opacity .2s ease; }
 .appointment-logo-link:hover { opacity: .68; }
 .appointment-logo { width: 100%; height: 100%; object-fit: contain; object-position: right top; }
@@ -189,6 +190,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
   .appointment { grid-template-columns: 1fr; gap: 11px; }
   .appointment-heading { flex-direction: column; gap: 16px; }
   .appointment-logo-frame { width: min(250px, 72%); height: 56px; }
+  .appointment-logo-frame-large { width: min(280px, 86%); height: 74px; }
   .appointment-logo { object-position: left center; }
   footer { flex-direction: column; }
 }
