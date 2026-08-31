@@ -69,7 +69,6 @@ const researchTracks = [
     description: 'An eight-channel STM32 capacitive lickometer, a programmable three-axis motion platform, long-duration behavioral tracking, and reproducible frame-level research workflows.',
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
-    logoTheme: 'dark',
   },
 ];
 
@@ -82,7 +81,6 @@ const appointments = [
     detailZh: null,
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
-    logoTheme: 'dark',
   },
   {
     date: 'NOV 2025 - PRESENT',
