@@ -88,8 +88,9 @@ const appointments = [
     role: 'Remote Research Collaborator · Prof. Ren Wang',
     detail: 'Trustworthy cross-subject EEG-fNIRS learning, calibration, meta-adaptation, and multimodal fusion.',
     detailZh: null,
-    logo: null,
-    logoAlt: null,
+    logo: '/assets/illinois-tech-logo.svg',
+    logoAlt: 'Illinois Tech logo',
+    href: 'https://www.iit.edu/',
   },
   {
     date: 'MAR 2026 - PRESENT',
@@ -117,6 +118,7 @@ const appointments = [
     detailZh: '设计 IIR/FIR 滤波器，使用 MNE 分析脑电时域与频域特征，并参与 PCA、ICA 与 CNN-LSTM 疲劳模型开发。',
     logo: '/assets/zhentec-logo.png',
     logoAlt: 'Zhen Tec logo',
+    href: 'https://zhentecbci.com/',
   },
   {
     date: 'MAY 2023 - JUN 2023',
@@ -245,8 +247,12 @@ export default function Home() {
                 <p className="appointment-date">{appointment.date}</p>
                 <div className="appointment-content">
                   <div className="appointment-heading">
-                    <h3>{appointment.institution}</h3>
-                    {appointment.logo && <Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" />}
+                    <h3>{appointment.href ? <a href={appointment.href} target="_blank" rel="noreferrer">{appointment.institution}</a> : appointment.institution}</h3>
+                    {appointment.logo && (
+                      appointment.href
+                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className="appointment-logo-link" aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" /></a>
+                        : <Image src={appointment.logo} alt={appointment.logoAlt} width={260} height={76} className="appointment-logo" />
+                    )}
                   </div>
                   <p className="appointment-role">{appointment.role}</p>
                   <p className="appointment-detail">{appointment.detail}</p>
