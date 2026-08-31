@@ -53,6 +53,8 @@ const researchTracks = [
     description: 'HCP preprocessing, multimodal event regressors, V-JEPA/MAE refactoring, SIREN/INR temporal modeling, and turbulence-oriented visualization for large-scale brain dynamics.',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
+    logoTheme: 'dark',
+    logoScale: 'large',
   },
   {
     code: 'BEHAVIORAL VISION',
@@ -100,6 +102,8 @@ const appointments = [
     detailZh: null,
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
+    logoTheme: 'dark',
+    logoScale: 'large',
   },
   {
     date: 'SEP 2021 - JUN 2025',
@@ -208,7 +212,7 @@ export default function Home() {
             {researchTracks.map((track) => (
               <article className="breadth-card" key={track.code}>
                 <div className="breadth-meta"><span>{track.code}</span><span>{track.lab}</span></div>
-                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}`}><Image src={track.logo} alt={track.logoAlt} width={280} height={82} className="breadth-logo" /></span>}
+                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}`}><Image src={track.logo} alt={track.logoAlt} width={320} height={96} className="breadth-logo" /></span>}
                 <h3>{track.title}</h3>
                 <p className="project-title-zh">{track.titleZh}</p>
                 <p>{track.description}</p>
