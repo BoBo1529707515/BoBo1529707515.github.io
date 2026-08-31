@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Yibo Yuan — Social Neuroscience × Artificial Companions',
   description:
-    'Yibo Yuan studies whether artificial social partners can satisfy human social need without overstepping human authority.',
+    'Yibo Yuan studies social need across neural population dynamics, biomimetic agents, BCI, scientific AI, and bounded human–AI relationships.',
   openGraph: {
     title: 'Yibo Yuan — Social Neuroscience × Artificial Companions',
     description:
-      'Research across social neuroscience, embodied AI, and bounded human–AI relationships.',
+      'Research across social neuroscience, embodied AI, BCI, scientific AI, and bounded human–AI relationships.',
     type: 'website',
     images: [{ url: '/assets/social-card.png', width: 1200, height: 630, alt: 'Yibo Yuan research portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Yibo Yuan — Social Neuroscience × Artificial Companions',
-    description: 'Research across social neuroscience, embodied AI, and bounded human–AI relationships.',
+    description: 'Research across social neuroscience, embodied AI, BCI, scientific AI, and bounded human–AI relationships.',
     images: ['/assets/social-card.png'],
   },
 };

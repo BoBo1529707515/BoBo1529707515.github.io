@@ -19,7 +19,7 @@ const projects = [
     image: '/assets/robotic-mouse.jpg',
   },
   {
-    number: '03', status: 'WORKING PROTOTYPE · MANUSCRIPT',
+    number: '03', status: 'LIVE RESEARCH PROTOTYPE',
     title: 'MORI — family AI with bounded memory',
     titleZh: 'MORI：具有人际边界的家庭 AI',
     description: 'A deployed prototype for long-term family interaction. MORI separates person-specific authority from experiential memory, so accumulated trust or past success cannot silently expand an AI’s role.',
@@ -34,6 +34,64 @@ const projects = [
     description: 'A structured NLP gate that updates an AI’s action authority only when temporal scope, authorization semantics, and speaker qualification all hold. The method is currently an ongoing research proposal.',
     descriptionZh: '只有当时间覆盖、授权语义与说话人资格同时成立时，才更新 AI 的行为权限；目前处于研究方案与实验设计阶段。',
     tags: ['NLP', 'AI memory', 'Human agency'],
+  },
+];
+
+const researchTracks = [
+  {
+    code: 'BCI',
+    lab: 'TIML Lab · Prof. Ren Wang',
+    title: 'Reliable cross-subject EEG-fNIRS learning',
+    titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
+    description: 'Participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion. A frozen three-expert system reached 74.0% participant-equal balanced accuracy on the 26-subject Shin2018-WG benchmark under K=5 per class.',
+  },
+  {
+    code: 'BRAIN DYNAMICS',
+    lab: 'AI for Scientific Simulation and Discovery Lab · Prof. Tailin Wu',
+    title: 'Physics-informed fMRI dynamics',
+    titleZh: '物理启发的 fMRI 动力学',
+    description: 'HCP preprocessing, multimodal event regressors, V-JEPA/MAE refactoring, SIREN/INR temporal modeling, and turbulence-oriented visualization for large-scale brain dynamics.',
+  },
+  {
+    code: 'BEHAVIORAL VISION',
+    lab: 'Westlake collaboration · Prof. Xiaodong Liu',
+    title: 'Constrained 2.5D macaque behavior analysis',
+    titleZh: '猕猴行为的受约束 2.5D 分析',
+    description: 'SAM2 mask tracking, cage calibration, separate front- and floor-plane trajectory proxies, contact-state handling, and descriptive spatial summaries without frame-level pseudoreplication.',
+  },
+  {
+    code: 'RESEARCH TOOLS',
+    lab: 'Systems Social Neuroscience Lab · Prof. Ding Liu',
+    title: 'Open experimental systems',
+    titleZh: '开放式行为神经科学实验系统',
+    description: 'An eight-channel STM32 capacitive lickometer, a programmable three-axis motion platform, long-duration behavioral tracking, and reproducible frame-level research workflows.',
+  },
+];
+
+const appointments = [
+  {
+    date: 'AUG 2025 - PRESENT',
+    institution: 'Westlake University',
+    role: 'Full-time Research Assistant · Professor Ding Liu\'s lab',
+    detail: 'Systems social neuroscience, miniscope calcium imaging, naturalistic behavior, and biomimetic social partners.',
+  },
+  {
+    date: 'NOV 2025 - PRESENT',
+    institution: 'Illinois Institute of Technology',
+    role: 'Remote Research Collaborator · Prof. Ren Wang',
+    detail: 'Trustworthy cross-subject EEG-fNIRS learning, calibration, meta-adaptation, and multimodal fusion.',
+  },
+  {
+    date: 'MAR 2026 - PRESENT',
+    institution: 'Westlake University',
+    role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
+    detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
+  },
+  {
+    date: 'SEP 2021 - JUN 2025',
+    institution: "Xi'an Jiaotong University",
+    role: 'B.Eng. in Biomedical Engineering',
+    detail: 'Training across biomedical instrumentation, neural engineering, machine learning, and wet-lab research.',
   },
 ];
 
@@ -57,13 +115,14 @@ export default function Home() {
           </div>
           <p className="profile-bio">I connect social neuroscience, embodied AI, and HCI to study whether artificial partners can meet human social needs.</p>
           <nav className="side-nav" aria-label="Primary navigation">
-            <a href="#research">Research</a><a href="#projects">Projects</a><a href="#publication">Publication</a><a href="#contact">Contact</a>
+            <a href="#research">Research</a><a href="#projects">Core projects</a><a href="#breadth">Research breadth</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
           </nav>
           <div className="profile-links">
             <a href="mailto:yibo031110@gmail.com">Email</a>
             <ExternalLink href="https://github.com/BoBo1529707515">GitHub</ExternalLink>
             <ExternalLink href="https://www.linkedin.com/in/yibo-yuan-319547343/">LinkedIn</ExternalLink>
-            <a href="/Yibo_Yuan_CV.pdf" target="_blank" rel="noreferrer">CV ↗</a>
+            <a href="/Yibo_Yuan_CV.pdf" target="_blank" rel="noreferrer">CV · EN ↗</a>
+            <a href="/Yibo_Yuan_CV_Chinese.pdf" target="_blank" rel="noreferrer">CV · 中文 ↗</a>
           </div>
           <p className="rail-note">Hangzhou, China · PhD applicant for Fall 2027</p>
         </div>
@@ -83,6 +142,20 @@ export default function Home() {
             <div><span className="lens-index">01</span><strong>Mechanism</strong><p>How does the brain represent social deprivation and relief?</p></div>
             <div><span className="lens-index">02</span><strong>Embodiment</strong><p>Which social functions can an artificial partner reproduce?</p></div>
             <div><span className="lens-index">03</span><strong>Authority</strong><p>How should an AI learn from intimacy without acquiring power?</p></div>
+          </div>
+        </section>
+
+        <section className="section breadth-section" id="breadth">
+          <div className="section-heading"><div><p className="eyebrow">RESEARCH BREADTH</p><h2>A broader toolkit for studying brains, behavior, and intelligent systems.</h2></div><p>除核心主线外，我也在脑机接口、科学智能、行为计算机视觉和开放科研工具方向开展合作。</p></div>
+          <div className="breadth-grid">
+            {researchTracks.map((track) => (
+              <article className="breadth-card" key={track.code}>
+                <div className="breadth-meta"><span>{track.code}</span><span>{track.lab}</span></div>
+                <h3>{track.title}</h3>
+                <p className="project-title-zh">{track.titleZh}</p>
+                <p>{track.description}</p>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -112,12 +185,24 @@ export default function Home() {
           </article>
         </section>
 
+        <section className="section experience-section" id="experience">
+          <div className="section-heading"><div><p className="eyebrow">EXPERIENCE</p><h2>Research appointments across neuroscience and intelligent systems.</h2></div><p>研究经历集中在一个交叉问题：如何把神经机制、行为测量与人工系统连接起来。</p></div>
+          <div className="appointment-list">
+            {appointments.map((appointment) => (
+              <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
+                <p className="appointment-date">{appointment.date}</p>
+                <div><h3>{appointment.institution}</h3><p className="appointment-role">{appointment.role}</p><p className="appointment-detail">{appointment.detail}</p></div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="section methods-section">
-          <div className="section-heading compact"><div><p className="eyebrow">ADDITIONAL PRACTICE</p><h2>I work across wet lab, computation, and system building.</h2></div></div>
+          <div className="section-heading compact"><div><p className="eyebrow">OPEN RESEARCH SOFTWARE</p><h2>Tools built for experiments that need to remain inspectable.</h2></div></div>
           <div className="methods-grid">
-            <div><span>NEURAL DATA</span><h3>Population analysis</h3><p>Neural manifolds, discriminability, subspace alignment, CKA, and permutation controls.</p></div>
-            <div><span>BEHAVIOR</span><h3>Open research tools</h3><p>Long-duration tracking, temporal alignment, contact detection, and hazard-based analysis.</p></div>
-            <div><span>SYSTEMS</span><h3>Experimental hardware</h3><p>STM32 lickometer, programmable motion platform, EEG/BCI acquisition, and rapid prototyping.</p></div>
+            <div><span>BEHAVIOR</span><h3>Mouse trajectory tracking</h3><p>Long-duration multi-animal tracking, custom ROIs, temporal and perspective alignment, and experimental contact detection.</p><ExternalLink href="https://github.com/BoBo1529707515/Mouse-trajectory-tracking">View repository</ExternalLink></div>
+            <div><span>HARDWARE</span><h3>Open lickometer</h3><p>Eight-channel STM32 firmware and a Python interface for real-time capacitive lick detection and CSV acquisition.</p><ExternalLink href="https://github.com/BoBo1529707515/lickometer">View repository</ExternalLink></div>
+            <div><span>MICROSCOPY</span><h3>NeuronTracker</h3><p>GUI-assisted axon-growth tracing with biologically motivated path constraints and calibrated quantitative exports.</p><ExternalLink href="https://github.com/BoBo1529707515/Neural-tract-tracing">View repository</ExternalLink></div>
           </div>
         </section>
 
