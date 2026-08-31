@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Yibo Yuan — Social Neuroscience × Artificial Companions',
+  title: 'Yibo Yuan — Social Neuroscience × Non-Biological Companions',
   description:
-    'Yibo Yuan studies social need across neural population dynamics, biomimetic agents, BCI, scientific AI, and bounded human–AI relationships.',
+    'Yibo Yuan studies when non-biological companions can support social need—and where their biological and relational limits begin.',
   openGraph: {
-    title: 'Yibo Yuan — Social Neuroscience × Artificial Companions',
+    title: 'Yibo Yuan — Social Neuroscience × Non-Biological Companions',
     description:
-      'Research across social neuroscience, embodied AI, BCI, scientific AI, and bounded human–AI relationships.',
+      'Research connecting social neuroscience, embodied companions, and bounded long-term human–AI relationships.',
     type: 'website',
     images: [{ url: '/assets/social-card.png', width: 1200, height: 630, alt: 'Yibo Yuan research portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yibo Yuan — Social Neuroscience × Artificial Companions',
-    description: 'Research across social neuroscience, embodied AI, BCI, scientific AI, and bounded human–AI relationships.',
+    title: 'Yibo Yuan — Social Neuroscience × Non-Biological Companions',
+    description: 'Research connecting social neuroscience, embodied companions, and bounded long-term human–AI relationships.',
     images: ['/assets/social-card.png'],
   },
 };

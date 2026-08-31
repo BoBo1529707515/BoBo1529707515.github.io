@@ -1,156 +1,32 @@
 import Image from 'next/image';
-
-const projects = [
-  {
-    number: '01', status: 'ACTIVE · WESTLAKE',
-    title: 'Social need in hypothalamic population dynamics',
-    titleZh: '下丘脑群体动力学中的社交需求',
-    description: 'I study how isolation and reunion reshape hypothalamic population activity during naturalistic social interaction, combining miniscope calcium imaging with frame-resolved behavioral analysis.',
-    descriptionZh: '结合微型显微镜钙成像与逐帧行为分析，研究隔离与重聚如何改变自然社交中的下丘脑神经群体活动。',
-    tags: ['Miniscope imaging', 'Neural manifolds', 'Social behavior'],
-  },
-  {
-    number: '02', status: 'VALIDATION IN PROGRESS',
-    title: 'A programmable biomimetic social partner',
-    titleZh: '可编程仿生社交伙伴：机器鼠',
-    description: 'I conceived this research program and initiated its cross-institutional collaboration: a closed-loop robotic mouse for testing whether an artificial partner can regulate social need—and where biological equivalence breaks down.',
-    descriptionZh: '我提出并发起跨机构合作，开发闭环机器鼠，用于检验人工伙伴能否调节社交需求，以及它与真实同伴的等价性边界。',
-    tags: ['Embodied AI', 'Closed-loop control', 'Rodent behavior'],
-    image: '/assets/robotic-mouse.jpg',
-  },
-  {
-    number: '03', status: 'LIVE RESEARCH PROTOTYPE',
-    title: 'MORI — family AI with bounded memory',
-    titleZh: 'MORI：具有人际边界的家庭 AI',
-    description: 'A deployed prototype for long-term family interaction. MORI separates person-specific authority from experiential memory, so accumulated trust or past success cannot silently expand an AI’s role.',
-    descriptionZh: '面向长期家庭互动的可用原型：把“对谁拥有什么权限”与经验记忆分开，避免信任和成功经验悄悄扩大 AI 的角色。',
-    tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
-    href: 'https://mori-family-companion.pages.dev/',
-  },
-  {
-    number: '04', status: 'RESEARCH PROPOSAL',
-    title: 'TAS-Gate — authority-aware long-term memory',
-    titleZh: 'TAS-Gate：面向授权边界的长期记忆',
-    description: 'A structured NLP gate that updates an AI’s action authority only when temporal scope, authorization semantics, and speaker qualification all hold. The method is currently an ongoing research proposal.',
-    descriptionZh: '只有当时间覆盖、授权语义与说话人资格同时成立时，才更新 AI 的行为权限；目前处于研究方案与实验设计阶段。',
-    tags: ['NLP', 'AI memory', 'Human agency'],
-  },
-];
-
-const researchTracks = [
-  {
-    code: 'BCI',
-    lab: 'TIML Lab · Prof. Ren Wang',
-    title: 'Reliable cross-subject EEG-fNIRS learning',
-    titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
-    description: 'Participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion. A frozen three-expert system reached 74.0% participant-equal balanced accuracy on the 26-subject Shin2018-WG benchmark under K=5 per class.',
-  },
-  {
-    code: 'BRAIN DYNAMICS',
-    lab: 'AI for Scientific Simulation and Discovery Lab · Prof. Tailin Wu',
-    title: 'Physics-informed fMRI dynamics',
-    titleZh: '物理启发的 fMRI 动力学',
-    description: 'HCP preprocessing, multimodal event regressors, V-JEPA/MAE refactoring, SIREN/INR temporal modeling, and turbulence-oriented visualization for large-scale brain dynamics.',
-    logo: '/assets/tailin-wu-lab-logo.png',
-    logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoScale: 'large',
-    figure: '/assets/tailin-wu-phase-gradient.png',
-    figureAlt: 'Phase-gradient direction and magnitude visualization on an fMRI-derived cortical map',
-    figureCaption: 'Phase-gradient analysis · open full figure',
-  },
-  {
-    code: 'BEHAVIORAL VISION',
-    lab: 'Westlake collaboration · Prof. Xiaodong Liu',
-    title: 'Constrained 2.5D macaque behavior analysis',
-    titleZh: '猕猴行为的受约束 2.5D 分析',
-    description: 'SAM2 mask tracking, cage calibration, separate front- and floor-plane trajectory proxies, contact-state handling, and descriptive spatial summaries without frame-level pseudoreplication.',
-  },
-  {
-    code: 'RESEARCH TOOLS',
-    lab: 'Systems Social Neuroscience Lab · Prof. Ding Liu',
-    title: 'Open experimental systems',
-    titleZh: '开放式行为神经科学实验系统',
-    description: 'An eight-channel STM32 capacitive lickometer, a programmable three-axis motion platform, long-duration behavioral tracking, and reproducible frame-level research workflows.',
-    logo: '/assets/ding-liu-lab-logo.png',
-    logoAlt: 'Ding Liu Lab logo',
-  },
-];
-
-const appointments = [
-  {
-    date: 'AUG 2025 - PRESENT',
-    institution: 'Westlake University',
-    role: 'Full-time Research Assistant · Professor Ding Liu\'s lab',
-    detail: 'Systems social neuroscience, miniscope calcium imaging, naturalistic behavior, and biomimetic social partners.',
-    detailZh: null,
-    logo: '/assets/ding-liu-lab-logo.png',
-    logoAlt: 'Ding Liu Lab logo',
-  },
-  {
-    date: 'NOV 2025 - PRESENT',
-    institution: 'Illinois Institute of Technology',
-    role: 'Remote Research Collaborator · Prof. Ren Wang',
-    detail: 'Trustworthy cross-subject EEG-fNIRS learning, calibration, meta-adaptation, and multimodal fusion.',
-    detailZh: null,
-    logo: '/assets/illinois-tech-logo.svg',
-    logoAlt: 'Illinois Tech logo',
-    href: 'https://www.iit.edu/',
-  },
-  {
-    date: 'MAR 2026 - PRESENT',
-    institution: 'Westlake University',
-    role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
-    detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
-    detailZh: null,
-    logo: '/assets/tailin-wu-lab-logo.png',
-    logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoScale: 'large',
-  },
-  {
-    date: 'SEP 2021 - JUN 2025',
-    institution: "Xi'an Jiaotong University",
-    role: 'B.Eng. in Biomedical Engineering',
-    detail: 'First year: Chemical Biology in Qian Xuesen Honors College. Subsequently completed a B.Eng. in Biomedical Engineering with training across instrumentation, neural engineering, machine learning, and wet-lab research.',
-    detailZh: '大一就读于钱学森荣誉学院化学生物学方向，之后完成生物医学工程工学学士。',
-    logo: '/assets/xjtu-logo.png',
-    logoAlt: "Xi'an Jiaotong University logo",
-  },
-  {
-    date: 'JUN 2024 - JUL 2024',
-    institution: 'Zhen Tec Technology Inc.',
-    role: 'EEG Data Analyst',
-    detail: 'Designed IIR/FIR filters, analyzed time- and frequency-domain EEG features with MNE, and supported PCA/ICA and CNN-LSTM fatigue-model development.',
-    detailZh: '设计 IIR/FIR 滤波器，使用 MNE 分析脑电时域与频域特征，并参与 PCA、ICA 与 CNN-LSTM 疲劳模型开发。',
-    logo: '/assets/zhentec-logo.png',
-    logoAlt: 'Zhen Tec logo',
-    href: 'https://zhentecbci.com/',
-    logoScale: 'large',
-  },
-  {
-    date: 'MAY 2023 - JUN 2023',
-    institution: "The First Affiliated Hospital of Xi'an Jiaotong University",
-    role: 'Clinical Laboratory Intern',
-    detail: 'Observed rehabilitation and medical-imaging workflows, assisted routine clinical tasks, and evaluated usability constraints in rehabilitation and portable imaging equipment.',
-    detailZh: '观察康复与医学影像工作流程，协助常规临床任务，并分析康复设备和便携式影像设备的可用性约束。',
-    logo: '/assets/xjtu-first-affiliated-hospital-logo.png',
-    logoAlt: "The First Affiliated Hospital of Xi'an Jiaotong University logo",
-    href: 'http://www.en.jdyfy.com/Cooperation___Exchange/Medical_Cooperation.htm',
-    logoScale: 'large',
-  },
-  {
-    date: 'JAN 2024 - 2025',
-    institution: 'Medical and Engineering Innovators',
-    role: 'Council Member · External Relations',
-    detail: 'Led alumni liaison across biomedical and electrical engineering, supported a Technology and Finance forum, and proposed a hospital-university translational project.',
-    detailZh: '负责生物医学工程和电气工程校友联络，协助举办科技金融论坛，并提出院校转化合作项目。',
-    logo: '/assets/medical-engineering-innovators-logo.png',
-    logoAlt: 'Medical and Engineering Innovators logo',
-    href: 'https://yigongxueren.com/',
-  },
-];
+import {
+  appointments,
+  coreProjects,
+  foundationProjects,
+  openTools,
+  publications,
+  researchTracks,
+  type ProjectModule,
+} from './content';
 
 function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
   return <a href={href} target="_blank" rel="noreferrer" className="text-link">{children}<span aria-hidden="true"> ↗</span></a>;
+}
+
+function ProjectModules({ modules }: { modules: ProjectModule[] }) {
+  return (
+    <div className="project-modules" aria-label="Project modules">
+      {modules.map((module) => (
+        <div className="project-module" key={module.id}>
+          <div className="project-module-meta"><span>{module.statusLabel}</span></div>
+          <h4>{module.label}</h4>
+          <p className="project-module-zh">{module.labelZh}</p>
+          <p>{module.summary}</p>
+          <p className="project-module-summary-zh">{module.summaryZh}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default function Home() {
@@ -175,9 +51,15 @@ export default function Home() {
               <Image src="/assets/xjtu-logo.png" alt="Xi'an Jiaotong University" width={260} height={70} className="institution-logo institution-logo-xjtu" />
             </a>
           </div>
-          <p className="profile-bio">I connect social neuroscience, embodied AI, and HCI to study whether artificial partners can meet human social needs.</p>
+          <p className="profile-bio">I study when non-biological companions can support social need—and where their biological and relational limits begin.</p>
           <nav className="side-nav" aria-label="Primary navigation">
-            <a href="#research">Research</a><a href="#projects">Core projects</a><a href="#breadth">Research breadth</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+            <a href="#research">Research question</a>
+            <a href="#companions">Core program</a>
+            <a href="#foundations">Foundations</a>
+            <a href="#collaborations">Collaborations</a>
+            <a href="#publication">Publication</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
           </nav>
           <div className="profile-links">
             <a href="mailto:yibo031110@gmail.com">Email</a>
@@ -192,50 +74,97 @@ export default function Home() {
 
       <main className="main-content" id="top">
         <header className="topbar"><span>Yibo Yuan / Research</span><a href="mailto:yibo031110@gmail.com">Let’s talk ↗</a></header>
+
         <section className="hero" id="research">
-          <p className="eyebrow accent">SOCIAL NEUROSCIENCE × ARTIFICIAL COMPANIONS</p>
-          <h1>Can artificial social partners satisfy human social need—<em>without overstepping human authority?</em></h1>
-          <p className="hero-zh">人工社交伙伴能否满足人的社交需求，同时不越过人类赋予它的权力边界？</p>
+          <p className="eyebrow accent">SOCIAL NEUROSCIENCE × NON-BIOLOGICAL COMPANIONS</p>
+          <h1>What makes a non-biological agent a <em>meaningful social companion?</em></h1>
+          <p className="hero-zh">什么使一个非生物智能体成为真正有意义的社会伙伴？</p>
           <div className="hero-copy">
-            <p>My work follows this question across three levels: the neural dynamics of social need, embodied interaction with biomimetic agents, and the governance of long-term human–AI relationships.</p>
-            <p>I build experiments and systems that make the question testable—from miniscope recordings and behavioral pipelines to robotic partners and authority-aware AI memory.</p>
+            <p>I study whether—and under what conditions—artificial partners can relieve social need. The central question is which social functions can be substituted and which remain uniquely biological.</p>
+            <p>Across mice and humans, I connect neural mechanisms of social need with embodied agents, long-term AI companions, and experiments on relational authority.</p>
           </div>
           <div className="research-lenses" aria-label="Research framework">
-            <div><span className="lens-index">01</span><strong>Mechanism</strong><p>How does the brain represent social deprivation and relief?</p></div>
-            <div><span className="lens-index">02</span><strong>Embodiment</strong><p>Which social functions can an artificial partner reproduce?</p></div>
-            <div><span className="lens-index">03</span><strong>Authority</strong><p>How should an AI learn from intimacy without acquiring power?</p></div>
+            <div><span className="lens-index">01</span><strong>Need</strong><p>How do deprivation and relief emerge in brain and behavior?</p></div>
+            <div><span className="lens-index">02</span><strong>Substitution</strong><p>Which social functions can embodied or conversational agents reproduce?</p></div>
+            <div><span className="lens-index">03</span><strong>Boundaries</strong><p>Where does biological equivalence fail, and what authority should an AI have?</p></div>
           </div>
         </section>
 
-        <section className="section breadth-section" id="breadth">
-          <div className="section-heading"><div><p className="eyebrow">RESEARCH BREADTH</p><h2>A broader toolkit for studying brains, behavior, and intelligent systems.</h2></div><p>除核心主线外，我也在脑机接口、科学智能、行为计算机视觉和开放科研工具方向开展合作。</p></div>
-          <div className="breadth-grid">
-            {researchTracks.map((track) => (
-              <article className="breadth-card" key={track.code}>
-                <div className="breadth-meta"><span>{track.code}</span><span>{track.lab}</span></div>
-                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}`}><Image src={track.logo} alt={track.logoAlt} width={320} height={96} className="breadth-logo" /></span>}
-                <h3>{track.title}</h3>
-                <p className="project-title-zh">{track.titleZh}</p>
-                <p>{track.description}</p>
-                {track.figure && <a className="breadth-figure" href={track.figure} target="_blank" rel="noreferrer"><Image src={track.figure} alt={track.figureAlt} width={962} height={641} /><span>{track.figureCaption} ↗</span></a>}
+        <section className="section core-program-section" id="companions">
+          <div className="section-heading">
+            <div><p className="eyebrow">CORE RESEARCH PROGRAM</p><h2>Non-biological companionship at two experimental scales.</h2></div>
+            <p>从具身机器鼠到长期 AI 伙伴：检验人工伙伴能否提供有意义的社会输入，以及这种替代在哪里失效或越界。</p>
+          </div>
+          <div className="project-list core-project-list">
+            {coreProjects.map((project) => (
+              <article className={`project-card core-project-card ${project.image ? 'project-card-featured' : ''}`} id={project.id} key={project.id}>
+                {project.image && (
+                  <div className="project-image-wrap">
+                    <Image src={project.image} alt={project.imageAlt ?? project.title} width={1600} height={1000} className="project-image" />
+                    {project.imageCaption && <span className="image-caption">{project.imageCaption}</span>}
+                  </div>
+                )}
+                <div className="project-body">
+                  <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge">{project.statusLabel}</span></div>
+                  <h3>{project.title}</h3>
+                  <p className="project-title-zh">{project.titleZh}</p>
+                  <p className="project-description">{project.description}</p>
+                  <p className="project-description-zh">{project.descriptionZh}</p>
+                  {project.contribution && (
+                    <div className="contribution-note"><span>CONTRIBUTION</span><p>{project.contribution}</p>{project.contributionZh && <p>{project.contributionZh}</p>}</div>
+                  )}
+                  {project.evidence && (
+                    <aside className="evidence-note">
+                      <div className="evidence-heading"><span>{project.evidence.label}</span><span>{project.evidence.lastVerified}</span></div>
+                      <p>{project.evidence.observation}</p>
+                      <p className="evidence-zh">{project.evidence.observationZh}</p>
+                      <p className="evidence-boundary">{project.evidence.boundary}</p>
+                      <p className="evidence-zh">{project.evidence.boundaryZh}</p>
+                    </aside>
+                  )}
+                  <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  {project.links?.map((link) => <ExternalLink href={link.href} key={link.href}>{link.label}</ExternalLink>)}
+                  {project.modules && <ProjectModules modules={project.modules} />}
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section" id="projects">
-          <div className="section-heading"><div><p className="eyebrow">SELECTED WORK</p><h2>One question, four experimental forms.</h2></div><p>四个项目围绕同一个核心：人工社交究竟能替代什么，又不能替代什么。</p></div>
-          <div className="project-list">
-            {projects.map((project) => (
-              <article className={`project-card ${project.image ? 'project-card-featured' : ''}`} key={project.number}>
-                {project.image && <div className="project-image-wrap"><Image src={project.image} alt="A real mouse interacting with the programmable robotic mouse" width={1600} height={1000} className="project-image" /><span className="image-caption">Real mouse × robotic mouse · validation setup</span></div>}
-                <div className="project-body">
-                  <div className="project-meta"><span>{project.number}</span><span className="status-badge">{project.status}</span></div>
-                  <h3>{project.title}</h3><p className="project-title-zh">{project.titleZh}</p>
-                  <p className="project-description">{project.description}</p><p className="project-description-zh">{project.descriptionZh}</p>
-                  <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  {project.href && <ExternalLink href={project.href}>Open live prototype</ExternalLink>}
-                </div>
+        <section className="section foundation-section" id="foundations">
+          <div className="section-heading">
+            <div><p className="eyebrow">SCIENTIFIC FOUNDATIONS</p><h2>What must be understood before substitution can be claimed.</h2></div>
+            <p>机制与边界不是旁支：只有先定义社交需求和有效授权，才能严谨判断人工陪伴究竟替代了什么。</p>
+          </div>
+          <div className="foundation-grid">
+            {foundationProjects.map((project) => (
+              <article className="foundation-card" id={project.id} key={project.id}>
+                <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge">{project.statusLabel}</span></div>
+                <h3>{project.title}</h3>
+                <p className="project-title-zh">{project.titleZh}</p>
+                <p className="project-description">{project.description}</p>
+                <p className="project-description-zh">{project.descriptionZh}</p>
+                <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section breadth-section" id="collaborations">
+          <div className="section-heading">
+            <div><p className="eyebrow">SUPPORTING COLLABORATIONS</p><h2>Methods that expand how I study brains, behavior, and intelligent systems.</h2></div>
+            <p>这些合作提供脑机接口、科学智能、行为视觉与实验系统能力，但不与“非生物陪伴”主线争夺首页重心。</p>
+          </div>
+          <div className="breadth-grid">
+            {researchTracks.map((track) => (
+              <article className="breadth-card" key={track.code}>
+                <div className="breadth-meta"><span>{track.code}</span><span>{track.lab}</span></div>
+                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}`}><Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="breadth-logo" /></span>}
+                <h3>{track.title}</h3>
+                <p className="project-title-zh">{track.titleZh}</p>
+                <p>{track.description}</p>
+                <p className="breadth-description-zh">{track.descriptionZh}</p>
+                {track.figure && <a className={`breadth-figure${track.figureSize === 'compact' ? ' breadth-figure-compact' : ''}`} href={track.figure} target="_blank" rel="noreferrer"><Image src={track.figure} alt={track.figureAlt ?? track.title} width={962} height={641} /><span>{track.figureCaption} ↗</span></a>}
               </article>
             ))}
           </div>
@@ -243,14 +172,16 @@ export default function Home() {
 
         <section className="section publication-section" id="publication">
           <div className="section-heading compact"><div><p className="eyebrow">PUBLICATION</p><h2>Methods for observing social circuits in action.</h2></div></div>
-          <article className="publication-card">
-            <div className="publication-year">2026</div>
-            <div><p className="publication-state">PUBLISHED · JOURNAL OF VISUALIZED EXPERIMENTS</p><h3>In Vivo Calcium Imaging with a Miniaturized Microscope in the Hypothalamus for Understanding Social Behaviors in Mice</h3><p>Dai et al., including Yibo Yuan · JoVE, issue 229, e70401</p><ExternalLink href="https://doi.org/10.3791/70401">DOI 10.3791/70401</ExternalLink></div>
-          </article>
+          {publications.map((publication) => (
+            <article className="publication-card" key={publication.href}>
+              <div className="publication-year">{publication.year}</div>
+              <div><p className="publication-state">{publication.state}</p><h3>{publication.title}</h3><p>{publication.authors}</p><ExternalLink href={publication.href}>{publication.linkLabel}</ExternalLink></div>
+            </article>
+          ))}
         </section>
 
         <section className="section experience-section" id="experience">
-          <div className="section-heading"><div><p className="eyebrow">EXPERIENCE</p><h2>From clinical observation to neural data and intelligent systems.</h2></div><p>从临床观察、脑电分析到社交神经科学与科学智能，这些经历共同塑造了我的跨学科研究路径。</p></div>
+          <div className="section-heading"><div><p className="eyebrow">EXPERIENCE</p><h2>From clinical observation to neural data and intelligent systems.</h2></div><p>这些经历共同提供研究非生物陪伴所需的神经科学、工程与人机交互基础。</p></div>
           <div className="appointment-list">
             {appointments.map((appointment) => (
               <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
@@ -260,8 +191,8 @@ export default function Home() {
                     <h3>{appointment.href ? <a href={appointment.href} target="_blank" rel="noreferrer">{appointment.institution}</a> : appointment.institution}</h3>
                     {appointment.logo && (
                       appointment.href
-                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={280} height={84} className="appointment-logo" /></a>
-                        : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt} width={280} height={84} className="appointment-logo" /></span>
+                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt ?? appointment.institution} width={280} height={84} className="appointment-logo" /></a>
+                        : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt ?? appointment.institution} width={280} height={84} className="appointment-logo" /></span>
                     )}
                   </div>
                   <p className="appointment-role">{appointment.role}</p>
@@ -274,22 +205,21 @@ export default function Home() {
         </section>
 
         <section className="section methods-section">
-          <div className="section-heading compact"><div><p className="eyebrow">OPEN RESEARCH SOFTWARE</p><h2>Tools built for experiments that need to remain inspectable.</h2></div></div>
+          <div className="section-heading compact"><div><p className="eyebrow">SELECTED OPEN RESEARCH SOFTWARE</p><h2>Tools built for experiments that need to remain inspectable.</h2></div></div>
           <div className="methods-grid">
-            <div><span>BEHAVIOR</span><h3>Mouse trajectory tracking</h3><p>Long-duration multi-animal tracking, custom ROIs, temporal and perspective alignment, and experimental contact detection.</p><ExternalLink href="https://github.com/BoBo1529707515/Mouse-trajectory-tracking">View repository</ExternalLink></div>
-            <div><span>HARDWARE</span><h3>Open lickometer</h3><p>Eight-channel STM32 firmware and a Python interface for real-time capacitive lick detection and CSV acquisition.</p><ExternalLink href="https://github.com/BoBo1529707515/lickometer">View repository</ExternalLink></div>
-            <div><span>MICROSCOPY</span><h3>NeuronTracker</h3><p>GUI-assisted axon-growth tracing with biologically motivated path constraints and calibrated quantitative exports.</p><ExternalLink href="https://github.com/BoBo1529707515/Neural-tract-tracing">View repository</ExternalLink></div>
+            {openTools.map((tool) => (
+              <div key={tool.code}>
+                <span>{tool.code}</span><h3>{tool.title}</h3><p className="tool-title-zh">{tool.titleZh}</p><p>{tool.description}</p><p className="tool-description-zh">{tool.descriptionZh}</p><ExternalLink href={tool.href}>View repository</ExternalLink>
+              </div>
+            ))}
           </div>
         </section>
 
         <section className="contact-section" id="contact">
-          <p className="eyebrow accent">CONTACT</p><h2>Interested in social need, artificial companions, or bounded AI agency?</h2>
+          <p className="eyebrow accent">CONTACT</p><h2>Interested in social need, non-biological companions, or bounded AI agency?</h2>
           <p>I’m preparing PhD applications for Fall 2027 and welcome conversations with aligned labs.</p>
           <a className="contact-button" href="mailto:yibo031110@gmail.com">yibo031110@gmail.com <span>↗</span></a>
-          <div className="contact-affiliation">
-            <span>CURRENT AFFILIATION</span>
-            <Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" />
-          </div>
+          <div className="contact-affiliation"><span>CURRENT AFFILIATION</span><Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" /></div>
         </section>
         <footer><span>© 2026 Yibo Yuan</span><span>Built around one research question.</span></footer>
       </main>
