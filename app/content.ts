@@ -82,6 +82,20 @@ export type Appointment = {
   logoTheme?: 'dark';
 };
 
+export type SidebarTimelineItem = {
+  institution: string;
+  role: string;
+  date: string;
+  logo: string;
+  logoAlt: string;
+  href?: string;
+};
+
+export type SidebarTimelineGroup = {
+  label: string;
+  items: SidebarTimelineItem[];
+};
+
 export type Publication = {
   year: string;
   state: string;
@@ -356,6 +370,43 @@ export const appointments: Appointment[] = [
     logo: '/assets/medical-engineering-innovators-logo.png',
     logoAlt: 'Medical and Engineering Innovators logo',
     href: 'https://yigongxueren.com/',
+  },
+];
+
+export const sidebarTimeline: SidebarTimelineGroup[] = [
+  {
+    label: 'Research',
+    items: [
+      {
+        institution: 'Westlake University',
+        role: 'Research Assistant · Social Neuroscience',
+        date: '2025 — Present',
+        logo: '/assets/westlake-logo.png',
+        logoAlt: 'Westlake University',
+        href: 'https://en.westlake.edu.cn/',
+      },
+      {
+        institution: 'Illinois Tech',
+        role: 'Remote Research Collaborator · BCI',
+        date: '2025 — Present',
+        logo: '/assets/illinois-tech-logo.svg',
+        logoAlt: 'Illinois Institute of Technology',
+        href: 'https://www.iit.edu/',
+      },
+    ],
+  },
+  {
+    label: 'Education',
+    items: [
+      {
+        institution: "Xi'an Jiaotong University",
+        role: 'B.Eng. Biomedical Engineering',
+        date: '2021 — 2025',
+        logo: '/assets/xjtu-logo.png',
+        logoAlt: "Xi'an Jiaotong University",
+        href: 'https://en.xjtu.edu.cn/',
+      },
+    ],
   },
 ];
 

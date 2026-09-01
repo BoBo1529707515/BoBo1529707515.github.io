@@ -6,6 +6,7 @@ import {
   openTools,
   publications,
   researchTracks,
+  sidebarTimeline,
   type ProjectModule,
 } from './content';
 
@@ -43,15 +44,31 @@ export default function Home() {
             <h2 className="profile-name">Yibo Yuan</h2>
             <p className="profile-role">Research Assistant<br />Westlake University</p>
           </div>
-          <div className="institution-marks" aria-label="Academic affiliations">
-            <a href="https://en.westlake.edu.cn/" target="_blank" rel="noreferrer" aria-label="Westlake University website">
-              <Image src="/assets/westlake-logo.png" alt="Westlake University" width={260} height={78} className="institution-logo institution-logo-westlake" />
-            </a>
-            <a href="https://en.xjtu.edu.cn/" target="_blank" rel="noreferrer" aria-label="Xi'an Jiaotong University website">
-              <Image src="/assets/xjtu-logo.png" alt="Xi'an Jiaotong University" width={260} height={70} className="institution-logo institution-logo-xjtu" />
-            </a>
-          </div>
           <p className="profile-bio">I study when non-biological companions can support social need—and where their biological and relational limits begin.</p>
+          <div className="rail-timeline" aria-label="Research and education timeline">
+            {sidebarTimeline.map((group) => (
+              <section className="rail-timeline-group" key={group.label}>
+                <div className="rail-timeline-title"><h3>{group.label}</h3><span /></div>
+                <div className="rail-timeline-items">
+                  {group.items.map((item) => {
+                    const content = (
+                      <>
+                        <span className="rail-timeline-logo-frame"><Image src={item.logo} alt={item.logoAlt} width={88} height={64} className="rail-timeline-logo" /></span>
+                        <span className="rail-timeline-copy">
+                          <strong>{item.institution}</strong>
+                          <span>{item.role}</span>
+                          <time>{item.date}</time>
+                        </span>
+                      </>
+                    );
+                    return item.href
+                      ? <a className="rail-timeline-item" href={item.href} target="_blank" rel="noreferrer" key={`${group.label}-${item.institution}`}>{content}</a>
+                      : <div className="rail-timeline-item" key={`${group.label}-${item.institution}`}>{content}</div>;
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research">Research question</a>
             <a href="#companions">Core program</a>
