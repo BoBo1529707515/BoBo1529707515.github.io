@@ -61,7 +61,7 @@ export type ResearchTrack = {
   descriptionZh: string;
   logo?: string;
   logoAlt?: string;
-  logoScale?: 'large' | 'prominent';
+  logoScale?: 'large' | 'prominent' | 'fit-wide';
   logoTheme?: 'dark';
   figure?: string;
   figureAlt?: string;
@@ -78,7 +78,7 @@ export type Appointment = {
   logo?: string;
   logoAlt?: string;
   href?: string;
-  logoScale?: 'large' | 'prominent';
+  logoScale?: 'large' | 'prominent' | 'fit-wide';
   logoTheme?: 'dark';
 };
 
@@ -326,9 +326,9 @@ export const appointments: Appointment[] = [
     role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
     detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
     detailZh: '开展面向 fMRI 动力学、时间表征学习与湍流分析的科学智能研究。',
-    logo: '/assets/tailin-wu-lab-mark.png',
+    logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoScale: 'large',
+    logoScale: 'fit-wide',
   },
   {
     date: 'SEP 2021 - JUN 2025',
