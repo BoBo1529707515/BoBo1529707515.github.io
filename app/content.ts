@@ -392,6 +392,7 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
       {
         institution: "Xi'an Jiaotong University",
         role: 'B.Eng. Biomedical Engineering',
+        note: 'Medical Electronics & Information',
         date: '2022 — 2025',
         logo: '/assets/xjtu-logo.png',
         logoAlt: "Xi'an Jiaotong University",
