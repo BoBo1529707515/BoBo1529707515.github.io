@@ -85,9 +85,11 @@ export type Appointment = {
 export type SidebarTimelineItem = {
   institution: string;
   role: string;
+  note?: string;
   date: string;
   logo: string;
   logoAlt: string;
+  logoVariant?: 'crest-left';
   href?: string;
 };
 
@@ -375,36 +377,34 @@ export const appointments: Appointment[] = [
 
 export const sidebarTimeline: SidebarTimelineGroup[] = [
   {
-    label: 'Research',
+    label: 'Academic Path',
     items: [
+      {
+        institution: "Xi'an Jiaotong University",
+        role: 'Chemical Biology',
+        note: 'Qian Xuesen Honors College',
+        date: '2021 — 2022',
+        logo: '/assets/xjtu-logo.png',
+        logoAlt: "Xi'an Jiaotong University",
+        logoVariant: 'crest-left',
+        href: 'https://en.xjtu.edu.cn/',
+      },
+      {
+        institution: "Xi'an Jiaotong University",
+        role: 'B.Eng. Biomedical Engineering',
+        date: '2022 — 2025',
+        logo: '/assets/xjtu-logo.png',
+        logoAlt: "Xi'an Jiaotong University",
+        logoVariant: 'crest-left',
+        href: 'https://en.xjtu.edu.cn/',
+      },
       {
         institution: 'Westlake University',
         role: 'Research Assistant · Social Neuroscience',
         date: '2025 — Present',
-        logo: '/assets/westlake-logo.png',
+        logo: '/assets/westlake-mark.png',
         logoAlt: 'Westlake University',
         href: 'https://en.westlake.edu.cn/',
-      },
-      {
-        institution: 'Illinois Tech',
-        role: 'Remote Research Collaborator · BCI',
-        date: '2025 — Present',
-        logo: '/assets/illinois-tech-logo.svg',
-        logoAlt: 'Illinois Institute of Technology',
-        href: 'https://www.iit.edu/',
-      },
-    ],
-  },
-  {
-    label: 'Education',
-    items: [
-      {
-        institution: "Xi'an Jiaotong University",
-        role: 'B.Eng. Biomedical Engineering',
-        date: '2021 — 2025',
-        logo: '/assets/xjtu-logo.png',
-        logoAlt: "Xi'an Jiaotong University",
-        href: 'https://en.xjtu.edu.cn/',
       },
     ],
   },

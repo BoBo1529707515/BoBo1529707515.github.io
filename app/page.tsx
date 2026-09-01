@@ -53,10 +53,13 @@ export default function Home() {
                   {group.items.map((item) => {
                     const content = (
                       <>
-                        <span className="rail-timeline-logo-frame"><Image src={item.logo} alt={item.logoAlt} width={88} height={64} className="rail-timeline-logo" /></span>
+                        <span className={`rail-timeline-logo-frame${item.logoVariant === 'crest-left' ? ' rail-timeline-logo-frame--crest-left' : ''}`}>
+                          <Image src={item.logo} alt={item.logoAlt} width={88} height={64} className="rail-timeline-logo" />
+                        </span>
                         <span className="rail-timeline-copy">
                           <strong>{item.institution}</strong>
                           <span>{item.role}</span>
+                          {item.note && <span className="rail-timeline-note">{item.note}</span>}
                           <time>{item.date}</time>
                         </span>
                       </>
