@@ -326,9 +326,9 @@ export const appointments: Appointment[] = [
     role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
     detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
     detailZh: '开展面向 fMRI 动力学、时间表征学习与湍流分析的科学智能研究。',
-    logo: '/assets/tailin-wu-lab-logo.png',
+    logo: '/assets/tailin-wu-lab-mark.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoScale: 'prominent',
+    logoScale: 'large',
   },
   {
     date: 'SEP 2021 - JUN 2025',
