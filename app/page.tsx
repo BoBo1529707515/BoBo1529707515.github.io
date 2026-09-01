@@ -65,8 +65,8 @@ export default function Home() {
                       </>
                     );
                     return item.href
-                      ? <a className="rail-timeline-item" href={item.href} target="_blank" rel="noreferrer" key={`${group.label}-${item.institution}`}>{content}</a>
-                      : <div className="rail-timeline-item" key={`${group.label}-${item.institution}`}>{content}</div>;
+                      ? <a className="rail-timeline-item" href={item.href} target="_blank" rel="noreferrer" key={`${group.label}-${item.institution}-${item.date}`}>{content}</a>
+                      : <div className="rail-timeline-item" key={`${group.label}-${item.institution}-${item.date}`}>{content}</div>;
                   })}
                 </div>
               </section>
