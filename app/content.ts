@@ -61,7 +61,7 @@ export type ResearchTrack = {
   descriptionZh: string;
   logo?: string;
   logoAlt?: string;
-  logoScale?: 'large';
+  logoScale?: 'large' | 'prominent';
   logoTheme?: 'dark';
   figure?: string;
   figureAlt?: string;
@@ -78,7 +78,7 @@ export type Appointment = {
   logo?: string;
   logoAlt?: string;
   href?: string;
-  logoScale?: 'large';
+  logoScale?: 'large' | 'prominent';
   logoTheme?: 'dark';
 };
 
@@ -272,6 +272,7 @@ export const researchTracks: ResearchTrack[] = [
     descriptionZh: '面向大尺度脑动力学，开展 HCP 预处理、时间表征学习、隐式神经表示与湍流可视化。',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
+    logoScale: 'prominent',
     figure: '/assets/tailin-wu-phase-gradient.png',
     figureAlt: 'Phase-gradient direction and magnitude visualization on an fMRI-derived cortical map',
     figureCaption: 'Phase-gradient analysis · open full figure',
@@ -327,6 +328,7 @@ export const appointments: Appointment[] = [
     detailZh: '开展面向 fMRI 动力学、时间表征学习与湍流分析的科学智能研究。',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
+    logoScale: 'prominent',
   },
   {
     date: 'SEP 2021 - JUN 2025',

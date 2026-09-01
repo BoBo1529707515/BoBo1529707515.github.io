@@ -154,6 +154,8 @@ a { color: inherit; text-decoration: none; }
 .breadth-meta span:last-child { max-width: 265px; text-align: right; }
 .breadth-logo-frame { display: block; width: min(210px, 48%); height: 58px; margin: 0 0 28px auto; }
 .breadth-logo-frame-large { width: min(280px, 65%); height: 76px; }
+.breadth-logo-frame-prominent { width: min(300px, 72%); height: 72px; overflow: hidden; }
+.breadth-logo-frame-prominent .breadth-logo { transform: scale(1.5); transform-origin: center; }
 .breadth-logo { display: block; width: 100%; height: 100%; object-fit: contain; object-position: right center; }
 .logo-surface-dark { padding: 9px 13px; border-radius: 4px; background: #07052f; }
 .logo-surface-dark .breadth-logo, .logo-surface-dark .appointment-logo { object-position: center; }
@@ -184,6 +186,8 @@ a { color: inherit; text-decoration: none; }
 .appointment h3 a:hover { color: var(--accent); }
 .appointment-logo-frame { display: block; width: min(245px, 33%); height: 58px; flex: 0 0 auto; }
 .appointment-logo-frame-large { width: min(280px, 38%); height: 76px; }
+.appointment-logo-frame-prominent { width: min(300px, 42%); height: 72px; overflow: hidden; }
+.appointment-logo-frame-prominent .appointment-logo { transform: scale(1.5); transform-origin: center; }
 .appointment-logo-link { transition: opacity .2s ease; }
 .appointment-logo-link:hover { opacity: .68; }
 .appointment-logo { width: 100%; height: 100%; object-fit: contain; object-position: right top; }
