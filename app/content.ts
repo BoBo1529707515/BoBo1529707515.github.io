@@ -236,8 +236,8 @@ export const coreProjects: ResearchProject[] = [
       'A 105-participant study of how people revise distinct AI powers as an artificial companion enters a long-term relationship and supports loneliness-related needs.',
     descriptionZh:
       '通过 105 人实验研究：当人工伙伴进入长期关系并回应孤独相关需求时，人们如何调整不同类型的 AI 权力。',
-    contribution: 'I conceived this study and led its experimental design, research framing, and cross-sector collaboration; I am currently advancing it with Xiaohongshu.',
-    contributionZh: '我提出了这一研究，并主导实验设计、问题构建与产学合作；目前正与小红书继续推进。',
+    contribution: 'I independently conceived and led this CHI study, designing its fixed 20-year relationship narrative, six power dimensions, four governance arrangements, and three-stage judgment protocol for 105 participants. I am leading the manuscript as first author and continuing to advance the project’s next phase in collaboration with Xiaohongshu.',
+    contributionZh: '我独立提出并完整主导了这项 CHI 研究，为 105 名参与者设计固定的 20 年关系叙事、六类权力维度、四种治理安排与三阶段判断流程，并作为第一作者主导论文写作。目前，我正与小红书合作推进项目的下一阶段。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
     modules: [
       {
