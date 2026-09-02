@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FigureLightbox } from '../components/FigureLightbox';
 import { LanguageToggle } from '../components/LanguageToggle';
+import { ProjectGalleryLightbox } from '../components/ProjectGalleryLightbox';
 import {
   appointments,
   coreProjects,
@@ -146,11 +147,13 @@ export default function Home() {
                     />
                   )}
                   {project.image && !project.figureDetails && (
-                    <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
-                      <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
-                      {project.imageCaption && <span className="image-caption" data-lang="en">{project.imageCaption}</span>}
-                      {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
-                    </a>
+                    project.id === 'robotic-mouse'
+                      ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} />
+                      : <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
+                          <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
+                          {project.imageCaption && <span className="image-caption" data-lang="en">{project.imageCaption}</span>}
+                          {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
+                        </a>
                   )}
                   {project.contribution && (
                     <div className="contribution-note"><span><span data-lang="en">MY CONTRIBUTION</span><span data-lang="zh">我的贡献</span></span><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>
