@@ -25,7 +25,12 @@ async function readRenderedPage() {
   const server = spawn(
     executable,
     ['wrangler', 'dev', '--config', 'dist/server/wrangler.json', '--ip', '127.0.0.1', '--port', '8787'],
-    { cwd: projectRoot, stdio: ['ignore', 'pipe', 'pipe'], shell: process.platform === 'win32' },
+    {
+      cwd: projectRoot,
+      stdio: ['ignore', 'pipe', 'pipe'],
+      shell: process.platform === 'win32',
+      detached: process.platform !== 'win32',
+    },
   );
 
   let diagnostics = '';
@@ -76,7 +81,13 @@ try {
     if (process.platform === 'win32') {
       spawnSync('taskkill', ['/pid', String(server.pid), '/T', '/F'], { stdio: 'ignore' });
     } else {
-      server.kill('SIGTERM');
+      try {
+        process.kill(-server.pid, 'SIGTERM');
+      } catch {
+        server.kill('SIGTERM');
+      }
     }
+    server.stdout.destroy();
+    server.stderr.destroy();
   }
 }
