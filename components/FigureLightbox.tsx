@@ -5,10 +5,12 @@ import { useEffect, useState } from 'react';
 
 type FigureDetails = {
   eyebrow: string;
+  eyebrowZh: string;
   title: string;
   titleZh: string;
   origin?: {
     label: string;
+    labelZh: string;
     title: string;
     titleZh: string;
     image: string;
@@ -30,11 +32,12 @@ type FigureLightboxProps = {
   src: string;
   alt: string;
   caption?: string;
+  captionZh?: string;
   fit: 'cover' | 'contain';
   details: FigureDetails;
 };
 
-export function FigureLightbox({ src, alt, caption, fit, details }: FigureLightboxProps) {
+export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: FigureLightboxProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -54,7 +57,8 @@ export function FigureLightbox({ src, alt, caption, fit, details }: FigureLightb
     <>
       <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label={`Open figure and methods for ${details.title}`}>
         <Image src={src} alt={alt} width={2000} height={1200} className={`project-primary-image project-primary-image-${fit}`} />
-        {caption && <span className="image-caption">{caption}</span>}
+        {caption && <span className="image-caption" data-lang="en">{caption}</span>}
+        {captionZh && <span className="image-caption" data-lang="zh">{captionZh}</span>}
       </button>
 
       {open && (
@@ -62,44 +66,42 @@ export function FigureLightbox({ src, alt, caption, fit, details }: FigureLightb
           if (event.currentTarget === event.target) setOpen(false);
         }}>
           <div className="figure-lightbox-panel">
-            <button className="figure-lightbox-close" type="button" onClick={() => setOpen(false)} aria-label="Close figure">Close ×</button>
+            <button className="figure-lightbox-close" type="button" onClick={() => setOpen(false)} aria-label="Close figure"><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
             <div className="figure-lightbox-visual">
               <Image src={src} alt={alt} width={2000} height={1200} priority className="figure-lightbox-image" />
-              <a href={src} target="_blank" rel="noreferrer">Open original image ↗</a>
+              <a href={src} target="_blank" rel="noreferrer"><span data-lang="en">Open original image</span><span data-lang="zh">打开原图</span> ↗</a>
             </div>
             <div className="figure-lightbox-copy">
-              <p className="eyebrow accent">{details.eyebrow}</p>
-              <h3 id="figure-lightbox-title">{details.title}</h3>
-              <p className="figure-lightbox-title-zh">{details.titleZh}</p>
+              <p className="eyebrow accent"><span data-lang="en">{details.eyebrow}</span><span data-lang="zh">{details.eyebrowZh}</span></p>
+              <h3 id="figure-lightbox-title"><span data-lang="en">{details.title}</span><span data-lang="zh">{details.titleZh}</span></h3>
               {details.origin && (
                 <section className="figure-origin" aria-label="Scientific origin of this analysis">
-                  <p className="figure-origin-label">{details.origin.label}</p>
-                  <h4>{details.origin.title}</h4>
-                  <p className="figure-origin-title-zh">{details.origin.titleZh}</p>
+                  <p className="figure-origin-label"><span data-lang="en">{details.origin.label}</span><span data-lang="zh">{details.origin.labelZh}</span></p>
+                  <h4><span data-lang="en">{details.origin.title}</span><span data-lang="zh">{details.origin.titleZh}</span></h4>
                   <a className="figure-origin-image" href={details.origin.href} target="_blank" rel="noreferrer">
                     <Image src={details.origin.image} alt={details.origin.imageAlt} width={882} height={766} />
                     <span>{details.origin.citation} ↗</span>
                   </a>
-                  <p className="figure-origin-body">{details.origin.body}</p>
-                  <p className="figure-origin-body-zh">{details.origin.bodyZh}</p>
+                  <p className="figure-origin-body" data-lang="en">{details.origin.body}</p>
+                  <p className="figure-origin-body" data-lang="zh">{details.origin.bodyZh}</p>
                   <div className="figure-origin-bridge">
-                    <p>{details.origin.bridge}</p>
-                    <p>{details.origin.bridgeZh}</p>
+                    <p data-lang="en">{details.origin.bridge}</p>
+                    <p data-lang="zh">{details.origin.bridgeZh}</p>
                   </div>
                 </section>
               )}
-              <p className="figure-method-heading">ANALYSIS PIPELINE · 分析流程</p>
+              <p className="figure-method-heading"><span data-lang="en">ANALYSIS PIPELINE</span><span data-lang="zh">分析流程</span></p>
               <ol className="figure-method-list">
                 {details.methods.map((method, index) => (
                   <li key={method}>
-                    <p>{method}</p>
-                    <p>{details.methodsZh[index]}</p>
+                    <p data-lang="en">{method}</p>
+                    <p data-lang="zh">{details.methodsZh[index]}</p>
                   </li>
                 ))}
               </ol>
               <div className="figure-reading">
-                <p>{details.reading}</p>
-                <p>{details.readingZh}</p>
+                <p data-lang="en">{details.reading}</p>
+                <p data-lang="zh">{details.readingZh}</p>
               </div>
             </div>
           </div>
