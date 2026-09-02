@@ -7,6 +7,19 @@ type FigureDetails = {
   eyebrow: string;
   title: string;
   titleZh: string;
+  origin?: {
+    label: string;
+    title: string;
+    titleZh: string;
+    image: string;
+    imageAlt: string;
+    body: string;
+    bodyZh: string;
+    bridge: string;
+    bridgeZh: string;
+    citation: string;
+    href: string;
+  };
   methods: string[];
   methodsZh: string[];
   reading: string;
@@ -58,6 +71,24 @@ export function FigureLightbox({ src, alt, caption, fit, details }: FigureLightb
               <p className="eyebrow accent">{details.eyebrow}</p>
               <h3 id="figure-lightbox-title">{details.title}</h3>
               <p className="figure-lightbox-title-zh">{details.titleZh}</p>
+              {details.origin && (
+                <section className="figure-origin" aria-label="Scientific origin of this analysis">
+                  <p className="figure-origin-label">{details.origin.label}</p>
+                  <h4>{details.origin.title}</h4>
+                  <p className="figure-origin-title-zh">{details.origin.titleZh}</p>
+                  <a className="figure-origin-image" href={details.origin.href} target="_blank" rel="noreferrer">
+                    <Image src={details.origin.image} alt={details.origin.imageAlt} width={882} height={766} />
+                    <span>{details.origin.citation} ↗</span>
+                  </a>
+                  <p className="figure-origin-body">{details.origin.body}</p>
+                  <p className="figure-origin-body-zh">{details.origin.bodyZh}</p>
+                  <div className="figure-origin-bridge">
+                    <p>{details.origin.bridge}</p>
+                    <p>{details.origin.bridgeZh}</p>
+                  </div>
+                </section>
+              )}
+              <p className="figure-method-heading">ANALYSIS PIPELINE · 分析流程</p>
               <ol className="figure-method-list">
                 {details.methods.map((method, index) => (
                   <li key={method}>

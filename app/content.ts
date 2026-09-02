@@ -51,6 +51,19 @@ export type ResearchProject = {
     eyebrow: string;
     title: string;
     titleZh: string;
+    origin?: {
+      label: string;
+      title: string;
+      titleZh: string;
+      image: string;
+      imageAlt: string;
+      body: string;
+      bodyZh: string;
+      bridge: string;
+      bridgeZh: string;
+      citation: string;
+      href: string;
+    };
     methods: string[];
     methodsZh: string[];
     reading: string;
@@ -155,6 +168,23 @@ export const coreProjects: ResearchProject[] = [
       eyebrow: 'HOW THIS FIGURE WAS MADE',
       title: 'Neural-state displacement from baseline',
       titleZh: '神经群体状态相对基线的位移',
+      origin: {
+        label: 'SCIENTIFIC ORIGIN',
+        title: 'From an opponent MPN circuit to a cross-day population state',
+        titleZh: '从 MPN 对立环路到可跨日比较的神经群体状态',
+        image: '/assets/nature-mpn-opponent-populations.png',
+        imageAlt: 'MPN isolation and reunion neuronal populations reported by Liu and colleagues in Nature',
+        body:
+          'In Liu et al., Nature (2025), Prof. Ding Liu and colleagues identified two opposing neuronal populations in the medial preoptic nucleus. MPN¹ˢᵒˡᵃᵗⁱᵒⁿ neurons were active when the partner was absent and suppressed after reunion, whereas MPNᴿᵉᵘⁿⁱᵒⁿ neurons showed the reverse pattern. The strength of MPN¹ˢᵒˡᵃᵗⁱᵒⁿ activity tracked social rebound, establishing a circuit-level basis for social need and satiety.',
+        bodyZh:
+          '刘鼎及其合作者发表于 Nature（2025）的研究在内侧视前核中鉴定出两类响应相反的神经元群体：伴侣离开时活跃、重聚后受抑制的 MPNᴵˢᵒˡᵃᵗⁱᵒⁿ 神经元，以及在重聚时被激活的 MPNᴿᵉᵘⁿⁱᵒⁿ 神经元。MPNᴵˢᵒˡᵃᵗⁱᵒⁿ 的活动强度随社交反弹变化，为社交需求与社交饱足提供了环路层面的基础。',
+        bridge:
+          'This finding created the biological starting point for my project, but also exposed a computational gap: without cell-by-cell registration across days, how can full-population dynamics be compared across sessions and isolation durations? I addressed this by expressing every session relative to its own baseline geometry, yielding the registration-free displacement measure shown here.',
+        bridgeZh:
+          '这一发现构成了本项目的生物学起点，同时也留下一个计算问题：在缺少跨日逐细胞配准时，如何比较不同 session、不同隔离时长下的完整神经群体动力学？因此，我将每个 session 表示为相对其自身基线几何的偏离，由此建立了图中无需跨日配准的群体状态位移指标。',
+        citation: 'Liu et al. · Nature 640 · 2025 · Fig. 2c',
+        href: 'https://doi.org/10.1038/s41586-025-08617-8',
+      },
       methods: [
         'I aligned each session’s frame-resolved MPN calcium activity (ΔF/F) to its reunion onset, so t = 0 marks the start of reunion and negative time marks the preceding isolation period.',
         'Within each session, I fitted PCA to the complete neural time series and retained up to 10 components. Each session was analysed in its own state space, so the comparison does not require cell-by-cell registration across days.',
