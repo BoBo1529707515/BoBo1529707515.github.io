@@ -47,6 +47,8 @@ export type ResearchProject = {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  imageLayout?: 'side' | 'wide';
+  imageFit?: 'cover' | 'contain';
   evidence?: EvidenceItem;
   modules?: ProjectModule[];
   links?: ProjectLink[];
@@ -118,33 +120,79 @@ export type OpenTool = {
 
 export const coreProjects: ResearchProject[] = [
   {
-    id: 'robotic-mouse',
+    id: 'social-need-dynamics',
     order: 1,
+    tier: 'core',
+    status: 'active',
+    statusLabel: 'ACTIVE · NEURAL MECHANISM',
+    title: 'Neural representation and computational modeling of social need',
+    titleZh: '社交需求的神经表征与计算建模',
+    description:
+      'I combine miniscope calcium imaging with frame-resolved contact behavior to study how isolation and reunion reshape medial preoptic nucleus (MPN) population dynamics.',
+    descriptionZh:
+      '结合微型显微镜钙成像与逐帧接触行为，研究隔离与重聚如何重塑内侧视前核（MPN）的神经群体动力学。',
+    contribution:
+      'Developed a registration-free population-geometry framework for comparing recordings across days, together with cross-validated decoding, motion controls, and circular-shift and permutation tests.',
+    contributionZh:
+      '针对缺少跨日神经元配准的问题，开发无需逐细胞配准的群体几何分析框架，并结合交叉验证解码、运动控制及时移与置换检验。',
+    tags: ['Miniscope imaging', 'Population geometry', 'Social homeostasis'],
+    image: '/assets/social-need-neural-state.png',
+    imageAlt: 'Preliminary neural state displacement from baseline across isolation durations and reunion',
+    imageCaption: 'Preliminary population-level visualization · reunion-evoked neural-state displacement across isolation durations · open full figure',
+    imageLayout: 'wide',
+    imageFit: 'contain',
+    evidence: {
+      label: 'Current evidence',
+      labelZh: '当前证据',
+      observation:
+        'Behaviorally inferred social need covaries with MPN population sensitivity across isolation and reunion conditions.',
+      observationZh: '行为推断的社交需求与不同隔离和重聚条件下 MPN 神经群体的敏感性协变。',
+      boundary:
+        'This is a preliminary population-level association supported by control analyses; it is not presented as a causal result.',
+      boundaryZh: '这是经控制分析支持的初步群体层面关联，目前不作因果解释。',
+      lastVerified: '2026-09',
+    },
+    modules: [
+      {
+        id: 'behavior-pipeline',
+        label: 'Contact behavior at scale',
+        labelZh: '高通量接触行为量化',
+        status: 'live',
+        statusLabel: 'OPEN WORKFLOW',
+        summary: 'Semantic segmentation enables efficient contact quantification across irregular arenas and heterogeneous video quality.',
+        summaryZh: '以语义分割高效量化接触行为，适应不规则场地与不同画质。',
+      },
+      {
+        id: 'registration-free-geometry',
+        label: 'Cross-day population comparison',
+        labelZh: '跨日群体比较',
+        status: 'live',
+        statusLabel: 'METHOD',
+        summary: 'Population geometry compares neural states without requiring cell-by-cell registration across days.',
+        summaryZh: '无需跨日逐细胞配准，即可比较不同条件下的神经群体状态。',
+      },
+    ],
+  },
+  {
+    id: 'robotic-mouse',
+    order: 2,
     tier: 'core',
     status: 'pilot',
     statusLabel: 'PILOT · SYSTEM VALIDATION',
-    title: 'A programmable biomimetic social partner',
-    titleZh: '可编程仿生社交伙伴：机器鼠',
+    title: 'A programmable robotic mouse for decomposing social need',
+    titleZh: '机器鼠：拆解社交需求的可编程仿生伙伴',
     description:
-      'A closed-loop robotic mouse for testing whether a non-biological partner can regulate social need—and for locating the point at which biological equivalence breaks down.',
+      'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation—and where biological equivalence breaks down.',
     descriptionZh:
-      '通过闭环机器鼠检验非生物伙伴能否调节社交需求，并定位人工伙伴与真实同伴之间的生物等价性边界。',
-    contribution: 'Research concept and cross-institutional collaboration initiated by Yibo Yuan.',
-    contributionZh: '研究构想与跨机构合作由袁艺博提出并发起。',
+      '将运动、触摸、温度、气味与互动响应性拆解为可控变量，检验非生物伙伴能否调节社交需求，并定位人工伙伴与真实同伴之间的等价性边界。',
+    contribution: 'Research concept, experimental program, and cross-institutional collaboration initiated by Yibo Yuan.',
+    contributionZh: '研究构想、实验体系与跨机构合作由袁艺博提出并发起。',
     tags: ['Embodied AI', 'Closed-loop control', 'Social homeostasis'],
-    image: '/assets/robotic-mouse.jpg',
-    imageAlt: 'A real mouse beside the programmable robotic mouse in a behavioral arena',
-    imageCaption: 'Behavioral validation setup · real mouse × machine mouse',
-    evidence: {
-      label: 'Preliminary observation',
-      labelZh: '初步观察',
-      observation:
-        'Pilot data show measurable, repeated near-target investigation of a stationary machine-mouse prototype.',
-      observationZh: '初步数据表明，小鼠会对静态机器鼠原型产生可测量、反复出现的近距离探索。',
-      boundary: 'This establishes behavioral feasibility—not yet social-need relief.',
-      boundaryZh: '目前结果证明行为范式可行，但尚不能证明机器鼠满足了社交需求。',
-      lastVerified: '2026-08',
-    },
+    image: '/assets/robotic-mouse-prototype.png',
+    imageAlt: 'Physical prototype of the biomimetic robotic mouse on a laboratory bench',
+    imageCaption: 'Current physical prototype · programmable biomimetic robotic mouse · open full image',
+    imageLayout: 'side',
+    imageFit: 'cover',
     modules: [
       {
         id: 'embodiment',
@@ -152,8 +200,8 @@ export const coreProjects: ResearchProject[] = [
         labelZh: '具身线索',
         status: 'building',
         statusLabel: 'BUILDING',
-        summary: 'Surface, odor, motion, and interaction contingency.',
-        summaryZh: '逐步拆解表面、气味、运动与互动响应性。',
+        summary: 'Motion, touch, temperature, odor, morphology, and interaction contingency.',
+        summaryZh: '逐步拆解运动、触摸、温度、气味、形态与互动响应性。',
       },
       {
         id: 'behavioral-evidence',
@@ -166,8 +214,8 @@ export const coreProjects: ResearchProject[] = [
       },
       {
         id: 'social-need-test',
-        label: 'Substitution test',
-        labelZh: '需求替代检验',
+        label: 'Reunion probe',
+        labelZh: '重聚检验',
         status: 'planned',
         statusLabel: 'NEXT',
         summary: 'Artificial-partner exposure followed by a standardized real-mouse probe.',
@@ -176,79 +224,93 @@ export const coreProjects: ResearchProject[] = [
     ],
   },
   {
-    id: 'mori',
-    order: 2,
+    id: 'controlled-touch',
+    order: 3,
     tier: 'core',
     status: 'prototype',
-    statusLabel: 'LIVE PROTOTYPE · HUMAN–AI',
-    title: 'MORI — a long-term AI companion with relational boundaries',
-    titleZh: 'MORI：具有关系边界的长期 AI 伙伴',
+    statusLabel: 'PROTOTYPE · CONTROLLED STIMULUS',
+    title: 'Controlled touch as a tool for modeling social-need accumulation',
+    titleZh: '可控触摸：研究社交需求积累的实验工具',
     description:
-      'A working prototype for studying how people grant, maintain, and revoke authority as an AI becomes part of a long-term relationship.',
+      'A programmable embodied platform turns the number, timing, duration, and tactile properties of contact into calibrated inputs for asking how social need accumulates, decays, and is relieved.',
     descriptionZh:
-      '通过可用原型研究：当 AI 逐渐进入长期关系时，人们如何赋予、维持和撤回它的行为权限。',
-    contribution: 'Concept, system design, and research framing led by Yibo Yuan.',
-    contributionZh: '由袁艺博主导概念提出、系统设计与研究问题构建。',
+      '通过可编程具身平台，将接触次数、时机、持续时间与触觉属性转化为可标定输入，用于研究社交需求如何积累、衰减与缓解。',
+    contribution:
+      'Designed the experimental tool and modeling framework linking controlled social contact to leaky-integrator, state-space, and attractor-based accounts of social need.',
+    contributionZh:
+      '设计可控触摸实验工具，并将社会接触输入与泄漏积分、状态空间及吸引子等社交需求模型相连接。',
+    tags: ['Programmable touch', 'Computational modeling', 'Experimental systems'],
+    image: '/assets/robotic-mouse-system.png',
+    imageAlt: 'Robotic mouse motor layout and programmable movement states',
+    imageCaption: 'Programmable morphology and movement states · a platform for controlled social cues · open full figure',
+    imageLayout: 'wide',
+    imageFit: 'contain',
+    modules: [
+      {
+        id: 'calibrated-inputs',
+        label: 'Calibrated social inputs',
+        labelZh: '可标定的社会输入',
+        status: 'building',
+        statusLabel: 'BUILDING',
+        summary: 'Contact count, timing, duration, tactile properties, and responsive motion become independently controllable variables.',
+        summaryZh: '独立控制接触次数、时机、持续时间、触觉属性与响应性运动。',
+      },
+      {
+        id: 'accumulation-models',
+        label: 'Accumulation models',
+        labelZh: '需求积累模型',
+        status: 'planned',
+        statusLabel: 'ANALYSIS PLAN',
+        summary: 'Compare leaky-integrator, hidden-state, attractor, and social-avoidance accounts of accumulation and relief.',
+        summaryZh: '比较泄漏积分、隐状态、吸引子与社交回避模型对需求积累和缓解的解释。',
+      },
+    ],
+  },
+  {
+    id: 'mori',
+    order: 4,
+    tier: 'core',
+    status: 'prototype',
+    statusLabel: 'CHI STUDY · N=105',
+    title: 'MORI — relational power in long-term human–AI companionship',
+    titleZh: 'MORI：长期人机陪伴关系中的权力边界',
+    description:
+      'A 105-participant study of how people revise distinct AI powers as an artificial companion enters a long-term relationship and supports loneliness-related needs.',
+    descriptionZh:
+      '通过 105 人实验研究：当人工伙伴进入长期关系并回应孤独相关需求时，人们如何调整不同类型的 AI 权力。',
+    contribution: 'Study concept, experimental design, research framing, and cross-sector collaboration led by Yibo Yuan; ongoing collaboration with Xiaohongshu.',
+    contributionZh: '由袁艺博主导研究构想、实验设计、问题构建与产学合作，目前与小红书持续合作。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
     modules: [
       {
-        id: 'relationship-memory',
-        label: 'Relationship memory',
-        labelZh: '关系记忆',
-        status: 'live',
-        statusLabel: 'LIVE',
-        summary: 'Persistent preferences, trust, experience, and relationship context.',
-        summaryZh: '持续保存偏好、信任、经验与关系情境。',
-      },
-      {
-        id: 'authority-memory',
-        label: 'Authority memory',
-        labelZh: '权限记忆',
-        status: 'building',
-        statusLabel: 'PROTOTYPE',
-        summary: 'Explicit action rights remain separate from accumulated experience.',
-        summaryZh: '把明确的行为权限与累积经验分开保存。',
-      },
-      {
         id: 'human-study',
-        label: 'Human decisions',
-        labelZh: '人的社会决策',
-        status: 'planned',
-        statusLabel: 'STUDY DESIGN',
-        summary: 'Experiments on when people grant, preserve, or revoke AI authority.',
-        summaryZh: '研究人何时赋权、保留权限或撤回 AI 的权限。',
+        label: 'Human study',
+        labelZh: '人类参与者实验',
+        status: 'live',
+        statusLabel: 'N=105',
+        summary: 'A fixed 20-year relationship narrative measures six powers under four governance arrangements across three judgment stages.',
+        summaryZh: '在固定的 20 年关系叙事中，跨三次判断测量四种治理安排下的六类权力。',
+      },
+      {
+        id: 'power-specific-change',
+        label: 'Power-specific change',
+        labelZh: '权力特异性变化',
+        status: 'live',
+        statusLabel: 'PRELIMINARY',
+        summary: 'Relationship context produces different—and sometimes opposing—revisions across powers; memory-sharing authority shows one of the largest attitude shifts.',
+        summaryZh: '关系情境会使不同权力出现差异化、甚至方向相反的调整；其中信息分享权是态度变化最大的维度之一。',
+      },
+      {
+        id: 'tas-gate',
+        label: 'TAS-Gate — computational extension',
+        labelZh: 'TAS-Gate：面向更高情商 AI 的计算延伸',
+        status: 'building',
+        statusLabel: 'BUILDING',
+        summary: 'Because authority is power-specific, rule memory and experience memory remain asymmetric: success, praise, or trust can improve behavior without silently expanding permission.',
+        summaryZh: '基于 MORI 对权力差异的发现，将规则记忆与经验记忆非对称分离，使 AI 能从成功、表扬和信任中学习，却不会将其误认为扩大权限的授权。',
       },
     ],
     links: [{ label: 'Open live prototype', href: 'https://mori-family-companion.pages.dev/', type: 'demo' }],
-  },
-];
-
-export const foundationProjects: ResearchProject[] = [
-  {
-    id: 'social-need-dynamics',
-    order: 1,
-    tier: 'foundation',
-    status: 'active',
-    statusLabel: 'ACTIVE · WESTLAKE',
-    title: 'Social need in hypothalamic population dynamics',
-    titleZh: '下丘脑群体动力学中的社交需求',
-    description:
-      'I study how isolation and reunion reshape hypothalamic population activity during naturalistic social interaction, combining miniscope calcium imaging with frame-resolved behavioral analysis.',
-    descriptionZh: '结合微型显微镜钙成像与逐帧行为分析，研究隔离与重聚如何改变自然社交中的下丘脑神经群体活动。',
-    tags: ['Miniscope imaging', 'Neural manifolds', 'Social behavior'],
-  },
-  {
-    id: 'tas-gate',
-    order: 2,
-    tier: 'foundation',
-    status: 'proposal',
-    statusLabel: 'RESEARCH PROPOSAL',
-    title: 'TAS-Gate — authority-aware long-term memory',
-    titleZh: 'TAS-Gate：面向授权边界的长期记忆',
-    description:
-      'A structured NLP gate that updates an AI’s action authority only when temporal scope, authorization semantics, and speaker qualification all hold.',
-    descriptionZh: '只有当时间覆盖、授权语义与说话人资格同时成立时，系统才更新 AI 的行为权限。',
-    tags: ['NLP', 'AI memory', 'Human agency'],
   },
 ];
 
@@ -263,13 +325,13 @@ export const researchTracks: ResearchTrack[] = [
     descriptionZh: '围绕跨被试多模态解码，开展被试隔离评估、少样本适应、概率校准与异构专家融合。',
   },
   {
-    code: 'BRAIN DYNAMICS',
-    lab: 'AI for Scientific Simulation and Discovery Lab · Prof. Tailin Wu',
-    title: 'Physics-informed fMRI dynamics',
-    titleZh: '物理启发的 fMRI 动力学',
+    code: 'WESTLAKE · CROSS-LAB AI',
+    lab: 'Through Systems Social Neuroscience Lab · Prof. Tailin Wu · Mentor: Tengfei Xu',
+    title: 'Learning and validating singular dynamics in the brain',
+    titleZh: '学习并验证大脑中的奇点动力学',
     description:
-      'HCP preprocessing, temporal representation learning, implicit neural representations, and turbulence-oriented visualization for large-scale brain dynamics.',
-    descriptionZh: '面向大尺度脑动力学，开展 HCP 预处理、时间表征学习、隐式神经表示与湍流可视化。',
+      'Scientific AI for learning whether generative models can represent singular structures in large-scale brain dynamics, with validation using open tools developed by Prof. Pulin Gong’s group at the University of Sydney.',
+    descriptionZh: '尝试让生成模型理解大尺度脑动力学中的奇点结构，并使用悉尼大学 Pulin Gong 教授团队的开源工具进行验证。',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
     logoScale: 'prominent',
@@ -304,9 +366,9 @@ export const appointments: Appointment[] = [
   {
     date: 'AUG 2025 - PRESENT',
     institution: 'Westlake University',
-    role: "Full-time Research Assistant · Professor Ding Liu's lab",
-    detail: 'Systems social neuroscience, miniscope calcium imaging, naturalistic behavior, and biomimetic social partners.',
-    detailZh: '从事系统与社交神经科学、微型显微镜钙成像、自然社交行为和仿生社交伙伴研究。',
+    role: 'Full-time Research Assistant · Systems Social Neuroscience Lab · Prof. Ding Liu',
+    detail: 'A unified program on how embodied and virtual non-biological partners may satisfy social need: neural representation, programmable social cues, long-term AI companionship, and relational authority.',
+    detailZh: '围绕“非生物伙伴如何满足社交需求”开展统一研究：涵盖神经表征、可编程社会线索、长期 AI 陪伴与关系权力边界。',
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
   },
@@ -319,16 +381,6 @@ export const appointments: Appointment[] = [
     logo: '/assets/illinois-tech-logo.svg',
     logoAlt: 'Illinois Tech logo',
     href: 'https://www.iit.edu/',
-  },
-  {
-    date: 'MAR 2026 - PRESENT',
-    institution: 'Westlake University',
-    role: 'Cross-lab Research Collaborator · Prof. Tailin Wu',
-    detail: 'Scientific AI for fMRI dynamics, temporal representation learning, and turbulence-oriented analysis.',
-    detailZh: '开展面向 fMRI 动力学、时间表征学习与湍流分析的科学智能研究。',
-    logo: '/assets/tailin-wu-lab-logo.png',
-    logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
-    logoScale: 'fit-wide',
   },
   {
     date: 'SEP 2021 - JUN 2025',

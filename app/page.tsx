@@ -2,7 +2,6 @@ import Image from 'next/image';
 import {
   appointments,
   coreProjects,
-  foundationProjects,
   openTools,
   publications,
   researchTracks,
@@ -44,7 +43,7 @@ export default function Home() {
             <h2 className="profile-name">Yibo Yuan</h2>
             <p className="profile-role">Research Assistant<br />Westlake University</p>
           </div>
-          <p className="profile-bio">I study when non-biological companions can support social need—and where their biological and relational limits begin.</p>
+          <p className="profile-bio">I study whether embodied and virtual non-biological partners can alleviate loneliness and satisfy social need—and where their biological and relational limits begin.</p>
           <div className="rail-timeline" aria-label="Research and education timeline">
             {sidebarTimeline.map((group) => (
               <section className="rail-timeline-group" key={group.label}>
@@ -75,7 +74,6 @@ export default function Home() {
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research">Research question</a>
             <a href="#companions">Core program</a>
-            <a href="#foundations">Foundations</a>
             <a href="#collaborations">Collaborations</a>
             <a href="#publication">Publication</a>
             <a href="#experience">Experience</a>
@@ -100,8 +98,8 @@ export default function Home() {
           <h1>What makes a non-biological agent a <em>meaningful social companion?</em></h1>
           <p className="hero-zh">什么使一个非生物智能体成为真正有意义的社会伙伴？</p>
           <div className="hero-copy">
-            <p>I study whether—and under what conditions—artificial partners can relieve social need. The central question is which social functions can be substituted and which remain uniquely biological.</p>
-            <p>Across mice and humans, I connect neural mechanisms of social need with embodied agents, long-term AI companions, and experiments on relational authority.</p>
+            <p>I study whether—and under what conditions—embodied and virtual artificial partners can alleviate loneliness and satisfy social need. The central question is which social functions can be substituted and which remain uniquely biological.</p>
+            <p>Across mice and humans, I connect neural representations of social need with programmable social stimuli, long-term AI companionship, and experiments on relational authority.</p>
           </div>
           <div className="research-lenses" aria-label="Research framework">
             <div><span className="lens-index">01</span><strong>Need</strong><p>How do deprivation and relief emerge in brain and behavior?</p></div>
@@ -112,17 +110,17 @@ export default function Home() {
 
         <section className="section core-program-section" id="companions">
           <div className="section-heading">
-            <div><p className="eyebrow">CORE RESEARCH PROGRAM</p><h2>Non-biological companionship at two experimental scales.</h2></div>
-            <p>从具身机器鼠到长期 AI 伙伴：检验人工伙伴能否提供有意义的社会输入，以及这种替代在哪里失效或越界。</p>
+            <div><p className="eyebrow">SYSTEMS SOCIAL NEUROSCIENCE LAB · WESTLAKE</p><h2>One question, four experimental forms.</h2></div>
+            <p>从社交需求的神经表征，到机器鼠与可控触摸，再到长期 AI 陪伴：检验非生物伙伴能否满足社交需求，以及这种替代在哪里失效或越界。</p>
           </div>
           <div className="project-list core-project-list">
             {coreProjects.map((project) => (
-              <article className={`project-card core-project-card ${project.image ? 'project-card-featured' : ''}`} id={project.id} key={project.id}>
+              <article className={`project-card core-project-card ${project.image ? 'project-card-featured' : ''}${project.imageLayout === 'wide' ? ' project-card-featured-wide' : ''}`} id={project.id} key={project.id}>
                 {project.image && (
-                  <div className="project-image-wrap">
-                    <Image src={project.image} alt={project.imageAlt ?? project.title} width={1600} height={1000} className="project-image" />
+                  <a className="project-image-wrap" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
+                    <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-image project-image-${project.imageFit ?? 'cover'}`} />
                     {project.imageCaption && <span className="image-caption">{project.imageCaption}</span>}
-                  </div>
+                  </a>
                 )}
                 <div className="project-body">
                   <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge">{project.statusLabel}</span></div>
@@ -146,25 +144,6 @@ export default function Home() {
                   {project.links?.map((link) => <ExternalLink href={link.href} key={link.href}>{link.label}</ExternalLink>)}
                   {project.modules && <ProjectModules modules={project.modules} />}
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section foundation-section" id="foundations">
-          <div className="section-heading">
-            <div><p className="eyebrow">SCIENTIFIC FOUNDATIONS</p><h2>What must be understood before substitution can be claimed.</h2></div>
-            <p>机制与边界不是旁支：只有先定义社交需求和有效授权，才能严谨判断人工陪伴究竟替代了什么。</p>
-          </div>
-          <div className="foundation-grid">
-            {foundationProjects.map((project) => (
-              <article className="foundation-card" id={project.id} key={project.id}>
-                <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge">{project.statusLabel}</span></div>
-                <h3>{project.title}</h3>
-                <p className="project-title-zh">{project.titleZh}</p>
-                <p className="project-description">{project.description}</p>
-                <p className="project-description-zh">{project.descriptionZh}</p>
-                <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </article>
             ))}
           </div>
