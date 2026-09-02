@@ -260,6 +260,8 @@ html[data-language='zh'] .contribution-note p[data-lang='zh'] { color: var(--ink
 .contact-button { width: fit-content; display: flex; align-items: center; gap: 22px; margin-top: 42px; padding: 15px 18px; border: 1px solid #766f60; font-size: 12px; transition: background .2s ease, color .2s ease; }
 .contact-button:hover { background: var(--paper); color: var(--ink); }
 .contact-button span { color: #e59a7e; }
+.contact-secondary-email { display: block; width: fit-content; margin-top: 15px; font-size: 10px; color: #aaa294; transition: color .2s ease; }
+.contact-secondary-email:hover { color: var(--paper); }
 .contact-affiliation { display: flex; align-items: center; gap: 28px; margin-top: 70px; padding-top: 27px; border-top: 1px solid #5c5749; }
 .contact-affiliation > span { flex: 0 0 auto; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .1em; color: #aaa294; }
 .contact-affiliation-logo { width: min(290px, 55vw); height: auto; object-fit: contain; }

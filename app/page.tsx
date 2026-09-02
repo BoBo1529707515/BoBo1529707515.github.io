@@ -84,7 +84,7 @@ export default function Home() {
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
           </nav>
           <div className="profile-links">
-            <a href="mailto:yibo031110@gmail.com">Email</a>
+            <a href="mailto:yuanyibo@westlake.edu.cn"><span data-lang="en">Email</span><span data-lang="zh">邮箱</span></a>
             <ExternalLink href="https://github.com/BoBo1529707515">GitHub</ExternalLink>
             <ExternalLink href="https://www.linkedin.com/in/yibo-yuan-319547343/">LinkedIn</ExternalLink>
             <a href="/Yibo_Yuan_CV.pdf" target="_blank" rel="noreferrer" data-lang="en">CV · EN ↗</a>
@@ -98,7 +98,7 @@ export default function Home() {
       <main className="main-content" id="top">
         <header className="topbar">
           <span><span data-lang="en">Yibo Yuan / Research</span><span data-lang="zh">袁艺博 / 研究</span></span>
-          <div className="topbar-actions"><LanguageToggle /><a href="mailto:yibo031110@gmail.com"><span data-lang="en">Let’s talk</span><span data-lang="zh">联系我</span> ↗</a></div>
+          <div className="topbar-actions"><LanguageToggle /><a href="mailto:yuanyibo@westlake.edu.cn"><span data-lang="en">Let’s talk</span><span data-lang="zh">联系我</span> ↗</a></div>
         </header>
 
         <section className="hero" id="research">
@@ -246,7 +246,8 @@ export default function Home() {
         <section className="contact-section" id="contact">
           <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">Interested in social need, non-biological companions, or bounded AI agency?</h2><h2 data-lang="zh">如果你也关注社交需求、非生物陪伴或具有边界的 AI 能动性，欢迎联系。</h2>
           <p data-lang="en">I’m preparing PhD applications for Fall 2027 and welcome conversations with aligned labs.</p><p data-lang="zh">我正在准备 2027 年秋季博士申请，欢迎与研究方向契合的实验室交流。</p>
-          <a className="contact-button" href="mailto:yibo031110@gmail.com">yibo031110@gmail.com <span>↗</span></a>
+          <a className="contact-button" href="mailto:yuanyibo@westlake.edu.cn">yuanyibo@westlake.edu.cn <span>↗</span></a>
+          <a className="contact-secondary-email" href="mailto:yibo031110@gmail.com"><span data-lang="en">Personal email: yibo031110@gmail.com</span><span data-lang="zh">个人邮箱：yibo031110@gmail.com</span></a>
           <div className="contact-affiliation"><span><span data-lang="en">CURRENT AFFILIATION</span><span data-lang="zh">当前单位</span></span><Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" /></div>
         </section>
         <footer><span>© 2026 Yibo Yuan</span><span data-lang="en">Built around one research question.</span><span data-lang="zh">围绕一个研究问题构建。</span></footer>
