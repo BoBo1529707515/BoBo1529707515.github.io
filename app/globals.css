@@ -160,8 +160,8 @@ a { color: inherit; text-decoration: none; }
 .breadth-meta span:last-child { max-width: 265px; text-align: right; }
 .breadth-logo-frame { display: block; width: min(210px, 48%); height: 58px; margin: 0 0 28px auto; }
 .breadth-logo-frame-large { width: min(280px, 65%); height: 76px; }
-.breadth-logo-frame-prominent { width: min(300px, 72%); height: 72px; overflow: hidden; }
-.breadth-logo-frame-prominent .breadth-logo { transform: scale(1.5); transform-origin: center; }
+.breadth-logo-frame-prominent { width: min(420px, 100%); height: 108px; overflow: visible; }
+.breadth-logo-frame-prominent .breadth-logo { transform: none; object-position: right center; }
 .breadth-logo { display: block; width: 100%; height: 100%; object-fit: contain; object-position: right center; }
 .logo-surface-dark { padding: 9px 13px; border-radius: 4px; background: #07052f; }
 .logo-surface-dark .breadth-logo, .logo-surface-dark .appointment-logo { object-position: center; }
@@ -256,6 +256,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
   .project-module { min-height: 140px; }
   .foundation-card { min-height: 0; }
   .breadth-figure-compact { width: 180px; margin-left: 0; }
+  .breadth-logo-frame-prominent { width: 100%; height: 86px; }
   .breadth-figure-compact img { height: 108px; }
   .publication-card { grid-template-columns: 1fr; gap: 16px; }
   .publication-year { font-size: 30px; }
