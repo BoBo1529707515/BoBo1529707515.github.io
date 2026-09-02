@@ -47,6 +47,15 @@ export type ResearchProject = {
   imageCaption?: string;
   imageLayout?: 'side' | 'wide';
   imageFit?: 'cover' | 'contain';
+  figureDetails?: {
+    eyebrow: string;
+    title: string;
+    titleZh: string;
+    methods: string[];
+    methodsZh: string[];
+    reading: string;
+    readingZh: string;
+  };
   secondaryImage?: string;
   secondaryImageAlt?: string;
   secondaryImageCaption?: string;
@@ -139,9 +148,30 @@ export const coreProjects: ResearchProject[] = [
     tags: ['Miniscope imaging', 'Population geometry', 'Social homeostasis'],
     image: '/assets/social-need-neural-state.png',
     imageAlt: 'Preliminary neural state displacement from baseline across isolation durations and reunion',
-    imageCaption: 'Preliminary population-level visualization · reunion-evoked neural-state displacement across isolation durations · open full figure',
+    imageCaption: 'Neural-state displacement across isolation durations · click for methods and reading guide',
     imageLayout: 'wide',
     imageFit: 'contain',
+    figureDetails: {
+      eyebrow: 'HOW THIS FIGURE WAS MADE',
+      title: 'Neural-state displacement from baseline',
+      titleZh: '神经群体状态相对基线的位移',
+      methods: [
+        'I aligned each session’s frame-resolved MPN calcium activity (ΔF/F) to its reunion onset, so t = 0 marks the start of reunion and negative time marks the preceding isolation period.',
+        'Within each session, I fitted PCA to the complete neural time series and retained up to 10 components. Each session was analysed in its own state space, so the comparison does not require cell-by-cell registration across days.',
+        'I defined the baseline centroid from the pre-reunion window (−300 to 0 s; −120 to 0 s if too few frames were available), calculated each frame’s Euclidean distance from that centroid, and z-scored the distance using the baseline distance distribution.',
+        'I averaged values in 2-s bins, retained bins with at least three frames, and applied Gaussian smoothing (σ = 1.5 bins). Sessions passing baseline-drift, cross-validated baseline-versus-social decoding, and touch-bout quality controls were grouped by isolation day; lines show the across-session mean and shading shows ± SEM.',
+      ],
+      methodsZh: [
+        '我将每个 session 的逐帧 MPN 钙活动（ΔF/F）对齐到其重聚起点，因此 t = 0 表示重聚开始，负时间表示此前的隔离期。',
+        '在每个 session 内部，我对完整神经时间序列拟合 PCA，并保留最多 10 个主成分。每个 session 均在自身的状态空间中独立分析，因此跨日比较不依赖逐细胞配准。',
+        '我以重聚前窗口（优先使用 −300 至 0 秒；帧数不足时回退至 −120 至 0 秒）定义基线质心，计算每一帧到该质心的欧氏距离，再依据基线期距离分布进行 z 标准化。',
+        '我按 2 秒分箱，每箱至少保留 3 帧，并进行高斯平滑（σ = 1.5 个时间箱）。通过基线漂移、基线与社交状态交叉验证解码、接触片段数量三项质控的 session 按隔离天数聚合；实线为 session 间均值，阴影为 ± SEM。',
+      ],
+      reading:
+        'How to read it: a value of 3 means that the population state is three baseline standard deviations farther from its baseline centroid than typical baseline fluctuation. Day 0/1/3/5 denote isolation conditions and n denotes retained sessions. Grey, green, and purple backgrounds mark isolation, reunion, and re-isolation; red and purple dashed lines mark reunion onset and median offset. The rise after t = 0 quantifies population-level sensitivity to reunion, while the subsequent trajectory tracks how that displacement evolves.',
+      readingZh:
+        '读图方式：纵轴为 3，表示当前群体状态相对基线质心的距离，比基线期的典型波动高 3 个标准差。Day 0/1/3/5 表示不同隔离条件，n 表示质控后纳入的 session 数；灰、绿、紫色背景分别代表隔离、重聚与再次隔离，红、紫虚线分别标记重聚起点和重聚结束时间中位数。t = 0 后的上升量化神经群体对重聚事件的敏感性，后续轨迹展示这种偏离如何随重聚过程演化。',
+    },
     evidence: {
       label: 'Current evidence',
       labelZh: '当前证据',

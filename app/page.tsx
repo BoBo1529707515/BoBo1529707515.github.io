@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FigureLightbox } from '../components/FigureLightbox';
 import {
   appointments,
   coreProjects,
@@ -122,7 +123,16 @@ export default function Home() {
                   <p className="project-title-zh">{project.titleZh}</p>
                   <p className="project-description">{project.description}</p>
                   <p className="project-description-zh">{project.descriptionZh}</p>
-                  {project.image && (
+                  {project.image && project.figureDetails && (
+                    <FigureLightbox
+                      src={project.image}
+                      alt={project.imageAlt ?? project.title}
+                      caption={project.imageCaption}
+                      fit={project.imageFit ?? 'cover'}
+                      details={project.figureDetails}
+                    />
+                  )}
+                  {project.image && !project.figureDetails && (
                     <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
                       <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
                       {project.imageCaption && <span className="image-caption">{project.imageCaption}</span>}
