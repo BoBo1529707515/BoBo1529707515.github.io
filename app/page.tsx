@@ -115,21 +115,21 @@ export default function Home() {
           </div>
           <div className="project-list core-project-list">
             {coreProjects.map((project) => (
-              <article className={`project-card core-project-card ${project.image ? 'project-card-featured' : ''}${project.imageLayout === 'wide' ? ' project-card-featured-wide' : ''}`} id={project.id} key={project.id}>
-                {project.image && (
-                  <a className="project-image-wrap" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
-                    <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-image project-image-${project.imageFit ?? 'cover'}`} />
-                    {project.imageCaption && <span className="image-caption">{project.imageCaption}</span>}
-                  </a>
-                )}
+              <article className={`project-card core-project-card${project.image ? ' project-card-has-media' : ''}`} id={project.id} key={project.id}>
                 <div className="project-body">
                   <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge">{project.statusLabel}</span></div>
                   <h3>{project.title}</h3>
                   <p className="project-title-zh">{project.titleZh}</p>
                   <p className="project-description">{project.description}</p>
                   <p className="project-description-zh">{project.descriptionZh}</p>
+                  {project.image && (
+                    <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
+                      <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
+                      {project.imageCaption && <span className="image-caption">{project.imageCaption}</span>}
+                    </a>
+                  )}
                   {project.contribution && (
-                    <div className="contribution-note"><span>CONTRIBUTION</span><p>{project.contribution}</p>{project.contributionZh && <p>{project.contributionZh}</p>}</div>
+                    <div className="contribution-note"><span>MY CONTRIBUTION</span><p>{project.contribution}</p>{project.contributionZh && <p>{project.contributionZh}</p>}</div>
                   )}
                   {project.evidence && (
                     <aside className="evidence-note">

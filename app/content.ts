@@ -133,9 +133,9 @@ export const coreProjects: ResearchProject[] = [
     descriptionZh:
       '结合微型显微镜钙成像与逐帧接触行为，研究隔离与重聚如何重塑内侧视前核（MPN）的神经群体动力学。',
     contribution:
-      'Developed a registration-free population-geometry framework for comparing recordings across days, together with cross-validated decoding, motion controls, and circular-shift and permutation tests.',
+      'I developed a registration-free population-geometry framework for comparing recordings across days and combined it with cross-validated decoding, motion controls, and circular-shift and permutation tests.',
     contributionZh:
-      '针对缺少跨日神经元配准的问题，开发无需逐细胞配准的群体几何分析框架，并结合交叉验证解码、运动控制及时移与置换检验。',
+      '我针对缺少跨日神经元配准的问题，开发了无需逐细胞配准的群体几何分析框架，并结合交叉验证解码、运动控制及时移与置换检验。',
     tags: ['Miniscope imaging', 'Population geometry', 'Social homeostasis'],
     image: '/assets/social-need-neural-state.png',
     imageAlt: 'Preliminary neural state displacement from baseline across isolation durations and reunion',
@@ -183,8 +183,8 @@ export const coreProjects: ResearchProject[] = [
       'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation. The same platform provides calibrated contact inputs for modeling how social need accumulates, decays, and is relieved.',
     descriptionZh:
       '将运动、触摸、温度、气味与互动响应性拆解为可控变量；同时以可标定的接触输入，研究社交需求如何积累、衰减与缓解。',
-    contribution: 'Research concept, experimental program, computational framing, and cross-institutional collaboration initiated by Yibo Yuan.',
-    contributionZh: '研究构想、实验体系、计算建模框架与跨机构合作由袁艺博提出并发起。',
+    contribution: 'I conceived this research program, developed its experimental and computational framework, and initiated the cross-institutional collaboration.',
+    contributionZh: '我提出了这一研究计划，构建其实验与计算框架，并发起跨机构合作。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     image: '/assets/robotic-mouse-prototype.png',
     imageAlt: 'Physical prototype of the biomimetic robotic mouse on a laboratory bench',
@@ -236,8 +236,8 @@ export const coreProjects: ResearchProject[] = [
       'A 105-participant study of how people revise distinct AI powers as an artificial companion enters a long-term relationship and supports loneliness-related needs.',
     descriptionZh:
       '通过 105 人实验研究：当人工伙伴进入长期关系并回应孤独相关需求时，人们如何调整不同类型的 AI 权力。',
-    contribution: 'Study concept, experimental design, research framing, and cross-sector collaboration led by Yibo Yuan; ongoing collaboration with Xiaohongshu.',
-    contributionZh: '由袁艺博主导研究构想、实验设计、问题构建与产学合作，目前与小红书持续合作。',
+    contribution: 'I conceived this study and led its experimental design, research framing, and cross-sector collaboration; I am currently advancing it with Xiaohongshu.',
+    contributionZh: '我提出了这一研究，并主导实验设计、问题构建与产学合作；目前正与小红书继续推进。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
     modules: [
       {
