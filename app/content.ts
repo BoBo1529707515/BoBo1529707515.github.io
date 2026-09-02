@@ -133,9 +133,9 @@ export const coreProjects: ResearchProject[] = [
     descriptionZh:
       '结合微型显微镜钙成像与逐帧接触行为，研究隔离与重聚如何重塑内侧视前核（MPN）的神经群体动力学。',
     contribution:
-      'I developed a registration-free population-geometry framework for comparing recordings across days and combined it with cross-validated decoding, motion controls, and circular-shift and permutation tests.',
+      'Using data from the lab’s published Nature study, I independently designed and implemented a registration-free population-state framework. By quantifying standardized displacement from each session’s initial state, I enabled cross-day comparison of event sensitivity and related MPN population sensitivity to behaviorally inferred social need, using cross-validated decoding, motion controls, circular shifts, and permutation tests. I also developed a high-throughput semantic-segmentation workflow to achieve robust frame-level contact quantification when low-resolution video and identity switching limited DeepLabCut.',
     contributionZh:
-      '我针对缺少跨日神经元配准的问题，开发了无需逐细胞配准的群体几何分析框架，并结合交叉验证解码、运动控制及时移与置换检验。',
+      '我基于实验室已发表 Nature 论文所使用的数据，独立提出并实现了无需跨日逐细胞配准的神经群体状态分析框架。通过量化神经群体相对于各次实验初始状态的标准化偏离，我实现了事件敏感性的跨日比较，并结合交叉验证解码、运动控制、循环时移与置换检验，揭示 MPN 神经群体敏感性与行为推断的社交需求之间的关系。针对低画质和身份互换导致 DeepLabCut 表现不稳定的问题，我还开发了以语义分割为核心的高通量流程，实现稳健的逐帧接触行为量化。',
     tags: ['Miniscope imaging', 'Population geometry', 'Social homeostasis'],
     image: '/assets/social-need-neural-state.png',
     imageAlt: 'Preliminary neural state displacement from baseline across isolation durations and reunion',
@@ -183,8 +183,8 @@ export const coreProjects: ResearchProject[] = [
       'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation. The same platform provides calibrated contact inputs for modeling how social need accumulates, decays, and is relieved.',
     descriptionZh:
       '将运动、触摸、温度、气味与互动响应性拆解为可控变量；同时以可标定的接触输入，研究社交需求如何积累、衰减与缓解。',
-    contribution: 'I conceived this research program, developed its experimental and computational framework, and initiated the cross-institutional collaboration.',
-    contributionZh: '我提出了这一研究计划，构建其实验与计算框架，并发起跨机构合作。',
+    contribution: 'I conceived this research program, developed its experimental and computational framework, and initiated the cross-institutional collaboration. Building on my behavioral-analysis system, I extended it into a real-time perception layer integrating semantic segmentation, skeletal tracking, and behavior classification for closed-loop robotic interaction.',
+    contributionZh: '我提出了这一研究计划，构建其实验与计算框架，并发起跨机构合作。在此前行为分析系统的基础上，我进一步将其扩展为机器鼠的实时感知层，整合语义分割、骨架追踪与行为分类，为闭环交互提供支持。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     image: '/assets/robotic-mouse-prototype.png',
     imageAlt: 'Physical prototype of the biomimetic robotic mouse on a laboratory bench',
