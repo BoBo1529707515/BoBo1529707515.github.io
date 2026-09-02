@@ -136,8 +136,6 @@ export default function Home() {
                       <div className="evidence-heading"><span>{project.evidence.label}</span><span>{project.evidence.lastVerified}</span></div>
                       <p>{project.evidence.observation}</p>
                       <p className="evidence-zh">{project.evidence.observationZh}</p>
-                      <p className="evidence-boundary">{project.evidence.boundary}</p>
-                      <p className="evidence-zh">{project.evidence.boundaryZh}</p>
                     </aside>
                   )}
                   <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>

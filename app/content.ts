@@ -16,8 +16,6 @@ export type EvidenceItem = {
   labelZh: string;
   observation: string;
   observationZh: string;
-  boundary: string;
-  boundaryZh: string;
   lastVerified: string;
 };
 
@@ -147,9 +145,6 @@ export const coreProjects: ResearchProject[] = [
       observation:
         'Behaviorally inferred social need covaries with MPN population sensitivity across isolation and reunion conditions.',
       observationZh: '行为推断的社交需求与不同隔离和重聚条件下 MPN 神经群体的敏感性协变。',
-      boundary:
-        'This is a preliminary population-level association supported by control analyses; it is not presented as a causal result.',
-      boundaryZh: '这是经控制分析支持的初步群体层面关联，目前不作因果解释。',
       lastVerified: '2026-09',
     },
     modules: [
