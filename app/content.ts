@@ -299,6 +299,11 @@ export const coreProjects: ResearchProject[] = [
     contribution: 'I independently conceived and led this CHI study, designing its fixed 20-year relationship narrative, six power dimensions, four governance arrangements, and three-stage judgment protocol for 105 participants. I am leading the manuscript as first author and continuing to advance the project’s next phase in collaboration with Xiaohongshu.',
     contributionZh: '我独立提出并完整主导了这项 CHI 研究，为 105 名参与者设计固定的 20 年关系叙事、六类权力维度、四种治理安排与三阶段判断流程，并作为第一作者主导论文写作。目前，我正与小红书合作推进项目的下一阶段。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
+    image: '/assets/mori-study-design.png',
+    imageAlt: 'MORI study design with baseline and post judgments across a fixed 20-year family narrative',
+    imageCaption: 'MORI study design / 实验流程 · six powers across a fixed 20-year relationship narrative · open full figure',
+    imageLayout: 'wide',
+    imageFit: 'contain',
     modules: [
       {
         id: 'human-study',
