@@ -47,6 +47,9 @@ export type ResearchProject = {
   imageCaption?: string;
   imageLayout?: 'side' | 'wide';
   imageFit?: 'cover' | 'contain';
+  secondaryImage?: string;
+  secondaryImageAlt?: string;
+  secondaryImageCaption?: string;
   evidence?: EvidenceItem;
   modules?: ProjectModule[];
   links?: ProjectLink[];
@@ -177,35 +180,38 @@ export const coreProjects: ResearchProject[] = [
     title: 'A programmable robotic mouse for decomposing social need',
     titleZh: '机器鼠：拆解社交需求的可编程仿生伙伴',
     description:
-      'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation—and where biological equivalence breaks down.',
+      'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation. The same platform provides calibrated contact inputs for modeling how social need accumulates, decays, and is relieved.',
     descriptionZh:
-      '将运动、触摸、温度、气味与互动响应性拆解为可控变量，检验非生物伙伴能否调节社交需求，并定位人工伙伴与真实同伴之间的等价性边界。',
-    contribution: 'Research concept, experimental program, and cross-institutional collaboration initiated by Yibo Yuan.',
-    contributionZh: '研究构想、实验体系与跨机构合作由袁艺博提出并发起。',
-    tags: ['Embodied AI', 'Closed-loop control', 'Social homeostasis'],
+      '将运动、触摸、温度、气味与互动响应性拆解为可控变量；同时以可标定的接触输入，研究社交需求如何积累、衰减与缓解。',
+    contribution: 'Research concept, experimental program, computational framing, and cross-institutional collaboration initiated by Yibo Yuan.',
+    contributionZh: '研究构想、实验体系、计算建模框架与跨机构合作由袁艺博提出并发起。',
+    tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     image: '/assets/robotic-mouse-prototype.png',
     imageAlt: 'Physical prototype of the biomimetic robotic mouse on a laboratory bench',
     imageCaption: 'Current physical prototype · programmable biomimetic robotic mouse · open full image',
     imageLayout: 'side',
     imageFit: 'cover',
+    secondaryImage: '/assets/robotic-mouse-system.png',
+    secondaryImageAlt: 'Robotic mouse motor layout and programmable movement states',
+    secondaryImageCaption: 'Programmable morphology and movement states · controlled social-cue platform · open full figure',
     modules: [
       {
         id: 'embodiment',
-        label: 'Embodiment',
-        labelZh: '具身线索',
+        label: 'Cue decomposition',
+        labelZh: '社会线索拆解',
         status: 'building',
         statusLabel: 'BUILDING',
         summary: 'Motion, touch, temperature, odor, morphology, and interaction contingency.',
         summaryZh: '逐步拆解运动、触摸、温度、气味、形态与互动响应性。',
       },
       {
-        id: 'behavioral-evidence',
-        label: 'Behavioral evidence',
-        labelZh: '行为证据',
-        status: 'pilot',
-        statusLabel: 'PILOT',
-        summary: 'Approach, proximity, withdrawal, and post-exposure social behavior.',
-        summaryZh: '量化接近、邻近、撤离及暴露后的真实社交行为。',
+        id: 'controlled-touch',
+        label: 'Controlled touch and accumulation',
+        labelZh: '可控触摸与需求积累',
+        status: 'building',
+        statusLabel: 'TOOL + MODEL',
+        summary: 'Contact count, timing, duration, and tactile properties become calibrated inputs for comparing accumulation models.',
+        summaryZh: '将接触次数、时机、持续时间与触觉属性作为可标定输入，比较不同的需求积累模型。',
       },
       {
         id: 'social-need-test',
@@ -219,51 +225,8 @@ export const coreProjects: ResearchProject[] = [
     ],
   },
   {
-    id: 'controlled-touch',
-    order: 3,
-    tier: 'core',
-    status: 'prototype',
-    statusLabel: 'PROTOTYPE · CONTROLLED STIMULUS',
-    title: 'Controlled touch as a tool for modeling social-need accumulation',
-    titleZh: '可控触摸：研究社交需求积累的实验工具',
-    description:
-      'A programmable embodied platform turns the number, timing, duration, and tactile properties of contact into calibrated inputs for asking how social need accumulates, decays, and is relieved.',
-    descriptionZh:
-      '通过可编程具身平台，将接触次数、时机、持续时间与触觉属性转化为可标定输入，用于研究社交需求如何积累、衰减与缓解。',
-    contribution:
-      'Designed the experimental tool and modeling framework linking controlled social contact to leaky-integrator, state-space, and attractor-based accounts of social need.',
-    contributionZh:
-      '设计可控触摸实验工具，并将社会接触输入与泄漏积分、状态空间及吸引子等社交需求模型相连接。',
-    tags: ['Programmable touch', 'Computational modeling', 'Experimental systems'],
-    image: '/assets/robotic-mouse-system.png',
-    imageAlt: 'Robotic mouse motor layout and programmable movement states',
-    imageCaption: 'Programmable morphology and movement states · a platform for controlled social cues · open full figure',
-    imageLayout: 'wide',
-    imageFit: 'contain',
-    modules: [
-      {
-        id: 'calibrated-inputs',
-        label: 'Calibrated social inputs',
-        labelZh: '可标定的社会输入',
-        status: 'building',
-        statusLabel: 'BUILDING',
-        summary: 'Contact count, timing, duration, tactile properties, and responsive motion become independently controllable variables.',
-        summaryZh: '独立控制接触次数、时机、持续时间、触觉属性与响应性运动。',
-      },
-      {
-        id: 'accumulation-models',
-        label: 'Accumulation models',
-        labelZh: '需求积累模型',
-        status: 'planned',
-        statusLabel: 'ANALYSIS PLAN',
-        summary: 'Compare leaky-integrator, hidden-state, attractor, and social-avoidance accounts of accumulation and relief.',
-        summaryZh: '比较泄漏积分、隐状态、吸引子与社交回避模型对需求积累和缓解的解释。',
-      },
-    ],
-  },
-  {
     id: 'mori',
-    order: 4,
+    order: 3,
     tier: 'core',
     status: 'prototype',
     statusLabel: 'CHI STUDY · N=105',

@@ -110,7 +110,7 @@ export default function Home() {
 
         <section className="section core-program-section" id="companions">
           <div className="section-heading">
-            <div><p className="eyebrow">SYSTEMS SOCIAL NEUROSCIENCE LAB · WESTLAKE</p><h2>One question, four experimental forms.</h2></div>
+            <div><p className="eyebrow">SYSTEMS SOCIAL NEUROSCIENCE LAB · WESTLAKE</p><h2>One question, three connected research programs.</h2></div>
             <p>从社交需求的神经表征，到机器鼠与可控触摸，再到长期 AI 陪伴：检验非生物伙伴能否满足社交需求，以及这种替代在哪里失效或越界。</p>
           </div>
           <div className="project-list core-project-list">
@@ -141,6 +141,12 @@ export default function Home() {
                   <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   {project.links?.map((link) => <ExternalLink href={link.href} key={link.href}>{link.label}</ExternalLink>)}
                   {project.modules && <ProjectModules modules={project.modules} />}
+                  {project.secondaryImage && (
+                    <a className="project-secondary-media" href={project.secondaryImage} target="_blank" rel="noreferrer" aria-label={`Open system figure for ${project.title}`}>
+                      <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? project.title} width={1600} height={900} />
+                      {project.secondaryImageCaption && <span>{project.secondaryImageCaption} ↗</span>}
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
