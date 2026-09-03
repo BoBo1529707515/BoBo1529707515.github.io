@@ -79,8 +79,8 @@ export default function Home() {
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research"><span data-lang="en">Research question</span><span data-lang="zh">研究问题</span></a>
             <a href="#companions"><span data-lang="en">Core program</span><span data-lang="zh">核心研究</span></a>
-            <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作项目</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
+            <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作项目</span></a>
             <a href="#experience"><span data-lang="en">Experience</span><span data-lang="zh">个人经历</span></a>
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
           </nav>
@@ -88,8 +88,7 @@ export default function Home() {
             <a href="mailto:yuanyibo@westlake.edu.cn"><span data-lang="en">Email</span><span data-lang="zh">邮箱</span></a>
             <ExternalLink href="https://github.com/BoBo1529707515">GitHub</ExternalLink>
             <ExternalLink href="https://www.linkedin.com/in/yibo-yuan-319547343/">LinkedIn</ExternalLink>
-            <a href="/Yibo_Yuan_CV.pdf" target="_blank" rel="noreferrer" data-lang="en">CV · EN ↗</a>
-            <a href="/Yibo_Yuan_CV_Chinese.pdf" target="_blank" rel="noreferrer" data-lang="zh">中文简历 ↗</a>
+            <a href="/Yibo_Yuan_Academic_CV_2026.pdf" target="_blank" rel="noreferrer" data-lang="en">CV · EN ↗</a>
           </div>
           <p className="rail-note" data-lang="en">Hangzhou, China · PhD applicant for Fall 2027</p>
           <p className="rail-note" data-lang="zh">中国杭州 · 申请 2027 年秋季博士项目</p>
@@ -182,6 +181,16 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section publication-section" id="publication">
+          <div className="section-heading compact"><div><p className="eyebrow"><span data-lang="en">PUBLICATION</span><span data-lang="zh">论文发表</span></p><h2 data-lang="en">Methods for observing social circuits in action.</h2><h2 data-lang="zh">观察社会神经环路如何运作的方法。</h2></div></div>
+          {publications.map((publication) => (
+            <article className="publication-card" key={publication.href}>
+              <div className="publication-year">{publication.year}</div>
+              <div><p className="publication-state"><span data-lang="en">{publication.state}</span><span data-lang="zh">{publication.stateZh}</span></p><h3 data-lang="en">{publication.title}</h3><h3 data-lang="zh">{publication.titleZh}</h3><p data-lang="en">{publication.authors}</p><p data-lang="zh">{publication.authorsZh}</p><ExternalLink href={publication.href} childrenZh={publication.linkLabelZh}>{publication.linkLabel}</ExternalLink></div>
+            </article>
+          ))}
+        </section>
+
         <section className="section breadth-section" id="collaborations">
           <div className="section-heading">
             <div><p className="eyebrow"><span data-lang="en">SUPPORTING COLLABORATIONS</span><span data-lang="zh">支持性合作</span></p><h2 data-lang="en">Methods that expand how I study brains, behavior, and intelligent systems.</h2><h2 data-lang="zh">拓展我研究大脑、行为与智能系统的方法。</h2></div>
@@ -199,16 +208,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="section publication-section" id="publication">
-          <div className="section-heading compact"><div><p className="eyebrow"><span data-lang="en">PUBLICATION</span><span data-lang="zh">论文发表</span></p><h2 data-lang="en">Methods for observing social circuits in action.</h2><h2 data-lang="zh">观察社会神经环路如何运作的方法。</h2></div></div>
-          {publications.map((publication) => (
-            <article className="publication-card" key={publication.href}>
-              <div className="publication-year">{publication.year}</div>
-              <div><p className="publication-state"><span data-lang="en">{publication.state}</span><span data-lang="zh">{publication.stateZh}</span></p><h3 data-lang="en">{publication.title}</h3><h3 data-lang="zh">{publication.titleZh}</h3><p data-lang="en">{publication.authors}</p><p data-lang="zh">{publication.authorsZh}</p><ExternalLink href={publication.href} childrenZh={publication.linkLabelZh}>{publication.linkLabel}</ExternalLink></div>
-            </article>
-          ))}
         </section>
 
         <section className="section experience-section" id="experience">

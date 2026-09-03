@@ -71,6 +71,8 @@ try {
   await rm(outputDir, { recursive: true, force: true });
   await mkdir(outputDir, { recursive: true });
   await cp(clientDir, outputDir, { recursive: true });
+  await rm(path.join(outputDir, 'Yibo_Yuan_CV.pdf'), { force: true });
+  await rm(path.join(outputDir, 'Yibo_Yuan_CV_Chinese.pdf'), { force: true });
   const staticHtml = rewriteForStaticHosting(html);
   await writeFile(path.join(outputDir, 'index.html'), staticHtml, 'utf8');
   await writeFile(path.join(outputDir, '404.html'), staticHtml, 'utf8');

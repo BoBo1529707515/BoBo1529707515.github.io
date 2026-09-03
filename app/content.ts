@@ -1,7 +1,7 @@
 // Public website content only. Keep unpublished or unapproved material outside
 // this application until it is cleared for public release.
 
-export type ProjectStatus = 'active' | 'pilot' | 'prototype' | 'proposal' | 'published';
+export type ProjectStatus = 'active' | 'completed' | 'pilot' | 'prototype' | 'proposal' | 'published';
 export type ModuleStatus = 'live' | 'pilot' | 'building' | 'planned' | 'published';
 export type MediaSize = 'hero' | 'standard' | 'compact';
 
@@ -170,9 +170,9 @@ export const coreProjects: ResearchProject[] = [
     id: 'social-need-dynamics',
     order: 1,
     tier: 'core',
-    status: 'active',
-    statusLabel: 'ACTIVE · NEURAL MECHANISM',
-    statusLabelZh: '进行中 · 神经机制',
+    status: 'completed',
+    statusLabel: 'NOV 2025 — MAR 2026',
+    statusLabelZh: '2025 年 11 月—2026 年 3 月',
     title: 'Neural representation and computational modeling of social need',
     titleZh: '社交需求的神经表征与计算建模',
     description:
@@ -275,8 +275,8 @@ export const coreProjects: ResearchProject[] = [
       'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation. The same platform provides calibrated contact inputs for modeling how social need accumulates, decays, and is relieved.',
     descriptionZh:
       '将运动、触摸、温度、气味与互动响应性拆解为可控变量；同时以可标定的接触输入，研究社交需求如何积累、衰减与缓解。',
-    contribution: 'I conceived the research program, designed the cue-decomposition and reunion-probe paradigms, and initiated the cross-institutional collaboration. I built the high-throughput, sound-attenuated behavioral platform supporting simultaneous multi-camera video and ultrasonic recording. I was responsible for the robotic mouse’s perception and planning layers, developing the host-side control software, serial communication interface, real-time semantic segmentation, skeletal tracking, behavior classification, and ROI-constrained visual redirection. I co-developed the PPO-based locomotion strategy with our collaborators, who implemented the embedded lower-level controller. I also translated experimental requirements into iterative refinements of the robot’s morphology, skin material, movement, and operating noise.',
-    contributionZh: '我提出了机器鼠研究计划，设计社会线索拆解与重聚检验范式，并发起跨机构合作。我搭建了支持多相机同时拍摄与超声记录的高通量静音行为平台。我负责机器鼠的感知层和规划层，开发上位机控制软件、串口通信接口、实时语义分割、骨架追踪、行为分类以及 ROI 约束下的视觉重定向。我与合作方共同开发基于 PPO 的类小鼠运动策略，由合作方实现下位机及底层控制。同时，我将实验需求转化为设计约束，推动机器鼠在形态、表面皮肤材料、运动表现和运行噪声方面进行多轮改进。',
+    contribution: 'I conceived the research program, designed the cue-decomposition and reunion-probe paradigms, initiated the cross-institutional collaboration, built the behavioral arena, and personally conducted the behavioral experiments. I built the high-throughput, sound-attenuated platform supporting simultaneous multi-camera video and ultrasonic recording. I was responsible for the robotic mouse’s perception and planning layers, developing the host-side control software, serial communication interface, real-time semantic segmentation, skeletal tracking, behavior classification, and ROI-constrained visual redirection. I co-developed the PPO-based locomotion strategy with our collaborators, who implemented the embedded lower-level controller. I also translated experimental requirements into iterative refinements of the robot’s morphology, skin material, movement, and operating noise.',
+    contributionZh: '我提出了机器鼠研究计划，设计社会线索拆解与重聚检验范式，发起跨机构合作，搭建行为学场地，并亲自完成行为实验。我搭建了支持多相机同时拍摄与超声记录的高通量静音行为平台。我负责机器鼠的感知层和规划层，开发上位机控制软件、串口通信接口、实时语义分割、骨架追踪、行为分类以及 ROI 约束下的视觉重定向。我与合作方共同开发基于 PPO 的类小鼠运动策略，由合作方实现下位机及底层控制。同时，我将实验需求转化为设计约束，推动机器鼠在形态、表面皮肤材料、运动表现和运行噪声方面进行多轮改进。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     tagsZh: ['具身智能', '可编程触摸', '社交稳态'],
     image: '/assets/robotic-mouse-prototype.png',
