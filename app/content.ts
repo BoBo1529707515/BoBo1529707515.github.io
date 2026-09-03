@@ -150,9 +150,9 @@ export type Publication = {
   titleZh: string;
   authors: string;
   authorsZh: string;
-  href: string;
-  linkLabel: string;
-  linkLabelZh: string;
+  href?: string;
+  linkLabel?: string;
+  linkLabelZh?: string;
 };
 
 export type OpenTool = {
@@ -572,6 +572,15 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
 ];
 
 export const publications: Publication[] = [
+  {
+    year: '2026',
+    state: 'FIRST AUTHOR · MANUSCRIPT UNDER REVIEW · SUBMITTED TO ACM CHI',
+    stateZh: '第一作者 · 在审稿件 · 已投稿 ACM CHI',
+    title: 'MORI: Relational Power in Long-Term Human–AI Companionship',
+    titleZh: 'MORI：长期人机陪伴关系中的权力边界',
+    authors: 'Yibo Yuan (first author) · Sichao Wang · Ding Liu',
+    authorsZh: '袁艺博（第一作者）· Sichao Wang（第二作者）· 刘鼎',
+  },
   {
     year: '2026',
     state: 'PUBLISHED · JOURNAL OF VISUALIZED EXPERIMENTS',

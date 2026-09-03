@@ -182,11 +182,11 @@ export default function Home() {
         </section>
 
         <section className="section publication-section" id="publication">
-          <div className="section-heading compact"><div><p className="eyebrow"><span data-lang="en">PUBLICATION</span><span data-lang="zh">论文发表</span></p><h2 data-lang="en">Methods for observing social circuits in action.</h2><h2 data-lang="zh">观察社会神经环路如何运作的方法。</h2></div></div>
+          <div className="section-heading compact"><div><p className="eyebrow"><span data-lang="en">PUBLICATIONS &amp; MANUSCRIPTS</span><span data-lang="zh">论文与在审稿件</span></p><h2 data-lang="en">Research in review and in publication.</h2><h2 data-lang="zh">正在同行评审与已经发表的研究。</h2></div></div>
           {publications.map((publication) => (
-            <article className="publication-card" key={publication.href}>
+            <article className="publication-card" key={publication.title}>
               <div className="publication-year">{publication.year}</div>
-              <div><p className="publication-state"><span data-lang="en">{publication.state}</span><span data-lang="zh">{publication.stateZh}</span></p><h3 data-lang="en">{publication.title}</h3><h3 data-lang="zh">{publication.titleZh}</h3><p data-lang="en">{publication.authors}</p><p data-lang="zh">{publication.authorsZh}</p><ExternalLink href={publication.href} childrenZh={publication.linkLabelZh}>{publication.linkLabel}</ExternalLink></div>
+              <div><p className="publication-state"><span data-lang="en">{publication.state}</span><span data-lang="zh">{publication.stateZh}</span></p><h3 data-lang="en">{publication.title}</h3><h3 data-lang="zh">{publication.titleZh}</h3><p data-lang="en">{publication.authors}</p><p data-lang="zh">{publication.authorsZh}</p>{publication.href && publication.linkLabel && <ExternalLink href={publication.href} childrenZh={publication.linkLabelZh}>{publication.linkLabel}</ExternalLink>}</div>
             </article>
           ))}
         </section>
