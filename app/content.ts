@@ -150,6 +150,8 @@ export type Publication = {
   titleZh: string;
   authors: string;
   authorsZh: string;
+  selfAuthor: string;
+  selfAuthorZh: string;
   href?: string;
   linkLabel?: string;
   linkLabelZh?: string;
@@ -574,12 +576,14 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
 export const publications: Publication[] = [
   {
     year: '2026',
-    state: 'FIRST AUTHOR · MANUSCRIPT UNDER REVIEW · SUBMITTED TO ACM CHI',
-    stateZh: '第一作者 · 在审稿件 · 已投稿 ACM CHI',
+    state: 'MANUSCRIPT UNDER REVIEW',
+    stateZh: '在审稿件',
     title: 'MORI: Relational Power in Long-Term Human–AI Companionship',
     titleZh: 'MORI：长期人机陪伴关系中的权力边界',
-    authors: 'Yibo Yuan (first author) · Sichao Wang (second author) · Ding Liu (advisor)',
-    authorsZh: '袁艺博（第一作者）· Sichao Wang（第二作者）· 刘鼎（指导教师）',
+    authors: 'Yibo Yuan, Sichao Wang, Ding Liu. Manuscript submitted to ACM CHI, 2026.',
+    authorsZh: '袁艺博、Sichao Wang、刘鼎。已投稿 ACM CHI，2026。',
+    selfAuthor: 'Yibo Yuan',
+    selfAuthorZh: '袁艺博',
   },
   {
     year: '2026',
@@ -587,8 +591,10 @@ export const publications: Publication[] = [
     stateZh: '已发表 · Journal of Visualized Experiments',
     title: 'In Vivo Calcium Imaging with a Miniaturized Microscope in the Hypothalamus for Understanding Social Behaviors in Mice',
     titleZh: '利用微型显微镜开展下丘脑在体钙成像以研究小鼠社会行为',
-    authors: 'Dai et al., including Yibo Yuan · JoVE, issue 229, e70401',
-    authorsZh: 'Dai 等，袁艺博共同作者 · JoVE，第 229 期，e70401',
+    authors: 'Dai, Y. Y., Wei, C., Yuan, Y., Rahman, M. M., & Liu, D. (2026). Journal of Visualized Experiments, (229), e70401.',
+    authorsZh: 'Dai, Y. Y., Wei, C., Yuan, Y., Rahman, M. M., & Liu, D.（2026）。Journal of Visualized Experiments，（229），e70401。',
+    selfAuthor: 'Yuan, Y.',
+    selfAuthorZh: 'Yuan, Y.',
     href: 'https://doi.org/10.3791/70401',
     linkLabel: 'DOI 10.3791/70401',
     linkLabelZh: 'DOI 10.3791/70401',

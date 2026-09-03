@@ -31,6 +31,12 @@ function ProjectModules({ modules }: { modules: ProjectModule[] }) {
   );
 }
 
+function HighlightedAuthorLine({ text, selfAuthor }: { text: string; selfAuthor: string }) {
+  const authorIndex = text.indexOf(selfAuthor);
+  if (authorIndex === -1) return <>{text}</>;
+  return <>{text.slice(0, authorIndex)}<strong>{selfAuthor}</strong>{text.slice(authorIndex + selfAuthor.length)}</>;
+}
+
 export default function Home() {
   return (
     <div className="site-shell">
@@ -186,7 +192,7 @@ export default function Home() {
           {publications.map((publication) => (
             <article className="publication-card" key={publication.title}>
               <div className="publication-year">{publication.year}</div>
-              <div><p className="publication-state"><span data-lang="en">{publication.state}</span><span data-lang="zh">{publication.stateZh}</span></p><h3 data-lang="en">{publication.title}</h3><h3 data-lang="zh">{publication.titleZh}</h3><p data-lang="en">{publication.authors}</p><p data-lang="zh">{publication.authorsZh}</p>{publication.href && publication.linkLabel && <ExternalLink href={publication.href} childrenZh={publication.linkLabelZh}>{publication.linkLabel}</ExternalLink>}</div>
+              <div><p className="publication-state"><span data-lang="en">{publication.state}</span><span data-lang="zh">{publication.stateZh}</span></p><h3 data-lang="en">{publication.title}</h3><h3 data-lang="zh">{publication.titleZh}</h3><p data-lang="en"><HighlightedAuthorLine text={publication.authors} selfAuthor={publication.selfAuthor} /></p><p data-lang="zh"><HighlightedAuthorLine text={publication.authorsZh} selfAuthor={publication.selfAuthorZh} /></p>{publication.href && publication.linkLabel && <ExternalLink href={publication.href} childrenZh={publication.linkLabelZh}>{publication.linkLabel}</ExternalLink>}</div>
             </article>
           ))}
         </section>
