@@ -257,7 +257,6 @@ html[data-language='zh'] .contribution-note p[data-lang='zh'] { color: var(--ink
 .publication-state { margin: 0 0 16px; font-size: 9px; font-weight: 700; letter-spacing: .12em; color: var(--sage); }
 .publication-card h3 { max-width: 840px; font-size: clamp(25px, 3vw, 42px); }
 .publication-card > div > p:not(.publication-state) { margin: 16px 0 0; font-size: 12px; color: var(--ink-soft); }
-.education-section { background: var(--white); }
 .experience-section { background: var(--paper); }
 .appointment-list { border-top: 1px solid var(--ink); }
 .appointment { display: grid; grid-template-columns: minmax(160px, .42fr) minmax(0, 1.58fr); gap: 34px; padding: 29px 0 31px; border-bottom: 1px solid var(--line); }

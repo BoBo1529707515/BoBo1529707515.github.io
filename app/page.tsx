@@ -48,9 +48,6 @@ function AppointmentList({ items }: { items: Appointment[] }) {
 }
 
 export default function Home() {
-  const education = appointments.filter((appointment) => appointment.institution === "Xi'an Jiaotong University");
-  const experience = appointments.filter((appointment) => appointment.institution !== "Xi'an Jiaotong University");
-
   return (
     <div className="site-shell">
       <aside className="profile-rail">
@@ -98,8 +95,7 @@ export default function Home() {
             <a href="#companions"><span data-lang="en">Selected work</span><span data-lang="zh">代表工作</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
             <a href="#collaborations"><span data-lang="en">Other work</span><span data-lang="zh">其他工作</span></a>
-            <a href="#education"><span data-lang="en">Education</span><span data-lang="zh">教育背景</span></a>
-            <a href="#experience"><span data-lang="en">Experience</span><span data-lang="zh">工作经历</span></a>
+            <a href="#experience"><span data-lang="en">Background</span><span data-lang="zh">教育与经历</span></a>
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
           </nav>
           <div className="profile-links">
@@ -220,14 +216,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section education-section" id="education">
-          <div className="section-heading compact"><div><h2 data-lang="en">Education.</h2><h2 data-lang="zh">教育背景。</h2></div></div>
-          <AppointmentList items={education} />
-        </section>
-
         <section className="section experience-section" id="experience">
-          <div className="section-heading compact"><div><h2 data-lang="en">Experience.</h2><h2 data-lang="zh">工作经历。</h2></div></div>
-          <AppointmentList items={experience} />
+          <div className="section-heading compact"><div><h2 data-lang="en">Education &amp; experience.</h2><h2 data-lang="zh">教育与经历。</h2></div></div>
+          <AppointmentList items={appointments} />
         </section>
 
         <section className="section methods-section">
