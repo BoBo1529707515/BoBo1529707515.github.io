@@ -198,10 +198,8 @@ export default function Home() {
         </section>
 
         <section className="section breadth-section" id="collaborations">
-          <div className="section-heading">
+          <div className="section-heading compact">
             <div><p className="eyebrow"><span data-lang="en">SUPPORTING COLLABORATIONS</span><span data-lang="zh">支持性合作</span></p><h2 data-lang="en">Methods that expand how I study brains, behavior, and intelligent systems.</h2><h2 data-lang="zh">拓展我研究大脑、行为与智能系统的方法。</h2></div>
-            <p data-lang="en">These collaborations add BCI, scientific AI, behavioral vision, and experimental-systems expertise without competing with the central non-biological-companionship program.</p>
-            <p data-lang="zh">这些合作提供脑机接口、科学智能、行为视觉与实验系统能力，但不与“非生物陪伴”主线争夺首页重心。</p>
           </div>
           <div className="breadth-grid">
             {researchTracks.map((track) => (
