@@ -8,6 +8,8 @@ import {
   openTools,
   publications,
   researchTracks,
+  sidebarTimeline,
+  type Appointment,
 } from './content';
 
 function ExternalLink({ href, children, childrenZh }: { href: string; children: React.ReactNode; childrenZh?: React.ReactNode }) {
@@ -20,7 +22,35 @@ function HighlightedAuthorLine({ text, selfAuthor }: { text: string; selfAuthor:
   return <>{text.slice(0, authorIndex)}<strong>{selfAuthor}</strong>{text.slice(authorIndex + selfAuthor.length)}</>;
 }
 
+function AppointmentList({ items }: { items: Appointment[] }) {
+  return (
+    <div className="appointment-list">
+      {items.map((appointment) => (
+        <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
+          <p className="appointment-date"><span data-lang="en">{appointment.date}</span><span data-lang="zh">{appointment.dateZh}</span></p>
+          <div className="appointment-content">
+            <div className="appointment-heading">
+              <h3>{appointment.href ? <a href={appointment.href} target="_blank" rel="noreferrer"><span data-lang="en">{appointment.institution}</span><span data-lang="zh">{appointment.institutionZh}</span></a> : <><span data-lang="en">{appointment.institution}</span><span data-lang="zh">{appointment.institutionZh}</span></>}</h3>
+              {appointment.logo && (
+                appointment.href
+                  ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}${appointment.logoScale === 'prominent' ? ' appointment-logo-frame-prominent' : ''}${appointment.logoScale === 'fit-wide' ? ' appointment-logo-frame-fit-wide' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt ?? appointment.institution} width={280} height={84} className="appointment-logo" /></a>
+                  : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}${appointment.logoScale === 'prominent' ? ' appointment-logo-frame-prominent' : ''}${appointment.logoScale === 'fit-wide' ? ' appointment-logo-frame-fit-wide' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt ?? appointment.institution} width={280} height={84} className="appointment-logo" /></span>
+              )}
+            </div>
+            <p className="appointment-role" data-lang="en">{appointment.role}</p><p className="appointment-role" data-lang="zh">{appointment.roleZh}</p>
+            <p className="appointment-detail" data-lang="en">{appointment.detail}</p>
+            {appointment.detailZh && <p className="appointment-detail" data-lang="zh">{appointment.detailZh}</p>}
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
+  const education = appointments.filter((appointment) => appointment.institution === "Xi'an Jiaotong University");
+  const experience = appointments.filter((appointment) => appointment.institution !== "Xi'an Jiaotong University");
+
   return (
     <div className="site-shell">
       <aside className="profile-rail">
@@ -35,12 +65,41 @@ export default function Home() {
             <p className="profile-role" data-lang="en">Research Assistant<br />Westlake University</p>
             <p className="profile-role" data-lang="zh">研究助理<br />西湖大学</p>
           </div>
+          <div className="rail-timeline" aria-label="Academic path">
+            {sidebarTimeline.map((group) => (
+              <section className="rail-timeline-group" key={group.label}>
+                <div className="rail-timeline-title"><h3><span data-lang="en">{group.label}</span><span data-lang="zh">{group.labelZh}</span></h3><span /></div>
+                <div className="rail-timeline-items">
+                  {group.items.map((item) => {
+                    const itemContent = (
+                      <>
+                        <span className={`rail-timeline-logo-frame${item.logoVariant === 'crest-left' ? ' rail-timeline-logo-frame--crest-left' : ''}`}>
+                          <Image src={item.logo} alt={item.logoAlt} width={88} height={64} className="rail-timeline-logo" />
+                        </span>
+                        <span className="rail-timeline-copy">
+                          <strong><span data-lang="en">{item.institution}</span><span data-lang="zh">{item.institutionZh}</span></strong>
+                          <span data-lang="en">{item.role}</span><span data-lang="zh">{item.roleZh}</span>
+                          {item.note && <span className="rail-timeline-note" data-lang="en">{item.note}</span>}
+                          {item.noteZh && <span className="rail-timeline-note" data-lang="zh">{item.noteZh}</span>}
+                          <time data-lang="en">{item.date}</time><time data-lang="zh">{item.dateZh}</time>
+                        </span>
+                      </>
+                    );
+                    return item.href
+                      ? <a className="rail-timeline-item" href={item.href} target="_blank" rel="noreferrer" key={`${group.label}-${item.institution}-${item.date}`}>{itemContent}</a>
+                      : <div className="rail-timeline-item" key={`${group.label}-${item.institution}-${item.date}`}>{itemContent}</div>;
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
             <a href="#companions"><span data-lang="en">Selected work</span><span data-lang="zh">代表工作</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
             <a href="#collaborations"><span data-lang="en">Other work</span><span data-lang="zh">其他工作</span></a>
-            <a href="#experience"><span data-lang="en">Background</span><span data-lang="zh">学习与经历</span></a>
+            <a href="#education"><span data-lang="en">Education</span><span data-lang="zh">教育背景</span></a>
+            <a href="#experience"><span data-lang="en">Experience</span><span data-lang="zh">工作经历</span></a>
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
           </nav>
           <div className="profile-links">
@@ -151,7 +210,7 @@ export default function Home() {
           <div className="breadth-grid">
             {researchTracks.map((track) => (
               <article className="breadth-card" key={track.code}>
-                <div className="breadth-meta"><span><span data-lang="en">{track.code}</span><span data-lang="zh">{track.codeZh}</span></span><span><span data-lang="en">{track.lab}</span><span data-lang="zh">{track.labZh}</span></span></div>
+                <div className="breadth-meta"><span><span data-lang="en">{track.code}</span><span data-lang="zh">{track.codeZh}</span></span>{track.href ? <a href={track.href} target="_blank" rel="noreferrer"><span data-lang="en">{track.lab} ↗</span><span data-lang="zh">{track.labZh} ↗</span></a> : <span><span data-lang="en">{track.lab}</span><span data-lang="zh">{track.labZh}</span></span>}</div>
                 {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}${track.logoScale === 'prominent' ? ' breadth-logo-frame-prominent' : ''}`}><Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="breadth-logo" /></span>}
                 <h3 data-lang="en">{track.title}</h3><h3 data-lang="zh">{track.titleZh}</h3>
                 <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>
@@ -161,28 +220,14 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section education-section" id="education">
+          <div className="section-heading compact"><div><h2 data-lang="en">Education.</h2><h2 data-lang="zh">教育背景。</h2></div></div>
+          <AppointmentList items={education} />
+        </section>
+
         <section className="section experience-section" id="experience">
-          <div className="section-heading compact"><div><h2 data-lang="en">Education &amp; experience.</h2><h2 data-lang="zh">教育与经历。</h2></div></div>
-          <div className="appointment-list">
-            {appointments.map((appointment) => (
-              <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
-                <p className="appointment-date"><span data-lang="en">{appointment.date}</span><span data-lang="zh">{appointment.dateZh}</span></p>
-                <div className="appointment-content">
-                  <div className="appointment-heading">
-                    <h3>{appointment.href ? <a href={appointment.href} target="_blank" rel="noreferrer"><span data-lang="en">{appointment.institution}</span><span data-lang="zh">{appointment.institutionZh}</span></a> : <><span data-lang="en">{appointment.institution}</span><span data-lang="zh">{appointment.institutionZh}</span></>}</h3>
-                    {appointment.logo && (
-                      appointment.href
-                        ? <a href={appointment.href} target="_blank" rel="noreferrer" className={`appointment-logo-frame appointment-logo-link${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}${appointment.logoScale === 'prominent' ? ' appointment-logo-frame-prominent' : ''}${appointment.logoScale === 'fit-wide' ? ' appointment-logo-frame-fit-wide' : ''}`} aria-label={`Visit ${appointment.institution}`}><Image src={appointment.logo} alt={appointment.logoAlt ?? appointment.institution} width={280} height={84} className="appointment-logo" /></a>
-                        : <span className={`appointment-logo-frame${appointment.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${appointment.logoScale === 'large' ? ' appointment-logo-frame-large' : ''}${appointment.logoScale === 'prominent' ? ' appointment-logo-frame-prominent' : ''}${appointment.logoScale === 'fit-wide' ? ' appointment-logo-frame-fit-wide' : ''}`}><Image src={appointment.logo} alt={appointment.logoAlt ?? appointment.institution} width={280} height={84} className="appointment-logo" /></span>
-                    )}
-                  </div>
-                  <p className="appointment-role" data-lang="en">{appointment.role}</p><p className="appointment-role" data-lang="zh">{appointment.roleZh}</p>
-                  <p className="appointment-detail" data-lang="en">{appointment.detail}</p>
-                  {appointment.detailZh && <p className="appointment-detail" data-lang="zh">{appointment.detailZh}</p>}
-                </div>
-              </article>
-            ))}
-          </div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Experience.</h2><h2 data-lang="zh">工作经历。</h2></div></div>
+          <AppointmentList items={experience} />
         </section>
 
         <section className="section methods-section">

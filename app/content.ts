@@ -100,6 +100,7 @@ export type ResearchTrack = {
   titleZh: string;
   description: string;
   descriptionZh: string;
+  href?: string;
   logo?: string;
   logoAlt?: string;
   logoScale?: 'large' | 'prominent' | 'fit-wide';
@@ -400,7 +401,7 @@ export const coreProjects: ResearchProject[] = [
         summaryZh: '基于 MORI 对权力差异的发现，将规则记忆与经验记忆非对称分离，使 AI 能从成功、表扬和信任中学习，却不会将其误认为扩大权限的授权。',
       },
     ],
-    links: [{ label: 'Open live prototype', labelZh: '打开在线原型', href: 'https://mori-family-companion.pages.dev/', type: 'demo' }],
+    links: [{ label: 'Open study prototype', labelZh: '打开实验测试', href: 'https://mori-family-memory.pages.dev/', type: 'demo' }],
   },
 ];
 
@@ -413,8 +414,8 @@ export const researchTracks: ResearchTrack[] = [
     title: 'Reliable cross-subject EEG-fNIRS learning',
     titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
     description:
-      'Participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding.',
-    descriptionZh: '围绕跨被试多模态解码，开展被试隔离评估、少样本适应、概率校准与异构专家融合。',
+      'Participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. This collaboration also supports the computational development of TAS-Gate, which separates authorization rules from experiential memory in long-term AI.',
+    descriptionZh: '围绕跨被试多模态解码，开展被试隔离评估、少样本适应、概率校准与异构专家融合；这项合作也支持 TAS-Gate 的计算设计，将长期 AI 的授权规则与经验记忆分离。',
   },
   {
     code: 'WESTLAKE · CROSS-LAB AI',
@@ -458,6 +459,7 @@ export const researchTracks: ResearchTrack[] = [
     descriptionZh: '开发八通道 STM32 舔舐计、可编程运动平台、长时程追踪与可复现逐帧分析流程。',
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
+    href: 'https://en.westlake.edu.cn/faculty/ding-liu.html',
   },
 ];
 
@@ -473,6 +475,7 @@ export const appointments: Appointment[] = [
     detailZh: '围绕“非生物伙伴如何满足社交需求”开展统一研究：涵盖神经表征、可编程社会线索、长期 AI 陪伴与关系权力边界。',
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
+    href: 'https://en.westlake.edu.cn/faculty/ding-liu.html',
   },
   {
     date: 'NOV 2025 - PRESENT',
@@ -549,7 +552,7 @@ export const appointments: Appointment[] = [
 export const sidebarTimeline: SidebarTimelineGroup[] = [
   {
     label: 'Academic Path',
-    labelZh: '学术经历',
+    labelZh: '个人经历',
     items: [
       {
         institution: "Xi'an Jiaotong University",
@@ -582,13 +585,15 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
       {
         institution: 'Westlake University',
         institutionZh: '西湖大学',
-        role: 'Research Assistant · Social Neuroscience',
-        roleZh: '研究助理 · 社会神经科学',
+        role: 'Research Assistant',
+        roleZh: '研究助理',
+        note: 'Systems Social Neuroscience Lab',
+        noteZh: '系统与社会神经科学实验室',
         date: '2025 — Present',
         dateZh: '2025—至今',
         logo: '/assets/westlake-mark.png',
         logoAlt: 'Westlake University',
-        href: 'https://en.westlake.edu.cn/',
+        href: 'https://en.westlake.edu.cn/faculty/ding-liu.html',
       },
     ],
   },
