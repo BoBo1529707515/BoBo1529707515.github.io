@@ -22,6 +22,12 @@ type FigureDetails = {
     citation: string;
     href: string;
   };
+  detailFigure?: {
+    image: string;
+    imageAlt: string;
+    caption: string;
+    captionZh: string;
+  };
   methods: string[];
   methodsZh: string[];
   reading: string;
@@ -89,6 +95,22 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
                     <p data-lang="zh">{details.origin.bridgeZh}</p>
                   </div>
                 </section>
+              )}
+              {details.detailFigure && (
+                <figure className="figure-detail-figure">
+                  <a href={details.detailFigure.image} target="_blank" rel="noreferrer">
+                    <Image
+                      src={details.detailFigure.image}
+                      alt={details.detailFigure.imageAlt}
+                      width={886}
+                      height={825}
+                    />
+                  </a>
+                  <figcaption>
+                    <span data-lang="en">{details.detailFigure.caption}</span>
+                    <span data-lang="zh">{details.detailFigure.captionZh}</span>
+                  </figcaption>
+                </figure>
               )}
               <p className="figure-method-heading"><span data-lang="en">ANALYSIS PIPELINE</span><span data-lang="zh">分析流程</span></p>
               <ol className="figure-method-list">

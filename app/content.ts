@@ -71,6 +71,12 @@ export type ResearchProject = {
       citation: string;
       href: string;
     };
+    detailFigure?: {
+      image: string;
+      imageAlt: string;
+      caption: string;
+      captionZh: string;
+    };
     methods: string[];
     methodsZh: string[];
     reading: string;
@@ -215,6 +221,14 @@ export const coreProjects: ResearchProject[] = [
           '这一发现构成了本项目的生物学起点，同时也留下一个计算问题：在缺少跨日逐细胞配准时，如何比较不同 session、不同隔离时长下的完整神经群体动力学？因此，我将每个 session 表示为相对其自身基线几何的偏离，由此建立了图中无需跨日配准的群体状态位移指标。',
         citation: 'Liu et al. · Nature 640 · 2025 · Fig. 2c',
         href: 'https://doi.org/10.1038/s41586-025-08617-8',
+      },
+      detailFigure: {
+        image: '/assets/social-need-state-trajectory-day3.png',
+        imageAlt: 'Representative three-dimensional MPN population-state trajectory from a Day 3 reunion session',
+        caption:
+          'Representative within-session neural-state trajectory. Calcium activity from 131 MPN neurons was projected into a three-dimensional PCA space, visualizing the transition from isolation through reunion and contact to re-isolation. Cross-day inference is based separately on baseline-normalized displacement and permutation statistics.',
+        captionZh:
+          '代表性单次实验神经状态轨迹。将 131 个 MPN 神经元的钙活动投影到三维 PCA 空间，展示从隔离、重聚与接触到再次隔离的状态演化；跨日推断则由基线标准化位移与置换统计独立支持。',
       },
       methods: [
         'I aligned each session’s frame-resolved MPN calcium activity (ΔF/F) to its reunion onset, so t = 0 marks the start of reunion and negative time marks the preceding isolation period.',
