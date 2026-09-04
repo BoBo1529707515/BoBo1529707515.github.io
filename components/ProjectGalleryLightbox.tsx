@@ -57,7 +57,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
   return (
     <>
       <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label="Open robotic mouse project details">
-        <Image src={triggerSrc} alt={triggerAlt} width={2000} height={1200} className="project-primary-image project-primary-image-cover" />
+        <Image src={triggerSrc} alt={triggerAlt} width={2000} height={1200} unoptimized className="project-primary-image project-primary-image-cover" />
         {triggerCaption && <span className="image-caption" data-lang="en">{triggerCaption}</span>}
         {triggerCaptionZh && <span className="image-caption" data-lang="zh">{triggerCaptionZh}</span>}
       </button>
@@ -78,7 +78,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               {gallery.map((item) => (
                 <figure className={item.compact ? 'is-compact' : ''} key={item.src}>
                   <a href={item.src} target="_blank" rel="noreferrer">
-                    <Image src={item.src} alt={item.alt} width={item.width} height={item.height} />
+                    <Image src={item.src} alt={item.alt} width={item.width} height={item.height} unoptimized />
                   </a>
                   <figcaption><span data-lang="en">{item.caption}</span><span data-lang="zh">{item.captionZh}</span></figcaption>
                 </figure>

@@ -62,7 +62,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
   return (
     <>
       <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label={`Open figure and methods for ${details.title}`}>
-        <Image src={src} alt={alt} width={2000} height={1200} className={`project-primary-image project-primary-image-${fit}`} />
+        <Image src={src} alt={alt} width={2000} height={1200} unoptimized className={`project-primary-image project-primary-image-${fit}`} />
         {caption && <span className="image-caption" data-lang="en">{caption}</span>}
         {captionZh && <span className="image-caption" data-lang="zh">{captionZh}</span>}
       </button>
@@ -74,7 +74,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
           <div className="figure-lightbox-panel">
             <button className="figure-lightbox-close" type="button" onClick={() => setOpen(false)} aria-label="Close figure"><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
             <div className="figure-lightbox-visual">
-              <Image src={src} alt={alt} width={2000} height={1200} priority className="figure-lightbox-image" />
+              <Image src={src} alt={alt} width={2000} height={1200} priority unoptimized className="figure-lightbox-image" />
               <a href={src} target="_blank" rel="noreferrer"><span data-lang="en">Open original image</span><span data-lang="zh">打开原图</span> ↗</a>
             </div>
             <div className="figure-lightbox-copy">
@@ -85,7 +85,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
                   <p className="figure-origin-label"><span data-lang="en">{details.origin.label}</span><span data-lang="zh">{details.origin.labelZh}</span></p>
                   <h4><span data-lang="en">{details.origin.title}</span><span data-lang="zh">{details.origin.titleZh}</span></h4>
                   <a className="figure-origin-image" href={details.origin.href} target="_blank" rel="noreferrer">
-                    <Image src={details.origin.image} alt={details.origin.imageAlt} width={882} height={766} />
+                    <Image src={details.origin.image} alt={details.origin.imageAlt} width={882} height={766} unoptimized />
                     <span>{details.origin.citation} ↗</span>
                   </a>
                   <p className="figure-origin-body" data-lang="en">{details.origin.body}</p>
@@ -104,6 +104,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
                       alt={details.detailFigure.imageAlt}
                       width={886}
                       height={825}
+                      unoptimized
                     />
                   </a>
                   <figcaption>
