@@ -184,13 +184,13 @@ export const coreProjects: ResearchProject[] = [
     title: 'Neural representation and computational modeling of social need',
     titleZh: '社交需求的神经表征与计算建模',
     description:
-      'I combine miniscope calcium imaging with frame-resolved contact behavior to study how isolation and reunion reshape medial preoptic nucleus (MPN) population dynamics.',
+      'How does the MPN population state change as social need builds during isolation and is relieved at reunion?',
     descriptionZh:
-      '结合微型显微镜钙成像与逐帧接触行为，研究隔离与重聚如何重塑内侧视前核（MPN）的神经群体动力学。',
+      '随着社交需求在隔离中积累、又在重聚时得到缓解，MPN 神经群体状态如何变化？',
     contribution:
-      'Using data from the lab’s published Nature study, I independently designed and implemented a registration-free population-state framework. By quantifying standardized displacement from each session’s initial state, I enabled cross-day comparison of event sensitivity and related MPN population sensitivity to behaviorally inferred social need, using cross-validated decoding, motion controls, circular shifts, and permutation tests. I also developed a high-throughput semantic-segmentation workflow to achieve robust frame-level contact quantification when low-resolution video and identity switching limited DeepLabCut.',
+      'Using data from the lab’s published Nature study, I independently developed a registration-free way to compare population states across days by measuring each session relative to its own baseline. I combined this measure with cross-validated decoding, motion controls, circular shifts, and permutation tests, and built a semantic-segmentation workflow for reliable frame-level contact measurement when low-resolution video and identity switching limited DeepLabCut.',
     contributionZh:
-      '我基于实验室已发表 Nature 论文所使用的数据，独立提出并实现了无需跨日逐细胞配准的神经群体状态分析框架。通过量化神经群体相对于各次实验初始状态的标准化偏离，我实现了事件敏感性的跨日比较，并结合交叉验证解码、运动控制、循环时移与置换检验，揭示 MPN 神经群体敏感性与行为推断的社交需求之间的关系。针对低画质和身份互换导致 DeepLabCut 表现不稳定的问题，我还开发了以语义分割为核心的高通量流程，实现稳健的逐帧接触行为量化。',
+      '我基于实验室已发表 Nature 论文所使用的数据，独立提出并实现了一种无需跨日逐细胞配准的比较方法：让每个 session 都相对于自身基线进行量化。我进一步结合交叉验证解码、运动控制、循环时移与置换检验，并针对低画质与身份互换限制 DeepLabCut 的问题，开发了用于逐帧接触量化的语义分割流程。',
     tags: ['Miniscope imaging', 'Population geometry', 'Social homeostasis'],
     tagsZh: ['微型显微镜成像', '神经群体几何', '社交稳态'],
     image: '/assets/social-need-neural-state.png',
@@ -283,16 +283,16 @@ export const coreProjects: ResearchProject[] = [
     order: 2,
     tier: 'core',
     status: 'pilot',
-    statusLabel: 'PILOT · SYSTEM VALIDATION',
-    statusLabelZh: '预实验 · 系统验证',
-    title: 'A programmable robotic mouse for decomposing social need',
+    statusLabel: 'IN DEVELOPMENT',
+    statusLabelZh: '开发中',
+    title: 'A programmable robotic mouse',
     titleZh: '机器鼠：拆解社交需求的可编程仿生伙伴',
     description:
-      'A standardized artificial social stimulus for isolating how motion, touch, temperature, odor, and responsiveness contribute to social-need regulation. The same platform provides calibrated contact inputs for modeling how social need accumulates, decays, and is relieved.',
+      'Can a mouse’s social need be relieved by something that moves, touches, and responds like another mouse—but is not one?',
     descriptionZh:
-      '将运动、触摸、温度、气味与互动响应性拆解为可控变量；同时以可标定的接触输入，研究社交需求如何积累、衰减与缓解。',
-    contribution: 'I conceived the research program, designed the cue-decomposition and reunion-probe paradigms, initiated the cross-institutional collaboration, built the behavioral arena, and personally conducted the behavioral experiments. I built the high-throughput, sound-attenuated platform supporting simultaneous multi-camera video and ultrasonic recording. I was responsible for the robotic mouse’s perception and planning layers, developing the host-side control software, serial communication interface, real-time semantic segmentation, skeletal tracking, behavior classification, and ROI-constrained visual redirection. I co-developed the PPO-based locomotion strategy with our collaborators, who implemented the embedded lower-level controller. I also translated experimental requirements into iterative refinements of the robot’s morphology, skin material, movement, and operating noise.',
-    contributionZh: '我提出了机器鼠研究计划，设计社会线索拆解与重聚检验范式，发起跨机构合作，搭建行为学场地，并亲自完成行为实验。我搭建了支持多相机同时拍摄与超声记录的高通量静音行为平台。我负责机器鼠的感知层和规划层，开发上位机控制软件、串口通信接口、实时语义分割、骨架追踪、行为分类以及 ROI 约束下的视觉重定向。我与合作方共同开发基于 PPO 的类小鼠运动策略，由合作方实现下位机及底层控制。同时，我将实验需求转化为设计约束，推动机器鼠在形态、表面皮肤材料、运动表现和运行噪声方面进行多轮改进。',
+      '一个会移动、触摸并回应的小鼠形态伙伴，能否缓解真实小鼠的社交需求？',
+    contribution: 'I conceived the project and initiated its cross-institutional collaboration. I designed the behavioral arena, cue-decomposition and reunion-probe paradigms, and ran the experiments; I also built the sound-attenuated multi-camera and ultrasonic recording platform, together with the robot’s perception, planning, and host-side control system. The platform lets us vary movement, touch, temperature, odor, and responsiveness independently, and use controlled contact to study how social need accumulates and decays.',
+    contributionZh: '我提出这一项目并发起跨机构合作，设计行为学场地、社会线索拆解与重聚检验范式，并亲自完成实验；同时搭建静音、多相机与超声同步记录平台，以及机器鼠的感知、规划和上位机控制系统。这个平台使我们能够分别控制运动、触摸、温度、气味与响应性，并用可控接触研究社交需求如何积累和衰减。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     tagsZh: ['具身智能', '可编程触摸', '社交稳态'],
     image: '/assets/robotic-mouse-prototype.png',
@@ -348,11 +348,11 @@ export const coreProjects: ResearchProject[] = [
     title: 'MORI — relational power in long-term human–AI companionship',
     titleZh: 'MORI：长期人机陪伴关系中的权力边界',
     description:
-      'A 105-participant study of how people revise distinct AI powers as an artificial companion enters a long-term relationship and supports loneliness-related needs.',
+      'When people live with an AI companion over time, which powers do they grant, revise, or withdraw?',
     descriptionZh:
-      '通过 105 人实验研究：当人工伙伴进入长期关系并回应孤独相关需求时，人们如何调整不同类型的 AI 权力。',
-    contribution: 'I independently conceived and led this study, designing its fixed 20-year relationship narrative, six power dimensions, four governance arrangements, and three-stage judgment protocol for 105 participants. The manuscript has been submitted to CHI with me as first author, and I am continuing to advance the project’s next phase in collaboration with rednote.',
-    contributionZh: '我独立提出并完整主导了这项研究，为 105 名参与者设计固定的 20 年关系叙事、六类权力维度、四种治理安排与三阶段判断流程。论文已投稿 CHI，由我担任第一作者；目前，我正与小红书合作推进项目的下一阶段。',
+      '当人们与 AI 伙伴长期相处时，会授予、调整或撤回哪些权力？',
+    contribution: 'I conceived and led this 105-participant study, creating a fixed 20-year relationship narrative in which people repeatedly judged six distinct AI powers under four governance arrangements. The manuscript has been submitted to CHI with me as first author, and I am continuing the project’s next phase in collaboration with rednote.',
+    contributionZh: '我独立提出并主导了这项 105 人研究：设计固定的 20 年关系叙事，让参与者在四种治理安排下反复判断六类不同的 AI 权力。论文已投稿 CHI，由我担任第一作者；目前，我正与小红书合作推进项目的下一阶段。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
     tagsZh: ['人机交互', '长期记忆', '关系权力'],
     image: '/assets/mori-study-design.png',
@@ -361,6 +361,13 @@ export const coreProjects: ResearchProject[] = [
     imageCaptionZh: 'MORI 实验流程 · 固定 20 年关系叙事中的六类权力判断 · 点击查看原图',
     imageLayout: 'wide',
     imageFit: 'contain',
+    evidence: {
+      label: 'Finding',
+      labelZh: '发现',
+      observation: 'Participants did not simply give AI more or less autonomy. Relationship context shifted different powers in different—and sometimes opposing—directions; memory-sharing authority showed one of the largest changes in attitude.',
+      observationZh: '参与者并不会整体性地扩大或限制 AI 权力。关系情境使不同权力出现差异化、甚至方向相反的调整，其中信息分享权是态度变化最大的维度之一。',
+      lastVerified: '2026-09',
+    },
     modules: [
       {
         id: 'human-study',

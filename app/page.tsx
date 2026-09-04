@@ -8,27 +8,10 @@ import {
   openTools,
   publications,
   researchTracks,
-  sidebarTimeline,
-  type ProjectModule,
 } from './content';
 
 function ExternalLink({ href, children, childrenZh }: { href: string; children: React.ReactNode; childrenZh?: React.ReactNode }) {
   return <a href={href} target="_blank" rel="noreferrer" className="text-link"><span data-lang="en">{children}</span>{childrenZh && <span data-lang="zh">{childrenZh}</span>}<span aria-hidden="true"> ↗</span></a>;
-}
-
-function ProjectModules({ modules }: { modules: ProjectModule[] }) {
-  return (
-    <div className="project-modules" aria-label="Project modules / 项目模块">
-      {modules.map((module) => (
-        <div className="project-module" key={module.id}>
-          <div className="project-module-meta"><span data-lang="en">{module.statusLabel}</span><span data-lang="zh">{module.statusLabelZh}</span></div>
-          <h4><span data-lang="en">{module.label}</span><span data-lang="zh">{module.labelZh}</span></h4>
-          <p data-lang="en">{module.summary}</p>
-          <p data-lang="zh">{module.summaryZh}</p>
-        </div>
-      ))}
-    </div>
-  );
 }
 
 function HighlightedAuthorLine({ text, selfAuthor }: { text: string; selfAuthor: string }) {
@@ -52,42 +35,12 @@ export default function Home() {
             <p className="profile-role" data-lang="en">Research Assistant<br />Westlake University</p>
             <p className="profile-role" data-lang="zh">研究助理<br />西湖大学</p>
           </div>
-          <p className="profile-bio" data-lang="en">I study whether embodied and virtual non-biological partners can alleviate loneliness and satisfy social need—and where their biological and relational limits begin.</p>
-          <p className="profile-bio" data-lang="zh">我研究具身与虚拟的非生物伙伴能否缓解孤独、满足社交需求，以及它们的生物学与关系边界从何处开始。</p>
-          <div className="rail-timeline" aria-label="Research and education timeline">
-            {sidebarTimeline.map((group) => (
-              <section className="rail-timeline-group" key={group.label}>
-                <div className="rail-timeline-title"><h3><span data-lang="en">{group.label}</span><span data-lang="zh">{group.labelZh}</span></h3><span /></div>
-                <div className="rail-timeline-items">
-                  {group.items.map((item) => {
-                    const content = (
-                      <>
-                        <span className={`rail-timeline-logo-frame${item.logoVariant === 'crest-left' ? ' rail-timeline-logo-frame--crest-left' : ''}`}>
-                          <Image src={item.logo} alt={item.logoAlt} width={88} height={64} className="rail-timeline-logo" />
-                        </span>
-                        <span className="rail-timeline-copy">
-                          <strong><span data-lang="en">{item.institution}</span><span data-lang="zh">{item.institutionZh}</span></strong>
-                          <span data-lang="en">{item.role}</span><span data-lang="zh">{item.roleZh}</span>
-                          {item.note && <span className="rail-timeline-note" data-lang="en">{item.note}</span>}
-                          {item.noteZh && <span className="rail-timeline-note" data-lang="zh">{item.noteZh}</span>}
-                          <time data-lang="en">{item.date}</time><time data-lang="zh">{item.dateZh}</time>
-                        </span>
-                      </>
-                    );
-                    return item.href
-                      ? <a className="rail-timeline-item" href={item.href} target="_blank" rel="noreferrer" key={`${group.label}-${item.institution}-${item.date}`}>{content}</a>
-                      : <div className="rail-timeline-item" key={`${group.label}-${item.institution}-${item.date}`}>{content}</div>;
-                  })}
-                </div>
-              </section>
-            ))}
-          </div>
           <nav className="side-nav" aria-label="Primary navigation">
-            <a href="#research"><span data-lang="en">Research question</span><span data-lang="zh">研究问题</span></a>
-            <a href="#companions"><span data-lang="en">Core program</span><span data-lang="zh">核心研究</span></a>
+            <a href="#research"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+            <a href="#companions"><span data-lang="en">Selected work</span><span data-lang="zh">代表工作</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
-            <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作项目</span></a>
-            <a href="#experience"><span data-lang="en">Experience</span><span data-lang="zh">个人经历</span></a>
+            <a href="#collaborations"><span data-lang="en">Other work</span><span data-lang="zh">其他工作</span></a>
+            <a href="#experience"><span data-lang="en">Background</span><span data-lang="zh">学习与经历</span></a>
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
           </nav>
           <div className="profile-links">
@@ -109,29 +62,23 @@ export default function Home() {
 
         <section className="hero" id="research">
           <p className="eyebrow accent"><span data-lang="en">SOCIAL NEUROSCIENCE × NON-BIOLOGICAL COMPANIONS</span><span data-lang="zh">社会神经科学 × 非生物陪伴</span></p>
-          <h1 data-lang="en">What makes a non-biological agent a <em>meaningful social companion?</em></h1>
-          <h1 data-lang="zh">什么使一个非生物智能体成为<em>真正有意义的社会伙伴？</em></h1>
-          <div className="hero-copy" data-lang="en">
-            <p>I study whether—and under what conditions—embodied and virtual artificial partners can alleviate loneliness and satisfy social need. The central question is which social functions can be substituted and which remain uniquely biological.</p>
-            <p>Across mice and humans, I connect neural representations of social need with programmable social stimuli, long-term AI companionship, and experiments on relational authority.</p>
+          <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
+          <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
+          <div className="hero-copy single" data-lang="en">
+            <p>I study how social need builds up and is relieved, and whether artificial partners can reproduce parts of what biological social interaction provides. My current work spans mouse social neuroscience, a programmable robotic mouse, and long-term human–AI companionship.</p>
           </div>
-          <div className="hero-copy" data-lang="zh">
-            <p>我研究具身与虚拟的人工伙伴是否、以及在什么条件下能够缓解孤独并满足社交需求。核心问题是：哪些社会功能可以被替代，哪些仍然依赖真实生物。</p>
-            <p>我从小鼠到人类，将社交需求的神经表征、可编程社会刺激、长期 AI 陪伴和关系权力实验连接为同一条研究主线。</p>
+          <div className="hero-copy single" data-lang="zh">
+            <p>我研究社交需求如何积累与缓解，以及人工伙伴能否复现真实生物互动所提供的部分社会功能。目前的工作横跨小鼠社会神经科学、可编程机器鼠与长期人机陪伴。</p>
           </div>
-          <div className="research-lenses" aria-label="Research framework">
-            <div><span className="lens-index">01</span><strong data-lang="en">Need</strong><strong data-lang="zh">需求</strong><p data-lang="en">How do deprivation and relief emerge in brain and behavior?</p><p data-lang="zh">剥夺与缓解如何在大脑和行为中产生？</p></div>
-            <div><span className="lens-index">02</span><strong data-lang="en">Substitution</strong><strong data-lang="zh">替代</strong><p data-lang="en">Which social functions can embodied or conversational agents reproduce?</p><p data-lang="zh">具身或对话式智能体能够复制哪些社会功能？</p></div>
-            <div><span className="lens-index">03</span><strong data-lang="en">Boundaries</strong><strong data-lang="zh">边界</strong><p data-lang="en">Where does biological equivalence fail, and what authority should an AI have?</p><p data-lang="zh">生物学等效性在哪里失效，AI 又应拥有何种权力？</p></div>
+          <div className="hero-actions">
+            <a href="#companions"><span data-lang="en">Selected work ↓</span><span data-lang="zh">代表工作 ↓</span></a>
+            <a href="/Yibo_Yuan_Academic_CV_2026.pdf" target="_blank" rel="noreferrer"><span data-lang="en">CV ↗</span><span data-lang="zh">简历 ↗</span></a>
+            <a href="mailto:yuanyibo@westlake.edu.cn"><span data-lang="en">Email ↗</span><span data-lang="zh">邮箱 ↗</span></a>
           </div>
         </section>
 
         <section className="section core-program-section" id="companions">
-          <div className="section-heading">
-            <div><p className="eyebrow"><span data-lang="en">SYSTEMS SOCIAL NEUROSCIENCE LAB · WESTLAKE</span><span data-lang="zh">西湖大学 · 系统与社会神经科学实验室</span></p><h2 data-lang="en">One question, three connected research programs.</h2><h2 data-lang="zh">一个问题，三个彼此相连的研究方向。</h2></div>
-            <p data-lang="en">From neural representations of social need, to robotic mice and controlled touch, to long-term AI companionship: testing whether non-biological partners can satisfy social need, and where substitution fails or oversteps.</p>
-            <p data-lang="zh">从社交需求的神经表征，到机器鼠与可控触摸，再到长期 AI 陪伴：检验非生物伙伴能否满足社交需求，以及这种替代在哪里失效或越界。</p>
-          </div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Selected work.</h2><h2 data-lang="zh">代表工作。</h2></div></div>
           <div className="project-list core-project-list">
             {coreProjects.map((project) => (
               <article className={`project-card core-project-card${project.image ? ' project-card-has-media' : ''}`} id={project.id} key={project.id}>
@@ -160,20 +107,20 @@ export default function Home() {
                           {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
                         </a>
                   )}
-                  {project.contribution && (
-                    <div className="contribution-note"><span><span data-lang="en">MY CONTRIBUTION</span><span data-lang="zh">我的贡献</span></span><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>
-                  )}
+                  {project.contribution && <div className="project-narrative"><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>}
                   {project.evidence && (
-                    <aside className="evidence-note">
-                      <div className="evidence-heading"><span><span data-lang="en">{project.evidence.label}</span><span data-lang="zh">{project.evidence.labelZh}</span></span><span>{project.evidence.lastVerified}</span></div>
+                    <aside className="project-result">
                       <p data-lang="en">{project.evidence.observation}</p>
                       <p data-lang="zh">{project.evidence.observationZh}</p>
                     </aside>
                   )}
-                  <div className="tag-row" data-lang="en">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  <div className="tag-row" data-lang="zh">{project.tagsZh.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   {project.links?.map((link) => <ExternalLink href={link.href} childrenZh={link.labelZh} key={link.href}>{link.label}</ExternalLink>)}
-                  {project.modules && <ProjectModules modules={project.modules} />}
+                  {project.modules?.filter((module) => module.id === 'tas-gate').map((module) => (
+                    <div className="project-continuation" key={module.id}>
+                      <h4><span data-lang="en">{module.label}</span><span data-lang="zh">{module.labelZh}</span></h4>
+                      <p data-lang="en">{module.summary}</p><p data-lang="zh">{module.summaryZh}</p>
+                    </div>
+                  ))}
                   {project.secondaryImage && (
                     <a className="project-secondary-media" href={project.secondaryImage} target="_blank" rel="noreferrer" aria-label={`Open system figure for ${project.title}`}>
                       <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? project.title} width={1600} height={900} />
@@ -188,7 +135,7 @@ export default function Home() {
         </section>
 
         <section className="section publication-section" id="publication">
-          <div className="section-heading compact"><div><p className="eyebrow"><span data-lang="en">PUBLICATIONS &amp; MANUSCRIPTS</span><span data-lang="zh">论文与在审稿件</span></p><h2 data-lang="en">Research in review and in publication.</h2><h2 data-lang="zh">正在同行评审与已经发表的研究。</h2></div></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Publications &amp; manuscripts.</h2><h2 data-lang="zh">论文与在审稿件。</h2></div></div>
           {publications.map((publication) => (
             <article className="publication-card" key={publication.title}>
               <div className="publication-year">{publication.year}</div>
@@ -199,7 +146,7 @@ export default function Home() {
 
         <section className="section breadth-section" id="collaborations">
           <div className="section-heading compact">
-            <div><p className="eyebrow"><span data-lang="en">SUPPORTING COLLABORATIONS</span><span data-lang="zh">支持性合作</span></p><h2 data-lang="en">Methods that expand how I study brains, behavior, and intelligent systems.</h2><h2 data-lang="zh">拓展我研究大脑、行为与智能系统的方法。</h2></div>
+            <div><h2 data-lang="en">Other work &amp; collaborations.</h2><h2 data-lang="zh">其他工作与合作。</h2></div>
           </div>
           <div className="breadth-grid">
             {researchTracks.map((track) => (
@@ -215,7 +162,7 @@ export default function Home() {
         </section>
 
         <section className="section experience-section" id="experience">
-          <div className="section-heading"><div><p className="eyebrow"><span data-lang="en">EXPERIENCE</span><span data-lang="zh">个人经历</span></p><h2 data-lang="en">From clinical observation to neural data and intelligent systems.</h2><h2 data-lang="zh">从临床观察到神经数据与智能系统。</h2></div><p data-lang="en">Together, these experiences provide the neuroscience, engineering, and HCI foundation for studying non-biological companionship.</p><p data-lang="zh">这些经历共同提供研究非生物陪伴所需的神经科学、工程与人机交互基础。</p></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Education &amp; experience.</h2><h2 data-lang="zh">教育与经历。</h2></div></div>
           <div className="appointment-list">
             {appointments.map((appointment) => (
               <article className="appointment" key={`${appointment.date}-${appointment.institution}`}>
@@ -239,7 +186,7 @@ export default function Home() {
         </section>
 
         <section className="section methods-section">
-          <div className="section-heading compact"><div><p className="eyebrow"><span data-lang="en">SELECTED OPEN RESEARCH SOFTWARE</span><span data-lang="zh">精选开源科研软件</span></p><h2 data-lang="en">Tools built for experiments that need to remain inspectable.</h2><h2 data-lang="zh">为需要可检查、可复现的实验而构建的工具。</h2></div></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Open research software.</h2><h2 data-lang="zh">开源科研软件。</h2></div></div>
           <div className="methods-grid">
             {openTools.map((tool) => (
               <div key={tool.code}>
@@ -250,13 +197,13 @@ export default function Home() {
         </section>
 
         <section className="contact-section" id="contact">
-          <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">Interested in social need, non-biological companions, or bounded AI agency?</h2><h2 data-lang="zh">如果你也关注社交需求、非生物陪伴或具有边界的 AI 能动性，欢迎联系。</h2>
+          <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">I’d be glad to hear from you.</h2><h2 data-lang="zh">欢迎联系我。</h2>
           <p data-lang="en">I’m preparing PhD applications for Fall 2027 and welcome conversations with aligned labs.</p><p data-lang="zh">我正在准备 2027 年秋季博士申请，欢迎与研究方向契合的实验室交流。</p>
           <a className="contact-button" href="mailto:yuanyibo@westlake.edu.cn">yuanyibo@westlake.edu.cn <span>↗</span></a>
           <a className="contact-secondary-email" href="mailto:yibo031110@gmail.com"><span data-lang="en">Personal email: yibo031110@gmail.com</span><span data-lang="zh">个人邮箱：yibo031110@gmail.com</span></a>
           <div className="contact-affiliation"><span><span data-lang="en">CURRENT AFFILIATION</span><span data-lang="zh">当前单位</span></span><Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" /></div>
         </section>
-        <footer><span>© 2026 Yibo Yuan</span><span data-lang="en">Built around one research question.</span><span data-lang="zh">围绕一个研究问题构建。</span></footer>
+        <footer><span>© 2026 Yibo Yuan</span><span><span data-lang="en">Hangzhou, China</span><span data-lang="zh">中国杭州</span></span></footer>
       </main>
     </div>
   );
