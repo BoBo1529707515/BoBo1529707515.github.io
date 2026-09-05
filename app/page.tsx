@@ -92,10 +92,10 @@ export default function Home() {
           </div>
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
-            <a href="#companions"><span data-lang="en">Selected work</span><span data-lang="zh">代表工作</span></a>
+            <a href="#companions"><span data-lang="en">Selected research</span><span data-lang="zh">代表研究</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
-            <a href="#collaborations"><span data-lang="en">Other work</span><span data-lang="zh">其他工作</span></a>
-            <a href="#experience"><span data-lang="en">Background</span><span data-lang="zh">教育与经历</span></a>
+            <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作研究</span></a>
+            <a href="#experience"><span data-lang="en">Earlier experience</span><span data-lang="zh">早期经历</span></a>
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
           </nav>
           <div className="profile-links">
@@ -116,24 +116,25 @@ export default function Home() {
         </header>
 
         <section className="hero" id="research">
+          <p className="hero-identity"><span data-lang="en">Yibo Yuan · Research Assistant, Westlake University</span><span data-lang="zh">袁艺博 · 西湖大学研究助理</span></p>
           <p className="eyebrow accent"><span data-lang="en">SOCIAL NEUROSCIENCE × NON-BIOLOGICAL COMPANIONS</span><span data-lang="zh">社会神经科学 × 非生物陪伴</span></p>
           <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
           <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
           <div className="hero-copy single" data-lang="en">
-            <p>I study how social need builds up and is relieved, and whether artificial partners can reproduce parts of what biological social interaction provides. My current work spans mouse social neuroscience, a programmable robotic mouse, and long-term human–AI companionship.</p>
+            <p>I begin with biological social interaction: how social need builds during isolation and changes at reunion. I then use a programmable robotic mouse to isolate the cues that matter, and human–AI experiments to study what changes when an artificial companion also holds memory and authority.</p>
           </div>
           <div className="hero-copy single" data-lang="zh">
-            <p>我研究社交需求如何积累与缓解，以及人工伙伴能否复现真实生物互动所提供的部分社会功能。目前的工作横跨小鼠社会神经科学、可编程机器鼠与长期人机陪伴。</p>
+            <p>我从生物社交出发，研究社交需求如何在隔离中积累、又如何在重聚时改变；再用可编程机器鼠拆解其中真正起作用的线索，并在人机实验中追问：当人工伙伴同时拥有记忆和权力时，陪伴关系会发生什么变化。</p>
           </div>
           <div className="hero-actions">
-            <a href="#companions"><span data-lang="en">Selected work ↓</span><span data-lang="zh">代表工作 ↓</span></a>
+            <a href="#companions"><span data-lang="en">Selected research ↓</span><span data-lang="zh">代表研究 ↓</span></a>
             <a href="/Yibo_Yuan_Academic_CV_2026.pdf" target="_blank" rel="noreferrer"><span data-lang="en">CV ↗</span><span data-lang="zh">简历 ↗</span></a>
             <a href="mailto:yuanyibo@westlake.edu.cn"><span data-lang="en">Email ↗</span><span data-lang="zh">邮箱 ↗</span></a>
           </div>
         </section>
 
         <section className="section core-program-section" id="companions">
-          <div className="section-heading compact"><div><h2 data-lang="en">Selected work.</h2><h2 data-lang="zh">代表工作。</h2></div></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Selected research.</h2><h2 data-lang="zh">代表研究。</h2></div></div>
           <div className="project-list core-project-list">
             {coreProjects.map((project) => (
               <article className={`project-card core-project-card${project.image ? ' project-card-has-media' : ''}`} id={project.id} key={project.id}>
@@ -201,7 +202,7 @@ export default function Home() {
 
         <section className="section breadth-section" id="collaborations">
           <div className="section-heading compact">
-            <div><h2 data-lang="en">Other work &amp; collaborations.</h2><h2 data-lang="zh">其他工作与合作。</h2></div>
+            <div><h2 data-lang="en">Selected collaborations.</h2><h2 data-lang="zh">合作研究。</h2></div>
           </div>
           <div className="breadth-grid">
             {researchTracks.map((track) => (
@@ -217,12 +218,12 @@ export default function Home() {
         </section>
 
         <section className="section experience-section" id="experience">
-          <div className="section-heading compact"><div><h2 data-lang="en">Education &amp; experience.</h2><h2 data-lang="zh">教育与经历。</h2></div></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Earlier experience.</h2><h2 data-lang="zh">早期经历。</h2></div></div>
           <AppointmentList items={appointments} />
         </section>
 
         <section className="section methods-section">
-          <div className="section-heading compact"><div><h2 data-lang="en">Open research software.</h2><h2 data-lang="zh">开源科研软件。</h2></div></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Open research tools.</h2><h2 data-lang="zh">开源科研工具。</h2></div></div>
           <div className="methods-grid">
             {openTools.map((tool) => (
               <div key={tool.code}>
@@ -233,8 +234,8 @@ export default function Home() {
         </section>
 
         <section className="contact-section" id="contact">
-          <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">I’d be glad to hear from you.</h2><h2 data-lang="zh">欢迎联系我。</h2>
-          <p data-lang="en">I’m preparing PhD applications for Fall 2027 and welcome conversations with aligned labs.</p><p data-lang="zh">我正在准备 2027 年秋季博士申请，欢迎与研究方向契合的实验室交流。</p>
+          <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">Contact.</h2><h2 data-lang="zh">联系方式。</h2>
+          <p data-lang="en">For PhD and research conversations, email me at the address below.</p><p data-lang="zh">如希望交流博士申请或研究合作，请通过下方邮箱联系我。</p>
           <a className="contact-button" href="mailto:yuanyibo@westlake.edu.cn">yuanyibo@westlake.edu.cn <span>↗</span></a>
           <a className="contact-secondary-email" href="mailto:yibo031110@gmail.com"><span data-lang="en">Personal email: yibo031110@gmail.com</span><span data-lang="zh">个人邮箱：yibo031110@gmail.com</span></a>
           <div className="contact-affiliation"><span><span data-lang="en">CURRENT AFFILIATION</span><span data-lang="zh">当前单位</span></span><Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" /></div>
