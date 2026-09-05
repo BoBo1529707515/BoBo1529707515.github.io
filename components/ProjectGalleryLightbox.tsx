@@ -78,6 +78,21 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               <p className="eyebrow accent"><span data-lang="en">TOWARD A CLOSED LOOP</span><span data-lang="zh">闭环目标</span></p>
               <p data-lang="en">I am extending the platform toward a closed-loop social-neuroengineering system. The planned loop will combine MPN population activity and dopamine signals from the freely moving mouse to estimate its social state, allowing the robotic mouse to adjust its interaction strategy online.</p>
               <p data-lang="zh">我正在将这一平台扩展为闭环社会神经工程系统：读取自由活动真实小鼠的 MPN 神经群体活动与多巴胺信号，估计其当前社交状态，并让机器鼠在线调整互动策略。</p>
+              <figure className="project-detail-planned-recording">
+                <a href="/assets/planned-mpn-miniscope-configuration.png" target="_blank" rel="noreferrer">
+                  <Image
+                    src="/assets/planned-mpn-miniscope-configuration.png"
+                    alt="Planned miniscope configuration for recording MPN calcium activity in freely moving mice"
+                    width={483}
+                    height={452}
+                    unoptimized
+                  />
+                </a>
+                <figcaption>
+                  <span data-lang="en"><strong>Planned recording configuration.</strong> A GRIN-lens miniscope will provide MPN calcium signals for estimating social state in the future closed-loop system.</span>
+                  <span data-lang="zh"><strong>计划中的记录方案。</strong>后续将使用 GRIN 透镜与微型显微镜记录 MPN 钙信号，为闭环系统估计真实小鼠的社交状态。</span>
+                </figcaption>
+              </figure>
             </section>
             <div className="project-detail-gallery">
               {gallery.map((item) => (
