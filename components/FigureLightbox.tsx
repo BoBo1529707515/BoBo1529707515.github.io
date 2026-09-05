@@ -22,6 +22,14 @@ type FigureDetails = {
     citation: string;
     href: string;
   };
+  rawFigure?: {
+    label: string;
+    labelZh: string;
+    image: string;
+    imageAlt: string;
+    caption: string;
+    captionZh: string;
+  };
   detailFigure?: {
     image: string;
     imageAlt: string;
@@ -95,6 +103,27 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
                     <p data-lang="zh">{details.origin.bridgeZh}</p>
                   </div>
                 </section>
+              )}
+              {details.rawFigure && (
+                <figure className="figure-raw-recording">
+                  <p className="figure-origin-label">
+                    <span data-lang="en">{details.rawFigure.label}</span>
+                    <span data-lang="zh">{details.rawFigure.labelZh}</span>
+                  </p>
+                  <a href={details.rawFigure.image} target="_blank" rel="noreferrer">
+                    <Image
+                      src={details.rawFigure.image}
+                      alt={details.rawFigure.imageAlt}
+                      width={147}
+                      height={140}
+                      unoptimized
+                    />
+                  </a>
+                  <figcaption>
+                    <span data-lang="en">{details.rawFigure.caption}</span>
+                    <span data-lang="zh">{details.rawFigure.captionZh}</span>
+                  </figcaption>
+                </figure>
               )}
               {details.detailFigure && (
                 <figure className="figure-detail-figure">

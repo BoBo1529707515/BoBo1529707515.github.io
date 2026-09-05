@@ -71,6 +71,14 @@ export type ResearchProject = {
       citation: string;
       href: string;
     };
+    rawFigure?: {
+      label: string;
+      labelZh: string;
+      image: string;
+      imageAlt: string;
+      caption: string;
+      captionZh: string;
+    };
     detailFigure?: {
       image: string;
       imageAlt: string;
@@ -222,6 +230,16 @@ export const coreProjects: ResearchProject[] = [
           '这一发现构成了本项目的生物学起点，同时也留下一个计算问题：在缺少跨日逐细胞配准时，如何比较不同 session、不同隔离时长下的完整神经群体动力学？因此，我将每个 session 表示为相对其自身基线几何的偏离，由此建立了图中无需跨日配准的群体状态位移指标。',
         citation: 'Liu et al. · Nature 640 · 2025 · Fig. 2c',
         href: 'https://doi.org/10.1038/s41586-025-08617-8',
+      },
+      rawFigure: {
+        label: 'RAW CALCIUM RECORDING',
+        labelZh: '原始钙成像记录',
+        image: '/assets/miniscope-raw-calcium-field.png',
+        imageAlt: 'Representative raw miniscope calcium-imaging field from an MPN recording',
+        caption:
+          'A representative raw miniscope calcium-imaging frame from the MPN recording. It is the image-level starting point from which neuronal fluorescence time series are extracted and assembled into the population-activity matrix used in the analyses below.',
+        captionZh:
+          'MPN 微型显微镜记录中的一帧代表性原始钙成像视野。后续分析从这一图像层面的原始记录中提取各神经元的荧光时间序列，并组成下方分析所使用的神经群体活动矩阵。',
       },
       detailFigure: {
         image: '/assets/social-need-state-trajectory-day3.png',
