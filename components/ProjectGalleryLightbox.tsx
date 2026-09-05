@@ -70,10 +70,15 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
             <button className="figure-lightbox-close" type="button" onClick={() => setOpen(false)} aria-label="Close project details"><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
             <header className="project-detail-header">
               <p className="eyebrow accent"><span data-lang="en">PROJECT DETAIL</span><span data-lang="zh">项目详情</span></p>
-              <h3 id="robotic-mouse-detail-title"><span data-lang="en">A programmable robotic mouse for decomposing social need</span><span data-lang="zh">机器鼠：拆解社交需求的可编程仿生伙伴</span></h3>
+              <h3 id="robotic-mouse-detail-title"><span data-lang="en">A social robotic mouse for decomposing social cues</span><span data-lang="zh">用于拆解社交线索的社交机器鼠</span></h3>
               <p data-lang="en">The platform turns embodiment into experimentally controllable variables while preserving a naturalistic encounter between a freely moving mouse and an artificial partner.</p>
               <p data-lang="zh">该平台将具身线索转化为可实验控制的变量，同时保留真实小鼠与人工伙伴之间的自然互动情境。</p>
             </header>
+            <section className="project-detail-goal">
+              <p className="eyebrow accent"><span data-lang="en">TOWARD A CLOSED LOOP</span><span data-lang="zh">闭环目标</span></p>
+              <p data-lang="en">I am extending the platform toward a closed-loop social-neuroengineering system. The planned loop will combine MPN population activity and dopamine signals from the freely moving mouse to estimate its social state, allowing the robotic mouse to adjust its interaction strategy online.</p>
+              <p data-lang="zh">我正在将这一平台扩展为闭环社会神经工程系统：读取自由活动真实小鼠的 MPN 神经群体活动与多巴胺信号，估计其当前社交状态，并让机器鼠在线调整互动策略。</p>
+            </section>
             <div className="project-detail-gallery">
               {gallery.map((item) => (
                 <figure className={item.compact ? 'is-compact' : ''} key={item.src}>

@@ -133,6 +133,8 @@ html[data-language='zh'] [data-lang='en'] { display: none !important; }
 .project-detail-header .eyebrow { grid-column: 1 / -1; }
 .project-detail-header h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(30px, 4vw, 56px); font-weight: 400; letter-spacing: -.04em; line-height: 1.04; }
 .project-detail-header > p:not(.eyebrow) { margin: 0; font-size: 11px; line-height: 1.7; color: var(--ink-soft); }
+.project-detail-goal { margin-top: 28px; padding: 22px 24px; border-left: 3px solid var(--accent); background: #fbf0ec; }
+.project-detail-goal > p:not(.eyebrow) { max-width: 900px; margin: 12px 0 0; font-size: 15px; line-height: 1.72; color: var(--ink-soft); }
 .project-detail-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 32px; }
 .project-detail-gallery figure { margin: 0; }
 .project-detail-gallery figure:first-child { grid-column: 1 / -1; }

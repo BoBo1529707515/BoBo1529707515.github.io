@@ -286,8 +286,8 @@ export const coreProjects: ResearchProject[] = [
     status: 'pilot',
     statusLabel: 'IN DEVELOPMENT',
     statusLabelZh: '开发中',
-    title: 'A programmable robotic mouse',
-    titleZh: '机器鼠：拆解社交需求的可编程仿生伙伴',
+    title: 'A social robotic mouse for decomposing social cues',
+    titleZh: '用于拆解社交线索的社交机器鼠',
     description:
       'Can a mouse’s social need be relieved by something that moves, touches, and responds like another mouse—but is not one?',
     descriptionZh:
