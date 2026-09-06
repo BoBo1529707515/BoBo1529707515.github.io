@@ -60,6 +60,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
         <Image src={triggerSrc} alt={triggerAlt} width={2000} height={1200} unoptimized className="project-primary-image project-primary-image-cover" />
         {triggerCaption && <span className="image-caption" data-lang="en">{triggerCaption}</span>}
         {triggerCaptionZh && <span className="image-caption" data-lang="zh">{triggerCaptionZh}</span>}
+        <span className="project-details-cue"><span data-lang="en">View project details →</span><span data-lang="zh">查看项目详情 →</span></span>
       </button>
 
       {open && (

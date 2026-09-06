@@ -428,3 +428,4 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
 .hardware-debug-details figure { margin: 24px 0 0; }
 .hardware-debug-details img { width: 449px; max-width: 100%; height: auto; }
 .hardware-debug-details .hardware-pcb-detail img { width: min(100%, 600px); }
+.project-details-cue { display: block; padding: 12px 16px; background: #183a49; color: #fff; font-size: .95rem; font-weight: 600; text-align: left; }
