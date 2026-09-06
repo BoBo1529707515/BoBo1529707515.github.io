@@ -16,9 +16,12 @@ const plans = [
 export function FuturePlans({ social = false }: { social?: boolean }) {
   return <section className="section future-plans" id="future-plans">
     <h2><span data-lang="en">Future plans</span><span data-lang="zh">未来计划</span></h2>
-    <p className="future-plans-intro" data-lang="en">Some of these plans are already taking shape. Others are ideas I would like to explore when the right opportunity comes along.</p>
-    <p className="future-plans-intro" data-lang="zh">这里有些是正在推进的计划，有些还只是天马行空的想法，等待合适的机会去探索。</p>
-    <div className="future-plan-list">{plans.slice(0, social ? 4 : 2).map(plan => <article key={plan.title}>
+    <details className="future-plan-details">
+      <summary><span data-lang="en">Plans in development and directions I hope to explore</span><span data-lang="zh">正在推进的计划与希望探索的方向</span></summary>
+      <div className="future-plan-details-content">
+        <p className="future-plans-intro" data-lang="en">Some of these plans are already taking shape. Others are ideas I would like to explore when the right opportunity comes along.</p>
+        <p className="future-plans-intro" data-lang="zh">这里有些是正在推进的计划，有些还只是天马行空的想法，等待合适的机会去探索。</p>
+        <div className="future-plan-list">{plans.slice(0, social ? 4 : 2).map(plan => <article key={plan.title}>
       <h3><span data-lang="en">{plan.title}</span><span data-lang="zh">{plan.titleZh}</span></h3>
       <p data-lang="en">{plan.body}</p><p data-lang="zh">{plan.bodyZh}</p>
     </article>)}
@@ -36,6 +39,8 @@ export function FuturePlans({ social = false }: { social?: boolean }) {
         <p data-lang="zh">是什么让人感到被陪伴、被渴望、被爱？我想进一步拆解这些体验中的感官与行为线索，探索具身人工伙伴能否满足其中一部分需求。</p>
         <p data-lang="en">Animal experiments could help me study the cues involved in social approach, aggression, and sexual behavior. Human studies would ask different questions about companionship, intimacy, and sexual needs. These are longer-term ideas, with the specific experiments and collaborations still to be developed.</p>
         <p data-lang="zh">动物实验可以帮助我研究社交接近、攻击与性行为中的基础线索；未来的人类研究则会进一步探讨陪伴、亲密与性相关需求。这些目前是远期想法，具体实验与合作还需要逐步寻找机会。</p>
+      </div>
+        </details>
       </div>
     </details>
   </section>;
