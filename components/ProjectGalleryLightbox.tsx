@@ -94,6 +94,11 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
                 </figcaption>
               </figure>
             </section>
+            <section className="project-detail-goal">
+              <h4><span data-lang="en">Reducing vibration and noise</span><span data-lang="zh">振动与噪声的迭代改进</span></h4>
+              <p data-lang="en">During testing, I observed that the mice were sensitive to vibration and sound from the robot. This prompted repeated adjustments to the control algorithms and, together with our collaborators, the robot’s mechanical structure to reduce noise and vibration.</p>
+              <p data-lang="zh">在实验调试中，我观察到小鼠对机器鼠产生的振动和声音敏感。因此，我反复参与控制算法的调试，并与合作方多次调整机器鼠的机械结构，以降低噪声与振动。</p>
+            </section>
             <div className="project-detail-gallery">
               {gallery.map((item) => (
                 <figure className={item.compact ? 'is-compact' : ''} key={item.src}>

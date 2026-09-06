@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { FuturePlans } from '../components/FuturePlans';
+import { ImageDetails } from '../components/ImageDetails';
 import { FigureLightbox } from '../components/FigureLightbox';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { ProjectGalleryLightbox } from '../components/ProjectGalleryLightbox';
@@ -223,6 +225,11 @@ export default function Home() {
         </section>
 
         <section className="section methods-section">
+          <div className="hardware-summary">
+            <div><h3 data-lang="en">Acquisition hardware</h3><h3 data-lang="zh">采集硬件</h3><p data-lang="en">I designed and tested an ADS1299 EEG acquisition board and developed a portable STM32–AD5933 bioimpedance system for my bachelor’s thesis.</p><p data-lang="zh">我设计并调试了 ADS1299 脑电采集板，并在毕业设计中开发了基于 STM32–AD5933 的便携式生物阻抗测量系统。</p></div>
+            <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299</figcaption></figure>
+            <figure><ImageDetails src="/thesis-ad5933-board.jpeg"><Image src="/thesis-ad5933-board.jpeg" alt="Bachelor’s thesis AD5933 measurement board" width={649} height={531} /></ImageDetails><figcaption><span data-lang="en">Bachelor’s thesis</span><span data-lang="zh">毕业设计</span></figcaption></figure>
+          </div>
           <div className="section-heading compact"><div><h2 data-lang="en">Open research tools.</h2><h2 data-lang="zh">开源科研工具。</h2></div></div>
           <div className="methods-grid">
             {openTools.map((tool) => (
@@ -233,6 +240,7 @@ export default function Home() {
           </div>
         </section>
 
+        <FuturePlans social />
         <section className="contact-section" id="contact">
           <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">Contact.</h2><h2 data-lang="zh">联系方式。</h2>
           <p data-lang="en">For PhD and research conversations, email me at the address below.</p><p data-lang="zh">如希望交流博士申请或研究合作，请通过下方邮箱联系我。</p>

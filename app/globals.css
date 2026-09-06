@@ -393,3 +393,37 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+ .image-detail-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: zoom-in; font: inherit; }
+.image-detail-trigger:focus-visible { outline: 2px solid #4274b8; outline-offset: 4px; }
+.image-detail-panel[data-slot="dialog-content"] { width: calc(100vw - 32px); max-width: 1400px; max-height: calc(100dvh - 32px); overflow-y: auto; padding: 48px 24px 24px; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(240px, 1fr); gap: 32px; background: #fff; color: #172b35; }
+.image-detail-close { position: absolute; right: 16px; top: 12px; padding: 5px 10px; cursor: pointer; }
+.image-detail-visual { min-width: 0; display: flex; align-items: center; }
+.image-detail-visual img { display: block; width: 100%; height: auto; max-height: 75dvh; object-fit: contain; }
+.image-detail-copy { padding: 18px 8px; }
+.image-detail-title { font-size: 1.8rem; line-height: 1.2; margin-bottom: 24px; }
+.image-detail-description { font-size: 1rem; line-height: 1.8; color: #52616a; }
+@media (max-width: 760px) { .image-detail-panel[data-slot="dialog-content"] { grid-template-columns: 1fr; gap: 12px; } }
+.hardware-summary { display: grid; grid-template-columns: minmax(0, 1fr) 110px 110px; align-items: center; gap: 20px; padding-bottom: 28px; margin-bottom: 36px; border-bottom: 1px solid #d9d3cb; }
+.hardware-summary h3 { font-size: 1.15rem; margin: 0 0 10px; }
+.hardware-summary p { font-size: .95rem; line-height: 1.7; margin: 0; }
+.hardware-summary figure { margin: 0; }
+.hardware-summary img { width: 110px; height: 85px; object-fit: contain; }
+.hardware-summary figcaption { font-size: .8rem; margin-top: 6px; text-align: center; }
+@media (max-width: 680px) { .hardware-summary { grid-template-columns: 110px 110px; } .hardware-summary > div { grid-column: 1 / -1; } }
+.image-detail-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.55); }
+.image-detail-panel { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 101; border-radius: 8px; }
+.future-plans h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin: 0 0 30px; line-height: 1.15; }
+.future-plan-list { border-top: 1px solid #cbd2d5; }
+.future-plan-list article { padding: 24px 0; border-bottom: 1px solid #cbd2d5; }
+.future-plan-list h3 { font-size: 1.2rem; margin: 0 0 12px; font-weight: 600; }
+.future-plan-list p { font-size: 1rem; line-height: 1.8; margin: 0; max-width: 900px; }
+.future-plans-intro { max-width: 850px; margin: 0 0 26px; font-size: 1rem; line-height: 1.8; }
+.future-horizon { margin-top: 26px; padding: 20px 0; border-bottom: 1px solid #cbd2d5; }
+.future-horizon summary { cursor: pointer; font-size: 1.05rem; font-weight: 600; }
+.future-horizon summary:focus-visible { outline: 2px solid #4274b8; outline-offset: 6px; }
+.future-horizon p { max-width: 900px; font-size: 1rem; line-height: 1.8; margin: 18px 0 0; }
+.hardware-debug-details { grid-column: 1 / -1; border-top: 1px solid #cbd2d5; padding-top: 24px; }
+.hardware-debug-details h3 { font-size: 1.4rem; margin-bottom: 18px; }
+.hardware-debug-details p, .hardware-debug-details figcaption { font-size: 1rem; line-height: 1.8; margin: 16px 0; }
+.hardware-debug-details figure { margin: 24px 0 0; }
+.hardware-debug-details img { width: 449px; max-width: 100%; height: auto; }

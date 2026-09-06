@@ -367,9 +367,9 @@ export const coreProjects: ResearchProject[] = [
     title: 'MORI — relational power in long-term human–AI companionship',
     titleZh: 'MORI：长期人机陪伴关系中的权力边界',
     description:
-      'When people live with an AI companion over time, which powers do they grant, revise, or withdraw?',
+      'An AI companion might one day take on a role resembling a family elder, remembering shared history and becoming involved in people’s relationships. What may it keep, and with whom may it share those memories? Could conversations become a digital inheritance? I designed MORI to study where people draw these boundaries and to inform companion agents with clearly defined permissions. Like my robotic-mouse research, it asks what an artificial social partner can provide, here focusing on the authority people are willing to grant it.',
     descriptionZh:
-      '当人们与 AI 伙伴长期相处时，会授予、调整或撤回哪些权力？',
+      '未来，长期陪伴的 AI 可能承担类似家庭长辈的角色，记得共同经历，也越来越深入地参与人们的社交。它可以保存哪些记忆、向谁分享？沟通记录是否会成为一种数字遗产？我设计 MORI 实验，研究用户如何划定这些边界，并据此发展权限清晰的陪伴智能体。它与机器鼠研究关心的是同一个问题：人工伙伴能提供怎样的社交陪伴；MORI 进一步追问，人们愿意赋予它哪些权力。',
     contribution: 'I conceived and led this 105-participant study, creating a fixed 20-year relationship narrative in which people repeatedly judged six distinct AI powers under four governance arrangements. I am first author on the manuscript, currently under review at ACM CHI, and I am continuing the project’s next phase in collaboration with rednote.',
     contributionZh: '我独立提出并主导了这项 105 人研究：设计固定的 20 年关系叙事，让参与者在四种治理安排下反复判断六类不同的 AI 权力。论文已投稿 CHI，由我担任第一作者；目前，我正与小红书合作推进项目的下一阶段。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
@@ -491,8 +491,8 @@ export const appointments: Appointment[] = [
     role: 'Council Member · External Relations',
     roleZh: '理事会成员 · 对外联络',
     detail:
-      'Led alumni liaison across biomedical and electrical engineering, supported a Technology and Finance forum, and proposed a hospital-university translational project.',
-    detailZh: '负责生物医学工程和电气工程校友联络，协助举办科技金融论坛，并提出院校转化合作项目。',
+      'I led alumni liaison across biomedical and electrical engineering, supported a Technology and Finance forum, and proposed a hospital-university translational project. Together, we have built an active community of nearly 3,000 members, primarily highly educated professionals.',
+    detailZh: '我负责生物医学工程和电气工程校友联络，协助举办科技金融论坛，并提出院校转化合作项目。我们共同组织了一个近 3,000 人、以高学历专业人士为主的活跃医工交叉社群。',
     logo: '/assets/medical-engineering-innovators-logo.png',
     logoAlt: 'Medical and Engineering Innovators logo',
     href: 'https://yigongxueren.com/',
