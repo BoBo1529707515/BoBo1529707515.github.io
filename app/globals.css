@@ -427,3 +427,4 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px
 .hardware-debug-details p, .hardware-debug-details figcaption { font-size: 1rem; line-height: 1.8; margin: 16px 0; }
 .hardware-debug-details figure { margin: 24px 0 0; }
 .hardware-debug-details img { width: 449px; max-width: 100%; height: auto; }
+.hardware-debug-details .hardware-pcb-detail img { width: min(100%, 600px); }
