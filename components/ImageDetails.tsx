@@ -1,9 +1,8 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import { HardwareDebugDetails } from './HardwareDebugDetails';
-import { Dialog } from '@base-ui/react/dialog';
 
 const hardware: Record<string, { title: string; titleZh: string; body: string; bodyZh: string }> = {
   '/ads1299-board-photo.png': { title: 'ADS1299 EEG acquisition board', titleZh: 'ADS1299 脑电采集板', body: 'I led the acquisition-board project, designed the circuit and PCB, and worked on soldering, board bring-up, and module testing. This photograph shows the prototype board.', bodyZh: '我负责采集板项目，完成电路与 PCB 设计，参与焊接、上电调试与模块测试。图中为项目实物板。' },
@@ -17,16 +16,20 @@ export function ImageDetails({ src, children, title, titleZh, body, bodyZh }: {
 }) {
   const info = hardware[src];
   const heading = title ?? info?.title ?? 'Research figure';
-  return <Dialog.Root>
-    <Dialog.Trigger className="image-detail-trigger" aria-label={`Open details: ${heading}`}>{children}</Dialog.Trigger>
-    <Dialog.Portal><Dialog.Backdrop className="image-detail-backdrop" /><Dialog.Popup className="image-detail-panel" data-slot="dialog-content">
-      <Dialog.Close className="image-detail-close"><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></Dialog.Close>
+  const [open, setOpen] = useState(false);
+  return <>
+    <button type="button" className="image-detail-trigger" aria-label={`Open details: ${heading}`} onClick={() => setOpen(true)}>{children}</button>
+    {open && <>
+      <button type="button" className="image-detail-backdrop" aria-label="Close image details" onClick={() => setOpen(false)} />
+      <section className="image-detail-panel" data-slot="dialog-content" role="dialog" aria-modal="true" aria-label={heading}>
+      <button type="button" className="image-detail-close" onClick={() => setOpen(false)}><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
       <div className="image-detail-visual"><Image src={src} width={2000} height={1400} alt={heading} /></div>
       <div className="image-detail-copy">
-        <Dialog.Title className="image-detail-title"><span data-lang="en">{heading}</span><span data-lang="zh">{titleZh ?? info?.titleZh ?? heading}</span></Dialog.Title>
-        <Dialog.Description className="image-detail-description"><span data-lang="en">{body ?? info?.body}</span><span data-lang="zh">{bodyZh ?? info?.bodyZh}</span></Dialog.Description>
+        <h2 className="image-detail-title"><span data-lang="en">{heading}</span><span data-lang="zh">{titleZh ?? info?.titleZh ?? heading}</span></h2>
+        <p className="image-detail-description"><span data-lang="en">{body ?? info?.body}</span><span data-lang="zh">{bodyZh ?? info?.bodyZh}</span></p>
       </div>
       <HardwareDebugDetails src={src} />
-    </Dialog.Popup></Dialog.Portal>
-  </Dialog.Root>;
+      </section>
+    </>}
+  </>;
 }
