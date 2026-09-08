@@ -161,6 +161,7 @@ export default function Home() {
                       ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} />
                       : <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
                           <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
+                          <span className="interactive-media-cue"><span data-lang="en">Click to enlarge the study design ↗</span><span data-lang="zh">点击放大研究设计 ↗</span></span>
                           {project.imageCaption && <span className="image-caption" data-lang="en">{project.imageCaption}</span>}
                           {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
                         </a>
@@ -227,8 +228,8 @@ export default function Home() {
         <section className="section methods-section">
           <div className="hardware-summary">
             <div><h3 data-lang="en">Acquisition hardware</h3><h3 data-lang="zh">采集硬件</h3><p data-lang="en">I designed and tested an ADS1299 EEG acquisition board and developed a portable STM32–AD5933 bioimpedance system for my bachelor’s thesis.</p><p data-lang="zh">我设计并调试了 ADS1299 脑电采集板，并在毕业设计中开发了基于 STM32–AD5933 的便携式生物阻抗测量系统。</p></div>
-            <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299</figcaption></figure>
-            <figure><ImageDetails src="/thesis-ad5933-board.jpeg"><Image src="/thesis-ad5933-board.jpeg" alt="Bachelor’s thesis AD5933 measurement board" width={649} height={531} /></ImageDetails><figcaption><span data-lang="en">Bachelor’s thesis</span><span data-lang="zh">毕业设计</span></figcaption></figure>
+            <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299<br /><span data-lang="en">Click for my contribution &amp; technical details</span><span data-lang="zh">点击查看我的贡献与技术细节</span></figcaption></figure>
+            <figure><ImageDetails src="/thesis-ad5933-board.jpeg"><Image src="/thesis-ad5933-board.jpeg" alt="Bachelor’s thesis AD5933 measurement board" width={649} height={531} /></ImageDetails><figcaption><span data-lang="en">AD5933 bachelor’s thesis<br />Click for my contribution &amp; technical details</span><span data-lang="zh">AD5933 毕业设计<br />点击查看我的贡献与技术细节</span></figcaption></figure>
           </div>
           <div className="section-heading compact"><div><h2 data-lang="en">Open research tools.</h2><h2 data-lang="zh">开源科研工具。</h2></div></div>
           <div className="methods-grid">

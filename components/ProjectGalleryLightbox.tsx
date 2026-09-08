@@ -58,9 +58,9 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
     <>
       <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label="Open robotic mouse project details">
         <Image src={triggerSrc} alt={triggerAlt} width={2000} height={1200} unoptimized className="project-primary-image project-primary-image-cover" />
+        <span className="interactive-media-cue interactive-media-cue-featured"><span data-lang="en">Interactive project · click to explore ↗</span><span data-lang="zh">交互式项目详情 · 点击展开 ↗</span></span>
         {triggerCaption && <span className="image-caption" data-lang="en">{triggerCaption}</span>}
         {triggerCaptionZh && <span className="image-caption" data-lang="zh">{triggerCaptionZh}</span>}
-        <span className="project-details-cue"><span data-lang="en">View project details →</span><span data-lang="zh">查看项目详情 →</span></span>
       </button>
 
       {open && (

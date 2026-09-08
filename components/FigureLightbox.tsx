@@ -71,6 +71,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
     <>
       <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label={`Open figure and methods for ${details.title}`}>
         <Image src={src} alt={alt} width={2000} height={1200} unoptimized className={`project-primary-image project-primary-image-${fit}`} />
+        <span className="interactive-media-cue"><span data-lang="en">Click for methods &amp; interpretation ↗</span><span data-lang="zh">点击查看方法与解读 ↗</span></span>
         {caption && <span className="image-caption" data-lang="en">{caption}</span>}
         {captionZh && <span className="image-caption" data-lang="zh">{captionZh}</span>}
       </button>

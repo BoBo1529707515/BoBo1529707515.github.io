@@ -18,7 +18,7 @@ export function ImageDetails({ src, children, title, titleZh, body, bodyZh }: {
   const heading = title ?? info?.title ?? 'Research figure';
   const [open, setOpen] = useState(false);
   return <>
-    <button type="button" className="image-detail-trigger" aria-label={`Open details: ${heading}`} onClick={() => setOpen(true)}>{children}</button>
+    <button type="button" className="image-detail-trigger" aria-label={`Open details: ${heading}`} onClick={() => setOpen(true)}>{children}<span className="image-detail-cue"><span data-lang="en">Details ↗</span><span data-lang="zh">查看详情 ↗</span></span></button>
     {open && <>
       <button type="button" className="image-detail-backdrop" aria-label="Close image details" onClick={() => setOpen(false)} />
       <section className="image-detail-panel" data-slot="dialog-content" role="dialog" aria-modal="true" aria-label={heading}>
