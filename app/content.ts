@@ -484,8 +484,8 @@ export const appointments: Appointment[] = [
     logoScale: 'large',
   },
   {
-    date: 'JAN 2024 - 2025',
-    dateZh: '2024 年 1 月—2025 年',
+    date: 'JAN 2024 - PRESENT',
+    dateZh: '2024 年 1 月—至今',
     institution: 'Medical and Engineering Innovators',
     institutionZh: '医工学人',
     role: 'Council Member · External Relations',
