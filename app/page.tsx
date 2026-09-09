@@ -95,6 +95,7 @@ export default function Home() {
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
             <a href="#companions"><span data-lang="en">Selected research</span><span data-lang="zh">代表研究</span></a>
+            <a href="#neuroengineering"><span data-lang="en">Neuroengineering</span><span data-lang="zh">神经工程</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
             <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作研究</span></a>
             <a href="#experience"><span data-lang="en">Earlier experience</span><span data-lang="zh">早期经历</span></a>
@@ -123,10 +124,10 @@ export default function Home() {
           <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
           <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
           <div className="hero-copy single" data-lang="en">
-            <p>I begin with biological social interaction: how social need builds during isolation and changes at reunion. I then use a programmable robotic mouse to isolate the cues that matter, and human–AI experiments to study what changes when an artificial companion also holds memory and authority.</p>
+            <p>My work connects neural-interface engineering with a broader question: how can an artificial agent sense, respond to, and ultimately regulate biological social states? I begin with biological social interaction, then use a programmable robotic mouse to isolate the cues that matter and human–AI experiments to study what changes when an artificial companion also holds memory and authority.</p>
           </div>
           <div className="hero-copy single" data-lang="zh">
-            <p>我从生物社交出发，研究社交需求如何在隔离中积累、又如何在重聚时改变；再用可编程机器鼠拆解其中真正起作用的线索，并在人机实验中追问：当人工伙伴同时拥有记忆和权力时，陪伴关系会发生什么变化。</p>
+            <p>我的研究将神经接口工程与一个更广泛的问题连接起来：人工智能体如何感知、回应并最终调控生物体的社交状态？我从生物社交出发，再用可编程机器鼠拆解真正起作用的线索，并在人机实验中追问：当人工伙伴同时拥有记忆和权力时，陪伴关系会发生什么变化。</p>
           </div>
           <div className="hero-actions">
             <a href="#companions"><span data-lang="en">Selected research ↓</span><span data-lang="zh">代表研究 ↓</span></a>
@@ -137,6 +138,8 @@ export default function Home() {
 
         <section className="section core-program-section" id="companions">
           <div className="section-heading compact"><div><h2 data-lang="en">Selected research.</h2><h2 data-lang="zh">代表研究。</h2></div></div>
+          <p className="section-context" data-lang="en">Under the supervision of Prof. Ding Liu in the Systems Social Neuroscience Lab, I study how neural population states, naturalistic behavior, and artificial interactive systems can be combined to understand and regulate social need.</p>
+          <p className="section-context" data-lang="zh">在刘鼎教授指导下，我在系统与社会神经科学实验室研究如何结合神经群体状态、自然行为与人工交互系统，理解并调控社交需求。</p>
           <div className="project-list core-project-list">
             {coreProjects.map((project) => (
               <article className={`project-card core-project-card${project.image ? ' project-card-has-media' : ''}`} id={project.id} key={project.id}>
@@ -193,6 +196,15 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section methods-section" id="neuroengineering">
+          <div className="section-heading compact"><div><h2 data-lang="en">Neuroengineering foundations.</h2><h2 data-lang="zh">神经工程基础。</h2></div></div>
+          <div className="hardware-summary">
+            <div><h3 data-lang="en">Neural and bioimpedance acquisition hardware</h3><h3 data-lang="zh">神经与生物阻抗采集硬件</h3><p data-lang="en">I led the hardware development of a portable eight-channel ADS1299–STM32 EEG acquisition system for the National College Student Biomedical Engineering Innovation Design Competition. For my bachelor’s thesis, supervised by Profs. Xiang Chen and Jin Li, I developed and bench-tested a portable STM32–AD5933 bioimpedance system.</p><p data-lang="zh">我主导全国大学生生物医学工程创新设计竞赛项目中便携式八通道 ADS1299–STM32 脑电采集系统的硬件开发；在陈翔教授和李津教授指导的毕业设计中，我开发并完成了便携式 STM32–AD5933 生物阻抗系统的台架测试。</p></div>
+            <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299<br /><span data-lang="en">Click for my contribution &amp; technical details</span><span data-lang="zh">点击查看我的贡献与技术细节</span></figcaption></figure>
+            <figure><ImageDetails src="/thesis-ad5933-board.jpeg"><Image src="/thesis-ad5933-board.jpeg" alt="Bachelor’s thesis AD5933 measurement board" width={649} height={531} /></ImageDetails><figcaption><span data-lang="en">AD5933 bachelor’s thesis<br />Click for my contribution &amp; technical details</span><span data-lang="zh">AD5933 毕业设计<br />点击查看我的贡献与技术细节</span></figcaption></figure>
+          </div>
+        </section>
+
         <section className="section publication-section" id="publication">
           <div className="section-heading compact"><div><h2 data-lang="en">Publications &amp; manuscripts.</h2><h2 data-lang="zh">论文与在审稿件。</h2></div></div>
           {publications.map((publication) => (
@@ -226,11 +238,6 @@ export default function Home() {
         </section>
 
         <section className="section methods-section">
-          <div className="hardware-summary">
-            <div><h3 data-lang="en">Acquisition hardware</h3><h3 data-lang="zh">采集硬件</h3><p data-lang="en">I designed and tested an ADS1299 EEG acquisition board and developed a portable STM32–AD5933 bioimpedance system for my bachelor’s thesis.</p><p data-lang="zh">我设计并调试了 ADS1299 脑电采集板，并在毕业设计中开发了基于 STM32–AD5933 的便携式生物阻抗测量系统。</p></div>
-            <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299<br /><span data-lang="en">Click for my contribution &amp; technical details</span><span data-lang="zh">点击查看我的贡献与技术细节</span></figcaption></figure>
-            <figure><ImageDetails src="/thesis-ad5933-board.jpeg"><Image src="/thesis-ad5933-board.jpeg" alt="Bachelor’s thesis AD5933 measurement board" width={649} height={531} /></ImageDetails><figcaption><span data-lang="en">AD5933 bachelor’s thesis<br />Click for my contribution &amp; technical details</span><span data-lang="zh">AD5933 毕业设计<br />点击查看我的贡献与技术细节</span></figcaption></figure>
-          </div>
           <div className="section-heading compact"><div><h2 data-lang="en">Open research tools.</h2><h2 data-lang="zh">开源科研工具。</h2></div></div>
           <div className="methods-grid">
             {openTools.map((tool) => (

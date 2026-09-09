@@ -1,7 +1,7 @@
 const plans = [
   { title: 'Optical and electrical recording and stimulation', titleZh: '光电记录与刺激',
-    body: 'I am planning a collaboration with an associate research fellow in Lan Li’s lab at Westlake University to combine transparent optoelectrodes with a miniscope. We aim to integrate optical and electrical stimulation and recording to study hypothalamic activity.',
-    bodyZh: '我计划与西湖大学李兰实验室的副研究员共同推进透明光电极与 miniscope 联用，整合光电刺激与记录，用于研究下丘脑神经活动。' },
+    body: 'I am exploring a potential collaboration with an associate research fellow in Lan Li’s lab at Westlake University to combine transparent optoelectrodes with a miniscope for integrated optical and electrical recording and stimulation in the hypothalamus.',
+    bodyZh: '我正在探索与西湖大学李兰实验室副研究员合作的可能性，希望将透明光电极与 miniscope 联用，在下丘脑中整合光学与电生理记录及刺激。' },
   { title: 'Closed-loop intervention with a robotic mouse', titleZh: '机器鼠闭环神经干预',
     body: 'I am developing a closed-loop neuromodulation system. I plan to use MPN population activity and dopamine signals to adjust the robot’s social interactions, then investigate whether this approach can improve social behavior in animal models of social dysfunction.',
     bodyZh: '我正在开发闭环神经调控系统，计划依据 MPN 神经群体活动与多巴胺信号调整机器鼠的社交行为，进一步在社交障碍动物模型中检验干预效果，探索治疗可能。' },

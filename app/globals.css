@@ -103,6 +103,7 @@ html[data-language='zh'] [data-lang='en'] { display: none !important; }
 .hero-copy { max-width: 900px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; margin-top: 50px; padding-top: 26px; border-top: 1px solid var(--line); }
 .hero-copy p { margin: 0; font-size: 16px; line-height: 1.72; color: var(--ink-soft); }
 .hero-copy.single { max-width: 760px; grid-template-columns: 1fr; }
+.section-context { max-width: 860px; margin: -10px 0 34px; color: var(--ink-soft); font-size: 16px; line-height: 1.72; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 31px; font-size: 11px; font-weight: 680; }
 .hero-actions a { padding-bottom: 4px; border-bottom: 1px solid var(--ink); transition: color .2s ease, border-color .2s ease; }
 .hero-actions a:hover { color: var(--accent); border-color: var(--accent); }

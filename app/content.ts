@@ -310,8 +310,8 @@ export const coreProjects: ResearchProject[] = [
       'Can a mouse’s social need be relieved by something that moves, touches, and responds like another mouse—but is not one?',
     descriptionZh:
       '一个会移动、触摸并回应的小鼠形态伙伴，能否缓解真实小鼠的社交需求？',
-    contribution: 'I conceived the project and initiated its cross-institutional collaboration. I designed the behavioral arena, cue-decomposition and reunion-probe paradigms, and ran the experiments; I also built the sound-attenuated multi-camera and ultrasonic recording platform, together with the robot’s perception, planning, and host-side control system. The platform lets us vary movement, touch, temperature, odor, and responsiveness independently, and use controlled contact to study how social need accumulates and decays.',
-    contributionZh: '我提出这一项目并发起跨机构合作，设计行为学场地、社会线索拆解与重聚检验范式，并亲自完成实验；同时搭建静音、多相机与超声同步记录平台，以及机器鼠的感知、规划和上位机控制系统。这个平台使我们能够分别控制运动、触摸、温度、气味与响应性，并用可控接触研究社交需求如何积累和衰减。',
+    contribution: 'I conceived the project and initiated a cross-institutional collaboration with an embodied-intelligence research team at Beijing Institute of Technology. I designed the behavioral arena, cue-decomposition and reunion-probe paradigms, and ran the experiments; I also built the sound-attenuated multi-camera and ultrasonic recording platform, together with the robot’s perception, planning, and host-side control system. The platform lets us vary movement, touch, temperature, odor, and responsiveness independently, and use controlled contact to study how social need accumulates and decays.',
+    contributionZh: '我提出这一项目，并主动联系北京理工大学具身智能研究团队发起跨机构合作。我设计行为学场地、社会线索拆解与重聚检验范式，并亲自完成实验；同时搭建静音、多相机与超声同步记录平台，以及机器鼠的感知、规划和上位机控制系统。这个平台使我们能够分别控制运动、触摸、温度、气味与响应性，并用可控接触研究社交需求如何积累和衰减。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     tagsZh: ['具身智能', '可编程触摸', '社交稳态'],
     image: '/assets/robotic-mouse-prototype.png',
@@ -440,11 +440,11 @@ export const researchTracks: ResearchTrack[] = [
     codeZh: '西湖大学 · 跨实验室 AI 合作',
     lab: 'Through Systems Social Neuroscience Lab · Prof. Tailin Wu · Mentor: Tengfei Xu',
     labZh: '经系统与社会神经科学实验室合作 · 吴泰霖教授 · 徐腾飞指导',
-    title: 'Learning and validating singular dynamics in the brain',
-    titleZh: '学习并验证大脑中的奇点动力学',
+    title: 'AI-based generative modeling and validation of cortical turbulence',
+    titleZh: '基于 AI 的大脑皮层湍流生成建模与验证',
     description:
-      'I test whether generative models can recover singular structures in large-scale brain dynamics, using open analysis tools from Prof. Pulin Gong’s group at the University of Sydney for validation.',
-    descriptionZh: '我测试生成模型能否恢复大尺度脑动力学中的奇点结构，并使用悉尼大学 Pulin Gong 教授团队的开源分析工具进行验证。',
+      'Under the supervision of Prof. Tailin Wu and mentorship of Tengfei Xu, I test whether generative models can recover cortical phase singularities and turbulence-like dynamics, using BrainVortexToolbox from Prof. Pulin Gong’s group at the University of Sydney for quantitative validation.',
+    descriptionZh: '在吴泰霖教授指导、徐腾飞博士指导下，我研究生成模型能否恢复大脑皮层中的相位奇点与类湍流动力学，并使用悉尼大学 Pulin Gong 教授团队开发的 BrainVortexToolbox 进行定量验证。',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
     logoScale: 'prominent',
@@ -476,8 +476,8 @@ export const appointments: Appointment[] = [
     role: 'EEG Data Analyst',
     roleZh: '脑电数据分析实习生',
     detail:
-      'Designed IIR/FIR filters, analyzed time- and frequency-domain EEG features with MNE, and supported PCA/ICA and CNN-LSTM fatigue-model development.',
-    detailZh: '设计 IIR/FIR 滤波器，使用 MNE 分析脑电时域与频域特征，并参与 PCA、ICA 与 CNN-LSTM 疲劳模型开发。',
+      'Supported EEG data acquisition, designed IIR/FIR filters, analyzed time- and frequency-domain features with MNE, and contributed to PCA/ICA and CNN-LSTM fatigue-model development.',
+    detailZh: '参与 EEG 数据采集，设计 IIR/FIR 滤波器，使用 MNE 分析脑电时域与频域特征，并参与 PCA、ICA 与 CNN-LSTM 疲劳模型开发。',
     logo: '/assets/zhentec-logo.png',
     logoAlt: 'Zhen Tec logo',
     href: 'https://zhentecbci.com/',
@@ -566,7 +566,7 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
 
 export const publications: Publication[] = [
   {
-    year: '2026',
+    year: '2027',
     state: 'MANUSCRIPT UNDER REVIEW · ACM CHI 2027',
     stateZh: '在审稿件 · ACM CHI 2027',
     title: 'MORI: Relational Power in Long-Term Human–AI Companionship',
