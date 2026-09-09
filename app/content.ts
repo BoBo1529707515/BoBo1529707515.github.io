@@ -566,7 +566,7 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
 
 export const publications: Publication[] = [
   {
-    year: '2027',
+    year: '2026',
     state: 'MANUSCRIPT UNDER REVIEW · ACM CHI 2027',
     stateZh: '在审稿件 · ACM CHI 2027',
     title: 'MORI: Relational Power in Long-Term Human–AI Companionship',

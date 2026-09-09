@@ -23,7 +23,7 @@ export function ImageDetails({ src, children, title, titleZh, body, bodyZh }: {
       <button type="button" className="image-detail-backdrop" aria-label="Close image details" onClick={() => setOpen(false)} />
       <section className="image-detail-panel" data-slot="dialog-content" role="dialog" aria-modal="true" aria-label={heading}>
       <button type="button" className="image-detail-close" onClick={() => setOpen(false)}><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
-      <div className="image-detail-visual"><Image src={src} width={2000} height={1400} alt={heading} /></div>
+      <div className="image-detail-visual"><Image src={src} width={2000} height={1400} alt={heading} unoptimized loading="eager" /></div>
       <div className="image-detail-copy">
         <h2 className="image-detail-title"><span data-lang="en">{heading}</span><span data-lang="zh">{titleZh ?? info?.titleZh ?? heading}</span></h2>
         <p className="image-detail-description"><span data-lang="en">{body ?? info?.body}</span><span data-lang="zh">{bodyZh ?? info?.bodyZh}</span></p>
