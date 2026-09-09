@@ -124,10 +124,10 @@ export default function Home() {
           <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
           <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
           <div className="hero-copy single" data-lang="en">
-            <p>My work connects neural-interface engineering with a broader question: how can an artificial agent sense, respond to, and ultimately regulate biological social states? I begin with biological social interaction, then use a programmable robotic mouse to isolate the cues that matter and human–AI experiments to study what changes when an artificial companion also holds memory and authority.</p>
+            <p>I began by learning how to record and interpret neural signals. At Westlake, this led me to a broader question: what makes social contact satisfying, and which parts of it might an artificial partner reproduce? I study this question through neural population analysis, a programmable robotic mouse, and human experiments on long-term AI companionship.</p>
           </div>
           <div className="hero-copy single" data-lang="zh">
-            <p>我的研究将神经接口工程与一个更广泛的问题连接起来：人工智能体如何感知、回应并最终调控生物体的社交状态？我从生物社交出发，再用可编程机器鼠拆解真正起作用的线索，并在人机实验中追问：当人工伙伴同时拥有记忆和权力时，陪伴关系会发生什么变化。</p>
+            <p>我最初关注如何记录和理解神经信号。来到西湖大学后，我开始进一步思考：什么样的接触能够满足社交需求，其中哪些作用可以由人工伙伴重现？我通过神经群体分析、可编程机器鼠和长期 AI 陪伴的人体研究分别探索这个问题。</p>
           </div>
           <div className="hero-actions">
             <a href="#companions"><span data-lang="en">Selected research ↓</span><span data-lang="zh">代表研究 ↓</span></a>

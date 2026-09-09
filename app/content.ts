@@ -310,8 +310,8 @@ export const coreProjects: ResearchProject[] = [
       'Can a mouse’s social need be relieved by something that moves, touches, and responds like another mouse—but is not one?',
     descriptionZh:
       '一个会移动、触摸并回应的小鼠形态伙伴，能否缓解真实小鼠的社交需求？',
-    contribution: 'I conceived the project and initiated a cross-institutional collaboration with an embodied-intelligence research team at Beijing Institute of Technology. I designed the behavioral arena, cue-decomposition and reunion-probe paradigms, and ran the experiments; I also built the sound-attenuated multi-camera and ultrasonic recording platform, together with the robot’s perception, planning, and host-side control system. The platform lets us vary movement, touch, temperature, odor, and responsiveness independently, and use controlled contact to study how social need accumulates and decays.',
-    contributionZh: '我提出这一项目，并主动联系北京理工大学具身智能研究团队发起跨机构合作。我设计行为学场地、社会线索拆解与重聚检验范式，并亲自完成实验；同时搭建静音、多相机与超声同步记录平台，以及机器鼠的感知、规划和上位机控制系统。这个平台使我们能够分别控制运动、触摸、温度、气味与响应性，并用可控接触研究社交需求如何积累和衰减。',
+    contribution: 'I conceived and currently lead this project and initiated its cross-institutional collaboration. I designed the behavioral arena, cue-decomposition and reunion-probe paradigms, and ran the experiments; I also built the sound-attenuated multi-camera and ultrasonic recording platform, together with the robot’s perception, planning, and host-side control system. The platform lets us vary movement, touch, temperature, odor, and responsiveness independently, and use controlled contact to study how social need accumulates and decays.',
+    contributionZh: '我提出并主导这一项目，同时发起跨机构合作。我设计行为学场地、社会线索拆解与重聚检验范式，并亲自完成实验；同时搭建静音、多相机与超声同步记录平台，以及机器鼠的感知、规划和上位机控制系统。这个平台使我们能够分别控制运动、触摸、温度、气味与响应性，并用可控接触研究社交需求如何积累和衰减。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     tagsZh: ['具身智能', '可编程触摸', '社交稳态'],
     image: '/assets/robotic-mouse-prototype.png',
