@@ -512,6 +512,20 @@ export const appointments: Appointment[] = [
     href: 'http://www.en.jdyfy.com/Cooperation___Exchange/Medical_Cooperation.htm',
     logoScale: 'large',
   },
+  {
+    date: 'JAN 2022 - OCT 2022',
+    dateZh: '2022 年 1—10 月',
+    institution: "Institute of Mitochondrial Biomedicine, Xi'an Jiaotong University",
+    institutionZh: '西安交通大学线粒体生物医学研究所',
+    role: 'Lab Member · XJTU iGEM',
+    roleZh: '实验室成员 · 西安交通大学 iGEM 团队',
+    detail:
+      'Under the supervision of Prof. Dan Tan, I contributed to engineering synthetic E. coli strains for soil improvement through plasmid design and optimization in SnapGene, PCR/RT-PCR, nucleic-acid purification, Western blotting, electrophoresis, and literature analysis. The team received a 2022 iGEM Gold Medal.',
+    detailZh: '在谭丹教授指导下，我参与用于土壤改良的工程化大肠杆菌菌株开发，开展质粒设计与 SnapGene 优化、PCR/RT-PCR、核酸纯化、Western blot、电泳及文献分析；团队获得 2022 年 iGEM 金奖。',
+    logo: '/assets/xjtu-logo.png',
+    logoAlt: "Xi'an Jiaotong University logo",
+    href: 'https://en.xjtu.edu.cn/',
+  },
 ];
 
 export const sidebarTimeline: SidebarTimelineGroup[] = [
