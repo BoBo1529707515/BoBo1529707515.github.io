@@ -4,6 +4,7 @@ import { ImageDetails } from '../components/ImageDetails';
 import { FigureLightbox } from '../components/FigureLightbox';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { ProjectGalleryLightbox } from '../components/ProjectGalleryLightbox';
+import { MoriProjectLightbox } from '../components/MoriProjectLightbox';
 import {
   appointments,
   coreProjects,
@@ -168,9 +169,11 @@ export default function Home() {
                     />
                   )}
                   {project.image && !project.figureDetails && (
-                    project.id === 'robotic-mouse'
-                      ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} />
-                      : <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
+                      project.id === 'robotic-mouse'
+                        ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} />
+                        : project.id === 'mori'
+                        ? <MoriProjectLightbox src={project.image} alt={project.imageAlt ?? project.title} caption={project.imageCaption} captionZh={project.imageCaptionZh} />
+                        : <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
                           <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
                           <span className="interactive-media-cue"><span data-lang="en">Click to enlarge the study design ↗</span><span data-lang="zh">点击放大研究设计 ↗</span></span>
                           {project.imageCaption && <span className="image-caption" data-lang="en">{project.imageCaption}</span>}
