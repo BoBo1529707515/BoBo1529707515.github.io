@@ -86,8 +86,8 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
             </section>
             <section className="project-case-section robot-imaging-evidence">
               <h4><span data-lang="en">MPN two-photon calcium imaging</span><span data-lang="zh">MPN 双光子钙成像</span></h4>
-              <p data-lang="en">An example MPN two-photon imaging field of view, shown here with the robotic-mouse project. This image is distinct from the planned miniscope recording configuration below and does not establish closed-loop control.</p>
-              <p data-lang="zh">机器鼠项目中的 MPN 双光子钙成像视野示例。它与下方计划中的 miniscope 记录方案分别标注，不代表已经实现闭环控制。</p>
+              <p data-lang="en">An MPN two-photon calcium-imaging field of view within the robotic-mouse research program. This is distinct from the planned miniscope configuration below; closed-loop control remains a future goal.</p>
+              <p data-lang="zh">机器鼠课题中的 MPN 双光子钙成像视野。此图与下方计划中的 miniscope 方案分别标注，闭环控制仍是后续目标。</p>
               <FigureViewer src="/assets/mpn-two-photon-calcium-imaging.png" alt="MPN two-photon calcium imaging field of view" />
             </section>
             <section className="project-detail-goal">
