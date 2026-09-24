@@ -429,6 +429,33 @@ export const coreProjects: ResearchProject[] = [
   },
 ];
 
+export const projectPreviews: Record<string, { summary: string; summaryZh: string; role: string; roleZh: string }> = {
+  'robotic-mouse': {
+    summary: 'Can a robotic partner relieve social need? A platform for controlled robot–mouse interaction.',
+    summaryZh: '机器伙伴能否缓解社交需求？通过可控的机器鼠与真鼠互动检验这一问题。',
+    role: 'Conceived and lead the project; experimental design, recording setup, and host-side robot control.',
+    roleZh: '提出并主导项目；负责实验设计、记录平台与机器鼠上位机控制。',
+  },
+  'social-need-dynamics': {
+    summary: 'How hypothalamic population states change during social isolation and reunion.',
+    summaryZh: '研究隔离与重聚过程中，下丘脑神经群体状态如何变化。',
+    role: 'Developed cross-session neural-state comparisons and frame-level social-contact analysis.',
+    roleZh: '开发跨记录神经状态比较方法与逐帧社交接触分析流程。',
+  },
+  mori: {
+    summary: 'How people grant and revise six forms of AI authority in an imagined long-term family relationship.',
+    summaryZh: '在虚构的长期家庭关系中，人们如何赋予和修订 AI 的六类权力？',
+    role: 'Conceived and led the 105-participant study; first-author manuscript under review at CHI 2027.',
+    roleZh: '提出并主导 105 人研究；第一作者论文在 CHI 2027 审稿中。',
+  },
+};
+
+export const collaborationPreviews: Record<string, { en: string; zh: string }> = {
+  BCI: { en: 'Few-shot adaptation and reliable fusion for cross-subject EEG-fNIRS decoding.', zh: '跨被试 EEG-fNIRS 解码的少样本适应与可靠融合。' },
+  'WESTLAKE · CROSS-LAB AI': { en: 'Testing whether generative models recover cortical turbulence dynamics.', zh: '检验生成模型能否恢复大脑皮层的类湍流动力学。' },
+  'BEHAVIORAL VISION': { en: 'Tracking and spatial analysis for macaque behavioral recordings.', zh: '猕猴行为视频的追踪与空间分析。' },
+};
+
 export const researchTracks: ResearchTrack[] = [
   {
     code: 'BCI',
@@ -444,8 +471,8 @@ export const researchTracks: ResearchTrack[] = [
   {
     code: 'WESTLAKE · CROSS-LAB AI',
     codeZh: '西湖大学 · 跨实验室 AI 合作',
-    lab: 'Through Systems Social Neuroscience Lab · Prof. Tailin Wu · Mentor: Tengfei Xu',
-    labZh: '经系统与社会神经科学实验室合作 · 吴泰霖教授 · 徐腾飞指导',
+    lab: 'Prof. Tailin Wu · Mentor: Tengfei Xu',
+    labZh: '吴泰霖教授 · 徐腾飞指导',
     title: 'AI-based generative modeling and validation of cortical turbulence',
     titleZh: '基于 AI 的大脑皮层湍流生成建模与验证',
     description:

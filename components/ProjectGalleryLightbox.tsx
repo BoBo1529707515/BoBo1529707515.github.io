@@ -84,6 +84,12 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               <p data-lang="en">During testing, I observed that the mice were sensitive to vibration and sound from the robot. I iterated on the control algorithms and worked with our collaborators on mechanical adjustments to reduce these confounds.</p>
               <p data-lang="zh">调试中，我观察到小鼠对机器鼠产生的振动和声音敏感。我反复调试控制算法，并与合作方调整机械结构，以降低这些混杂因素。</p>
             </section>
+            <section className="project-case-section robot-imaging-evidence">
+              <h4><span data-lang="en">MPN two-photon calcium imaging</span><span data-lang="zh">MPN 双光子钙成像</span></h4>
+              <p data-lang="en">An example MPN two-photon imaging field of view, shown here with the robotic-mouse project. This image is distinct from the planned miniscope recording configuration below and does not establish closed-loop control.</p>
+              <p data-lang="zh">机器鼠项目中的 MPN 双光子钙成像视野示例。它与下方计划中的 miniscope 记录方案分别标注，不代表已经实现闭环控制。</p>
+              <FigureViewer src="/assets/mpn-two-photon-calcium-imaging.png" alt="MPN two-photon calcium imaging field of view" />
+            </section>
             <section className="project-detail-goal">
               <p className="eyebrow accent"><span data-lang="en">TOWARD A CLOSED LOOP</span><span data-lang="zh">闭环目标</span></p>
               <p data-lang="en">I am extending the platform toward a closed-loop social-neuroengineering system. The planned loop will combine MPN population activity and dopamine signals from the freely moving mouse to estimate its social state, allowing the robotic mouse to adjust its interaction strategy online.</p>

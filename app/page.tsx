@@ -5,9 +5,13 @@ import { FigureLightbox } from '../components/FigureLightbox';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { ProjectGalleryLightbox } from '../components/ProjectGalleryLightbox';
 import { MoriProjectLightbox } from '../components/MoriProjectLightbox';
+import { TextDetails } from '../components/TextDetails';
+import { FigureViewer } from '../components/FigureViewer';
 import {
   appointments,
   coreProjects,
+  projectPreviews,
+  collaborationPreviews,
   openTools,
   publications,
   researchTracks,
@@ -125,12 +129,10 @@ export default function Home() {
           <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
           <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
           <div className="hero-copy single" data-lang="en">
-            <p>I am a research assistant in Prof. Ding Liu’s Systems Social Neuroscience Lab at Westlake University. I build experimental systems and analyze neural and behavioral data to ask when an artificial partner can meet social needs—and where its limits begin.</p>
-            <p>My work connects a robotic-mouse platform, neural population analysis, and human–AI interaction studies. For my PhD, I hope to develop closed-loop neurotechnology and study how artificial partners affect social connection.</p>
+            <p>I am a research assistant with Prof. Ding Liu at Westlake University. I build experimental systems and study neural activity and human–AI interaction to understand artificial companionship. Seeking a PhD for Fall 2027 in neurotechnology and human–AI interaction.</p>
           </div>
           <div className="hero-copy single" data-lang="zh">
-            <p>我是西湖大学刘鼎教授系统与社会神经科学实验室的研究助理。我搭建实验系统、分析神经与行为数据，研究人工伙伴何时能够满足社交需求，以及这种作用的边界。</p>
-            <p>我的工作连接机器鼠平台、神经群体分析和人机交互实验。博士阶段，我希望发展闭环神经技术，并研究人工伙伴如何影响社交连接。</p>
+            <p>我是西湖大学刘鼎教授组的研究助理，通过实验系统搭建、神经活动分析与人机交互研究，探索人工陪伴。申请 2027 年秋季神经技术与人机交互方向博士。</p>
           </div>
           <div className="hero-actions">
             <a href="#companions"><span data-lang="en">Selected research ↓</span><span data-lang="zh">代表研究 ↓</span></a>
@@ -142,8 +144,6 @@ export default function Home() {
 
         <section className="section core-program-section" id="companions">
           <div className="section-heading compact"><div><h2 data-lang="en">Selected research.</h2><h2 data-lang="zh">代表研究。</h2></div></div>
-          <p className="section-context" data-lang="en">Under the supervision of Prof. Ding Liu in the Systems Social Neuroscience Lab, I study how neural population states, naturalistic behavior, and artificial interactive systems can be combined to understand and regulate social need.</p>
-          <p className="section-context" data-lang="zh">在刘鼎教授指导下，我在系统与社会神经科学实验室研究如何结合神经群体状态、自然行为与人工交互系统，理解并调控社交需求。</p>
           <nav className="research-index" aria-label="Research projects">
             <a href="#robotic-mouse"><span>01</span><strong data-lang="en">Build an artificial partner</strong><strong data-lang="zh">搭建人工伙伴</strong><small data-lang="en">Robotic mouse · experimental platform</small><small data-lang="zh">机器鼠 · 实验平台</small></a>
             <a href="#social-need-dynamics"><span>02</span><strong data-lang="en">Measure social states</strong><strong data-lang="zh">测量社交状态</strong><small data-lang="en">Neural populations · naturalistic behavior</small><small data-lang="zh">神经群体 · 自然行为</small></a>
@@ -156,8 +156,9 @@ export default function Home() {
                   <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge"><span data-lang="en">{project.statusLabel}</span><span data-lang="zh">{project.statusLabelZh}</span></span></div>
                   <h3 data-lang="en">{project.title}</h3>
                   <h3 data-lang="zh">{project.titleZh}</h3>
-                  <p className="project-description" data-lang="en">{project.description}</p>
-                  <p className="project-description" data-lang="zh">{project.descriptionZh}</p>
+                  <p className="project-description" data-lang="en">{projectPreviews[project.id].summary}</p>
+                  <p className="project-description" data-lang="zh">{projectPreviews[project.id].summaryZh}</p>
+                  <p className="project-role-preview"><span data-lang="en"><strong>My role: </strong>{projectPreviews[project.id].role}</span><span data-lang="zh"><strong>我的工作：</strong>{projectPreviews[project.id].roleZh}</span></p>
                   {project.image && project.figureDetails && (
                     <FigureLightbox
                       src={project.image}
@@ -180,6 +181,8 @@ export default function Home() {
                           {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
                         </a>
                   )}
+                  <TextDetails title={project.title} titleZh={project.titleZh}>
+                  <p data-lang="en">{project.description}</p><p data-lang="zh">{project.descriptionZh}</p>
                   {project.contribution && <div className="project-narrative"><h4 className="evidence-label"><span data-lang="en">My contribution</span><span data-lang="zh">我的贡献</span></h4><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>}
                   {project.evidence && (
                     <aside className="project-result">
@@ -202,6 +205,7 @@ export default function Home() {
                       {project.secondaryImageCaptionZh && <span data-lang="zh">{project.secondaryImageCaptionZh} ↗</span>}
                     </a>
                   )}
+                  </TextDetails>
                 </div>
               </article>
             ))}
@@ -210,34 +214,16 @@ export default function Home() {
 
         <section className="section methods-section" id="neuroengineering">
           <div className="section-heading compact"><div><h2 data-lang="en">Hands-on experimental work.</h2><h2 data-lang="zh">实验与硬件能力。</h2></div></div>
+          <p className="section-context"><span data-lang="en">Circuit design, soldering, embedded acquisition, and experimental troubleshooting. Select a project to see the build.</span><span data-lang="zh">电路设计、焊接、嵌入式采集与实验排障。点击项目查看搭建细节。</span></p>
+          <TextDetails title="Experimental systems and hands-on work" titleZh="实验系统搭建与动手能力" label="Experimental setup" labelZh="实验搭建详情">
           <div className="experimental-evidence">
             <article><h3><span data-lang="en">Design &amp; run experiments</span><span data-lang="zh">设计并实施实验</span></h3><p data-lang="en">Behavioral arena and paradigm design, multi-camera and ultrasonic recording, and robot–mouse pilot experiments. I connect the apparatus to the question being tested.</p><p data-lang="zh">行为场地与范式设计、多相机与超声记录，以及机器鼠互动的探索性实验。让实验装置服务于明确的研究问题。</p><a href="#robotic-mouse"><span data-lang="en">Robotic-mouse project ↑</span><span data-lang="zh">机器鼠项目 ↑</span></a></article>
             <article><h3><span data-lang="en">Build &amp; debug instruments</span><span data-lang="zh">搭建与调试仪器</span></h3><p data-lang="en">Circuit and PCB design, soldering and board bring-up, STM32 acquisition, and bench testing. The ADS1299 case includes a USB-isolation debugging example.</p><p data-lang="zh">电路与 PCB 设计、焊接和上电调试、STM32 采集与台架测试。下方 ADS1299 详情包含 USB 隔离电路的排障案例。</p></article>
             <article><h3><span data-lang="en">Connect hardware to data</span><span data-lang="zh">连接硬件与数据</span></h3><p data-lang="en">An open-source STM32 lickometer, programmable motion tools, and behavioral-video analysis workflows support repeatable experimental measurements.</p><p data-lang="zh">开源 STM32 舔水计、可编程运动工具与行为视频分析流程，为可重复的实验测量提供支持。</p><a href="#tools"><span data-lang="en">Open research tools ↓</span><span data-lang="zh">开源研究工具 ↓</span></a></article>
           </div>
-          <div className="imaging-evidence">
-            <figure>
-              <ImageDetails
-                src="/assets/mpn-two-photon-calcium-imaging.png"
-                title="MPN two-photon calcium imaging"
-                titleZh="MPN 双光子钙成像"
-                body="An example field of view from two-photon calcium imaging in the medial preoptic nucleus (MPN). This is a separate imaging example from the miniscope recordings described in the neural-population project."
-                bodyZh="内侧视前核（MPN）双光子钙成像的视野示例。此图与神经群体项目中介绍的 miniscope 记录分开展示，不混用两种成像方法。"
-              >
-                <Image src="/assets/mpn-two-photon-calcium-imaging.png" alt="Example field of view from MPN two-photon calcium imaging" width={1321} height={874} />
-              </ImageDetails>
-              <figcaption><span data-lang="en">MPN · two-photon calcium imaging</span><span data-lang="zh">MPN · 双光子钙成像</span></figcaption>
-            </figure>
-            <div>
-              <h3 data-lang="en">A view into the MPN</h3><h3 data-lang="zh">MPN 成像视野</h3>
-              <p data-lang="en">An example two-photon calcium-imaging field of view in the medial preoptic nucleus. Click to inspect the original image.</p>
-              <p data-lang="zh">内侧视前核的双光子钙成像视野示例，可点击查看原图。</p>
-              <p className="imaging-method-note" data-lang="en">Two-photon imaging; distinct from the miniscope recordings in the neural-population analysis above.</p>
-              <p className="imaging-method-note" data-lang="zh">此处为双光子成像，与上方神经群体分析中的 miniscope 记录分别标注。</p>
-            </div>
-          </div>
-          <div className="hardware-summary">
             <div><h3 data-lang="en">Neural and bioimpedance acquisition hardware</h3><h3 data-lang="zh">神经与生物阻抗采集硬件</h3><p data-lang="en">I led the hardware development of a portable eight-channel ADS1299–STM32 EEG acquisition system for the National College Student Biomedical Engineering Innovation Design Competition. For my bachelor’s thesis, supervised by Profs. Xiang Chen and Jin Li, I developed and bench-tested a portable STM32–AD5933 bioimpedance system.</p><p data-lang="zh">我主导全国大学生生物医学工程创新设计竞赛项目中便携式八通道 ADS1299–STM32 脑电采集系统的硬件开发；在陈翔教授和李津教授指导的毕业设计中，我开发并完成了便携式 STM32–AD5933 生物阻抗系统的台架测试。</p></div>
+          </TextDetails>
+          <div className="hardware-summary">
             <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299<br /><span data-lang="en">Click for my contribution &amp; technical details</span><span data-lang="zh">点击查看我的贡献与技术细节</span></figcaption></figure>
             <figure><ImageDetails src="/thesis-ad5933-board.jpeg"><Image src="/thesis-ad5933-board.jpeg" alt="Bachelor’s thesis AD5933 measurement board" width={649} height={531} /></ImageDetails><figcaption><span data-lang="en">AD5933 bachelor’s thesis<br />Click for my contribution &amp; technical details</span><span data-lang="zh">AD5933 毕业设计<br />点击查看我的贡献与技术细节</span></figcaption></figure>
           </div>
@@ -261,9 +247,14 @@ export default function Home() {
             {researchTracks.map((track) => (
               <article className="breadth-card" key={track.code}>
                 <div className="breadth-meta"><span><span data-lang="en">{track.code}</span><span data-lang="zh">{track.codeZh}</span></span>{track.href ? <a href={track.href} target="_blank" rel="noreferrer"><span data-lang="en">{track.lab} ↗</span><span data-lang="zh">{track.labZh} ↗</span></a> : <span><span data-lang="en">{track.lab}</span><span data-lang="zh">{track.labZh}</span></span>}</div>
-                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}${track.logoScale === 'prominent' ? ' breadth-logo-frame-prominent' : ''}`}><Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="breadth-logo" /></span>}
                 <h3 data-lang="en">{track.title}</h3><h3 data-lang="zh">{track.titleZh}</h3>
-                <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>
+                <p data-lang="en">{collaborationPreviews[track.code].en}</p><p data-lang="zh">{collaborationPreviews[track.code].zh}</p>
+                <TextDetails title={track.title} titleZh={track.titleZh}>
+                  {track.logo && <Image src={track.logo} alt={track.logoAlt ?? track.lab} width={240} height={72} style={{ maxWidth: '100%', height: 'auto' }} />}
+                  <p data-lang="en">{track.lab}</p><p data-lang="zh">{track.labZh}</p>
+                  <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>
+                  {track.figure && <FigureViewer src={track.figure} alt={track.figureAlt ?? track.title} />}
+                </TextDetails>
                 {track.figure && <a className={`breadth-figure${track.figureSize === 'compact' ? ' breadth-figure-compact' : ''}`} href={track.figure} target="_blank" rel="noreferrer"><Image src={track.figure} alt={track.figureAlt ?? track.title} width={962} height={641} /><span data-lang="en">{track.figureCaption} ↗</span><span data-lang="zh">{track.figureCaptionZh} ↗</span></a>}
               </article>
             ))}
@@ -272,7 +263,7 @@ export default function Home() {
 
         <section className="section experience-section" id="experience">
           <div className="section-heading compact"><div><h2 data-lang="en">Earlier experience.</h2><h2 data-lang="zh">早期经历。</h2></div></div>
-          <AppointmentList items={appointments} />
+          <details className="earlier-experience-details"><summary><span data-lang="en">Earlier research, engineering, and community experience</span><span data-lang="zh">展开早期科研、工程与社群经历</span></summary><AppointmentList items={appointments} /></details>
         </section>
 
         <section className="section methods-section" id="tools">
