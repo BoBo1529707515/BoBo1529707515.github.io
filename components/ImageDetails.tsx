@@ -25,7 +25,12 @@ export function ImageDetails({ src, children, title, titleZh, body, bodyZh }: {
         <h2 id={titleId} className="image-detail-title"><span data-lang="en">{heading}</span><span data-lang="zh">{titleZh ?? info?.titleZh ?? heading}</span></h2>
         <p className="image-detail-description"><span data-lang="en">{body ?? info?.body}</span><span data-lang="zh">{bodyZh ?? info?.bodyZh}</span></p>
       </div>
-      <FigureViewer src={src} alt={heading} />
+      {['/ads1299-board-photo.png', '/ads1299-pcb.jpg'].includes(src) ? (
+        <div className="detail-media-grid">
+          <figure><FigureViewer src="/ads1299-board-photo.png" alt="ADS1299–STM32 prototype board" /><figcaption><span data-lang="en">Physical acquisition-board prototype</span><span data-lang="zh">采集板实物原型</span></figcaption></figure>
+          <figure><FigureViewer src="/ads1299-pcb.jpg" alt="ADS1299–STM32 acquisition board PCB layout" /><figcaption><span data-lang="en">PCB layout of the acquisition board</span><span data-lang="zh">采集板 PCB 设计图</span></figcaption></figure>
+        </div>
+      ) : <FigureViewer src={src} alt={heading} />}
       <HardwareDebugDetails src={src} />
     </ResearchDialog>
   </>;

@@ -6,7 +6,6 @@ export function HardwareDebugDetails({ src }: { src: string }) {
     <h3><span data-lang="en">Circuit design and board bring-up</span><span data-lang="zh">电路设计与硬件调试</span></h3>
     <p data-lang="en">I led the architecture and PCB design of the eight-channel ADS1299–STM32 acquisition board. My work covered power and reference circuits, input protection, anti-aliasing, bias drive, and test-signal paths, followed by soldering, board bring-up, and bench verification.</p>
     <p data-lang="zh">我负责八通道 ADS1299–STM32 采集板的系统架构与 PCB 设计，完成电源与参考、输入保护、抗混叠、偏置驱动和测试信号路径的设计，并开展焊接、上电调试与台架验证。</p>
-    <figure className="hardware-pcb-detail"><FigureViewer src="/ads1299-pcb.jpg" alt="ADS1299–STM32 acquisition board PCB layout" /><figcaption><span data-lang="en">PCB layout of the acquisition board</span><span data-lang="zh">采集板 PCB 设计图</span></figcaption></figure>
     <h3><span data-lang="en">Debugging the USB interface</span><span data-lang="zh">USB 接口排障记录</span></h3>
     <p data-lang="en">During board bring-up, the computer detected the CH340 interface for about one second before it disappeared. I also observed no activity on the USB data lines.</p>
     <p data-lang="zh">在电路板调试中，我发现电脑只能在插入后的约 1 秒内识别 CH340 接口，随后设备消失，USB 数据线上也未观察到活动。</p>

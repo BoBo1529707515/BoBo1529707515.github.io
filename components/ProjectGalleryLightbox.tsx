@@ -37,6 +37,7 @@ const gallery = [
     height: 900,
     caption: 'Programmable morphology and movement states for controlled social-cue experiments',
     captionZh: '用于可控社会线索实验的可编程形态与运动状态',
+    wide: true,
   },
 ];
 
@@ -73,7 +74,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               <p data-lang="en">The images below document the prototype and pilot interaction, not proof that artificial contact satisfies social need. The study is designed to separate social cues and test residual social need with a real-mouse reunion probe.</p>
               <p data-lang="zh">下图展示实物原型和探索性互动，并不等于已经证明人工接触满足了社交需求。研究拟拆解不同社会线索，并通过真鼠重聚检验测量剩余社交需求。</p>
               <div className="project-detail-gallery">
-                {gallery.map((item) => <figure className={item.compact ? 'is-compact' : ''} key={item.src}>
+                {gallery.map((item) => <figure className={item.wide ? 'detail-media-wide' : ''} key={item.src}>
                   <FigureViewer src={item.src} alt={item.alt} />
                   <figcaption><span data-lang="en">{item.caption}</span><span data-lang="zh">{item.captionZh}</span></figcaption>
                 </figure>)}
