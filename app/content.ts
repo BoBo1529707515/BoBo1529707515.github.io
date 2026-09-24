@@ -470,11 +470,6 @@ export const researchTracks: ResearchTrack[] = [
     description:
       'Mask tracking, cage calibration, plane-specific trajectory proxies, contact-state handling, and descriptive spatial analysis.',
       descriptionZh: '结合掩膜追踪、笼体标定、分平面轨迹代理与接触状态处理，进行稳健的描述性空间分析。',
-      figure: '/assets/macaque-sam2-cage-calibration.png',
-      figureAlt: 'Four recording frames showing macaque SAM2 segmentation masks and cage calibration before and after treatment',
-      figureCaption: 'Example recording frames with SAM2 masks and cage calibration. These frames illustrate the analysis workflow, not a treatment-effect estimate. Open full figure',
-      figureCaptionZh: '记录帧示例：SAM2 掩膜与笼体标定。图示用于展示分析流程，不代表处理效果的统计结论。点击查看原图',
-      figureSize: 'compact',
   },
 ];
 
