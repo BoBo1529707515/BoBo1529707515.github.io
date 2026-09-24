@@ -266,14 +266,6 @@ export const coreProjects: ResearchProject[] = [
       readingZh:
         '读图方式：纵轴为 3，表示当前群体状态相对基线质心的距离，比基线期的典型波动高 3 个标准差。Day 0/1/3/5 表示不同隔离条件，n 表示质控后纳入的 session 数；灰、绿、紫色背景分别代表隔离、重聚与再次隔离，红、紫虚线分别标记重聚起点和重聚结束时间中位数。t = 0 后的上升量化神经群体对重聚事件的敏感性，后续轨迹展示这种偏离如何随重聚过程演化。',
     },
-    evidence: {
-      label: 'Current evidence',
-      labelZh: '当前证据',
-      observation:
-        'Behaviorally inferred social need covaries with MPN population sensitivity across isolation and reunion conditions.',
-      observationZh: '行为推断的社交需求与不同隔离和重聚条件下 MPN 神经群体的敏感性协变。',
-      lastVerified: '2026-09',
-    },
     modules: [
       {
         id: 'behavior-pipeline',

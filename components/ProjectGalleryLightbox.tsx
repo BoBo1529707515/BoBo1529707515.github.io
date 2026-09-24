@@ -62,14 +62,12 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               <p data-lang="zh">该平台将具身线索转化为可实验控制的变量，同时保留真实小鼠与人工伙伴之间的自然互动情境。</p>
             </header>
             <section className="project-case-section">
-              <h4><span data-lang="en">My role · March 2026–present</span><span data-lang="zh">我的工作 · 2026 年 3 月至今</span></h4>
               <p data-lang="en">I conceived the research question, initiated the cross-institutional collaboration, and lead the project under Prof. Ding Liu’s supervision. My work includes behavioral-paradigm and arena design, experiments, a sound-attenuated multi-camera and ultrasonic recording setup, and the robot’s perception, planning, and host-side control.</p>
               <p data-lang="zh">我提出研究问题、发起跨机构合作，并在刘鼎教授指导下主导项目。我负责行为范式与场地设计、实验实施、静音多相机与超声记录平台，以及机器鼠的感知、规划和上位机控制。</p>
               <p data-lang="en">The robotic platform is a collaborative effort; low-level control and PPO-based locomotion are collaborators’ contributions, not solely my work.</p>
               <p data-lang="zh">机器鼠平台由团队合作完成；底层控制与基于 PPO 的运动策略由合作方贡献，并非我独立完成。</p>
             </section>
             <section className="project-case-section">
-              <h4><span data-lang="en">Current evidence · prototype &amp; pilot interaction</span><span data-lang="zh">已有证据 · 实物原型与探索性互动</span></h4>
               <p data-lang="en">The images below document the prototype and pilot interaction, not proof that artificial contact satisfies social need. The study is designed to separate social cues and test residual social need with a real-mouse reunion probe.</p>
               <p data-lang="zh">下图展示实物原型和探索性互动，并不等于已经证明人工接触满足了社交需求。研究拟拆解不同社会线索，并通过真鼠重聚检验测量剩余社交需求。</p>
               <div className="project-detail-gallery">
