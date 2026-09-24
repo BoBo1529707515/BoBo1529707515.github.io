@@ -185,7 +185,7 @@ export type OpenTool = {
 export const coreProjects: ResearchProject[] = [
   {
     id: 'social-need-dynamics',
-    order: 1,
+    order: 2,
     tier: 'core',
     status: 'completed',
     statusLabel: 'NOV 2025 — MAR 2026',
@@ -299,7 +299,7 @@ export const coreProjects: ResearchProject[] = [
   },
   {
     id: 'robotic-mouse',
-    order: 2,
+    order: 1,
     tier: 'core',
     status: 'pilot',
     statusLabel: 'IN DEVELOPMENT',
@@ -310,8 +310,8 @@ export const coreProjects: ResearchProject[] = [
       'Can a mouse’s social need be relieved by something that moves, touches, and responds like another mouse—but is not one?',
     descriptionZh:
       '一个会移动、触摸并回应的小鼠形态伙伴，能否缓解真实小鼠的社交需求？',
-    contribution: 'I conceived and currently lead this project and initiated its cross-institutional collaboration. I designed the behavioral arena, cue-decomposition and reunion-probe paradigms, and ran the experiments; I also built the sound-attenuated multi-camera and ultrasonic recording platform, together with the robot’s perception, planning, and host-side control system. The platform lets us vary movement, touch, temperature, odor, and responsiveness independently, and use controlled contact to study how social need accumulates and decays.',
-    contributionZh: '我提出并主导这一项目，同时发起跨机构合作。我设计行为学场地、社会线索拆解与重聚检验范式，并亲自完成实验；同时搭建静音、多相机与超声同步记录平台，以及机器鼠的感知、规划和上位机控制系统。这个平台使我们能够分别控制运动、触摸、温度、气味与响应性，并用可控接触研究社交需求如何积累和衰减。',
+    contribution: 'I conceived and lead the project, initiated its cross-institutional collaboration, and designed the behavioral arena and experimental paradigms. I built the multi-camera and ultrasonic recording setup and the robot’s perception, planning, and host-side control, and conducted pilot experiments. The platform is being developed to separate movement, touch, temperature, odor, and responsiveness as experimental variables.',
+    contributionZh: '我提出并主导项目、发起跨机构合作，设计行为场地与实验范式。我搭建多相机与超声记录平台、机器鼠感知规划与上位机控制系统，并开展探索性实验。目前正将运动、触摸、温度、气味与响应性逐步拆解为可控实验变量。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     tagsZh: ['具身智能', '可编程触摸', '社交稳态'],
     image: '/assets/robotic-mouse-prototype.png',
@@ -324,6 +324,12 @@ export const coreProjects: ResearchProject[] = [
     secondaryImageAlt: 'Robotic mouse motor layout and programmable movement states',
     secondaryImageCaption: 'Programmable morphology and movement states · controlled social-cue platform · open full figure',
     secondaryImageCaptionZh: '可编程形态与运动状态 · 可控社会线索平台',
+    evidence: {
+      label: 'Current stage · since March 2026', labelZh: '当前阶段 · 始于 2026 年 3 月',
+      observation: 'Physical prototype and pilot interaction. Whether robotic contact reduces social need remains an experimental question; neural closed-loop control is a planned extension.',
+      observationZh: '已有实物原型与探索性互动；机器鼠接触是否降低社交需求仍待实验检验，神经闭环控制属于后续计划。',
+      lastVerified: '2026-09',
+    },
     modules: [
       {
         id: 'embodiment',
@@ -367,9 +373,9 @@ export const coreProjects: ResearchProject[] = [
     title: 'MORI — relational power in long-term human–AI companionship',
     titleZh: 'MORI：长期人机陪伴关系中的权力边界',
     description:
-      'An AI companion might one day take on a role resembling a family elder, remembering shared history and becoming involved in people’s relationships. What may it keep, and with whom may it share those memories? Could conversations become a digital inheritance? I designed MORI to study where people draw these boundaries and to inform companion agents with clearly defined permissions. Like my robotic-mouse research, it asks what an artificial social partner can provide, here focusing on the authority people are willing to grant it.',
+      'When an AI companion becomes part of a long-term relationship, what may it remember, share, interpret, or act on? MORI examines how people grant and revise these distinct forms of authority. It studies human judgments about imagined relationships—not whether AI companionship biologically satisfies social need.',
     descriptionZh:
-      '未来，长期陪伴的 AI 可能承担类似家庭长辈的角色，记得共同经历，也越来越深入地参与人们的社交。它可以保存哪些记忆、向谁分享？沟通记录是否会成为一种数字遗产？我设计 MORI 实验，研究用户如何划定这些边界，并据此发展权限清晰的陪伴智能体。它与机器鼠研究关心的是同一个问题：人工伙伴能提供怎样的社交陪伴；MORI 进一步追问，人们愿意赋予它哪些权力。',
+      '当 AI 陪伴者进入长期关系，它可以记住、分享、解释什么，又可以介入哪些事情？MORI 研究人们如何赋予和修订这些不同权力。它测量人们对虚构关系情境的判断，并非直接检验 AI 是否在生物学上满足社交需求。',
     contribution: 'I conceived and led this 105-participant study, creating a fixed 20-year relationship narrative in which people repeatedly judged six distinct AI powers under four governance arrangements. I am first author on the manuscript, currently under review at ACM CHI 2027, and I am continuing the project’s next phase in collaboration with rednote.',
     contributionZh: '我独立提出并主导了这项 105 人研究：设计固定的 20 年关系叙事，让参与者在四种治理安排下反复判断六类不同的 AI 权力。论文目前以我为第一作者投稿 ACM CHI 2027，正在审稿；同时，我正与小红书合作推进项目的下一阶段。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
@@ -410,8 +416,8 @@ export const coreProjects: ResearchProject[] = [
       },
       {
         id: 'tas-gate',
-        label: 'TAS-Gate — computational extension',
-        labelZh: 'TAS-Gate：面向更高情商 AI 的计算延伸',
+        label: 'TAS-Gate — computational extension in development',
+        labelZh: 'TAS-Gate：开发中的计算延伸',
         status: 'building',
         statusLabel: 'BUILDING',
         statusLabelZh: '开发中',

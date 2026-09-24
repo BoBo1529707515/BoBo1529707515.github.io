@@ -95,7 +95,7 @@ export default function Home() {
           <nav className="side-nav" aria-label="Primary navigation">
             <a href="#research"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
             <a href="#companions"><span data-lang="en">Selected research</span><span data-lang="zh">代表研究</span></a>
-            <a href="#neuroengineering"><span data-lang="en">Neuroengineering</span><span data-lang="zh">神经工程</span></a>
+            <a href="#neuroengineering"><span data-lang="en">Experimental &amp; hardware work</span><span data-lang="zh">实验与硬件能力</span></a>
             <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
             <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作研究</span></a>
             <a href="#experience"><span data-lang="en">Earlier experience</span><span data-lang="zh">早期经历</span></a>
@@ -124,13 +124,16 @@ export default function Home() {
           <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
           <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
           <div className="hero-copy single" data-lang="en">
-            <p>I began by learning how to record and interpret neural signals. At Westlake, this led me to a broader question: what makes social contact satisfying, and which parts of it might an artificial partner reproduce? I study this question through neural population analysis, a programmable robotic mouse, and human experiments on long-term AI companionship. By developing the robotic mouse into a closed-loop, programmable experimental platform, I hope to use it to study social states and open new possibilities for neuroscience and brain–computer interface research.</p>
+            <p>I am a research assistant in Prof. Ding Liu’s Systems Social Neuroscience Lab at Westlake University. I build experimental systems and analyze neural and behavioral data to ask when an artificial partner can meet social needs—and where its limits begin.</p>
+            <p>My work connects a robotic-mouse platform, neural population analysis, and human–AI interaction studies. For my PhD, I hope to develop closed-loop neurotechnology and study how artificial partners affect social connection.</p>
           </div>
           <div className="hero-copy single" data-lang="zh">
-            <p>我最初关注如何记录和理解神经信号。来到西湖大学后，我开始进一步思考：什么样的接触能够满足社交需求，其中哪些作用可以由人工伙伴重现？我通过神经群体分析、可编程机器鼠和长期 AI 陪伴的人体研究分别探索这个问题。我希望进一步把机器鼠发展为闭环、可编程的实验平台，用它研究社交状态，并为神经科学和脑机接口研究提供新的实验工具。</p>
+            <p>我是西湖大学刘鼎教授系统与社会神经科学实验室的研究助理。我搭建实验系统、分析神经与行为数据，研究人工伙伴何时能够满足社交需求，以及这种作用的边界。</p>
+            <p>我的工作连接机器鼠平台、神经群体分析和人机交互实验。博士阶段，我希望发展闭环神经技术，并研究人工伙伴如何影响社交连接。</p>
           </div>
           <div className="hero-actions">
             <a href="#companions"><span data-lang="en">Selected research ↓</span><span data-lang="zh">代表研究 ↓</span></a>
+            <a href="#neuroengineering"><span data-lang="en">Hands-on work ↓</span><span data-lang="zh">实验与硬件能力 ↓</span></a>
             <a href="/Yibo_Yuan_Academic_CV_2026.pdf" target="_blank" rel="noreferrer"><span data-lang="en">CV ↗</span><span data-lang="zh">简历 ↗</span></a>
             <a href="mailto:yuanyibo@westlake.edu.cn"><span data-lang="en">Email ↗</span><span data-lang="zh">邮箱 ↗</span></a>
           </div>
@@ -140,8 +143,13 @@ export default function Home() {
           <div className="section-heading compact"><div><h2 data-lang="en">Selected research.</h2><h2 data-lang="zh">代表研究。</h2></div></div>
           <p className="section-context" data-lang="en">Under the supervision of Prof. Ding Liu in the Systems Social Neuroscience Lab, I study how neural population states, naturalistic behavior, and artificial interactive systems can be combined to understand and regulate social need.</p>
           <p className="section-context" data-lang="zh">在刘鼎教授指导下，我在系统与社会神经科学实验室研究如何结合神经群体状态、自然行为与人工交互系统，理解并调控社交需求。</p>
+          <nav className="research-index" aria-label="Research projects">
+            <a href="#robotic-mouse"><span>01</span><strong data-lang="en">Build an artificial partner</strong><strong data-lang="zh">搭建人工伙伴</strong><small data-lang="en">Robotic mouse · experimental platform</small><small data-lang="zh">机器鼠 · 实验平台</small></a>
+            <a href="#social-need-dynamics"><span>02</span><strong data-lang="en">Measure social states</strong><strong data-lang="zh">测量社交状态</strong><small data-lang="en">Neural populations · naturalistic behavior</small><small data-lang="zh">神经群体 · 自然行为</small></a>
+            <a href="#mori"><span>03</span><strong data-lang="en">Study relational boundaries</strong><strong data-lang="zh">研究关系边界</strong><small data-lang="en">MORI · human–AI interaction</small><small data-lang="zh">MORI · 人机交互</small></a>
+          </nav>
           <div className="project-list core-project-list">
-            {coreProjects.map((project) => (
+            {[...coreProjects].sort((a, b) => a.order - b.order).map((project) => (
               <article className={`project-card core-project-card${project.image ? ' project-card-has-media' : ''}`} id={project.id} key={project.id}>
                 <div className="project-body">
                   <div className="project-meta"><span>{String(project.order).padStart(2, '0')}</span><span className="status-badge"><span data-lang="en">{project.statusLabel}</span><span data-lang="zh">{project.statusLabelZh}</span></span></div>
@@ -169,9 +177,10 @@ export default function Home() {
                           {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
                         </a>
                   )}
-                  {project.contribution && <div className="project-narrative"><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>}
+                  {project.contribution && <div className="project-narrative"><h4 className="evidence-label"><span data-lang="en">My contribution</span><span data-lang="zh">我的贡献</span></h4><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>}
                   {project.evidence && (
                     <aside className="project-result">
+                      <h4 className="evidence-label"><span data-lang="en">{project.evidence.label}</span><span data-lang="zh">{project.evidence.labelZh}</span></h4>
                       <p data-lang="en">{project.evidence.observation}</p>
                       <p data-lang="zh">{project.evidence.observationZh}</p>
                     </aside>
@@ -183,7 +192,7 @@ export default function Home() {
                       <p data-lang="en">{module.summary}</p><p data-lang="zh">{module.summaryZh}</p>
                     </div>
                   ))}
-                  {project.secondaryImage && (
+                  {project.secondaryImage && project.id !== 'robotic-mouse' && (
                     <a className="project-secondary-media" href={project.secondaryImage} target="_blank" rel="noreferrer" aria-label={`Open system figure for ${project.title}`}>
                       <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? project.title} width={1600} height={900} />
                       {project.secondaryImageCaption && <span data-lang="en">{project.secondaryImageCaption} ↗</span>}
@@ -197,7 +206,12 @@ export default function Home() {
         </section>
 
         <section className="section methods-section" id="neuroengineering">
-          <div className="section-heading compact"><div><h2 data-lang="en">Neuroengineering foundations.</h2><h2 data-lang="zh">神经工程基础。</h2></div></div>
+          <div className="section-heading compact"><div><h2 data-lang="en">Hands-on experimental work.</h2><h2 data-lang="zh">实验与硬件能力。</h2></div></div>
+          <div className="experimental-evidence">
+            <article><h3><span data-lang="en">Design &amp; run experiments</span><span data-lang="zh">设计并实施实验</span></h3><p data-lang="en">Behavioral arena and paradigm design, multi-camera and ultrasonic recording, and robot–mouse pilot experiments. I connect the apparatus to the question being tested.</p><p data-lang="zh">行为场地与范式设计、多相机与超声记录，以及机器鼠互动的探索性实验。让实验装置服务于明确的研究问题。</p><a href="#robotic-mouse"><span data-lang="en">Robotic-mouse project ↑</span><span data-lang="zh">机器鼠项目 ↑</span></a></article>
+            <article><h3><span data-lang="en">Build &amp; debug instruments</span><span data-lang="zh">搭建与调试仪器</span></h3><p data-lang="en">Circuit and PCB design, soldering and board bring-up, STM32 acquisition, and bench testing. The ADS1299 case includes a USB-isolation debugging example.</p><p data-lang="zh">电路与 PCB 设计、焊接和上电调试、STM32 采集与台架测试。下方 ADS1299 详情包含 USB 隔离电路的排障案例。</p></article>
+            <article><h3><span data-lang="en">Connect hardware to data</span><span data-lang="zh">连接硬件与数据</span></h3><p data-lang="en">An open-source STM32 lickometer, programmable motion tools, and behavioral-video analysis workflows support repeatable experimental measurements.</p><p data-lang="zh">开源 STM32 舔水计、可编程运动工具与行为视频分析流程，为可重复的实验测量提供支持。</p><a href="#tools"><span data-lang="en">Open research tools ↓</span><span data-lang="zh">开源研究工具 ↓</span></a></article>
+          </div>
           <div className="hardware-summary">
             <div><h3 data-lang="en">Neural and bioimpedance acquisition hardware</h3><h3 data-lang="zh">神经与生物阻抗采集硬件</h3><p data-lang="en">I led the hardware development of a portable eight-channel ADS1299–STM32 EEG acquisition system for the National College Student Biomedical Engineering Innovation Design Competition. For my bachelor’s thesis, supervised by Profs. Xiang Chen and Jin Li, I developed and bench-tested a portable STM32–AD5933 bioimpedance system.</p><p data-lang="zh">我主导全国大学生生物医学工程创新设计竞赛项目中便携式八通道 ADS1299–STM32 脑电采集系统的硬件开发；在陈翔教授和李津教授指导的毕业设计中，我开发并完成了便携式 STM32–AD5933 生物阻抗系统的台架测试。</p></div>
             <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299<br /><span data-lang="en">Click for my contribution &amp; technical details</span><span data-lang="zh">点击查看我的贡献与技术细节</span></figcaption></figure>
@@ -237,7 +251,7 @@ export default function Home() {
           <AppointmentList items={appointments} />
         </section>
 
-        <section className="section methods-section">
+        <section className="section methods-section" id="tools">
           <div className="section-heading compact"><div><h2 data-lang="en">Open research tools.</h2><h2 data-lang="zh">开源科研工具。</h2></div></div>
           <div className="methods-grid">
             {openTools.map((tool) => (

@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useId, useState } from 'react';
+import { ResearchDialog } from './ResearchDialog';
+import { FigureViewer } from './FigureViewer';
 
 type FigureDetails = {
   eyebrow: string;
@@ -53,19 +55,7 @@ type FigureLightboxProps = {
 
 export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: FigureLightboxProps) {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
-    };
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [open]);
+  const titleId = useId();
 
   return (
     <>
@@ -76,27 +66,22 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
         {captionZh && <span className="image-caption" data-lang="zh">{captionZh}</span>}
       </button>
 
-      {open && (
-        <div className="figure-lightbox" role="dialog" aria-modal="true" aria-labelledby="figure-lightbox-title" onMouseDown={(event) => {
-          if (event.currentTarget === event.target) setOpen(false);
-        }}>
+      <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId}>
           <div className="figure-lightbox-panel">
-            <button className="figure-lightbox-close" type="button" onClick={() => setOpen(false)} aria-label="Close figure"><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
+            <header className="project-detail-header">
+              <p className="eyebrow accent"><span data-lang="en">{details.eyebrow}</span><span data-lang="zh">{details.eyebrowZh}</span></p>
+              <h3 id={titleId}><span data-lang="en">{details.title}</span><span data-lang="zh">{details.titleZh}</span></h3>
+            </header>
             <div className="figure-lightbox-visual">
-              <Image src={src} alt={alt} width={2000} height={1200} priority unoptimized className="figure-lightbox-image" />
-              <a href={src} target="_blank" rel="noreferrer"><span data-lang="en">Open original image</span><span data-lang="zh">打开原图</span> ↗</a>
+              <FigureViewer src={src} alt={alt} />
             </div>
             <div className="figure-lightbox-copy">
-              <p className="eyebrow accent"><span data-lang="en">{details.eyebrow}</span><span data-lang="zh">{details.eyebrowZh}</span></p>
-              <h3 id="figure-lightbox-title"><span data-lang="en">{details.title}</span><span data-lang="zh">{details.titleZh}</span></h3>
               {details.origin && (
                 <section className="figure-origin" aria-label="Scientific origin of this analysis">
                   <p className="figure-origin-label"><span data-lang="en">{details.origin.label}</span><span data-lang="zh">{details.origin.labelZh}</span></p>
                   <h4><span data-lang="en">{details.origin.title}</span><span data-lang="zh">{details.origin.titleZh}</span></h4>
-                  <a className="figure-origin-image" href={details.origin.href} target="_blank" rel="noreferrer">
-                    <Image src={details.origin.image} alt={details.origin.imageAlt} width={882} height={766} unoptimized />
-                    <span>{details.origin.citation} ↗</span>
-                  </a>
+                  <FigureViewer src={details.origin.image} alt={details.origin.imageAlt} />
+                  <a className="text-link" href={details.origin.href} target="_blank" rel="noreferrer">{details.origin.citation} ↗</a>
                   <p className="figure-origin-body" data-lang="en">{details.origin.body}</p>
                   <p className="figure-origin-body" data-lang="zh">{details.origin.bodyZh}</p>
                   <div className="figure-origin-bridge">
@@ -128,15 +113,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
               )}
               {details.detailFigure && (
                 <figure className="figure-detail-figure">
-                  <a href={details.detailFigure.image} target="_blank" rel="noreferrer">
-                    <Image
-                      src={details.detailFigure.image}
-                      alt={details.detailFigure.imageAlt}
-                      width={886}
-                      height={825}
-                      unoptimized
-                    />
-                  </a>
+                  <FigureViewer src={details.detailFigure.image} alt={details.detailFigure.imageAlt} />
                   <figcaption>
                     <span data-lang="en">{details.detailFigure.caption}</span>
                     <span data-lang="zh">{details.detailFigure.captionZh}</span>
@@ -158,8 +135,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
               </div>
             </div>
           </div>
-        </div>
-      )}
+      </ResearchDialog>
     </>
   );
 }

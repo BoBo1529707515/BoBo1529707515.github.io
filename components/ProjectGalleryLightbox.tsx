@@ -1,7 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useId, useState } from 'react';
+import { ResearchDialog } from './ResearchDialog';
+import { FigureViewer } from './FigureViewer';
 
 type ProjectGalleryLightboxProps = {
   triggerSrc: string;
@@ -40,19 +42,7 @@ const gallery = [
 
 export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption, triggerCaptionZh }: ProjectGalleryLightboxProps) {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
-    };
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [open]);
+  const titleId = useId();
 
   return (
     <>
@@ -63,22 +53,41 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
         {triggerCaptionZh && <span className="image-caption" data-lang="zh">{triggerCaptionZh}</span>}
       </button>
 
-      {open && (
-        <div className="project-detail-lightbox" role="dialog" aria-modal="true" aria-labelledby="robotic-mouse-detail-title" onMouseDown={(event) => {
-          if (event.currentTarget === event.target) setOpen(false);
-        }}>
+      <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId}>
           <div className="project-detail-panel">
-            <button className="figure-lightbox-close" type="button" onClick={() => setOpen(false)} aria-label="Close project details"><span data-lang="en">Close ×</span><span data-lang="zh">关闭 ×</span></button>
             <header className="project-detail-header">
               <p className="eyebrow accent"><span data-lang="en">PROJECT DETAIL</span><span data-lang="zh">项目详情</span></p>
-              <h3 id="robotic-mouse-detail-title"><span data-lang="en">A social robotic mouse for decomposing social cues</span><span data-lang="zh">用于拆解社交线索的社交机器鼠</span></h3>
+              <h3 id={titleId}><span data-lang="en">A social robotic mouse for decomposing social cues</span><span data-lang="zh">用于拆解社交线索的社交机器鼠</span></h3>
               <p data-lang="en">The platform turns embodiment into experimentally controllable variables while preserving a naturalistic encounter between a freely moving mouse and an artificial partner.</p>
               <p data-lang="zh">该平台将具身线索转化为可实验控制的变量，同时保留真实小鼠与人工伙伴之间的自然互动情境。</p>
             </header>
+            <section className="project-case-section">
+              <h4><span data-lang="en">My role · March 2026–present</span><span data-lang="zh">我的工作 · 2026 年 3 月至今</span></h4>
+              <p data-lang="en">I conceived the research question, initiated the cross-institutional collaboration, and lead the project under Prof. Ding Liu’s supervision. My work includes behavioral-paradigm and arena design, experiments, a sound-attenuated multi-camera and ultrasonic recording setup, and the robot’s perception, planning, and host-side control.</p>
+              <p data-lang="zh">我提出研究问题、发起跨机构合作，并在刘鼎教授指导下主导项目。我负责行为范式与场地设计、实验实施、静音多相机与超声记录平台，以及机器鼠的感知、规划和上位机控制。</p>
+              <p data-lang="en">The robotic platform is a collaborative effort; low-level control and PPO-based locomotion are collaborators’ contributions, not solely my work.</p>
+              <p data-lang="zh">机器鼠平台由团队合作完成；底层控制与基于 PPO 的运动策略由合作方贡献，并非我独立完成。</p>
+            </section>
+            <section className="project-case-section">
+              <h4><span data-lang="en">Current evidence · prototype &amp; pilot interaction</span><span data-lang="zh">已有证据 · 实物原型与探索性互动</span></h4>
+              <p data-lang="en">The images below document the prototype and pilot interaction, not proof that artificial contact satisfies social need. The study is designed to separate social cues and test residual social need with a real-mouse reunion probe.</p>
+              <p data-lang="zh">下图展示实物原型和探索性互动，并不等于已经证明人工接触满足了社交需求。研究拟拆解不同社会线索，并通过真鼠重聚检验测量剩余社交需求。</p>
+              <div className="project-detail-gallery">
+                {gallery.map((item) => <figure className={item.compact ? 'is-compact' : ''} key={item.src}>
+                  <FigureViewer src={item.src} alt={item.alt} />
+                  <figcaption><span data-lang="en">{item.caption}</span><span data-lang="zh">{item.captionZh}</span></figcaption>
+                </figure>)}
+              </div>
+            </section>
+            <section className="project-case-section">
+              <h4><span data-lang="en">Experimental iteration · vibration &amp; noise</span><span data-lang="zh">实验迭代 · 振动与噪声</span></h4>
+              <p data-lang="en">During testing, I observed that the mice were sensitive to vibration and sound from the robot. I iterated on the control algorithms and worked with our collaborators on mechanical adjustments to reduce these confounds.</p>
+              <p data-lang="zh">调试中，我观察到小鼠对机器鼠产生的振动和声音敏感。我反复调试控制算法，并与合作方调整机械结构，以降低这些混杂因素。</p>
+            </section>
             <section className="project-detail-goal">
               <p className="eyebrow accent"><span data-lang="en">TOWARD A CLOSED LOOP</span><span data-lang="zh">闭环目标</span></p>
               <p data-lang="en">I am extending the platform toward a closed-loop social-neuroengineering system. The planned loop will combine MPN population activity and dopamine signals from the freely moving mouse to estimate its social state, allowing the robotic mouse to adjust its interaction strategy online.</p>
-              <p data-lang="zh">我正在将这一平台扩展为闭环社会神经工程系统：读取自由活动真实小鼠的 MPN 神经群体活动与多巴胺信号，估计其当前社交状态，并让机器鼠在线调整互动策略。</p>
+              <p data-lang="zh">下一步计划将平台扩展为闭环社会神经工程系统：结合自由活动真实小鼠的 MPN 神经群体活动与多巴胺信号估计社交状态，让机器鼠在线调整互动策略。这是计划中的闭环方案，而非已完成的验证结果。</p>
               <figure className="project-detail-planned-recording">
                 <a href="/assets/planned-mpn-miniscope-configuration.png" target="_blank" rel="noreferrer">
                   <Image
@@ -95,24 +104,8 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
                 </figcaption>
               </figure>
             </section>
-            <section className="project-detail-goal">
-              <h4><span data-lang="en">Reducing vibration and noise</span><span data-lang="zh">振动与噪声的迭代改进</span></h4>
-              <p data-lang="en">During testing, I observed that the mice were sensitive to vibration and sound from the robot. This prompted repeated adjustments to the control algorithms and, together with our collaborators, the robot’s mechanical structure to reduce noise and vibration.</p>
-              <p data-lang="zh">在实验调试中，我观察到小鼠对机器鼠产生的振动和声音敏感。因此，我反复参与控制算法的调试，并与合作方多次调整机器鼠的机械结构，以降低噪声与振动。</p>
-            </section>
-            <div className="project-detail-gallery">
-              {gallery.map((item) => (
-                <figure className={item.compact ? 'is-compact' : ''} key={item.src}>
-                  <a href={item.src} target="_blank" rel="noreferrer">
-                    <Image src={item.src} alt={item.alt} width={item.width} height={item.height} unoptimized />
-                  </a>
-                  <figcaption><span data-lang="en">{item.caption}</span><span data-lang="zh">{item.captionZh}</span></figcaption>
-                </figure>
-              ))}
-            </div>
           </div>
-        </div>
-      )}
+      </ResearchDialog>
     </>
   );
 }
