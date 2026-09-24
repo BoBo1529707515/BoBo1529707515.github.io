@@ -480,6 +480,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .experimental-evidence h3 { font-size: 1.125rem; line-height: 1.45; margin: 0 0 12px; }
 .experimental-evidence p { font-size: 1rem; line-height: 1.75; color: var(--ink-soft); margin: 0 0 14px; }
 .experimental-evidence a { font-size: .875rem; text-decoration: underline; text-underline-offset: 4px; }
+.imaging-evidence { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; margin-bottom: 32px; }
+.imaging-evidence figure { min-width: 0; margin: 0; }
+.imaging-evidence img { display: block; width: 100%; height: auto; }
+.imaging-evidence h3 { font-size: 1.15rem; line-height: 1.45; margin: 0 0 12px; }
+.imaging-evidence p { font-size: 1rem; line-height: 1.75; margin: 0 0 12px; }
+.imaging-evidence figcaption, .imaging-evidence .imaging-method-note { font-size: .875rem; line-height: 1.6; color: var(--ink-soft); }
+.imaging-evidence figcaption { margin-top: 8px; }
 .hardware-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 24px; padding: 0; margin: 0; border: 0; }
 .hardware-summary > div { grid-column: 1 / -1; }
 .hardware-summary img { display: block; width: 100%; height: auto; object-fit: contain; }
@@ -552,6 +559,7 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
   .research-index { grid-template-columns: 1fr; gap: 4px; }
   .research-index a { gap: 4px; padding: 12px 0; }
   .hardware-summary { grid-template-columns: 1fr; }
+  .imaging-evidence { grid-template-columns: 1fr; gap: 16px; }
   .methods-grid { grid-template-columns: 1fr; }
   .research-dialog[data-slot='dialog-content'] { width: calc(100vw - 16px); max-width: calc(100vw - 16px); max-height: calc(100dvh - 16px); padding: 0 16px 24px; }
   .research-dialog-toolbar { margin: 0 -16px 20px; padding: 10px 16px; }

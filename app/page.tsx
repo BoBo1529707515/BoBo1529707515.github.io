@@ -212,6 +212,27 @@ export default function Home() {
             <article><h3><span data-lang="en">Build &amp; debug instruments</span><span data-lang="zh">搭建与调试仪器</span></h3><p data-lang="en">Circuit and PCB design, soldering and board bring-up, STM32 acquisition, and bench testing. The ADS1299 case includes a USB-isolation debugging example.</p><p data-lang="zh">电路与 PCB 设计、焊接和上电调试、STM32 采集与台架测试。下方 ADS1299 详情包含 USB 隔离电路的排障案例。</p></article>
             <article><h3><span data-lang="en">Connect hardware to data</span><span data-lang="zh">连接硬件与数据</span></h3><p data-lang="en">An open-source STM32 lickometer, programmable motion tools, and behavioral-video analysis workflows support repeatable experimental measurements.</p><p data-lang="zh">开源 STM32 舔水计、可编程运动工具与行为视频分析流程，为可重复的实验测量提供支持。</p><a href="#tools"><span data-lang="en">Open research tools ↓</span><span data-lang="zh">开源研究工具 ↓</span></a></article>
           </div>
+          <div className="imaging-evidence">
+            <figure>
+              <ImageDetails
+                src="/assets/mpn-two-photon-calcium-imaging.png"
+                title="MPN two-photon calcium imaging"
+                titleZh="MPN 双光子钙成像"
+                body="An example field of view from two-photon calcium imaging in the medial preoptic nucleus (MPN). This is a separate imaging example from the miniscope recordings described in the neural-population project."
+                bodyZh="内侧视前核（MPN）双光子钙成像的视野示例。此图与神经群体项目中介绍的 miniscope 记录分开展示，不混用两种成像方法。"
+              >
+                <Image src="/assets/mpn-two-photon-calcium-imaging.png" alt="Example field of view from MPN two-photon calcium imaging" width={1321} height={874} />
+              </ImageDetails>
+              <figcaption><span data-lang="en">MPN · two-photon calcium imaging</span><span data-lang="zh">MPN · 双光子钙成像</span></figcaption>
+            </figure>
+            <div>
+              <h3 data-lang="en">A view into the MPN</h3><h3 data-lang="zh">MPN 成像视野</h3>
+              <p data-lang="en">An example two-photon calcium-imaging field of view in the medial preoptic nucleus. Click to inspect the original image.</p>
+              <p data-lang="zh">内侧视前核的双光子钙成像视野示例，可点击查看原图。</p>
+              <p className="imaging-method-note" data-lang="en">Two-photon imaging; distinct from the miniscope recordings in the neural-population analysis above.</p>
+              <p className="imaging-method-note" data-lang="zh">此处为双光子成像，与上方神经群体分析中的 miniscope 记录分别标注。</p>
+            </div>
+          </div>
           <div className="hardware-summary">
             <div><h3 data-lang="en">Neural and bioimpedance acquisition hardware</h3><h3 data-lang="zh">神经与生物阻抗采集硬件</h3><p data-lang="en">I led the hardware development of a portable eight-channel ADS1299–STM32 EEG acquisition system for the National College Student Biomedical Engineering Innovation Design Competition. For my bachelor’s thesis, supervised by Profs. Xiang Chen and Jin Li, I developed and bench-tested a portable STM32–AD5933 bioimpedance system.</p><p data-lang="zh">我主导全国大学生生物医学工程创新设计竞赛项目中便携式八通道 ADS1299–STM32 脑电采集系统的硬件开发；在陈翔教授和李津教授指导的毕业设计中，我开发并完成了便携式 STM32–AD5933 生物阻抗系统的台架测试。</p></div>
             <figure><ImageDetails src="/ads1299-board-photo.png"><Image src="/ads1299-board-photo.png" alt="ADS1299 project prototype board" width={1299} height={891} /></ImageDetails><figcaption>ADS1299<br /><span data-lang="en">Click for my contribution &amp; technical details</span><span data-lang="zh">点击查看我的贡献与技术细节</span></figcaption></figure>
