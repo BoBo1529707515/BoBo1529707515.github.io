@@ -603,9 +603,6 @@ export const publications: Publication[] = [
     authorsZh: '袁艺博（Yibo Yuan）、Sichaon Wang、Yang Su、Ren Wang。第一作者稿件。',
     selfAuthor: 'Yibo Yuan',
     selfAuthorZh: '袁艺博（Yibo Yuan）',
-    href: '#reground',
-    linkLabel: 'Project overview',
-    linkLabelZh: '项目介绍',
   },
   {
     year: '2026',
