@@ -99,7 +99,7 @@ export default function Home() {
             <a href="#research"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
             <a href="#companions"><span data-lang="en">Selected research</span><span data-lang="zh">代表研究</span></a>
             <a href="#neuroengineering"><span data-lang="en">Experimental &amp; hardware work</span><span data-lang="zh">实验与硬件能力</span></a>
-            <a href="#publication"><span data-lang="en">Publication</span><span data-lang="zh">论文发表</span></a>
+            <a href="#publication"><span data-lang="en">Papers</span><span data-lang="zh">论文</span></a>
             <a href="#collaborations"><span data-lang="en">Collaborations</span><span data-lang="zh">合作研究</span></a>
             <a href="#experience"><span data-lang="en">Earlier experience</span><span data-lang="zh">早期经历</span></a>
             <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a>
@@ -127,12 +127,12 @@ export default function Home() {
           <h1 data-lang="en">How does social need change when the social partner is <em>artificial?</em></h1>
           <h1 data-lang="zh">当社交伙伴是人工的，<em>社交需求会发生什么变化？</em></h1>
           <div className="hero-copy single" data-lang="en">
-            <p>I am a research assistant in Prof. Ding Liu’s Systems Social Neuroscience Lab at Westlake University. I build experimental systems and analyze neural and behavioral data to ask when an artificial partner can meet social needs—and where its limits begin.</p>
-            <p>My work connects a robotic-mouse platform, neural population analysis, and human–AI interaction studies. For my PhD, I hope to develop closed-loop neurotechnology and study how artificial partners affect social connection.</p>
+            <p>I’m Yibo, a research assistant in Prof. Ding Liu’s Systems Social Neuroscience Lab at Westlake University. I want to understand whether an artificial partner can meet our need for social contact, and what might still be missing.</p>
+            <p>To get at this question, I build a robotic mouse, analyze neural recordings, and study how people relate to AI companions. I also design and debug the hardware these experiments need. I’m applying for PhD programs starting in Fall 2027.</p>
           </div>
           <div className="hero-copy single" data-lang="zh">
-            <p>我是西湖大学刘鼎教授系统与社会神经科学实验室的研究助理。我搭建实验系统、分析神经与行为数据，研究人工伙伴何时能够满足社交需求，以及这种作用的边界。</p>
-            <p>我的工作连接机器鼠平台、神经群体分析和人机交互实验。博士阶段，我希望发展闭环神经技术，并研究人工伙伴如何影响社交连接。</p>
+            <p>我是袁艺博，目前在西湖大学刘鼎教授的系统与社会神经科学实验室做研究助理。我想弄清楚：人工伙伴能不能满足我们的社交需求？如果可以，又有哪些部分是它无法替代的？</p>
+            <p>围绕这个问题，我做机器鼠、分析神经活动，也研究人们如何与 AI 陪伴者相处。实验需要的硬件，我也会自己设计和调试。目前，我正在申请 2027 年秋季入学的博士项目。</p>
           </div>
           <div className="hero-actions">
             <a href="#companions"><span data-lang="en">Selected research ↓</span><span data-lang="zh">代表研究 ↓</span></a>
@@ -144,8 +144,8 @@ export default function Home() {
 
         <section className="section core-program-section" id="companions">
           <div className="section-heading compact"><div><h2 data-lang="en">Selected research.</h2><h2 data-lang="zh">代表研究。</h2></div></div>
-          <p className="section-context" data-lang="en">My work connects social neuroscience, artificial social partners, and human–AI interaction. In Prof. Ding Liu’s Systems Social Neuroscience Lab, I study social need through neural population states and naturalistic behavior; complementary projects examine relational authority and AI experience reuse.</p>
-          <p className="section-context" data-lang="zh">我的研究连接社会神经科学、人工社会伙伴与人机交互。在刘鼎教授的系统与社会神经科学实验室，我通过神经群体状态与自然行为研究社交需求；相关项目进一步探索关系权力与 AI 的经验重用。</p>
+          <p className="section-context" data-lang="en">These projects ask what we need from a social partner, and what changes when that partner is artificial.</p>
+          <p className="section-context" data-lang="zh">这些项目都围绕一个问题：我们究竟需要社交伙伴带来什么？当伙伴变成人工的，又会发生什么变化？</p>
           <nav className="research-index" aria-label="Research projects">
             <a href="#robotic-mouse"><span>01</span><strong data-lang="en">Build an artificial partner</strong><strong data-lang="zh">搭建人工伙伴</strong><small data-lang="en">Robotic mouse · experimental platform</small><small data-lang="zh">机器鼠 · 实验平台</small></a>
             <a href="#social-need-dynamics"><span>02</span><strong data-lang="en">Measure social states</strong><strong data-lang="zh">测量社交状态</strong><small data-lang="en">Neural populations · naturalistic behavior</small><small data-lang="zh">神经群体 · 自然行为</small></a>
@@ -210,9 +210,9 @@ export default function Home() {
           <div className="section-heading compact"><div><h2 data-lang="en">Hands-on experimental work.</h2><h2 data-lang="zh">实验与硬件能力。</h2></div></div>
           <TextDetails title="Experimental setup and hardware development" titleZh="实验搭建与硬件开发" label="Experimental setup & build details" labelZh="实验搭建与硬件详情">
           <div className="experimental-evidence">
-            <article><h3><span data-lang="en">Design &amp; run experiments</span><span data-lang="zh">设计并实施实验</span></h3><p data-lang="en">Behavioral arena and paradigm design, multi-camera and ultrasonic recording, and robot–mouse pilot experiments. I connect the apparatus to the question being tested.</p><p data-lang="zh">行为场地与范式设计、多相机与超声记录，以及机器鼠互动的探索性实验。让实验装置服务于明确的研究问题。</p><a href="#robotic-mouse"><span data-lang="en">Robotic-mouse project ↑</span><span data-lang="zh">机器鼠项目 ↑</span></a></article>
-            <article><h3><span data-lang="en">Build &amp; debug instruments</span><span data-lang="zh">搭建与调试仪器</span></h3><p data-lang="en">Circuit and PCB design, soldering and board bring-up, STM32 acquisition, and bench testing. The ADS1299 case includes a USB-isolation debugging example.</p><p data-lang="zh">电路与 PCB 设计、焊接和上电调试、STM32 采集与台架测试。下方 ADS1299 详情包含 USB 隔离电路的排障案例。</p></article>
-            <article><h3><span data-lang="en">Connect hardware to data</span><span data-lang="zh">连接硬件与数据</span></h3><p data-lang="en">An open-source STM32 lickometer, programmable motion tools, and behavioral-video analysis workflows support repeatable experimental measurements.</p><p data-lang="zh">开源 STM32 舔水计、可编程运动工具与行为视频分析流程，为可重复的实验测量提供支持。</p><a href="#tools"><span data-lang="en">Open research tools ↓</span><span data-lang="zh">开源研究工具 ↓</span></a></article>
+            <article><h3><span data-lang="en">Design &amp; run experiments</span><span data-lang="zh">设计并开展实验</span></h3><p data-lang="en">For the robotic-mouse experiments, I design the arena and protocol, set up the cameras and ultrasonic recording, and run pilot interactions.</p><p data-lang="zh">机器鼠实验里，从场地和流程设计，到相机与超声记录装置的搭建，再到探索性互动，我都实际参与。</p><a href="#robotic-mouse"><span data-lang="en">Robotic-mouse project ↑</span><span data-lang="zh">机器鼠项目 ↑</span></a></article>
+            <article><h3><span data-lang="en">Build &amp; debug instruments</span><span data-lang="zh">搭建与调试仪器</span></h3><p data-lang="en">I design circuits and PCBs, solder boards, and test them on the bench. The ADS1299 notes include a USB fault I traced to the isolation circuit’s power supply.</p><p data-lang="zh">我会画电路和 PCB、焊板子，再上电测试。ADS1299 项目里还记着一次 USB 排障：电脑认不到设备，最后查到了隔离电路的供电问题。</p></article>
+            <article><h3><span data-lang="en">Write the tools around the experiment</span><span data-lang="zh">把配套工具也做出来</span></h3><p data-lang="en">I write the software around the hardware too: recording lick events, controlling motion, and tracking behavior in long videos.</p><p data-lang="zh">硬件之外，我也写配套软件：记录舔舐事件、控制运动，以及从长视频中追踪行为。</p><a href="#tools"><span data-lang="en">Open research tools ↓</span><span data-lang="zh">开源研究工具 ↓</span></a></article>
           </div>
             <div><h3 data-lang="en">Neural and bioimpedance acquisition hardware</h3><h3 data-lang="zh">神经与生物阻抗采集硬件</h3><p data-lang="en">I led the hardware development of a portable eight-channel ADS1299–STM32 EEG acquisition system for the National College Student Biomedical Engineering Innovation Design Competition. For my bachelor’s thesis, supervised by Profs. Xiang Chen and Jin Li, I developed and bench-tested a portable STM32–AD5933 bioimpedance system.</p><p data-lang="zh">我主导全国大学生生物医学工程创新设计竞赛项目中便携式八通道 ADS1299–STM32 脑电采集系统的硬件开发；在陈翔教授和李津教授指导的毕业设计中，我开发并完成了便携式 STM32–AD5933 生物阻抗系统的台架测试。</p></div>
           </TextDetails>
@@ -268,7 +268,7 @@ export default function Home() {
         <FuturePlans social />
         <section className="contact-section" id="contact">
           <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">Contact.</h2><h2 data-lang="zh">联系方式。</h2>
-          <p data-lang="en">For PhD and research conversations, email me at the address below.</p><p data-lang="zh">如希望交流博士申请或研究合作，请通过下方邮箱联系我。</p>
+          <p data-lang="en">If you’re working on similar questions, or would like to talk about PhD opportunities, I’d love to hear from you.</p><p data-lang="zh">如果你也在研究类似的问题，或愿意聊聊博士机会，欢迎给我写信。</p>
           <a className="contact-button" href="mailto:yuanyibo@westlake.edu.cn">yuanyibo@westlake.edu.cn <span>↗</span></a>
           <a className="contact-secondary-email" href="mailto:yibo031110@gmail.com"><span data-lang="en">Personal email: yibo031110@gmail.com</span><span data-lang="zh">个人邮箱：yibo031110@gmail.com</span></a>
           <div className="contact-affiliation"><span><span data-lang="en">CURRENT AFFILIATION</span><span data-lang="zh">当前单位</span></span><Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" /></div>
