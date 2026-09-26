@@ -456,7 +456,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .section-heading { margin-bottom: 28px; }
 .section-heading h2, .contact-section h2 { font-size: clamp(2rem, 3.4vw, 3.5rem); line-height: 1.12; }
 .section-context { margin: 0 0 24px; }
-.research-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 24px 0 32px; }
+.research-index { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 24px 0 32px; }
 .research-index a { display: grid; align-content: start; gap: 7px; border-top: 2px solid var(--accent); padding: 14px 0; }
 .research-index a > span { color: var(--accent-dark); font-size: .75rem; }
 .research-index strong { font-size: 1rem; line-height: 1.45; }

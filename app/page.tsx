@@ -6,6 +6,7 @@ import { LanguageToggle } from '../components/LanguageToggle';
 import { ProjectGalleryLightbox } from '../components/ProjectGalleryLightbox';
 import { MoriProjectLightbox } from '../components/MoriProjectLightbox';
 import { TextDetails } from '../components/TextDetails';
+import { ReGroundDetails } from '../components/ReGroundDetails';
 import {
   appointments,
   coreProjects,
@@ -143,12 +144,13 @@ export default function Home() {
 
         <section className="section core-program-section" id="companions">
           <div className="section-heading compact"><div><h2 data-lang="en">Selected research.</h2><h2 data-lang="zh">代表研究。</h2></div></div>
-          <p className="section-context" data-lang="en">Under the supervision of Prof. Ding Liu in the Systems Social Neuroscience Lab, I study how neural population states, naturalistic behavior, and artificial interactive systems can be combined to understand and regulate social need.</p>
-          <p className="section-context" data-lang="zh">在刘鼎教授指导下，我在系统与社会神经科学实验室研究如何结合神经群体状态、自然行为与人工交互系统，理解并调控社交需求。</p>
+          <p className="section-context" data-lang="en">My work connects social neuroscience, artificial social partners, and human–AI interaction. In Prof. Ding Liu’s Systems Social Neuroscience Lab, I study social need through neural population states and naturalistic behavior; complementary projects examine relational authority and AI experience reuse.</p>
+          <p className="section-context" data-lang="zh">我的研究连接社会神经科学、人工社会伙伴与人机交互。在刘鼎教授的系统与社会神经科学实验室，我通过神经群体状态与自然行为研究社交需求；相关项目进一步探索关系权力与 AI 的经验重用。</p>
           <nav className="research-index" aria-label="Research projects">
             <a href="#robotic-mouse"><span>01</span><strong data-lang="en">Build an artificial partner</strong><strong data-lang="zh">搭建人工伙伴</strong><small data-lang="en">Robotic mouse · experimental platform</small><small data-lang="zh">机器鼠 · 实验平台</small></a>
             <a href="#social-need-dynamics"><span>02</span><strong data-lang="en">Measure social states</strong><strong data-lang="zh">测量社交状态</strong><small data-lang="en">Neural populations · naturalistic behavior</small><small data-lang="zh">神经群体 · 自然行为</small></a>
             <a href="#mori"><span>03</span><strong data-lang="en">Study relational boundaries</strong><strong data-lang="zh">研究关系边界</strong><small data-lang="en">MORI · human–AI interaction</small><small data-lang="zh">MORI · 人机交互</small></a>
+            <a href="#reground"><span>04</span><strong data-lang="en">Reuse experience within authority</strong><strong data-lang="zh">在权限内重用经验</strong><small data-lang="en">ReGround · agent memory &amp; planning</small><small data-lang="zh">ReGround · 智能体记忆与规划</small></a>
           </nav>
           <div className="project-list core-project-list">
             {[...coreProjects].sort((a, b) => a.order - b.order).map((project) => (
@@ -190,12 +192,7 @@ export default function Home() {
                     </aside>
                   )}
                   {project.links?.map((link) => <ExternalLink href={link.href} childrenZh={link.labelZh} key={link.href}>{link.label}</ExternalLink>)}
-                  {project.modules?.filter((module) => module.id === 'tas-gate').map((module) => (
-                    <div className="project-continuation" key={module.id}>
-                      <h4><span data-lang="en">{module.label}</span><span data-lang="zh">{module.labelZh}</span></h4>
-                      <p data-lang="en">{module.summary}</p><p data-lang="zh">{module.summaryZh}</p>
-                    </div>
-                  ))}
+                  {project.id === 'reground' && <ReGroundDetails />}
                   {project.secondaryImage && project.id !== 'robotic-mouse' && (
                     <a className="project-secondary-media" href={project.secondaryImage} target="_blank" rel="noreferrer" aria-label={`Open system figure for ${project.title}`}>
                       <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? project.title} width={1600} height={900} />

@@ -406,18 +406,22 @@ export const coreProjects: ResearchProject[] = [
         summary: 'Relationship context produces different—and sometimes opposing—revisions across powers; memory-sharing authority shows one of the largest attitude shifts.',
         summaryZh: '关系情境会使不同权力出现差异化、甚至方向相反的调整；其中信息分享权是态度变化最大的维度之一。',
       },
-      {
-        id: 'tas-gate',
-        label: 'TAS-Gate — computational extension in development',
-        labelZh: 'TAS-Gate：开发中的计算延伸',
-        status: 'building',
-        statusLabel: 'BUILDING',
-        statusLabelZh: '开发中',
-        summary: 'Building on MORI, I separate long-term memory into two asymmetric components: experience memory uses success, praise, and trust to improve behavior, while rule memory changes only through valid authorization.',
-        summaryZh: '基于 MORI 对权力差异的发现，将规则记忆与经验记忆非对称分离，使 AI 能从成功、表扬和信任中学习，却不会将其误认为扩大权限的授权。',
-      },
     ],
     links: [{ label: 'Open study prototype', labelZh: '打开实验测试', href: 'https://mori-family-memory.pages.dev/', type: 'demo' }],
+  },
+  {
+    id: 'reground',
+    order: 4,
+    tier: 'core',
+    status: 'active',
+    statusLabel: 'FIRST AUTHOR · ICLR 2027 UNDER REVIEW',
+    statusLabelZh: '第一作者 · ICLR 2027 在审',
+    title: 'ReGround — reusing experience under changing authority',
+    titleZh: 'ReGround：权限变化后的经验重用',
+    description: 'How can an AI agent reuse what it has learned when its role or permissions change? ReGround explores experience reuse in long-term human–AI collaboration without treating past success as permission to act.',
+    descriptionZh: '当角色或权限发生变化时，AI 如何重新运用学到的经验？ReGround 研究长期人机协作中的经验重用，让过去的成功不被误当作行动授权。',
+    tags: ['Human–AI collaboration', 'Agent memory', 'Authority-aware planning'],
+    tagsZh: ['人机协作', '智能体记忆', '权限约束规划'],
   },
 ];
 
@@ -430,8 +434,8 @@ export const researchTracks: ResearchTrack[] = [
     title: 'Reliable cross-subject EEG-fNIRS learning',
     titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
     description:
-      'With Prof. Ren Wang, I develop participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. I also discuss the computational design of TAS-Gate, which separates authorization rules from experiential memory in long-term AI.',
-    descriptionZh: '我与王韧教授合作开展跨被试多模态解码，研究被试隔离评估、少样本适应、概率校准与异构专家融合，并讨论 TAS-Gate 中授权规则与经验记忆分离的计算设计。',
+      'With Prof. Ren Wang, I develop participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. In a separate collaboration, we co-author ReGround, my first-author manuscript on experience reuse under changing authority, under review at ICLR 2027.',
+    descriptionZh: '我与王韧教授合作开展跨被试多模态解码，研究被试隔离评估、少样本适应、概率校准与异构专家融合。在另一项合作中，我们共同撰写 ReGround，研究权限变化后的经验重用；该稿件由我担任第一作者，目前在 ICLR 2027 审稿。',
   },
   {
     code: 'WESTLAKE · CROSS-LAB AI',
@@ -589,6 +593,20 @@ export const sidebarTimeline: SidebarTimelineGroup[] = [
 ];
 
 export const publications: Publication[] = [
+  {
+    year: '2026',
+    state: 'MANUSCRIPT UNDER REVIEW · ICLR 2027',
+    stateZh: '在审稿件 · ICLR 2027',
+    title: 'Re-Grounding Relational Experience under Changing Authority',
+    titleZh: '权限变化下关系经验的重新落地',
+    authors: 'Yibo Yuan, Sichaon Wang, Yang Su, Ren Wang. First-author manuscript.',
+    authorsZh: '袁艺博（Yibo Yuan）、Sichaon Wang、Yang Su、Ren Wang。第一作者稿件。',
+    selfAuthor: 'Yibo Yuan',
+    selfAuthorZh: '袁艺博（Yibo Yuan）',
+    href: '#reground',
+    linkLabel: 'Project overview',
+    linkLabelZh: '项目介绍',
+  },
   {
     year: '2026',
     state: 'MANUSCRIPT UNDER REVIEW · ACM CHI 2027',
