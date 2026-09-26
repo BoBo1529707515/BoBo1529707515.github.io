@@ -197,15 +197,15 @@ export const coreProjects: ResearchProject[] = [
     descriptionZh:
       '随着社交需求在隔离中积累、又在重聚时得到缓解，MPN 神经群体状态如何变化？',
     contribution:
-      'I worked with data from the lab’s published Nature study. To compare recordings across days without matching every neuron, I developed a measure that uses each session’s own baseline. I checked it with decoding and control analyses. When low-resolution video and identity switches made contact hard to measure with DeepLabCut, I built a segmentation-based tracking workflow.',
+      'Using data from the lab’s published Nature study, I independently developed a registration-free way to compare population states across days by measuring each session relative to its own baseline. I combined this measure with cross-validated decoding, motion controls, circular shifts, and permutation tests, and built a semantic-segmentation workflow for reliable frame-level contact measurement when low-resolution video and identity switching limited DeepLabCut.',
     contributionZh:
-      '我分析的是实验室已发表 Nature 论文中的数据。不同天记录到的神经元难以一一对应，我就尝试以每次记录自身的基线为参照，比较群体状态，并用解码和对照分析来检验。行为视频也有难点：画质低、两只小鼠容易被认错。为此，我做了一套基于语义分割的追踪流程，逐帧测量接触。',
+      '我基于实验室已发表 Nature 论文所使用的数据，独立提出并实现了一种无需跨日逐细胞配准的比较方法：让每个 session 都相对于自身基线进行量化。我进一步结合交叉验证解码、运动控制、循环时移与置换检验，并针对低画质与身份互换限制 DeepLabCut 的问题，开发了用于逐帧接触量化的语义分割流程。',
     tags: ['Miniscope imaging', 'Population geometry', 'Social homeostasis'],
     tagsZh: ['微型显微镜成像', '神经群体几何', '社交稳态'],
     image: '/assets/social-need-neural-state.png',
     imageAlt: 'Preliminary neural state displacement from baseline across isolation durations and reunion',
-    imageCaption: 'How MPN population activity changes when mice reunite after different periods of isolation',
-    imageCaptionZh: '隔离不同时长后再重聚，MPN 神经群体活动如何变化',
+    imageCaption: 'Neural-state displacement across isolation durations · click for methods and reading guide',
+    imageCaptionZh: '不同隔离时长下的神经状态位移 · 点击查看方法与读图说明',
     imageLayout: 'wide',
     imageFit: 'contain',
     figureDetails: {
@@ -225,9 +225,9 @@ export const coreProjects: ResearchProject[] = [
         bodyZh:
           '刘鼎及其合作者发表于 Nature（2025）的研究在内侧视前核中鉴定出两类响应相反的神经元群体：伴侣离开时活跃、重聚后受抑制的 MPNᴵˢᵒˡᵃᵗⁱᵒⁿ 神经元，以及在重聚时被激活的 MPNᴿᵉᵘⁿⁱᵒⁿ 神经元。MPNᴵˢᵒˡᵃᵗⁱᵒⁿ 的活动强度随社交反弹变化，为社交需求与社交饱足提供了环路层面的基础。',
         bridge:
-          'I started with a practical question: how could I compare recordings from different days without matching every neuron? My approach was to measure each session against its own baseline, then compare how far the population state moved.',
+          'This finding created the biological starting point for my project, but also exposed a computational gap: without cell-by-cell registration across days, how can full-population dynamics be compared across sessions and isolation durations? I addressed this by expressing every session relative to its own baseline geometry, yielding the registration-free displacement measure shown here.',
         bridgeZh:
-          '我的问题更具体：不同天记录到的神经元无法一一对应，还能比较群体活动吗？我尝试让每次记录都以自己的基线为参照，再比较群体状态偏离基线的程度。',
+          '这一发现构成了本项目的生物学起点，同时也留下一个计算问题：在缺少跨日逐细胞配准时，如何比较不同 session、不同隔离时长下的完整神经群体动力学？因此，我将每个 session 表示为相对其自身基线几何的偏离，由此建立了图中无需跨日配准的群体状态位移指标。',
         citation: 'Liu et al. · Nature 640 · 2025 · Fig. 2c',
         href: 'https://doi.org/10.1038/s41586-025-08617-8',
       },
@@ -237,9 +237,9 @@ export const coreProjects: ResearchProject[] = [
         image: '/assets/miniscope-raw-calcium-field.png',
         imageAlt: 'Representative raw miniscope calcium-imaging field from an MPN recording',
         caption:
-          'A raw frame from an MPN miniscope recording. I work with the fluorescence traces extracted from these images to study how neurons change together.',
+          'A representative raw miniscope calcium-imaging frame from the MPN recording. It is the image-level starting point from which neuronal fluorescence time series are extracted and assembled into the population-activity matrix used in the analyses below.',
         captionZh:
-          'MPN 微型显微镜记录中的一帧原始图像。我的分析使用从这些图像中提取的荧光曲线，观察神经元的活动如何一起变化。',
+          'MPN 微型显微镜记录中的一帧代表性原始钙成像视野。后续分析从这一图像层面的原始记录中提取各神经元的荧光时间序列，并组成下方分析所使用的神经群体活动矩阵。',
       },
       detailFigure: {
         image: '/assets/social-need-state-trajectory-day3.png',
@@ -296,14 +296,14 @@ export const coreProjects: ResearchProject[] = [
     status: 'pilot',
     statusLabel: 'IN DEVELOPMENT',
     statusLabelZh: '开发中',
-    title: 'Building a robotic social partner for mice',
-    titleZh: '给小鼠做一个机器伙伴',
+    title: 'A biomimetic robotic mouse for controlled social interaction',
+    titleZh: '用于可控社会互动研究的仿生机器鼠',
     description:
-      'Can a mouse’s social need be relieved by something that moves, touches, and responds like another mouse—but is not one?',
+      'Can an artificial partner modulate social need in mice? This project examines the contributions of sensory cues and contingent responses to social interaction.',
     descriptionZh:
-      '一个会移动、触摸并回应的小鼠形态伙伴，能否缓解真实小鼠的社交需求？',
-    contribution: 'I proposed this project and brought the collaborators together. I design the experiments, build the arena and recording setup, and work on the robot’s perception, planning, and host-side control. We are testing the prototype and working toward changing movement, touch, warmth, smell, and responsiveness one at a time.',
-    contributionZh: '这个课题是我提出的，合作也是我联系起来的。我负责实验设计、场地与记录装置的搭建，以及机器鼠的感知、规划和上位机控制。我们正在测试原型，希望能分别改变它的动作、触碰、温度、气味和回应方式。',
+      '人工伙伴能否调节小鼠的社交需求？本项目研究不同感官线索与交互响应在社会互动中的作用。',
+    contribution: 'I conceived and lead the project, initiated its cross-institutional collaboration, and designed the behavioral arena and experimental paradigms. I built the multi-camera and ultrasonic recording setup and the robot’s perception, planning, and host-side control, and conducted pilot experiments. The platform is being developed to separate movement, touch, temperature, odor, and responsiveness as experimental variables.',
+    contributionZh: '我提出并主导项目、发起跨机构合作，设计行为场地与实验范式。我搭建多相机与超声记录平台、机器鼠感知规划与上位机控制系统，并开展探索性实验。目前正将运动、触摸、温度、气味与响应性逐步拆解为可控实验变量。',
     tags: ['Embodied AI', 'Programmable touch', 'Social homeostasis'],
     tagsZh: ['具身智能', '可编程触摸', '社交稳态'],
     image: '/assets/robotic-mouse-prototype.png',
@@ -318,8 +318,8 @@ export const coreProjects: ResearchProject[] = [
     secondaryImageCaptionZh: '可编程形态与运动状态 · 可控社会线索平台',
     evidence: {
       label: 'Current stage · since March 2026', labelZh: '当前阶段 · 始于 2026 年 3 月',
-      observation: 'The prototype is built, and pilot interactions are underway. Next comes testing whether contact with the robot changes social need; neural feedback is a longer-term goal.',
-      observationZh: '原型已经搭起来，也开始了探索性互动。接下来要检验的是：与机器鼠接触，是否真的改变了社交需求。用神经信号反馈控制机器鼠，是更后面的目标。',
+      observation: 'Physical prototype and pilot interaction. Whether robotic contact reduces social need remains an experimental question; neural closed-loop control is a planned extension.',
+      observationZh: '已有实物原型与探索性互动；机器鼠接触是否降低社交需求仍待实验检验，神经闭环控制属于后续计划。',
       lastVerified: '2026-09',
     },
     modules: [
@@ -365,11 +365,11 @@ export const coreProjects: ResearchProject[] = [
     title: 'MORI — relational power in long-term human–AI companionship',
     titleZh: 'MORI：长期人机陪伴关系中的权力边界',
     description:
-      'If an AI has been part of your family for years, should it remember everything? Share a memory with someone else? Step into an argument? In MORI, I ask where people draw these lines, and what makes them change their minds.',
+      'When an AI companion becomes part of a long-term relationship, what may it remember, share, interpret, or act on? MORI examines how people grant and revise these distinct forms of authority. It studies human judgments about imagined relationships—not whether AI companionship biologically satisfies social need.',
     descriptionZh:
-      '如果一个 AI 已经在你家里生活了很多年，它该记住所有事情吗？能把你的回忆告诉别人吗？该不该介入一次家庭争吵？在 MORI 中，我想知道人们会把界线画在哪里，又为什么改变主意。',
-    contribution: 'I designed and led a study with 105 participants, using a fictional family story spanning 20 years. Participants judged six AI powers under four governance arrangements. The first-author manuscript is under review at ACM CHI 2027, and I am working with rednote on the next phase.',
-    contributionZh: '我提出、设计并主导了这项 105 人研究，让参与者跟随一个跨越 20 年的虚构家庭故事，在四种治理安排下判断六类 AI 权力。一作稿件正在 ACM CHI 2027 审稿，我也正与小红书合作推进下一阶段。',
+      '当 AI 陪伴者进入长期关系，它可以记住、分享、解释什么，又可以介入哪些事情？MORI 研究人们如何赋予和修订这些不同权力。它测量人们对虚构关系情境的判断，并非直接检验 AI 是否在生物学上满足社交需求。',
+    contribution: 'I conceived and led this 105-participant study, creating a fixed 20-year relationship narrative in which people repeatedly judged six distinct AI powers under four governance arrangements. I am first author on the manuscript, currently under review at ACM CHI 2027, and I am continuing the project’s next phase in collaboration with rednote.',
+    contributionZh: '我独立提出并主导了这项 105 人研究：设计固定的 20 年关系叙事，让参与者在四种治理安排下反复判断六类不同的 AI 权力。论文目前以我为第一作者投稿 ACM CHI 2027，正在审稿；同时，我正与小红书合作推进项目的下一阶段。',
     tags: ['Human–AI interaction', 'Long-term memory', 'Relational authority'],
     tagsZh: ['人机交互', '长期记忆', '关系权力'],
     image: '/assets/mori-relational-power-overview.png',
@@ -381,8 +381,8 @@ export const coreProjects: ResearchProject[] = [
     evidence: {
       label: 'Finding',
       labelZh: '发现',
-      observation: 'People did not give AI more freedom across the board. A change in the relationship could make them more open to one power and less open to another. Sharing memories was among the powers where attitudes shifted most.',
-      observationZh: '人们并不是一概给 AI 更多或更少的自由。关系变了，他们可能更愿意交出某一种权力，却收回另一种。对于能不能分享记忆，态度变化尤其明显。',
+      observation: 'Participants did not simply give AI more or less autonomy. Relationship context shifted different powers in different—and sometimes opposing—directions; memory-sharing authority showed one of the largest changes in attitude.',
+      observationZh: '参与者并不会整体性地扩大或限制 AI 权力。关系情境使不同权力出现差异化、甚至方向相反的调整，其中信息分享权是态度变化最大的维度之一。',
       lastVerified: '2026-09',
     },
     modules: [
@@ -418,8 +418,8 @@ export const coreProjects: ResearchProject[] = [
     statusLabelZh: '第一作者 · ICLR 2027 在审',
     title: 'ReGround — reusing experience under changing authority',
     titleZh: 'ReGround：权限变化后的经验重用',
-    description: 'An AI may learn a useful way to help, then lose permission to use it. What should it keep, and what should it change? In ReGround, we study how agents can reuse experience without assuming that past success gives them permission to act.',
-    descriptionZh: 'AI 学会了一种有用的做法，后来却不再被允许这样做。哪些经验该保留，哪些做法要改变？在 ReGround 中，我们研究如何让 AI 继续利用经验，却不把过去的成功当成行动授权。',
+    description: 'ReGround studies how AI agents can reuse experience under changes in role and authority. The work distinguishes the value of past experience from current authorization in long-term human–AI collaboration.',
+    descriptionZh: 'ReGround 研究 AI 智能体在角色与权限变化后如何重用经验，区分长期人机协作中的历史经验价值与当前行动授权。',
     tags: ['Human–AI collaboration', 'Agent memory', 'Authority-aware planning'],
     tagsZh: ['人机协作', '智能体记忆', '权限约束规划'],
   },
@@ -434,8 +434,8 @@ export const researchTracks: ResearchTrack[] = [
     title: 'Reliable cross-subject EEG-fNIRS learning',
     titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
     description:
-      'With Prof. Ren Wang, I study how EEG–fNIRS models can work for a new participant with little calibration data. I work on few-shot adaptation, combining models, and testing on participants kept separate from training. We also collaborate on ReGround, listed above.',
-    descriptionZh: '我与王韧教授合作，研究 EEG–fNIRS 模型如何用少量校准数据适应新被试。我做少样本适应、模型融合，并在与训练集分开的被试上评估效果。我们也合作开展了上面的 ReGround 项目。',
+      'With Prof. Ren Wang, I develop participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. In a separate collaboration, we co-author ReGround, my first-author manuscript on experience reuse under changing authority, under review at ICLR 2027.',
+    descriptionZh: '我与王韧教授合作开展跨被试多模态解码，研究被试隔离评估、少样本适应、概率校准与异构专家融合。在另一项合作中，我们共同撰写 ReGround，研究权限变化后的经验重用；该稿件由我担任第一作者，目前在 ICLR 2027 审稿。',
   },
   {
     code: 'WESTLAKE · CROSS-LAB AI',
@@ -445,8 +445,8 @@ export const researchTracks: ResearchTrack[] = [
     title: 'AI-based generative modeling and validation of cortical turbulence',
     titleZh: '基于 AI 的大脑皮层湍流生成建模与验证',
     description:
-      'With Prof. Tailin Wu and Tengfei Xu, I ask whether generative models reproduce the phase singularities and turbulence-like dynamics seen in cortical activity. I compare these patterns using BrainVortexToolbox, developed by Prof. Pulin Gong’s group at the University of Sydney.',
-    descriptionZh: '在吴泰霖教授和徐腾飞博士指导下，我研究生成模型能否重现皮层活动中的相位奇点与类湍流变化。我使用悉尼大学 Pulin Gong 教授团队的 BrainVortexToolbox，对这些模式进行比较。',
+      'Under the supervision of Prof. Tailin Wu and mentorship of Tengfei Xu, I test whether generative models can recover cortical phase singularities and turbulence-like dynamics, using BrainVortexToolbox from Prof. Pulin Gong’s group at the University of Sydney for quantitative validation.',
+    descriptionZh: '在吴泰霖教授指导、徐腾飞博士指导下，我研究生成模型能否恢复大脑皮层中的相位奇点与类湍流动力学，并使用悉尼大学 Pulin Gong 教授团队开发的 BrainVortexToolbox 进行定量验证。',
     logo: '/assets/tailin-wu-lab-logo.png',
     logoAlt: 'AI for Scientific Simulation and Discovery Lab logo',
     logoScale: 'prominent',
@@ -464,18 +464,18 @@ export const researchTracks: ResearchTrack[] = [
     title: 'Constrained 2.5D macaque behavior analysis',
     titleZh: '猕猴行为的受约束 2.5D 分析',
     description:
-      'I work on tracking macaques from video and calibrating the cage geometry to describe where they move. The analysis uses plane-specific trajectory estimates rather than full 3D reconstruction.',
-      descriptionZh: '我做视频中的猕猴追踪，并结合笼体几何标定分析它们在哪里活动。目前按不同平面估计轨迹，不是完整的三维重建。',
+      'I develop video-based macaque tracking and spatial analysis using segmentation masks, cage calibration, and plane-specific trajectory estimates, with explicit handling of contact states.',
+      descriptionZh: '我结合分割掩膜追踪、笼体标定、分平面轨迹估计与接触状态处理，开发基于视频的猕猴行为追踪与空间分析方法。',
   },
   {
     code: 'RESEARCH TOOLS',
     codeZh: '实验工具',
     lab: 'Systems Social Neuroscience Lab · Prof. Ding Liu',
     labZh: '系统与社会神经科学实验室 · 刘鼎教授',
-    title: 'Tools I build for the lab',
-    titleZh: '我给实验室做的工具',
-    description: 'I build tools for our experiments: an eight-channel STM32 lickometer, a programmable motion platform, and software for long video recordings and frame-by-frame behavior analysis.',
-    descriptionZh: '我也给实验室做工具：八通道 STM32 舔舐计、可编程运动平台，以及处理长视频、逐帧分析行为的软件。',
+    title: 'Open experimental systems',
+    titleZh: '开放式行为神经科学实验系统',
+    description: 'An eight-channel STM32 lickometer, a programmable motion platform, long-duration tracking, and reproducible frame-level workflows.',
+    descriptionZh: '开发八通道 STM32 舔舐计、可编程运动平台、长时程追踪与可复现逐帧分析流程。',
     logo: '/assets/ding-liu-lab-logo.png',
     logoAlt: 'Ding Liu Lab logo',
   },
@@ -505,8 +505,8 @@ export const appointments: Appointment[] = [
     role: 'Council Member · External Relations',
     roleZh: '理事会成员 · 对外联络',
     detail:
-      'I bring biomedical and electrical engineering alumni together, helped organize a Technology and Finance forum, and proposed a hospital–university collaboration. Our community now has nearly 3,000 members.',
-    detailZh: '我负责联系生物医学工程和电气工程领域的校友，协助举办科技金融论坛，也提出过医院与高校的合作项目。这个社群现在有近 3,000 位成员。',
+      'I led alumni liaison across biomedical and electrical engineering, supported a Technology and Finance forum, and proposed a hospital-university translational project. Together, we have built an active community of nearly 3,000 members, primarily highly educated professionals.',
+    detailZh: '我负责生物医学工程和电气工程校友联络，协助举办科技金融论坛，并提出院校转化合作项目。我们共同组织了一个近 3,000 人、以高学历专业人士为主的活跃医工交叉社群。',
     logo: '/assets/medical-engineering-innovators-logo.png',
     logoAlt: 'Medical and Engineering Innovators logo',
     href: 'https://yigongxueren.com/',
@@ -637,8 +637,8 @@ export const openTools: OpenTool[] = [
     codeZh: '行为分析',
     title: 'Mouse trajectory tracking',
     titleZh: '小鼠轨迹追踪',
-    description: 'Track mice in long videos, define the arena, align recordings, and measure contact frame by frame using segmentation.',
-    descriptionZh: '追踪长视频中的小鼠，自定义场地、对齐记录，并用分割结果逐帧测量接触。',
+    description: 'Long-duration tracking, custom ROIs, temporal alignment, and high-throughput semantic-segmentation-based contact detection.',
+    descriptionZh: '支持长时程追踪、自定义场地、时间对齐与基于语义分割的高通量接触检测。',
     href: 'https://github.com/BoBo1529707515/Mouse-trajectory-tracking',
   },
   {
@@ -646,8 +646,8 @@ export const openTools: OpenTool[] = [
     codeZh: '实验硬件',
     title: 'Open lickometer',
     titleZh: '开源舔舐计',
-    description: 'An eight-channel STM32 lick detector with a Python interface to view events in real time and save them as CSV files.',
-    descriptionZh: '八通道 STM32 舔舐检测装置，配有 Python 界面，可实时查看事件并保存为 CSV 文件。',
+    description: 'Eight-channel STM32 firmware and a Python interface for real-time capacitive lick detection and CSV acquisition.',
+    descriptionZh: '八通道 STM32 固件与 Python 界面，用于实时电容舔舐检测和 CSV 采集。',
     href: 'https://github.com/BoBo1529707515/lickometer',
   },
   {
@@ -655,8 +655,8 @@ export const openTools: OpenTool[] = [
     codeZh: '显微成像',
     title: 'NeuronTracker',
     titleZh: '神经突起追踪工具',
-    description: 'A graphical tool for tracing axon growth, with path constraints and calibrated measurements that can be exported.',
-    descriptionZh: '用图形界面追踪轴突生长，加入路径约束，并导出经过标定的测量结果。',
+    description: 'GUI-assisted axon-growth tracing with biologically motivated path constraints and calibrated exports.',
+    descriptionZh: '结合生物学路径约束与标定导出的 GUI 辅助轴突生长追踪工具。',
     href: 'https://github.com/BoBo1529707515/Neural-tract-tracing',
   },
 ];

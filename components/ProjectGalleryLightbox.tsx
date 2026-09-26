@@ -18,16 +18,16 @@ const gallery = [
     alt: 'Physical prototype of the biomimetic robotic mouse',
     width: 2000,
     height: 1200,
-    caption: 'Our robotic-mouse prototype',
-    captionZh: '我们搭建的机器鼠原型',
+    caption: 'Physical prototype — programmable biomimetic embodiment',
+    captionZh: '机器鼠实物原型——可编程仿生具身平台',
   },
   {
     src: '/assets/robotic-mouse-skin-interaction.png',
     alt: 'A skin-covered robotic mouse interacting with a real mouse in the behavioral arena',
     width: 533,
     height: 457,
-    caption: 'A real mouse meets the skin-covered robot in a pilot experiment',
-    captionZh: '探索性实验中，真鼠与带皮机器鼠相遇',
+    caption: 'Pilot interaction — a skin-covered robotic mouse and a real mouse in the behavioral arena',
+    captionZh: '探索性互动实验——带皮机器鼠与真实小鼠在行为场地中互动',
   },
   {
     src: '/assets/robotic-mouse-system.png',
@@ -48,7 +48,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
     <>
       <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label="Open robotic mouse project details">
         <Image src={triggerSrc} alt={triggerAlt} width={2000} height={1200} unoptimized className="project-primary-image project-primary-image-cover" />
-        <span className="interactive-media-cue interactive-media-cue-featured"><span data-lang="en">More about the project ↗</span><span data-lang="zh">看看机器鼠是怎么做的 ↗</span></span>
+        <span className="interactive-media-cue interactive-media-cue-featured"><span data-lang="en">Interactive project · click to explore ↗</span><span data-lang="zh">交互式项目详情 · 点击展开 ↗</span></span>
         {triggerCaption && <span className="image-caption" data-lang="en">{triggerCaption}</span>}
         {triggerCaptionZh && <span className="image-caption" data-lang="zh">{triggerCaptionZh}</span>}
       </button>
@@ -57,19 +57,19 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
           <div className="project-detail-panel">
             <header className="project-detail-header">
               <p className="eyebrow accent"><span data-lang="en">PROJECT DETAIL</span><span data-lang="zh">项目详情</span></p>
-              <h3 id={titleId}><span data-lang="en">Building a robotic social partner for mice</span><span data-lang="zh">给小鼠做一个机器伙伴</span></h3>
-              <p data-lang="en">What matters to a mouse when it meets another mouse: movement, touch, smell, or being responded to? A robot lets us vary these cues while the real mouse moves freely.</p>
-              <p data-lang="zh">一只小鼠遇到另一只小鼠时，在意的是动作、触碰、气味，还是对方的回应？我希望借助机器鼠，在真鼠自由活动时，分别改变这些线索。</p>
+              <h3 id={titleId}><span data-lang="en">A biomimetic robotic mouse for controlled social interaction</span><span data-lang="zh">用于可控社会互动研究的仿生机器鼠</span></h3>
+              <p data-lang="en">The platform turns embodiment into experimentally controllable variables while preserving a naturalistic encounter between a freely moving mouse and an artificial partner.</p>
+              <p data-lang="zh">该平台将具身线索转化为可实验控制的变量，同时保留真实小鼠与人工伙伴之间的自然互动情境。</p>
             </header>
             <section className="project-case-section">
-              <p data-lang="en">I proposed the project and brought the collaborators together. Under Prof. Ding Liu’s supervision, I design and run the behavioral experiments, build the arena and multi-camera/ultrasonic recording setup, and work on the robot’s perception, planning, and host-side control.</p>
-              <p data-lang="zh">这个课题是我提出的，合作者也是我联系起来的。在刘鼎教授指导下，我设计并开展行为实验，搭建场地、多相机与超声记录装置，也负责机器鼠的感知、规划和上位机控制。</p>
-              <p data-lang="en">Our collaborators develop the low-level control and PPO-based locomotion. We work together to make the robot suitable for these experiments.</p>
-              <p data-lang="zh">合作方负责底层控制与基于 PPO 的运动策略，我们一起把机器鼠调整到适合实验的状态。</p>
+              <p data-lang="en">I conceived the research question, initiated the cross-institutional collaboration, and lead the project under Prof. Ding Liu’s supervision. My work includes behavioral-paradigm and arena design, experiments, a sound-attenuated multi-camera and ultrasonic recording setup, and the robot’s perception, planning, and host-side control.</p>
+              <p data-lang="zh">我提出研究问题、发起跨机构合作，并在刘鼎教授指导下主导项目。我负责行为范式与场地设计、实验实施、静音多相机与超声记录平台，以及机器鼠的感知、规划和上位机控制。</p>
+              <p data-lang="en">Collaborators contribute the low-level control and PPO-based locomotion, alongside joint refinement of the robotic platform for behavioral experiments.</p>
+              <p data-lang="zh">合作方负责底层控制与基于 PPO 的运动策略，团队共同完善用于行为实验的机器鼠平台。</p>
             </section>
             <section className="project-case-section">
-              <p data-lang="en">Here are the prototype and our pilot interactions. To test whether the robot changes social need, we plan to let the mouse meet a real partner afterward and measure its response.</p>
-              <p data-lang="zh">下面是原型和探索性互动的照片。接下来，我们计划让接触过机器鼠的小鼠再与真鼠重聚，观察它的反应，检验社交需求是否发生变化。</p>
+              <p data-lang="en">The images below document the prototype and pilot interaction, not proof that artificial contact satisfies social need. The study is designed to separate social cues and test residual social need with a real-mouse reunion probe.</p>
+              <p data-lang="zh">下图展示实物原型和探索性互动，并不等于已经证明人工接触满足了社交需求。研究拟拆解不同社会线索，并通过真鼠重聚检验测量剩余社交需求。</p>
               <div className="project-detail-gallery">
                 {gallery.map((item) => <figure className={item.wide ? 'detail-media-wide' : ''} key={item.src}>
                   <FigureViewer src={item.src} alt={item.alt} />
@@ -78,20 +78,22 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               </div>
             </section>
             <section className="project-case-section">
-              <h4><span data-lang="en">Making the robot quieter</span><span data-lang="zh">先让机器鼠安静下来</span></h4>
-              <p data-lang="en">During testing, I noticed that the mice reacted to the robot’s vibration and noise. I kept adjusting the control algorithms and worked with our collaborators on the mechanics, so these cues would interfere less with the experiment.</p>
-              <p data-lang="zh">调试时，我发现小鼠会对机器鼠的振动和声音产生反应。于是我反复调整控制算法，也和合作方一起改机械结构，尽量减少这些干扰。</p>
+              <h4><span data-lang="en">Experimental iteration · vibration &amp; noise</span><span data-lang="zh">实验迭代 · 振动与噪声</span></h4>
+              <p data-lang="en">During testing, I observed that the mice were sensitive to vibration and sound from the robot. I iterated on the control algorithms and worked with our collaborators on mechanical adjustments to reduce these confounds.</p>
+              <p data-lang="zh">调试中，我观察到小鼠对机器鼠产生的振动和声音敏感。我反复调试控制算法，并与合作方调整机械结构，以降低这些混杂因素。</p>
             </section>
             <section className="project-case-section robot-imaging-evidence">
-              <h4><span data-lang="en">September 15 — my first view of hypothalamic neurons!</span><span data-lang="zh">9 月 15 日，我点亮了第一群下丘脑神经元！</span></h4>
-              <p data-lang="en">My first two-photon calcium-imaging view of a group of hypothalamic neurons, in the MPN. This is part of the robotic-mouse project.</p>
-              <p data-lang="zh">这是我第一次通过双光子钙成像看到的一群下丘脑 MPN 神经元，也是机器鼠课题中的一步。</p>
+              <h4><span data-lang="en">MPN two-photon calcium imaging</span><span data-lang="zh">MPN 双光子钙成像</span></h4>
+              <p data-lang="en">September 15 — my first view of a group of hypothalamic neurons!</p>
+              <p data-lang="zh">9 月 15 日，我点亮了第一群下丘脑神经元！</p>
+              <p data-lang="en">Two-photon calcium imaging of neurons in the medial preoptic nucleus (MPN), conducted as part of the robotic-mouse project.</p>
+              <p data-lang="zh">机器鼠课题中的内侧视前核（MPN）神经元双光子钙成像视野。</p>
               <FigureViewer src="/assets/mpn-two-photon-calcium-imaging.png" alt="MPN two-photon calcium imaging field of view" />
             </section>
             <section className="project-detail-goal">
               <p className="eyebrow accent"><span data-lang="en">TOWARD A CLOSED LOOP</span><span data-lang="zh">闭环目标</span></p>
-              <p data-lang="en">Next, I want the robot to respond to the mouse’s neural activity, not just its movement. I plan to use MPN activity and dopamine signals to estimate social state and adjust the interaction as it happens.</p>
-              <p data-lang="zh">下一步，我希望机器鼠不只回应小鼠的动作，还能依据它的神经活动调整互动。我计划结合 MPN 活动与多巴胺信号估计社交状态，再让这些信号参与机器鼠的控制。</p>
+              <p data-lang="en">I am extending the platform toward a closed-loop social-neuroengineering system. The planned loop will combine MPN population activity and dopamine signals from the freely moving mouse to estimate its social state, allowing the robotic mouse to adjust its interaction strategy online.</p>
+              <p data-lang="zh">下一步计划将平台扩展为闭环社会神经工程系统：结合自由活动真实小鼠的 MPN 神经群体活动与多巴胺信号估计社交状态，让机器鼠在线调整互动策略。这是计划中的闭环方案，而非已完成的验证结果。</p>
               <figure className="project-detail-planned-recording">
                 <a href="/assets/planned-mpn-miniscope-configuration.png" target="_blank" rel="noreferrer">
                   <Image
