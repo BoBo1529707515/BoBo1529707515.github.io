@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createContext, runInContext } from 'node:vm';
-import { sanitizedPayload, durationBucket } from '../lib/site-analytics.mjs';
+import { sanitizedPayload, durationBucket, analyticsHeadCode } from '../lib/site-analytics.mjs';
 
 test('only fixed event data, generic source labels, and referrer origin leave the site', () => {
   const result = sanitizedPayload({ n: 'Project open', d: 'wrong', u: 'https://private/', r: 'https://mail.example.org/inbox/person?email=private', p: { target: 'mori', seconds: 12.8, email: 'private', language: 'zh' } }, 'https://bobo1529707515.github.io/?email=private&utm_source=email#private');
@@ -15,7 +15,7 @@ test('only fixed event data, generic source labels, and referrer origin leave th
 });
 
 const source = readFileSync(new URL('../lib/site-analytics.mjs', import.meta.url), 'utf8').replace(/^export /gm, '');
-function fixture({ hostname = 'bobo1529707515.github.io', dnt = '0', gpc = false, excluded = false, storageThrows = false } = {}) {
+function fixture({ hostname = 'bobo1529707515.github.io', dnt = '0', gpc = false, excluded = false, storageThrows = false, search = '?private=secret', headCode = analyticsHeadCode() } = {}) {
   const listeners = new Map(); const intervals = new Map(); const scripts = []; const events = [];
   let now = 0; let focused = true; let sequence = 0;
   const storage = new Map(excluded ? [['plausible_ignore', 'true']] : []);
@@ -27,14 +27,24 @@ function fixture({ hostname = 'bobo1529707515.github.io', dnt = '0', gpc = false
     getElementById: id => scripts.find(s => s.id === id), createElement: () => ({}),
     head: { appendChild: s => scripts.push(s) }, querySelector: () => null, querySelectorAll: () => [],
   };
-  const location = { hostname, href: `https://${hostname}/?private=secret` };
+  const location = { hostname, search, href: `https://${hostname}/${search}` };
   const window = { ...eventMethods, location, setInterval: fn => { intervals.set(++sequence, fn); return sequence; }, clearInterval: id => intervals.delete(id) };
-  const context = createContext({ window, document, location, navigator: { doNotTrack: dnt, globalPrivacyControl: gpc }, localStorage: { getItem: k => { if (storageThrows) throw Error('blocked'); return storage.get(k); } }, performance: { now: () => now }, URL, Element: class {} });
+  const context = createContext({ window, document, location, navigator: { doNotTrack: dnt, globalPrivacyControl: gpc }, localStorage: { getItem: k => { if (storageThrows) throw Error('blocked'); return storage.get(k); }, setItem: (k, v) => { if (storageThrows) throw Error('blocked'); storage.set(k, v); } }, performance: { now: () => now }, URL, URLSearchParams, Element: class {} });
+  scripts.push({ id: 'portfolio-plausible', ...eventMethods });
+  runInContext(headCode, context);
   runInContext(source, context);
   const api = runInContext('({ initializeAnalytics, startProjectVisit, recordEvent, trackingAllowed })', context);
   const emit = name => { for (const fn of [...(listeners.get(name) || [])]) fn(); };
-  return { ...api, scripts, events, storage, document, window,
-    load() { api.initializeAnalytics(); if (scripts[0]) { window.plausible = (n, options) => events.push({ n, ...options }); scripts[0].onload(); } },
+  const providerLoad = () => {
+    if (!window.plausible?.o) return;
+    const options = window.plausible.o;
+    window.plausible = (n, options) => events.push({ n, ...options });
+    window.plausible.l = true;
+    if (options.autoCapturePageviews) window.plausible('pageview');
+    emit('load');
+  };
+  return { ...api, scripts, events, storage, document, window, context, providerLoad,
+    load() { api.initializeAnalytics(); providerLoad(); },
     advance(seconds) { for (let i = 0; i < seconds; i++) { now += 1000; for (const fn of [...intervals.values()]) fn(); } },
     focus(value) { focused = value; emit(value ? 'focus' : 'blur'); },
     visible(value) { document.visibilityState = value ? 'visible' : 'hidden'; emit('visibilitychange'); },
@@ -42,20 +52,70 @@ function fixture({ hostname = 'bobo1529707515.github.io', dnt = '0', gpc = false
   };
 }
 
-test('local previews, opt-out, privacy signals and unavailable storage load no tracker', () => {
-  for (const options of [{ hostname: 'localhost' }, { excluded: true }, { dnt: '1' }, { gpc: true }, { storageThrows: true }]) {
-    const f = fixture(options); f.initializeAnalytics(); assert.equal(f.scripts.length, 0);
+test('local previews, opt-out, privacy signals and unavailable storage never initialize tracking', () => {
+  for (const options of [{ hostname: 'localhost' }, { excluded: true }, { dnt: '1' }, { gpc: true }, { storageThrows: true }, { search: '?analytics=off' }]) {
+    const f = fixture(options); f.load(); assert.equal(f.window.plausible, undefined); assert.equal(f.events.length, 0);
   }
 });
 test('one script and one pageview; automatic form and link capture are disabled', () => {
   const f = fixture(); f.initializeAnalytics(); f.initializeAnalytics(); assert.equal(f.scripts.length, 1);
   assert.equal(f.window.plausible.o.formSubmissions, false);
   assert.equal(f.window.plausible.o.outboundLinks, false);
-  assert.equal(f.window.plausible.o.autoCapturePageviews, false);
+  assert.equal(f.window.plausible.o.autoCapturePageviews, true);
   assert.equal(f.window.plausible.o.transformRequest({ n: 'pageview', r: '' }).u, 'https://bobo1529707515.github.io/');
-  f.window.plausible = (n, options) => f.events.push({ n, ...options }); f.scripts[0].onload(); f.emit('focus'); f.emit('visibilitychange');
+  f.providerLoad(); f.emit('focus'); f.emit('visibilitychange');
   assert.equal(f.events.filter(e => e.n === 'pageview').length, 1);
 });
+test('head initialization does not depend on React or focus; hydration never duplicates pageviews', () => {
+  const f = fixture(); f.focus(false); f.providerLoad();
+  assert.equal(f.events.filter(e => e.n === 'pageview').length, 1);
+  f.initializeAnalytics(); f.initializeAnalytics();
+  f.recordEvent('Project open', { target: 'mori' });
+  assert.equal(f.events.filter(e => e.n === 'pageview').length, 1);
+  assert.equal(f.events.filter(e => e.n === 'Project open').length, 1);
+});
+
+if (process.env.ANALYTICS_EXPORTED_HTML) {
+  test('production-minified HTML contains executable head configuration and exactly one provider', () => {
+    const html = readFileSync(process.env.ANALYTICS_EXPORTED_HTML, 'utf8');
+    const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/)?.[1];
+    assert.ok(head);
+    assert.equal((head.match(/src="https:\/\/plausible.io\/js\/pa-DGHz7Ah089TJDGr67iLK-\.js"/g) || []).length, 1);
+    const headCode = head.match(/<script[^>]*id="portfolio-analytics-config"[^>]*>([\s\S]*?)<\/script>/)?.[1];
+    assert.ok(headCode);
+    const f = fixture({ headCode });
+    assert.equal(f.window.plausible.o.transformRequest({ n: 'pageview', r: '' }).u, 'https://bobo1529707515.github.io/');
+    f.focus(false); f.providerLoad(); f.initializeAnalytics();
+    assert.equal(f.events.filter(e => e.n === 'pageview').length, 1);
+    const excluded = fixture({ headCode, search: '?analytics=off' }); excluded.load();
+    assert.equal(excluded.events.length, 0);
+  });
+}
+
+if (process.env.ANALYTICS_PROVIDER_JS) {
+  test('actual Plausible provider initializes from the head and sends sanitized events to a mocked transport', () => {
+    const provider = readFileSync(process.env.ANALYTICS_PROVIDER_JS, 'utf8');
+    for (const excluded of [false, true]) {
+      const f = fixture({ excluded }); const requests = [];
+      f.focus(false);
+      const fetch = (_url, options) => { requests.push(JSON.parse(options.body)); return Promise.resolve({ status: 202 }); };
+      Object.assign(f.context, { fetch, ResizeObserver: class { observe() {} } });
+      Object.assign(f.window, { fetch, navigator: f.context.navigator, localStorage: f.context.localStorage, history: {}, innerHeight: 800, scrollY: 0 });
+      Object.assign(f.document, { body: { scrollHeight: 2000 }, documentElement: { scrollHeight: 2000 }, referrer: 'https://mail.example.org/inbox/private' });
+      runInContext("Object.defineProperty(globalThis, 'plausible', { get: () => window.plausible, set: value => { window.plausible = value; } });", f.context);
+      runInContext(provider, f.context);
+      f.initializeAnalytics(); f.emit('load');
+      f.recordEvent('Project open', { target: 'mori', email: 'private' });
+      if (excluded) { assert.equal(requests.length, 0); continue; }
+      assert.equal(requests.filter(p => p.n === 'pageview').length, 1);
+      assert.equal(requests[0].u, 'https://bobo1529707515.github.io/');
+      assert.equal(requests[0].d, 'bobo1529707515.github.io');
+      assert.equal(requests[0].r, 'https://mail.example.org');
+      assert.equal(requests[1].p.target, 'mori');
+      assert.equal(requests[1].p.email, undefined);
+    }
+  });
+}
 test('detail timing excludes hidden and unfocused time, stops once, and respects opt-out', () => {
   const f = fixture(); f.load(); const stop = f.startProjectVisit('mori');
   f.advance(14); f.visible(false); f.advance(40); f.visible(true); f.activity(); f.advance(10);

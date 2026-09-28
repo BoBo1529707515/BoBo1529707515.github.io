@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build:github
+      - name: Verify analytics in the exported page
+        run: node --test scripts/test-analytics.mjs
+        env:
+          ANALYTICS_EXPORTED_HTML: docs/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

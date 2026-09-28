@@ -30,4 +30,6 @@ URLs are normalized to the homepage. Only generic `utm_source` values `email`, `
 
 ## Verification
 
+The initial HTML head contains the provider script and privacy-aware initialization; basic pageviews do not wait for React hydration or window focus. The public provider JavaScript may be downloaded even when tracking is disabled, but it is not initialized and no analytics events are sent in that case. React attaches custom interactions only and does not emit another pageview.
+
 Run `node --test scripts/test-analytics.mjs` and `npm run build:github`. Tests use a simulated clock and mocked event receiver, not fabricated production visits. Then check installation and actual events in the authenticated Plausible dashboard. An HTTP success response from a collector is not proof that events appear in the private dashboard.
