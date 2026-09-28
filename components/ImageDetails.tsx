@@ -20,7 +20,7 @@ export function ImageDetails({ src, children, title, titleZh, body, bodyZh }: {
   const titleId = useId();
   return <>
     <button type="button" className="image-detail-trigger" aria-label={`Open details: ${heading}`} onClick={() => setOpen(true)}>{children}<span className="image-detail-cue"><span data-lang="en">Details ↗</span><span data-lang="zh">查看详情 ↗</span></span></button>
-    <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId}>
+    <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId} analyticsId={src.includes('ads1299') ? 'ads1299' : src.includes('ad5933') ? 'ad5933' : 'image'}>
       <div className="image-detail-copy">
         <h2 id={titleId} className="image-detail-title"><span data-lang="en">{heading}</span><span data-lang="zh">{titleZh ?? info?.titleZh ?? heading}</span></h2>
         <p className="image-detail-description"><span data-lang="en">{body ?? info?.body}</span><span data-lang="zh">{bodyZh ?? info?.bodyZh}</span></p>

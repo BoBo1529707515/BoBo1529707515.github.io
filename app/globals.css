@@ -587,6 +587,12 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 .experience-section .section-heading h2 { font-size: clamp(1.875rem, 2.9vw, 3rem); }
 .experience-section .appointment h3 { font-size: clamp(22px, 2.3vw, 32px); line-height: 1.15; }
 .experience-section .appointment-detail { font-size: .9375rem; }
+.analytics-privacy { margin: 12px 0 28px; color: var(--ink-soft); font-size: .875rem; line-height: 1.65; }
+.analytics-privacy summary { cursor: pointer; width: fit-content; }
+.analytics-privacy > div { max-width: 760px; padding-top: 8px; }
+.analytics-privacy p { margin: 10px 0; }
+.analytics-privacy a, .analytics-privacy button { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+.analytics-privacy button { display: block; border: 0; background: transparent; padding: 8px 0; font: inherit; cursor: pointer; }
 @media (max-width: 760px) {
   .hardware-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .hardware-summary img { height: 110px; }

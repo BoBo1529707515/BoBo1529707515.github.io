@@ -6,6 +6,7 @@ import { LanguageToggle } from '../components/LanguageToggle';
 import { ProjectGalleryLightbox } from '../components/ProjectGalleryLightbox';
 import { MoriProjectLightbox } from '../components/MoriProjectLightbox';
 import { TextDetails } from '../components/TextDetails';
+import { AnalyticsPrivacy } from '../components/AnalyticsPrivacy';
 import { ReGroundDetails } from '../components/ReGroundDetails';
 import {
   appointments,
@@ -274,6 +275,7 @@ export default function Home() {
           <div className="contact-affiliation"><span><span data-lang="en">CURRENT AFFILIATION</span><span data-lang="zh">当前单位</span></span><Image src="/assets/westlake-logo-reverse.png" alt="Westlake University" width={300} height={90} className="contact-affiliation-logo" /></div>
         </section>
         <footer><span>© 2026 Yibo Yuan</span><span><span data-lang="en">Hangzhou, China</span><span data-lang="zh">中国杭州</span></span></footer>
+        <AnalyticsPrivacy />
       </main>
     </div>
   );

@@ -18,7 +18,7 @@ export function MoriProjectLightbox({ src, alt, caption, captionZh }: {
       <span className="image-caption" data-lang="en">{caption}</span>
       <span className="image-caption" data-lang="zh">{captionZh}</span>
     </button>
-    <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId}>
+    <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId} analyticsId="mori">
       <div className="image-detail-copy">
         <h2 id={titleId} className="image-detail-title"><span data-lang="en">MORI: relational power in human–AI companionship</span><span data-lang="zh">MORI：人机陪伴中的关系权力</span></h2>
         <p data-lang="en">MORI distinguishes six forms of relational power: retention, forgetting, sharing, interpretation, advice, and conflict intervention. The family network illustrates how an AI companion can become a relational hub across members.</p>

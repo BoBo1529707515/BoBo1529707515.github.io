@@ -1,12 +1,16 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
+import { startProjectVisit } from '../lib/site-analytics.mjs';
 import { Dialog, DialogContent } from './ui/dialog';
 
-export function ResearchDialog({ open, onOpenChange, titleId, className, children }: {
+export function ResearchDialog({ open, onOpenChange, titleId, className, children, analyticsId }: {
   open: boolean; onOpenChange: (open: boolean) => void; titleId: string;
-  className?: string; children: ReactNode;
+  className?: string; children: ReactNode; analyticsId?: string;
 }) {
+  useEffect(() => {
+    if (open && analyticsId) return startProjectVisit(analyticsId);
+  }, [open, analyticsId]);
   return <Dialog open={open} onOpenChange={onOpenChange}>
     <DialogContent className={`research-dialog ${className ?? ''}`} showCloseButton={false} aria-labelledby={titleId} aria-describedby={undefined}>
       <div className="research-dialog-toolbar">

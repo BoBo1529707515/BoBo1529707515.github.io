@@ -66,7 +66,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
         {captionZh && <span className="image-caption" data-lang="zh">{captionZh}</span>}
       </button>
 
-      <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId}>
+      <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId} analyticsId="social-need-dynamics">
           <div className="figure-lightbox-panel">
             <header className="project-detail-header">
               <p className="eyebrow accent"><span data-lang="en">{details.eyebrow}</span><span data-lang="zh">{details.eyebrowZh}</span></p>

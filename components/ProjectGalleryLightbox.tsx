@@ -53,7 +53,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
         {triggerCaptionZh && <span className="image-caption" data-lang="zh">{triggerCaptionZh}</span>}
       </button>
 
-      <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId}>
+      <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId} analyticsId="robotic-mouse">
           <div className="project-detail-panel">
             <header className="project-detail-header">
               <p className="eyebrow accent"><span data-lang="en">PROJECT DETAIL</span><span data-lang="zh">项目详情</span></p>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { recordEvent } from '../lib/site-analytics.mjs';
 
 type Language = 'en' | 'zh';
 
@@ -14,9 +15,9 @@ export function LanguageToggle() {
 
   return (
     <div className="language-toggle" role="group" aria-label="Language / 语言">
-      <button type="button" className={language === 'en' ? 'is-active' : ''} aria-pressed={language === 'en'} onClick={() => setLanguage('en')}>EN</button>
+      <button type="button" className={language === 'en' ? 'is-active' : ''} aria-pressed={language === 'en'} onClick={() => { if (language !== 'en') recordEvent('Language change', { language: 'en' }); setLanguage('en'); }}>EN</button>
       <span aria-hidden="true">/</span>
-      <button type="button" className={language === 'zh' ? 'is-active' : ''} aria-pressed={language === 'zh'} onClick={() => setLanguage('zh')}>中文</button>
+      <button type="button" className={language === 'zh' ? 'is-active' : ''} aria-pressed={language === 'zh'} onClick={() => { if (language !== 'zh') recordEvent('Language change', { language: 'zh' }); setLanguage('zh'); }}>中文</button>
     </div>
   );
 }

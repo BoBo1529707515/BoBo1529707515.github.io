@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { recordEvent } from '../lib/site-analytics.mjs';
 
 /** Keep scientific figures uncropped; zoom inside a scrollable viewport. */
 export function FigureViewer({ src, alt }: { src: string; alt: string }) {
@@ -8,7 +9,7 @@ export function FigureViewer({ src, alt }: { src: string; alt: string }) {
   const [naturalWidth, setNaturalWidth] = useState(1200);
   return <div className="figure-viewer">
     <div className="figure-viewer-controls">
-      <button type="button" aria-pressed={zoomed} onClick={() => setZoomed(!zoomed)}>
+      <button type="button" aria-pressed={zoomed} onClick={() => { if (!zoomed) recordEvent('Image enlarge', { target: src.includes('mori') ? 'mori' : src.includes('robotic') || src.includes('mpn-two-photon') || src.includes('planned-mpn') ? 'robotic-mouse' : src.includes('ads1299') || src.includes('usb-isolation') ? 'ads1299' : src.includes('ad5933') ? 'ad5933' : 'social-need-dynamics' }); setZoomed(!zoomed); }}>
         <span data-lang="en">{zoomed ? 'Fit to page' : 'Enlarge labels'}</span>
         <span data-lang="zh">{zoomed ? '适应页面' : '放大查看图中文字'}</span>
       </button>

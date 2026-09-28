@@ -1,7 +1,7 @@
 import { TextDetails } from './TextDetails';
 
 export function ReGroundDetails() {
-  return <TextDetails title="ReGround: experience reuse under changing authority" titleZh="ReGround：权限变化后的经验重用" label="About this project" labelZh="项目简介">
+  return <TextDetails analyticsId="reground" title="ReGround: experience reuse under changing authority" titleZh="ReGround：权限变化后的经验重用" label="About this project" labelZh="项目简介">
     <p data-lang="en"><strong>Yibo Yuan</strong>, Sichaon Wang, Yang Su, Ren Wang · 2026 · First-author manuscript under review at ICLR 2027.</p>
     <p data-lang="zh"><strong>袁艺博（Yibo Yuan）</strong>、Sichaon Wang、Yang Su、Ren Wang · 2026 年稿件 · 第一作者 · ICLR 2027 在审。</p>
     <p data-lang="en">ReGround investigates experience reuse when an AI agent’s role or authority changes. It distinguishes learned collaboration experience from current authorization, allowing useful knowledge to be retained while its applicability is reassessed.</p>
