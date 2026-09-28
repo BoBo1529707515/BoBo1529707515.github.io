@@ -75,6 +75,20 @@ test('head initialization does not depend on React or focus; hydration never dup
   assert.equal(f.events.filter(e => e.n === 'Project open').length, 1);
 });
 
+test('official installation probe passes the privacy filter; unknown events and opted-out probes do not', () => {
+  const f = fixture();
+  const transform = f.window.plausible.o.transformRequest;
+  const result = transform({ n: 'verification-agent-test', d: 'wrong', u: 'https://private/', r: '', v: 36, p: { email: 'private' } });
+  assert.ok(result, 'Plausible verification must not be dropped by the custom event allowlist');
+  assert.equal(result.n, 'verification-agent-test');
+  assert.equal(result.d, 'bobo1529707515.github.io');
+  assert.equal(result.u, 'https://bobo1529707515.github.io/');
+  assert.equal(result.p, undefined);
+  assert.equal(transform({ n: 'other-unknown-event' }), null);
+  f.storage.set('plausible_ignore', 'true');
+  assert.equal(transform({ n: 'verification-agent-test' }), null);
+});
+
 if (process.env.ANALYTICS_EXPORTED_HTML) {
   test('production-minified HTML contains executable head configuration and exactly one provider', () => {
     const html = readFileSync(process.env.ANALYTICS_EXPORTED_HTML, 'utf8');
@@ -85,6 +99,7 @@ if (process.env.ANALYTICS_EXPORTED_HTML) {
     assert.ok(headCode);
     const f = fixture({ headCode });
     assert.equal(f.window.plausible.o.transformRequest({ n: 'pageview', r: '' }).u, 'https://bobo1529707515.github.io/');
+    assert.equal(f.window.plausible.o.transformRequest({ n: 'verification-agent-test', r: '' })?.n, 'verification-agent-test');
     f.focus(false); f.providerLoad(); f.initializeAnalytics();
     assert.equal(f.events.filter(e => e.n === 'pageview').length, 1);
     const excluded = fixture({ headCode, search: '?analytics=off' }); excluded.load();
@@ -93,7 +108,7 @@ if (process.env.ANALYTICS_EXPORTED_HTML) {
 }
 
 if (process.env.ANALYTICS_PROVIDER_JS) {
-  test('actual Plausible provider initializes from the head and sends sanitized events to a mocked transport', () => {
+  test('actual Plausible provider initializes from the head and sends sanitized events to a mocked transport', async () => {
     const provider = readFileSync(process.env.ANALYTICS_PROVIDER_JS, 'utf8');
     for (const excluded of [false, true]) {
       const f = fixture({ excluded }); const requests = [];
@@ -113,6 +128,10 @@ if (process.env.ANALYTICS_PROVIDER_JS) {
       assert.equal(requests[0].r, 'https://mail.example.org');
       assert.equal(requests[1].p.target, 'mori');
       assert.equal(requests[1].p.email, undefined);
+      const callback = await new Promise(resolve => f.window.plausible('verification-agent-test', { callback: resolve }));
+      assert.equal(callback?.status, 202, 'official verifier callback must receive the transport response');
+      assert.equal(requests.at(-1).n, 'verification-agent-test');
+      assert.equal(requests.at(-1).d, 'bobo1529707515.github.io');
     }
   });
 }
