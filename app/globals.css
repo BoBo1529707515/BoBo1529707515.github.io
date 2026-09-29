@@ -546,6 +546,9 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 .research-dialog .project-detail-gallery .detail-media-wide .figure-viewer-canvas:not(.is-zoomed) img { max-height: 340px; }
 .research-dialog .image-detail-copy + .figure-viewer .figure-viewer-canvas:not(.is-zoomed) img { max-height: 360px; }
 .research-dialog .figure-zoom-hint { margin: 8px 0 0; font-size: .875rem; color: var(--ink-soft); }
+.research-dialog .reground-framework { margin: 24px 0 0; }
+.research-dialog .reground-framework .figure-viewer-canvas:not(.is-zoomed) img { max-height: 340px; }
+.research-dialog .reground-framework figcaption { margin-top: 8px; color: var(--ink-soft); }
 .research-dialog .figure-raw-recording { grid-template-columns: 160px minmax(0, 1fr); }
 .research-dialog .image-detail-copy { padding: 0; }
 .research-dialog .image-detail-title { margin: 0 0 14px; }

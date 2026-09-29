@@ -1,4 +1,5 @@
 import { TextDetails } from './TextDetails';
+import { FigureViewer } from './FigureViewer';
 
 export function ReGroundDetails() {
   return <TextDetails analyticsId="reground" title="ReGround: experience reuse under changing authority" titleZh="ReGround：权限变化后的经验重用" label="About this project" labelZh="项目简介">
@@ -8,5 +9,9 @@ export function ReGroundDetails() {
     <p data-lang="zh">ReGround 研究 AI 智能体在角色或权限变化后的经验重用，区分已学习的协作经验与当前行动授权，在保留有用知识的同时重新判断其适用性。</p>
     <p data-lang="en">This work extends my research on relational authority to AI memory and planning, with a focus on learning within changing authorization boundaries.</p>
     <p data-lang="zh">这项工作将我对关系权力的研究延伸至 AI 记忆与规划，关注授权边界变化条件下的持续学习。</p>
+    <figure className="reground-framework">
+      <FigureViewer src="/assets/reground-framework.webp" zoomWidth={2400} alt="ReGround framework: relational experience and current normative state guide experience reuse and authorized planning within a collaborative network." />
+      <figcaption><span data-lang="en">ReGround framework: reusing collaboration experience under current authority.</span><span data-lang="zh">ReGround 框架：在当前权限下重用协作经验。</span></figcaption>
+    </figure>
   </TextDetails>;
 }
