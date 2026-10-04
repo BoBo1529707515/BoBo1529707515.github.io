@@ -303,6 +303,13 @@ html[data-language='zh'] .contribution-note p[data-lang='zh'] { color: var(--ink
 .methods-grid h3 { margin-top: 56px; font-size: 27px; }
 .methods-grid p { margin: 13px 0 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
 .methods-grid .text-link { margin-top: 22px; }
+.circuit-tool-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 28px; }
+.circuit-tool-heading h2 { margin: 12px 0 16px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(25px, 2.7vw, 34px); font-weight: 400; line-height: 1.15; }
+.circuit-tool-award { margin: 0; color: var(--accent-dark); font-size: 14px; line-height: 1.7; }
+.circuit-tool-copy p { margin: 0 0 14px; color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
+.circuit-tool-copy .circuit-tool-note { font-size: 13px; }
+.circuit-tool-copy .text-link { margin-top: 4px; }
+@media (max-width: 760px) { .circuit-tool-section { grid-template-columns: 1fr; gap: 18px; } }
 .tool-title-zh { margin: 6px 0 0 !important; font-size: 10px !important; color: var(--accent-dark) !important; }
 .tool-description-zh { margin-top: 6px !important; font-size: 9px !important; color: #8b8376 !important; }
 
