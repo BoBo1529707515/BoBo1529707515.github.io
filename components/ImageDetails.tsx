@@ -6,9 +6,9 @@ import { ResearchDialog } from './ResearchDialog';
 import { FigureViewer } from './FigureViewer';
 
 const hardware: Record<string, { title: string; titleZh: string; body: string; bodyZh: string }> = {
-  '/ads1299-board-photo.png': { title: 'ADS1299 EEG acquisition board', titleZh: 'ADS1299 脑电采集板', body: 'I led the acquisition-board project, designed the circuit and PCB, and worked on soldering, board bring-up, and module testing. This photograph shows the prototype board.', bodyZh: '我负责采集板项目，完成电路与 PCB 设计，参与焊接、上电调试与模块测试。图中为项目实物板。' },
+  '/ads1299-board-photo.png': { title: 'ADS1299 portable eight-channel EEG recorder · 2024–2025', titleZh: 'ADS1299 便携式八通道脑电采集器 · 2024—2025', body: 'I led hardware development of this portable eight-channel EEG recorder for the National College Student Biomedical Engineering Innovation Design Competition. I designed the circuit and PCB and worked on soldering, board bring-up, and module testing. This photograph shows the prototype board.', bodyZh: '我主导全国大学生生物医学工程创新设计竞赛项目中这款便携式八通道脑电采集器的硬件开发，完成电路与 PCB 设计，并参与焊接、上电调试与模块测试。图中为项目实物板。' },
   '/ads1299-pcb.jpg': { title: 'EEG acquisition PCB layout', titleZh: '脑电采集板 PCB 设计', body: 'PCB layout for my ADS1299 acquisition-hardware project. The physical prototype is shown in the hardware section.', bodyZh: 'ADS1299 采集硬件项目的 PCB 设计图。硬件介绍中另有实物板照片。' },
-  '/thesis-ad5933-board.jpeg': { title: 'Bioimpedance system: measurement board', titleZh: '生物阻抗系统：测量板', body: 'The AD5933 measurement board from my bachelor’s thesis supports impedance measurements at multiple frequencies. I designed the hardware and carried out bench testing.', bodyZh: '毕业设计中的 AD5933 测量板支持多频阻抗测量。我完成硬件设计与台架测试。' },
+  '/thesis-ad5933-board.jpeg': { title: 'AD5933 bioimpedance measurement prototype · 2025', titleZh: 'AD5933 生物电阻抗测量原型 · 2025', body: 'In 2025, we collaborated with a hospital to develop an instrument for bedside assessment of lymphedema using bioelectrical impedance measurements. Supervised by Profs. Xiang Chen and Jin Li, I developed the portable STM32–AD5933 hardware and carried out bench testing for my bachelor’s thesis. The board supports measurements at multiple frequencies.', bodyZh: '2025 年，我们与医院合作，研发面向淋巴水肿床旁测量的仪器，采用生物电阻抗测量方案。在陈翔教授和李津教授指导下，我在毕业设计中完成便携式 STM32–AD5933 系统的硬件开发与台架测试。该测量板支持多频阻抗测量。' },
 };
 
 export function ImageDetails({ src, children, title, titleZh, body, bodyZh }: {

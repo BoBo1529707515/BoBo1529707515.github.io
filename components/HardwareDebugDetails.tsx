@@ -3,6 +3,9 @@ import { FigureViewer } from './FigureViewer';
 export function HardwareDebugDetails({ src }: { src: string }) {
   if (!['/ads1299-board-photo.png', '/ads1299-pcb.jpg'].includes(src)) return null;
   return <section className="hardware-debug-details">
+    <h3><span data-lang="en">From acquisition to signal processing</span><span data-lang="zh">从采集硬件到信号处理</span></h3>
+    <p data-lang="en">Working on the EEG recorder in 2024–2025 sparked my interest in what happens after acquisition: how are raw EEG signals processed and analyzed? This motivated me to apply for an internship at Zhen Tec, where I gained experience in EEG data analysis.</p>
+    <p data-lang="zh">2024—2025 年的脑电采集器项目让我开始关注采集之后的问题：原始脑电信号究竟如何处理和分析？这份好奇促使我申请臻泰的实习，进一步接触脑电数据分析。</p>
     <h3><span data-lang="en">Circuit design and board bring-up</span><span data-lang="zh">电路设计与硬件调试</span></h3>
     <p data-lang="en">I led the architecture and PCB design of the eight-channel ADS1299–STM32 acquisition board. My work covered power and reference circuits, input protection, anti-aliasing, bias drive, and test-signal paths, followed by soldering, board bring-up, and bench verification.</p>
     <p data-lang="zh">我负责八通道 ADS1299–STM32 采集板的系统架构与 PCB 设计，完成电源与参考、输入保护、抗混叠、偏置驱动和测试信号路径的设计，并开展焊接、上电调试与台架验证。</p>
