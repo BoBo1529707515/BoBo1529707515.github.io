@@ -20,6 +20,7 @@ for (const [route, ids] of Object.entries(expected)) {
     const nav = html.match(/<nav\b[^>]*aria-label="Primary navigation"[^>]*>([\s\S]*?)<\/nav>/)?.[1] || '';
     assert.deepEqual([...nav.matchAll(/href="([^"]+)"/g)].map(match => match[1]), ['/', '/experience/', '/publications/', '/tools/', '/future/']);
     if (route === 'publications' || route === 'talks') assert.ok(html.indexOf('id="talks"') < html.indexOf('id="publication"'), 'Talks precede papers');
+    if (route === 'experience') assert.ok(html.indexOf('id="experience"') < html.indexOf('id="collaborations"'), 'Earlier experience precedes collaborations');
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
     assert.ok(html.includes('portfolio-plausible'));
     if (route === 'talks') assert.ok(html.includes('/assets/talk-emotionally-intelligent-ai.png'));

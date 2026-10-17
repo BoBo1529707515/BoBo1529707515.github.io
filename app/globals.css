@@ -604,7 +604,7 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 .breadth-card .breadth-meta > span { display: block; max-width: none; text-align: left; }
 .breadth-card .breadth-meta > span + span { margin-top: 6px; }
 .hardware-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; }
-.hardware-summary img { width: 100%; height: 160px; object-fit: contain; }
+.hardware-summary img { width: 100%; height: 220px; object-fit: contain; }
 .text-details-trigger { display: block; width: fit-content; max-width: 100%; padding: 8px 0; min-height: 40px; background: none; border: 0; color: var(--accent-dark); text-align: left; font: inherit; font-size: .875rem; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
 .research-dialog .experimental-evidence { grid-template-columns: 1fr; }
 .research-dialog .robot-imaging-evidence .figure-viewer { max-width: 520px; }
@@ -620,7 +620,7 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 .analytics-privacy button { display: block; border: 0; background: transparent; padding: 8px 0; font: inherit; cursor: pointer; }
 @media (max-width: 760px) {
   .hardware-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-  .hardware-summary img { height: 110px; }
+  .hardware-summary img { height: 130px; }
 }
 /* Top-level pages, October 2026. */
 .site-header { grid-row: 1; }

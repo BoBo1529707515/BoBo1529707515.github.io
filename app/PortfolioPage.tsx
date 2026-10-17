@@ -239,6 +239,11 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
 
         }
         {section === 'experience' && <>
+        <section className="section experience-section" id="experience">
+          <div className="section-heading compact"><div><h2 data-lang="en">Earlier experience.</h2><h2 data-lang="zh">早期经历。</h2></div></div>
+          <AppointmentList items={appointments} />
+        </section>
+
         <section className="section breadth-section" id="collaborations">
           <div className="section-heading compact">
             <div><h2 data-lang="en">Selected collaborations.</h2><h2 data-lang="zh">合作研究。</h2></div>
@@ -258,11 +263,6 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="section experience-section" id="experience">
-          <div className="section-heading compact"><div><h2 data-lang="en">Earlier experience.</h2><h2 data-lang="zh">早期经历。</h2></div></div>
-          <AppointmentList items={appointments} />
         </section>
 
         </>}
