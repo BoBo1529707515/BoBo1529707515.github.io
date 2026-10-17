@@ -30,7 +30,7 @@ test('talk photograph and CV are present in the static export', () => {
   assert.ok(existsSync('docs/Yibo_Yuan_Academic_CV_2026.pdf'));
 });
 test('circuit explorer screenshot is available from the tools page', () => {
-  assert.ok(existsSync('docs/assets/circuit-explorer-interface.png'));
+  assert.ok(existsSync('docs/assets/circuit-explorer-network.png'));
   assert.ok(readFileSync('docs/tools/index.html', 'utf8').includes('class="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/"'));
 });
 test('overview images open details, with an explicit external-tool exception', () => {
