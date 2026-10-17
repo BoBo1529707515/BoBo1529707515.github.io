@@ -226,6 +226,7 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
         </section>
 
         </>}
+        {section === 'publications' && <TalkSection />}
         {section === 'publications' && <section className="section publication-section" id="publication">
           <div className="section-heading compact"><div><h2 data-lang="en">Publications &amp; manuscripts.</h2><h2 data-lang="zh">论文与在审稿件。</h2></div></div>
           {publications.map((publication) => (
@@ -237,7 +238,6 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
         </section>
 
         }
-        {section === 'publications' && <TalkSection />}
         {section === 'experience' && <>
         <section className="section breadth-section" id="collaborations">
           <div className="section-heading compact">
