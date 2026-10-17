@@ -42,3 +42,11 @@ test('overview images open details, with an explicit external-tool exception', (
   assert.ok(experience.includes('View details'));
   assert.ok(readFileSync('docs/tools/index.html', 'utf8').includes('Open tool'));
 });
+test('collaboration summaries and future plans use consistent presentation', () => {
+  const experience = readFileSync('docs/experience/index.html', 'utf8');
+  assert.equal((experience.match(/class="text-details-trigger"/g) || []).length, 4);
+  assert.ok(!experience.includes('class="breadth-figure'));
+  const future = readFileSync('docs/future/index.html', 'utf8');
+  assert.ok(!future.includes('<details class="future-'));
+  assert.ok(future.includes('<section class="future-horizon"'));
+});

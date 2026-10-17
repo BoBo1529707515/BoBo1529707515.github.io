@@ -3,7 +3,7 @@
 import { useId, useState, type ReactNode } from 'react';
 import { ResearchDialog } from './ResearchDialog';
 
-export function TextDetails({ title, titleZh, children, label = 'Research details', labelZh = '研究详情', analyticsId = 'experimental-setup' }: {
+export function TextDetails({ title, titleZh, children, label = 'View details', labelZh = '查看详情', analyticsId = 'experimental-setup' }: {
   title: string; titleZh: string; children: ReactNode; label?: string; labelZh?: string; analyticsId?: string;
 }) {
   const [open, setOpen] = useState(false);

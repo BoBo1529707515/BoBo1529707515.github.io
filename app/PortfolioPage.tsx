@@ -55,6 +55,7 @@ function AppointmentList({ items }: { items: Appointment[] }) {
 
 import { SiteNavigation, LegacySectionLinks } from '../components/SiteNavigation';
 import { TalkSection } from '../components/TalkSection';
+import { FigureViewer } from '../components/FigureViewer';
 
 export type PortfolioSection = 'research' | 'tools' | 'experience' | 'publications' | 'future';
 export default function PortfolioPage({ section = 'research' }: { section?: PortfolioSection }) {
@@ -170,20 +171,20 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
                       captionZh={project.imageCaptionZh}
                       fit={project.imageFit ?? 'cover'}
                       details={project.figureDetails}
+                      detailIntro={<div className="project-narrative"><p data-lang="en">{project.contribution}</p><p data-lang="zh">{project.contributionZh}</p></div>}
                     />
                   )}
                   {project.image && !project.figureDetails && (
                       project.id === 'robotic-mouse'
-                        ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} />
+                        ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} detailIntro={<div className="project-narrative"><p data-lang="en">{project.contribution}</p><p data-lang="zh">{project.contributionZh}</p></div>} />
                         : project.id === 'mori'
-                        ? <MoriProjectLightbox src={project.image} alt={project.imageAlt ?? project.title} caption={project.imageCaption} captionZh={project.imageCaptionZh} />
+                        ? <MoriProjectLightbox src={project.image} alt={project.imageAlt ?? project.title} caption={project.imageCaption} captionZh={project.imageCaptionZh} detailIntro={<div className="project-narrative"><p data-lang="en">{project.contribution}</p><p data-lang="zh">{project.contributionZh}</p></div>} />
                         : <ImageDetails src={project.image} title={project.title} titleZh={project.titleZh} body={project.description} bodyZh={project.descriptionZh}>
                           <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
                           {project.imageCaption && <span className="image-caption" data-lang="en">{project.imageCaption}</span>}
                           {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
                         </ImageDetails>
                   )}
-                  {project.contribution && <div className="project-narrative"><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>}
                   {project.evidence && (
                     <aside className="project-result">
                       <h4 className="evidence-label"><span data-lang="en">{project.evidence.label}</span><span data-lang="zh">{project.evidence.labelZh}</span></h4>
@@ -246,10 +247,14 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
             {researchTracks.map((track) => (
               <article className="breadth-card" key={track.code}>
                 <div className="breadth-meta"><span><span data-lang="en">{track.code}</span><span data-lang="zh">{track.codeZh}</span></span>{track.href ? <a href={track.href} target="_blank" rel="noreferrer"><span data-lang="en">{track.lab} ↗</span><span data-lang="zh">{track.labZh} ↗</span></a> : <span><span data-lang="en">{track.lab}</span><span data-lang="zh">{track.labZh}</span></span>}</div>
-                {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}${track.logoScale === 'prominent' ? ' breadth-logo-frame-prominent' : ''}`}><Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="breadth-logo" /></span>}
-                <h3 data-lang="en">{track.title}</h3><h3 data-lang="zh">{track.titleZh}</h3>
-                <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>
-                {track.figure && <div className={`breadth-figure${track.figureSize === 'compact' ? ' breadth-figure-compact' : ''}`}><ImageDetails src={track.figure} title={track.title} titleZh={track.titleZh} body={track.description} bodyZh={track.descriptionZh}><Image src={track.figure} alt={track.figureAlt ?? track.title} width={962} height={641} /></ImageDetails></div>}
+                <h3 data-lang="en">{track.cardTitle ?? track.title}</h3><h3 data-lang="zh">{track.cardTitleZh ?? track.titleZh}</h3>
+                <p data-lang="en">{track.summary ?? track.description}</p><p data-lang="zh">{track.summaryZh ?? track.descriptionZh}</p>
+                <TextDetails title={track.title} titleZh={track.titleZh} analyticsId="collaborations">
+                  <p data-lang="en">{track.lab}</p><p data-lang="zh">{track.labZh}</p>
+                  {track.logo && <Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="collaboration-detail-logo" />}
+                  <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>
+                  {track.figure && <FigureViewer src={track.figure} alt={track.figureAlt ?? track.title} />}
+                </TextDetails>
               </article>
             ))}
           </div>
@@ -290,7 +295,7 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
         </section>
 
         </>}
-        {section === 'future' && <FuturePlans social expanded />}
+        {section === 'future' && <FuturePlans social />}
         {section !== 'research' && <div className="page-back-link"><a href="/"><span data-lang="en">← Back to research</span><span data-lang="zh">← 返回代表研究</span></a></div>}
         <section className="contact-section compact-contact" id="contact">
           <p className="eyebrow accent"><span data-lang="en">CONTACT</span><span data-lang="zh">联系方式</span></p><h2 data-lang="en">Contact.</h2><h2 data-lang="zh">联系方式。</h2>

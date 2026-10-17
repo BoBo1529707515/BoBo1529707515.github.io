@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useId, useState } from 'react';
 import { ResearchDialog } from './ResearchDialog';
+import { FigureViewer } from './FigureViewer';
 
 const eventPhotos = [
   { file: 'talk-2036-yibo-stage.png', en: 'My talk: “Addressing loneliness: better companionship through AI”', zh: '我的报告：「对抗孤单，让 AI 提供更好的陪伴」', width: 1920, height: 1279 },
@@ -38,7 +39,7 @@ export function TalkSection() {
             <h3><span data-lang="en">From the event</span><span data-lang="zh">活动现场</span></h3>
             <p className="talk-gallery-hint"><span data-lang="en">Shanghai · 12 July 2026 · Select a photograph to enlarge.</span><span data-lang="zh">上海 · 2026 年 7 月 12 日 · 点击照片查看大图。</span></p>
             <div className="talk-photo-grid">{eventPhotos.map(photo => <figure key={photo.file}>
-              <a href={`/assets/${photo.file}`} target="_blank" rel="noreferrer" aria-label={`Enlarge: ${photo.en}`}><Image src={`/assets/${photo.file}`} alt={photo.en} width={photo.width} height={photo.height} loading="lazy" /></a>
+              <FigureViewer src={`/assets/${photo.file}`} alt={photo.en} />
               <figcaption><span data-lang="en">{photo.en}</span><span data-lang="zh">{photo.zh}</span></figcaption>
             </figure>)}</div>
           </section>

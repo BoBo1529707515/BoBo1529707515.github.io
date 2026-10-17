@@ -13,11 +13,10 @@ const plans = [
     bodyZh: '基于 MORI 与 ReGround，我计划研究长期、多人 AI 交互中的经验重用与授权问题，考察角色变化、隐私与任务表现之间的关系。' },
 ];
 
-export function FuturePlans({ social = false, expanded = false }: { social?: boolean; expanded?: boolean }) {
+export function FuturePlans({ social = false }: { social?: boolean }) {
   return <section className="section future-plans" id="future-plans">
     <h2><span data-lang="en">Future plans &amp; ideas</span><span data-lang="zh">未来计划与有趣想法</span></h2>
-    <details className="future-plan-details" open={expanded}>
-      <summary><span data-lang="en">Plans in development and directions I hope to explore</span><span data-lang="zh">正在推进的计划与希望探索的方向</span></summary>
+    <div className="future-plan-details">
       <div className="future-plan-details-content">
         <p className="future-plans-intro" data-lang="en">Some of these plans are already taking shape. Others are ideas I would like to explore when the right opportunity comes along.</p>
         <p className="future-plans-intro" data-lang="zh">以下包括正在推进的研究计划与尚处于构想阶段的长期方向。</p>
@@ -32,16 +31,16 @@ export function FuturePlans({ social = false, expanded = false }: { social?: boo
         <p data-lang="zh">我希望继续推动医工学人的发展，让它成为连接医生、工程师、研发企业与创投部门的枢纽，帮助大家围绕临床需求寻找合作者、推进项目。</p>
       </article>
     </div>
-    <details className="future-horizon">
-      <summary><span data-lang="en">Ideas to explore: questions for the longer term</span><span data-lang="zh">有趣想法：更远一些，我还想探索的问题</span></summary>
+    <section className="future-horizon">
+      <h3><span data-lang="en">Ideas to explore</span><span data-lang="zh">有趣想法：更远一些的问题</span></h3>
       <div>
         <p data-lang="en">What makes us feel accompanied, desired, or loved? I am curious about which sensory and behavioral cues contribute to these experiences, and whether an embodied artificial partner could meet some of those needs.</p>
         <p data-lang="zh">是什么让人感到被陪伴、被渴望、被爱？我想进一步拆解这些体验中的感官与行为线索，探索具身人工伙伴能否满足其中一部分需求。</p>
         <p data-lang="en">Animal experiments could help me study the cues involved in social approach, aggression, and sexual behavior. Human studies would ask different questions about companionship, intimacy, and sexual needs. These are longer-term ideas, with the specific experiments and collaborations still to be developed.</p>
         <p data-lang="zh">动物实验可以帮助我研究社交接近、攻击与性行为中的基础线索；未来的人类研究则会进一步探讨陪伴、亲密与性相关需求。这些目前是远期想法，具体实验与合作还需要逐步寻找机会。</p>
       </div>
-        </details>
+        </section>
       </div>
-    </details>
+    </div>
   </section>;
 }

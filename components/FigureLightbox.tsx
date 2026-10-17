@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useId, useState } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { ResearchDialog } from './ResearchDialog';
 import { FigureViewer } from './FigureViewer';
 
@@ -51,9 +51,10 @@ type FigureLightboxProps = {
   captionZh?: string;
   fit: 'cover' | 'contain';
   details: FigureDetails;
+  detailIntro?: ReactNode;
 };
 
-export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: FigureLightboxProps) {
+export function FigureLightbox({ src, alt, caption, captionZh, fit, details, detailIntro }: FigureLightboxProps) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
 
@@ -72,6 +73,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
               <p className="eyebrow accent"><span data-lang="en">{details.eyebrow}</span><span data-lang="zh">{details.eyebrowZh}</span></p>
               <h3 id={titleId}><span data-lang="en">{details.title}</span><span data-lang="zh">{details.titleZh}</span></h3>
             </header>
+            {detailIntro}
             <div className="figure-lightbox-visual">
               <FigureViewer src={src} alt={alt} />
             </div>
@@ -96,15 +98,7 @@ export function FigureLightbox({ src, alt, caption, captionZh, fit, details }: F
                     <span data-lang="en">{details.rawFigure.label}</span>
                     <span data-lang="zh">{details.rawFigure.labelZh}</span>
                   </p>
-                  <a href={details.rawFigure.image} target="_blank" rel="noreferrer">
-                    <Image
-                      src={details.rawFigure.image}
-                      alt={details.rawFigure.imageAlt}
-                      width={147}
-                      height={140}
-                      unoptimized
-                    />
-                  </a>
+                  <FigureViewer src={details.rawFigure.image} alt={details.rawFigure.imageAlt} />
                   <figcaption>
                     <span data-lang="en">{details.rawFigure.caption}</span>
                     <span data-lang="zh">{details.rawFigure.captionZh}</span>

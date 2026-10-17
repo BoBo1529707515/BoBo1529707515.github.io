@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useId, useState } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { FigureViewer } from './FigureViewer';
 import { ResearchDialog } from './ResearchDialog';
 
-export function MoriProjectLightbox({ src, alt, caption, captionZh }: {
-  src: string; alt: string; caption?: string; captionZh?: string;
+export function MoriProjectLightbox({ src, alt, caption, captionZh, detailIntro }: {
+  src: string; alt: string; caption?: string; captionZh?: string; detailIntro?: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
@@ -24,6 +24,7 @@ export function MoriProjectLightbox({ src, alt, caption, captionZh }: {
         <p data-lang="en">MORI distinguishes six forms of relational power: retention, forgetting, sharing, interpretation, advice, and conflict intervention. The family network illustrates how an AI companion can become a relational hub across members.</p>
         <p data-lang="zh">MORI 区分保留、遗忘、分享、解释、建议与冲突介入六类关系权力。家庭关系网络展示 AI 陪伴者如何成为连接不同成员的关系枢纽。</p>
       </div>
+      {detailIntro}
       <section className="project-case-section">
         <h4><span data-lang="en">Research framework</span><span data-lang="zh">研究框架</span></h4>
         <FigureViewer src={src} alt={alt} />

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useId, useState } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { ResearchDialog } from './ResearchDialog';
 import { FigureViewer } from './FigureViewer';
 
@@ -10,6 +10,7 @@ type ProjectGalleryLightboxProps = {
   triggerAlt: string;
   triggerCaption?: string;
   triggerCaptionZh?: string;
+  detailIntro?: ReactNode;
 };
 
 const gallery = [
@@ -40,7 +41,7 @@ const gallery = [
   },
 ];
 
-export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption, triggerCaptionZh }: ProjectGalleryLightboxProps) {
+export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption, triggerCaptionZh, detailIntro }: ProjectGalleryLightboxProps) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
 
@@ -62,8 +63,8 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               <p data-lang="zh">该平台将具身线索转化为可实验控制的变量，同时保留真实小鼠与人工伙伴之间的自然互动情境。</p>
             </header>
             <section className="project-case-section">
-              <p data-lang="en">I conceived the research question, initiated the cross-institutional collaboration, and lead the project under Prof. Ding Liu’s supervision. My work includes behavioral-paradigm and arena design, experiments, a sound-attenuated multi-camera and ultrasonic recording setup, and the robot’s perception, planning, and host-side control.</p>
-              <p data-lang="zh">我提出研究问题、发起跨机构合作，并在刘鼎教授指导下主导项目。我负责行为范式与场地设计、实验实施、静音多相机与超声记录平台，以及机器鼠的感知、规划和上位机控制。</p>
+              {detailIntro}
+              <p data-lang="en">I lead this work under Prof. Ding Liu’s supervision.</p><p data-lang="zh">我在刘鼎教授指导下主导这项工作。</p>
               <p data-lang="en">Collaborators contribute the low-level control and PPO-based locomotion, alongside joint refinement of the robotic platform for behavioral experiments.</p>
               <p data-lang="zh">合作方负责底层控制与基于 PPO 的运动策略，团队共同完善用于行为实验的机器鼠平台。</p>
             </section>
@@ -95,15 +96,7 @@ export function ProjectGalleryLightbox({ triggerSrc, triggerAlt, triggerCaption,
               <p data-lang="en">I am extending the platform toward a closed-loop social-neuroengineering system. The planned loop will combine MPN population activity and dopamine signals from the freely moving mouse to estimate its social state, allowing the robotic mouse to adjust its interaction strategy online.</p>
               <p data-lang="zh">下一步计划将平台扩展为闭环社会神经工程系统：结合自由活动真实小鼠的 MPN 神经群体活动与多巴胺信号估计社交状态，让机器鼠在线调整互动策略。这是计划中的闭环方案，而非已完成的验证结果。</p>
               <figure className="project-detail-planned-recording">
-                <a href="/assets/planned-mpn-miniscope-configuration.png" target="_blank" rel="noreferrer">
-                  <Image
-                    src="/assets/planned-mpn-miniscope-configuration.png"
-                    alt="Planned miniscope configuration for recording MPN calcium activity in freely moving mice"
-                    width={483}
-                    height={452}
-                    unoptimized
-                  />
-                </a>
+                <FigureViewer src="/assets/planned-mpn-miniscope-configuration.png" alt="Planned miniscope configuration for recording MPN calcium activity in freely moving mice" />
                 <figcaption>
                   <span data-lang="en"><strong>Planned recording configuration.</strong> A GRIN-lens miniscope will provide MPN calcium signals for estimating social state in the future closed-loop system.</span>
                   <span data-lang="zh"><strong>计划中的记录方案。</strong>后续将使用 GRIN 透镜与微型显微镜记录 MPN 钙信号，为闭环系统估计真实小鼠的社交状态。</span>

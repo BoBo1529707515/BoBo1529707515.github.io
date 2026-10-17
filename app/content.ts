@@ -100,6 +100,10 @@ export type ResearchProject = {
 };
 
 export type ResearchTrack = {
+  cardTitle?: string;
+  cardTitleZh?: string;
+  summary?: string;
+  summaryZh?: string;
   code: string;
   codeZh: string;
   lab: string;
@@ -433,6 +437,8 @@ export const researchTracks: ResearchTrack[] = [
     labZh: 'TIML 实验室 · 王韧教授',
     title: 'Reliable cross-subject EEG-fNIRS learning',
     titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
+    summary: 'Cross-subject multimodal decoding with few-shot adaptation, probability calibration, and expert fusion, in collaboration with Prof. Ren Wang.',
+    summaryZh: '与王韧教授合作，结合少样本适应、概率校准与专家融合，研究跨被试多模态脑信号解码。',
     description:
       'With Prof. Ren Wang, I develop participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. In a separate collaboration, we co-author ReGround, my first-author manuscript on experience reuse under changing authority, under review at ICLR 2027.',
     descriptionZh: '我与王韧教授合作开展跨被试多模态解码，研究被试隔离评估、少样本适应、概率校准与异构专家融合。在另一项合作中，我们共同撰写 ReGround，研究权限变化后的经验重用；该稿件由我担任第一作者，目前在 ICLR 2027 审稿。',
@@ -444,6 +450,10 @@ export const researchTracks: ResearchTrack[] = [
     labZh: '经系统与社会神经科学实验室合作 · 吴泰霖教授 · 徐腾飞指导',
     title: 'AI-based generative modeling and validation of cortical turbulence',
     titleZh: '基于 AI 的大脑皮层湍流生成建模与验证',
+    cardTitle: 'Generative models of cortical turbulence',
+    cardTitleZh: '大脑皮层湍流的生成建模',
+    summary: 'Testing whether generative models recover cortical phase singularities and turbulence-like dynamics, with quantitative validation using BrainVortexToolbox.',
+    summaryZh: '研究生成模型能否恢复大脑皮层相位奇点与类湍流动力学，并使用 BrainVortexToolbox 进行定量验证。',
     description:
       'Under the supervision of Prof. Tailin Wu and mentorship of Tengfei Xu, I test whether generative models can recover cortical phase singularities and turbulence-like dynamics, using BrainVortexToolbox from Prof. Pulin Gong’s group at the University of Sydney for quantitative validation.',
     descriptionZh: '在吴泰霖教授指导、徐腾飞博士指导下，我研究生成模型能否恢复大脑皮层中的相位奇点与类湍流动力学，并使用悉尼大学 Pulin Gong 教授团队开发的 BrainVortexToolbox 进行定量验证。',
