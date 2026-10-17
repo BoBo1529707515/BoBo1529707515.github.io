@@ -654,3 +654,12 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 @media (min-width: 761px) and (max-width: 980px) {
   .profile-inner { position: static; top: auto; max-height: none; min-height: auto; }
 }
+.talk-event-gallery { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.talk-gallery-hint { color: var(--ink-soft); font-size: 13px; }
+.talk-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; margin-top: 16px; }
+.talk-photo-grid figure { min-width: 0; margin: 0; }
+.talk-photo-grid a { display: block; border: 1px solid var(--line); background: var(--paper); }
+.talk-photo-grid a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.talk-photo-grid img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+.talk-photo-grid figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+@media (max-width: 540px) { .talk-photo-grid { grid-template-columns: 1fr; } }
