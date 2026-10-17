@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
-import { TextDetails } from './TextDetails';
+import { useId, useState } from 'react';
+import { ResearchDialog } from './ResearchDialog';
 
 const eventPhotos = [
   { file: 'talk-2036-yibo-stage.png', en: 'My talk: “Addressing loneliness: better companionship through AI”', zh: '我的报告：「对抗孤单，让 AI 提供更好的陪伴」', width: 1920, height: 1279 },
@@ -9,10 +12,12 @@ const eventPhotos = [
 ];
 
 export function TalkSection() {
+  const [open, setOpen] = useState(false);
+  const titleId = useId();
   return <section className="section talks-section" id="talks">
     <div className="section-heading compact"><h1><span data-lang="en">Research talks.</span><span data-lang="zh">研究分享。</span></h1></div>
     <article className="talk-card">
-      <a className="talk-photo" href="/assets/talk-emotionally-intelligent-ai.png" target="_blank" rel="noreferrer" aria-label="Enlarge talk photograph"><Image src="/assets/talk-emotionally-intelligent-ai.png" alt="Yibo Yuan presenting a talk on emotionally intelligent AI, human–AI collaboration, and social loneliness" width={1600} height={1066} priority /><span className="image-caption"><span data-lang="en">A conversation about AI and human connection · enlarge ↗</span><span data-lang="zh">关于 AI 与人类连接的分享 · 点击放大 ↗</span></span></a>
+      <button type="button" className="talk-photo" onClick={() => setOpen(true)} aria-label="View talk details"><Image src="/assets/talk-emotionally-intelligent-ai.png" alt="Yibo Yuan presenting a talk on emotionally intelligent AI, human–AI collaboration, and social loneliness" width={1600} height={1066} priority /><span className="interactive-media-cue"><span data-lang="en">View details →</span><span data-lang="zh">查看详情 →</span></span></button>
       <div className="talk-copy">
         <p className="talk-event"><span data-lang="en">2036: Carbon–Silicon Coexistence<br /><time dateTime="2026-07-12">12 July 2026</time> · Shanghai</span><span data-lang="zh">2036 碳硅共生现场<br /><time dateTime="2026-07-12">2026 年 7 月 12 日</time> · 上海</span></p>
         <p className="eyebrow accent"><span data-lang="en">AI · COLLABORATION · SOCIAL CONNECTION</span><span data-lang="zh">人工智能 · 人机协作 · 社交连接</span></p>
@@ -20,7 +25,9 @@ export function TalkSection() {
         <h2 data-lang="zh">构建更有情商的 AI，让人机协作更好</h2>
         <p data-lang="en">In this talk, I discussed how AI could better understand and respond to human emotions and social needs, support collaboration, and help address loneliness—while preserving human agency and connection.</p>
         <p data-lang="zh">这次报告围绕一个愿景展开：让 AI 更好地理解和回应人的情绪与社交需求，支持更好的人机协作，并探索缓解社交孤独的可能性，同时保留人的自主性与真实的人际连接。</p>
-        <TextDetails title="Emotionally intelligent AI and human connection" titleZh="更有情商的 AI 与人类连接" label="About this talk" labelZh="查看报告详情" analyticsId="talks">
+        <button type="button" className="text-details-trigger" onClick={() => setOpen(true)} aria-label="Open research details: Emotionally intelligent AI and human connection"><span data-lang="en">View details →</span><span data-lang="zh">查看详情 →</span></button>
+        <ResearchDialog open={open} onOpenChange={setOpen} titleId={titleId} analyticsId="talks">
+          <h2 id={titleId} className="image-detail-title"><span data-lang="en">Emotionally intelligent AI and human connection</span><span data-lang="zh">更有情商的 AI 与人类连接</span></h2>
           <div className="talk-detail-copy">
             <p className="talk-original-title"><span data-lang="en">Talk title: “Addressing loneliness: better companionship through AI”</span><span data-lang="zh">报告题目：「对抗孤单，让 AI 提供更好的陪伴」</span></p>
             <p data-lang="en">The central question is not only whether AI can produce empathetic language, but how it should respond to people in an ongoing relationship. I brought together three questions:</p><p data-lang="zh">核心问题不仅是 AI 能否说出有同理心的话，更是它应当如何在持续的关系中回应人。我围绕三个问题展开分享：</p>
@@ -35,7 +42,7 @@ export function TalkSection() {
               <figcaption><span data-lang="en">{photo.en}</span><span data-lang="zh">{photo.zh}</span></figcaption>
             </figure>)}</div>
           </section>
-        </TextDetails>
+        </ResearchDialog>
       </div>
     </article>
   </section>;

@@ -33,3 +33,12 @@ test('circuit explorer screenshot is available from the tools page', () => {
   assert.ok(existsSync('docs/assets/circuit-explorer-interface.png'));
   assert.ok(readFileSync('docs/tools/index.html', 'utf8').includes('class="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/"'));
 });
+test('overview images open details, with an explicit external-tool exception', () => {
+  const talks = readFileSync('docs/publications/index.html', 'utf8');
+  assert.ok(talks.includes('aria-label="View talk details"'));
+  assert.ok(!talks.includes('aria-label="Enlarge talk photograph"'));
+  const experience = readFileSync('docs/experience/index.html', 'utf8');
+  assert.ok(!experience.includes('href="/assets/tailin-wu-phase-gradient.png"'));
+  assert.ok(experience.includes('View details'));
+  assert.ok(readFileSync('docs/tools/index.html', 'utf8').includes('Open tool'));
+});

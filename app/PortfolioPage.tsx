@@ -177,12 +177,11 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
                         ? <ProjectGalleryLightbox triggerSrc={project.image} triggerAlt={project.imageAlt ?? project.title} triggerCaption={project.imageCaption} triggerCaptionZh={project.imageCaptionZh} />
                         : project.id === 'mori'
                         ? <MoriProjectLightbox src={project.image} alt={project.imageAlt ?? project.title} caption={project.imageCaption} captionZh={project.imageCaptionZh} />
-                        : <a className="project-primary-media" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open full image for ${project.title}`}>
+                        : <ImageDetails src={project.image} title={project.title} titleZh={project.titleZh} body={project.description} bodyZh={project.descriptionZh}>
                           <Image src={project.image} alt={project.imageAlt ?? project.title} width={2000} height={1200} className={`project-primary-image project-primary-image-${project.imageFit ?? 'cover'}`} />
-                          <span className="interactive-media-cue"><span data-lang="en">Click to enlarge the study design ↗</span><span data-lang="zh">点击放大研究设计 ↗</span></span>
                           {project.imageCaption && <span className="image-caption" data-lang="en">{project.imageCaption}</span>}
                           {project.imageCaptionZh && <span className="image-caption" data-lang="zh">{project.imageCaptionZh}</span>}
-                        </a>
+                        </ImageDetails>
                   )}
                   {project.contribution && <div className="project-narrative"><p data-lang="en">{project.contribution}</p>{project.contributionZh && <p data-lang="zh">{project.contributionZh}</p>}</div>}
                   {project.evidence && (
@@ -195,11 +194,11 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
                   {project.links?.map((link) => <ExternalLink href={link.href} childrenZh={link.labelZh} key={link.href}>{link.label}</ExternalLink>)}
                   {project.id === 'reground' && <ReGroundDetails />}
                   {project.secondaryImage && project.id !== 'robotic-mouse' && (
-                    <a className="project-secondary-media" href={project.secondaryImage} target="_blank" rel="noreferrer" aria-label={`Open system figure for ${project.title}`}>
+                    <ImageDetails src={project.secondaryImage} title={project.title} titleZh={project.titleZh} body={project.description} bodyZh={project.descriptionZh}>
                       <Image src={project.secondaryImage} alt={project.secondaryImageAlt ?? project.title} width={1600} height={900} />
                       {project.secondaryImageCaption && <span data-lang="en">{project.secondaryImageCaption} ↗</span>}
                       {project.secondaryImageCaptionZh && <span data-lang="zh">{project.secondaryImageCaptionZh} ↗</span>}
-                    </a>
+                    </ImageDetails>
                   )}
                 </div>
               </article>
@@ -250,7 +249,7 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
                 {track.logo && <span className={`breadth-logo-frame${track.logoTheme === 'dark' ? ' logo-surface-dark' : ''}${track.logoScale === 'large' ? ' breadth-logo-frame-large' : ''}${track.logoScale === 'prominent' ? ' breadth-logo-frame-prominent' : ''}`}><Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="breadth-logo" /></span>}
                 <h3 data-lang="en">{track.title}</h3><h3 data-lang="zh">{track.titleZh}</h3>
                 <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>
-                {track.figure && <a className={`breadth-figure${track.figureSize === 'compact' ? ' breadth-figure-compact' : ''}`} href={track.figure} target="_blank" rel="noreferrer"><Image src={track.figure} alt={track.figureAlt ?? track.title} width={962} height={641} /><span data-lang="en">{track.figureCaption} ↗</span><span data-lang="zh">{track.figureCaptionZh} ↗</span></a>}
+                {track.figure && <div className={`breadth-figure${track.figureSize === 'compact' ? ' breadth-figure-compact' : ''}`}><ImageDetails src={track.figure} title={track.title} titleZh={track.titleZh} body={track.description} bodyZh={track.descriptionZh}><Image src={track.figure} alt={track.figureAlt ?? track.title} width={962} height={641} /></ImageDetails></div>}
               </article>
             ))}
           </div>
@@ -282,7 +281,7 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
             </div>
             <p className="circuit-tool-award"><span data-lang="en">Westlake University AI MAKER Competition<br />First Prize · Best Practical Application Award</span><span data-lang="zh">西湖大学 AI MAKER 大赛<br />一等奖 · 最佳实用奖</span></p>
           </div>
-          <a className="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/" target="_blank" rel="noreferrer" aria-label="Try the neural circuit explorer"><Image src="/assets/circuit-explorer-interface.png" alt="Neural circuit explorer interface showing brain-region connections and cell-type information" width={1822} height={913} loading="lazy" /></a>
+          <a className="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/" target="_blank" rel="noreferrer" aria-label="Try the neural circuit explorer"><Image src="/assets/circuit-explorer-interface.png" alt="Neural circuit explorer interface showing brain-region connections and cell-type information" width={1822} height={913} loading="lazy" /><span className="interactive-media-cue"><span data-lang="en">Open tool ↗</span><span data-lang="zh">打开工具 ↗</span></span></a>
           <div className="circuit-tool-copy">
             <p data-lang="en">Co-developed with PhD student Yitong Xia, this database brings together projection data, cell-type information, and functional evidence from 3,000+ circuit papers spanning roughly the past 15 years. It includes AI-assisted evidence screening and a DeepSeek-powered chat interface.</p>
             <p data-lang="zh">我与博士生夏一桐共同搭建，整合了投射数据、细胞类型信息，以及近 15 年 3,000 余篇环路论文中的功能验证证据，并加入 AI 辅助证据筛查和 DeepSeek 对话功能。</p>

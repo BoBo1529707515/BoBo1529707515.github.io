@@ -591,6 +591,8 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 /* Requested adjustments to the MORI-figure version; preserve its type and palette. */
 .breadth-logo-frame, .breadth-logo-frame-large, .breadth-logo-frame-prominent { width: min(240px, 100%); height: 58px; margin-bottom: 18px; }
 .breadth-figure-compact img { max-height: 160px; object-fit: contain; }
+.breadth-figure .image-detail-cue { margin: 0; padding: 10px 14px; background: var(--ink); color: #fff; font: inherit; font-size: .875rem; letter-spacing: 0; text-align: left; text-transform: none; }
+.breadth-figure .image-detail-cue span { margin: 0; font: inherit; color: inherit; letter-spacing: 0; text-align: inherit; text-transform: none; }
 .breadth-card .breadth-meta { display: block; }
 .breadth-card .breadth-meta > span { display: block; max-width: none; text-align: left; }
 .breadth-card .breadth-meta > span + span { margin-top: 6px; }
@@ -630,7 +632,7 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 .page-back-link { padding: 20px clamp(26px, 7vw, 112px); font-size: 14px; border-top: 1px solid var(--line); color: var(--accent-dark); }
 .talks-section h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(34px, 4vw, 52px); font-weight: 400; }
 .talk-card { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-.talk-photo { display: block; }
+.talk-photo { display: block; width: 100%; padding: 0; border: 0; background: none; font: inherit; text-align: left; cursor: pointer; }
 .talk-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
 .talk-copy h2 { margin: 10px 0 16px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(24px, 2.5vw, 33px); font-weight: 400; line-height: 1.2; }
 .talk-copy p, .talk-detail-copy { color: var(--ink-soft); font-size: 15px; line-height: 1.75; }

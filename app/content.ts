@@ -204,8 +204,8 @@ export const coreProjects: ResearchProject[] = [
     tagsZh: ['微型显微镜成像', '神经群体几何', '社交稳态'],
     image: '/assets/social-need-neural-state.png',
     imageAlt: 'Preliminary neural state displacement from baseline across isolation durations and reunion',
-    imageCaption: 'Neural-state displacement across isolation durations · click for methods and reading guide',
-    imageCaptionZh: '不同隔离时长下的神经状态位移 · 点击查看方法与读图说明',
+    imageCaption: 'Neural-state displacement across isolation durations',
+    imageCaptionZh: '不同隔离时长下的神经状态位移',
     imageLayout: 'wide',
     imageFit: 'contain',
     figureDetails: {

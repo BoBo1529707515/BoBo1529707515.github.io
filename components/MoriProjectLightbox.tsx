@@ -14,7 +14,7 @@ export function MoriProjectLightbox({ src, alt, caption, captionZh }: {
   return <>
     <button className="project-primary-media figure-trigger" type="button" onClick={() => setOpen(true)} aria-label="Open MORI project figures">
       <Image src={src} alt={alt} width={4320} height={1452} unoptimized className="project-primary-image project-primary-image-contain" />
-      <span className="interactive-media-cue"><span data-lang="en">Click to explore the framework &amp; study design ↗</span><span data-lang="zh">点击查看研究框架与实验流程 ↗</span></span>
+      <span className="interactive-media-cue"><span data-lang="en">View details →</span><span data-lang="zh">查看详情 →</span></span>
       <span className="image-caption" data-lang="en">{caption}</span>
       <span className="image-caption" data-lang="zh">{captionZh}</span>
     </button>
