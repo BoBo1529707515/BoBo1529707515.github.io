@@ -7,11 +7,18 @@ type Language = 'en' | 'zh';
 
 export function LanguageToggle() {
   const [language, setLanguage] = useState<Language>('en');
+  const [restored, setRestored] = useState(false);
+
+  useEffect(() => {
+    try { if (localStorage.getItem('portfolio-language') === 'zh') setLanguage('zh'); } catch { /* Storage is optional. */ }
+    setRestored(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.language = language;
     document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
-  }, [language]);
+    if (restored) { try { localStorage.setItem('portfolio-language', language); } catch { /* Storage is optional. */ } }
+  }, [language, restored]);
 
   return (
     <div className="language-toggle" role="group" aria-label="Language / 语言">

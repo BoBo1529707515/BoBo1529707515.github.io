@@ -1,0 +1,27 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
+
+const expected = {
+  '': ['research', 'companions'],
+  tools: ['neuroengineering', 'tools', 'circuit-explorer'],
+  experience: ['collaborations', 'experience'],
+  publications: ['publication'],
+  future: ['future-plans'],
+  talks: ['talks'],
+};
+const allIds = Object.values(expected).flat();
+for (const [route, ids] of Object.entries(expected)) {
+  test(`exported /${route} has the correct content and working navigation`, () => {
+    const html = readFileSync(`docs/${route ? route + '/' : ''}index.html`, 'utf8');
+    for (const id of allIds) assert.equal(html.includes(`id="${id}"`), ids.includes(id), `${route}: ${id}`);
+    for (const path of Object.keys(expected)) assert.ok(html.includes(`href="/${path ? path + '/' : ''}"`), `Missing link to ${path}`);
+    assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
+    assert.ok(html.includes('portfolio-plausible'));
+    if (route === 'talks') assert.ok(html.includes('/assets/talk-emotionally-intelligent-ai.png'));
+  });
+}
+test('talk photograph and CV are present in the static export', () => {
+  assert.ok(existsSync('docs/assets/talk-emotionally-intelligent-ai.png'));
+  assert.ok(existsSync('docs/Yibo_Yuan_Academic_CV_2026.pdf'));
+});

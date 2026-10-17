@@ -6,7 +6,8 @@ import process from 'node:process';
 const projectRoot = process.cwd();
 const clientDir = path.resolve(projectRoot, 'dist', 'client');
 const outputDir = path.resolve(projectRoot, 'docs');
-const localUrl = 'http://127.0.0.1:8787/';
+const renderPort = process.env.EXPORT_PORT || '8787';
+const localUrl = `http://127.0.0.1:${renderPort}/`;
 const productionUrl = 'https://bobo1529707515.github.io';
 
 if (path.dirname(outputDir) !== projectRoot) {
@@ -15,7 +16,7 @@ if (path.dirname(outputDir) !== projectRoot) {
 
 async function readRenderedPage() {
   try {
-    const existing = await fetch(localUrl);
+    const existing = await fetch(localUrl, { signal: AbortSignal.timeout(5000) });
     if (existing.ok) return { html: await existing.text(), server: null };
   } catch {
     // Start a temporary local Worker below.
@@ -24,7 +25,7 @@ async function readRenderedPage() {
   const executable = 'npx';
   const server = spawn(
     executable,
-    ['wrangler', 'dev', '--config', 'dist/server/wrangler.json', '--ip', '127.0.0.1', '--port', '8787'],
+    ['wrangler', 'dev', '--config', 'dist/server/wrangler.json', '--ip', '127.0.0.1', '--port', renderPort],
     {
       cwd: projectRoot,
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -42,7 +43,7 @@ async function readRenderedPage() {
       throw new Error(`Local render server exited early.\n${diagnostics}`);
     }
     try {
-      const response = await fetch(localUrl);
+      const response = await fetch(localUrl, { signal: AbortSignal.timeout(5000) });
       if (response.ok) return { html: await response.text(), server };
     } catch {
       // The Worker is still starting.
@@ -75,6 +76,14 @@ try {
   await rm(path.join(outputDir, 'Yibo_Yuan_CV_Chinese.pdf'), { force: true });
   const staticHtml = rewriteForStaticHosting(html);
   await writeFile(path.join(outputDir, 'index.html'), staticHtml, 'utf8');
+  for (const route of ['tools', 'talks', 'experience', 'publications', 'future']) {
+    const response = await fetch(`${localUrl}${route}/`);
+    if (!response.ok) throw new Error(`Could not render /${route}/: ${response.status}`);
+    const pageHtml = rewriteForStaticHosting(await response.text());
+    if (!pageHtml.includes('site-header')) throw new Error(`Invalid rendered page: ${route}`);
+    await mkdir(path.join(outputDir, route), { recursive: true });
+    await writeFile(path.join(outputDir, route, 'index.html'), pageHtml, 'utf8');
+  }
   await writeFile(path.join(outputDir, '404.html'), staticHtml, 'utf8');
   await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
   console.log(`GitHub Pages export ready: ${outputDir}`);

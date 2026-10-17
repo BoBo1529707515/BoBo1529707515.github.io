@@ -25,6 +25,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build:github
+      - name: Verify all exported pages and navigation
+        run: node --test scripts/test-pages.mjs
       - name: Verify analytics in the exported page
         run: node --test scripts/test-analytics.mjs
         env:

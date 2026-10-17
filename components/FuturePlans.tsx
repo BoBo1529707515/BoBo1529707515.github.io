@@ -13,10 +13,10 @@ const plans = [
     bodyZh: '基于 MORI 与 ReGround，我计划研究长期、多人 AI 交互中的经验重用与授权问题，考察角色变化、隐私与任务表现之间的关系。' },
 ];
 
-export function FuturePlans({ social = false }: { social?: boolean }) {
+export function FuturePlans({ social = false, expanded = false }: { social?: boolean; expanded?: boolean }) {
   return <section className="section future-plans" id="future-plans">
     <h2><span data-lang="en">Future plans</span><span data-lang="zh">未来计划</span></h2>
-    <details className="future-plan-details">
+    <details className="future-plan-details" open={expanded}>
       <summary><span data-lang="en">Plans in development and directions I hope to explore</span><span data-lang="zh">正在推进的计划与希望探索的方向</span></summary>
       <div className="future-plan-details-content">
         <p className="future-plans-intro" data-lang="en">Some of these plans are already taking shape. Others are ideas I would like to explore when the right opportunity comes along.</p>

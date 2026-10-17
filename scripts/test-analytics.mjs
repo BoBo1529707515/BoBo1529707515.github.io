@@ -15,6 +15,13 @@ test('only fixed event data, generic source labels, and referrer origin leave th
 });
 
 const source = readFileSync(new URL('../lib/site-analytics.mjs', import.meta.url), 'utf8').replace(/^export /gm, '');
+test('page statistics retain only known public routes and discard private paths', () => {
+  for (const path of ['/tools/', '/talks/', '/experience/', '/publications/', '/future/']) {
+    assert.equal(sanitizedPayload({ n: 'pageview' }, `https://bobo1529707515.github.io${path}?secret=x#private`).u, `https://bobo1529707515.github.io${path}`);
+  }
+  assert.equal(sanitizedPayload({ n: 'pageview' }, 'https://bobo1529707515.github.io/private/person').u, 'https://bobo1529707515.github.io/');
+  assert.equal(sanitizedPayload({ n: 'Project open', p: { target: 'talks' } }, 'https://bobo1529707515.github.io/talks/').p.target, 'talks');
+});
 function fixture({ hostname = 'bobo1529707515.github.io', dnt = '0', gpc = false, excluded = false, storageThrows = false, search = '?private=secret', headCode = analyticsHeadCode() } = {}) {
   const listeners = new Map(); const intervals = new Map(); const scripts = []; const events = [];
   let now = 0; let focused = true; let sequence = 0;

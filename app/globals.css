@@ -2,6 +2,8 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+/* Multi-page navigation retains the portfolio's existing paper palette. */
+
 :root {
   --paper: #faf8f4;
   --paper-deep: #f1ece4;
@@ -606,4 +608,49 @@ html[data-language='zh'] .research-dialog p[data-lang='zh'] { font-size: 1rem; l
 @media (max-width: 760px) {
   .hardware-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .hardware-summary img { height: 110px; }
+}
+/* Top-level pages, October 2026. */
+.site-header { grid-row: 1; }
+@media (max-width: 980px) {
+  .main-content { grid-row: 2; }
+  .profile-rail { grid-row: 3; }
+}
+.site-header { grid-column: 1 / -1; position: sticky; top: 0; z-index: 40; padding: 12px 28px; gap: 22px; background: var(--paper); text-transform: none; letter-spacing: 0; min-height: 70px; }
+.header-name { flex-shrink: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 400; }
+.page-nav { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 5px 20px; }
+.page-nav a { padding: 9px 0; color: var(--ink-soft); border-bottom: 2px solid transparent; font-size: 13px; white-space: nowrap; }
+.page-nav a[aria-current='page'] { color: var(--accent-dark); border-color: var(--accent); }
+.page-nav a:focus-visible, .talk-photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.profile-inner { top: 72px; min-height: calc(100vh - 72px); max-height: calc(100vh - 72px); }
+.section, .core-project-card, .hero { scroll-margin-top: 115px; }
+.page-back-link { padding: 20px clamp(26px, 7vw, 112px); font-size: 14px; border-top: 1px solid var(--line); color: var(--accent-dark); }
+.talks-section h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(34px, 4vw, 52px); font-weight: 400; }
+.talk-card { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.talk-photo { display: block; }
+.talk-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.talk-copy h2 { margin: 10px 0 16px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(24px, 2.5vw, 33px); font-weight: 400; line-height: 1.2; }
+.talk-copy p, .talk-detail-copy { color: var(--ink-soft); font-size: 15px; line-height: 1.75; }
+.talk-detail-copy li { margin-bottom: 12px; }
+.talk-detail-copy ul { padding-left: 22px; list-style: disc; }
+.compact-contact { padding-top: 30px; padding-bottom: 30px; }
+.compact-contact h2, .compact-contact > .eyebrow, .compact-contact > p:not(.eyebrow), .compact-contact .contact-affiliation { display: none !important; }
+.compact-contact .contact-button { margin-top: 0; font-size: clamp(17px, 2vw, 24px); }
+@media (max-width: 1000px) {
+  .site-header { gap: 10px 18px; flex-wrap: wrap; }
+  .page-nav { order: 3; flex-basis: 100%; justify-content: flex-start; gap: 4px 19px; }
+  .site-header .topbar-actions { margin-left: auto; }
+  .profile-inner { top: 112px; max-height: calc(100vh - 112px); }
+  .talk-card { grid-template-columns: 1fr; }
+  .talk-photo { max-width: 620px; }
+}
+@media (max-width: 760px) {
+  .site-header { padding: 10px 20px; justify-content: space-between; }
+  .page-nav { gap: 0 16px; }
+  .page-nav a { font-size: 12px; padding: 6px 0; }
+  .profile-inner { position: static; max-height: none; min-height: auto; }
+  .talk-card { gap: 20px; }
+  .section, .core-project-card, .hero { scroll-margin-top: 150px; }
+}
+@media (min-width: 761px) and (max-width: 980px) {
+  .profile-inner { position: static; top: auto; max-height: none; min-height: auto; }
 }
