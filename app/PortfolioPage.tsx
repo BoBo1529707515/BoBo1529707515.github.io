@@ -284,10 +284,8 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
           </div>
           <a className="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/" target="_blank" rel="noreferrer" aria-label="Try the neural circuit explorer"><Image src="/assets/circuit-explorer-interface.png" alt="Neural circuit explorer interface showing brain-region connections and cell-type information" width={1822} height={913} loading="lazy" /></a>
           <div className="circuit-tool-copy">
-            <p data-lang="en">Co-developed with PhD student Yitong Xia using Claude Code, this database brings together projection data, cell-type information, and functional evidence from 3,000+ circuit papers spanning roughly the past 15 years. It includes AI-assisted evidence screening and a DeepSeek-powered chat interface.</p>
-            <p data-lang="zh">我与博士生夏一桐共同使用 Claude Code 搭建，整合了投射数据、细胞类型信息，以及近 15 年 3,000 余篇环路论文中的功能验证证据，并加入 AI 辅助证据筛查和 DeepSeek 对话功能。</p>
-            <p className="circuit-tool-note" data-lang="en">An exploratory tool, not a validated reference: bugs and factual errors remain possible. Please check evidence against the original papers. Feedback and corrections are welcome.</p>
-            <p className="circuit-tool-note" data-lang="zh">目前仍是探索性工具，可能存在程序问题与事实性错误；使用证据前请核对原始论文。欢迎试用、反馈和纠错。</p>
+            <p data-lang="en">Co-developed with PhD student Yitong Xia, this database brings together projection data, cell-type information, and functional evidence from 3,000+ circuit papers spanning roughly the past 15 years. It includes AI-assisted evidence screening and a DeepSeek-powered chat interface.</p>
+            <p data-lang="zh">我与博士生夏一桐共同搭建，整合了投射数据、细胞类型信息，以及近 15 年 3,000 余篇环路论文中的功能验证证据，并加入 AI 辅助证据筛查和 DeepSeek 对话功能。</p>
             <ExternalLink href="https://circuit-visualizer-fly.fly.dev/" childrenZh="试用环路数据库">Try the circuit explorer</ExternalLink>
           </div>
         </section>
