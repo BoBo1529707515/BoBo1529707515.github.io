@@ -250,11 +250,11 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
           </div>
           <div className="breadth-grid">
             {researchTracks.map((track) => (
-              <article className="breadth-card" key={track.code}>
+              <article className={`breadth-card${track.figure ? ' breadth-card-illustrated' : ''}`} key={track.code}>
                 <div className="breadth-meta"><span><span data-lang="en">{track.code}</span><span data-lang="zh">{track.codeZh}</span></span>{track.href ? <a href={track.href} target="_blank" rel="noreferrer"><span data-lang="en">{track.lab} ↗</span><span data-lang="zh">{track.labZh} ↗</span></a> : <span><span data-lang="en">{track.lab}</span><span data-lang="zh">{track.labZh}</span></span>}</div>
                 <h3 data-lang="en">{track.cardTitle ?? track.title}</h3><h3 data-lang="zh">{track.cardTitleZh ?? track.titleZh}</h3>
                 <p data-lang="en">{track.summary ?? track.description}</p><p data-lang="zh">{track.summaryZh ?? track.descriptionZh}</p>
-                <TextDetails title={track.title} titleZh={track.titleZh} analyticsId="collaborations">
+                <TextDetails title={track.title} titleZh={track.titleZh} analyticsId="collaborations" preview={track.figure ? <Image src={track.figure} alt={track.figureAlt ?? track.title} width={800} height={600} unoptimized /> : undefined}>
                   <p data-lang="en">{track.lab}</p><p data-lang="zh">{track.labZh}</p>
                   {track.logo && <Image src={track.logo} alt={track.logoAlt ?? track.lab} width={320} height={96} className="collaboration-detail-logo" />}
                   <p data-lang="en">{track.description}</p><p data-lang="zh">{track.descriptionZh}</p>

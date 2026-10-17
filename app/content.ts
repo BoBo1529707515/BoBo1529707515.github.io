@@ -444,6 +444,17 @@ export const researchTracks: ResearchTrack[] = [
     descriptionZh: '我与伊利诺伊理工学院（IIT）TIML 实验室的王韧教授开展远程科研合作，研究跨被试多模态解码中的被试隔离评估、少样本适应、概率校准与异构专家融合。在另一项合作中，我们共同撰写 ReGround，研究权限变化后的经验重用；该稿件由我担任第一作者，目前在 ICLR 2027 审稿。',
   },
   {
+    code: 'BEHAVIORAL VISION',
+    codeZh: '行为视觉',
+    lab: 'Westlake collaboration · Prof. Xiaodong Liu',
+    labZh: '西湖大学合作 · 刘晓东教授',
+    title: 'Constrained 2.5D macaque behavior analysis',
+    titleZh: '猕猴行为的受约束 2.5D 分析',
+    description:
+      'I develop video-based macaque tracking and spatial analysis using segmentation masks, cage calibration, and plane-specific trajectory estimates, with explicit handling of contact states.',
+    descriptionZh: '我结合分割掩膜追踪、笼体标定、分平面轨迹估计与接触状态处理，开发基于视频的猕猴行为追踪与空间分析方法。',
+  },
+  {
     code: 'WESTLAKE · CROSS-LAB AI',
     codeZh: '西湖大学 · 跨实验室 AI 合作',
     lab: 'Through Systems Social Neuroscience Lab · Prof. Tailin Wu · Mentor: Tengfei Xu',
@@ -465,29 +476,6 @@ export const researchTracks: ResearchTrack[] = [
     figureCaption: 'Phase-gradient analysis · open full figure',
     figureCaptionZh: '相位梯度分析 · 点击查看原图',
     figureSize: 'compact',
-  },
-  {
-    code: 'BEHAVIORAL VISION',
-    codeZh: '行为视觉',
-    lab: 'Westlake collaboration · Prof. Xiaodong Liu',
-    labZh: '西湖大学合作 · 刘晓东教授',
-    title: 'Constrained 2.5D macaque behavior analysis',
-    titleZh: '猕猴行为的受约束 2.5D 分析',
-    description:
-      'I develop video-based macaque tracking and spatial analysis using segmentation masks, cage calibration, and plane-specific trajectory estimates, with explicit handling of contact states.',
-      descriptionZh: '我结合分割掩膜追踪、笼体标定、分平面轨迹估计与接触状态处理，开发基于视频的猕猴行为追踪与空间分析方法。',
-  },
-  {
-    code: 'RESEARCH TOOLS',
-    codeZh: '实验工具',
-    lab: 'Systems Social Neuroscience Lab · Prof. Ding Liu',
-    labZh: '系统与社会神经科学实验室 · 刘鼎教授',
-    title: 'Open experimental systems',
-    titleZh: '开放式行为神经科学实验系统',
-    description: 'An eight-channel STM32 lickometer, a programmable motion platform, long-duration tracking, and reproducible frame-level workflows.',
-    descriptionZh: '开发八通道 STM32 舔舐计、可编程运动平台、长时程追踪与可复现逐帧分析流程。',
-    logo: '/assets/ding-liu-lab-logo.png',
-    logoAlt: 'Ding Liu Lab logo',
   },
 ];
 

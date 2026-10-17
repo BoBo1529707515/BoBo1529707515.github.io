@@ -49,7 +49,10 @@ test('collaboration summaries and future plans use consistent presentation', () 
   assert.ok(experience.includes('REMOTE RESEARCH COLLABORATION'));
   assert.ok(experience.includes('伊利诺伊理工学院（IIT）'));
   assert.ok(experience.includes('远程科研合作'));
-  assert.equal((experience.match(/class="text-details-trigger"/g) || []).length, 4);
+  assert.equal((experience.match(/class="text-details-trigger"/g) || []).length, 2);
+  assert.ok(experience.includes('class="collaboration-image-trigger"'));
+  assert.ok(experience.includes('src="/assets/tailin-wu-phase-gradient.png"'));
+  assert.ok(!experience.includes('Open experimental systems'));
   assert.ok(!experience.includes('class="breadth-figure'));
   const future = readFileSync('docs/future/index.html', 'utf8');
   assert.ok(!future.includes('<details class="future-'));
