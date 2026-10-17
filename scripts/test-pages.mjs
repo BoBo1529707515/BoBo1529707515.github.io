@@ -6,16 +6,18 @@ const expected = {
   '': ['research', 'companions'],
   tools: ['neuroengineering', 'tools', 'circuit-explorer'],
   experience: ['collaborations', 'experience'],
-  publications: ['publication'],
+  publications: ['publication', 'talks'],
   future: ['future-plans'],
-  talks: ['talks'],
+  talks: ['publication', 'talks'],
 };
 const allIds = Object.values(expected).flat();
 for (const [route, ids] of Object.entries(expected)) {
   test(`exported /${route} has the correct content and working navigation`, () => {
     const html = readFileSync(`docs/${route ? route + '/' : ''}index.html`, 'utf8');
     for (const id of allIds) assert.equal(html.includes(`id="${id}"`), ids.includes(id), `${route}: ${id}`);
-    for (const path of Object.keys(expected)) assert.ok(html.includes(`href="/${path ? path + '/' : ''}"`), `Missing link to ${path}`);
+    for (const path of Object.keys(expected).filter(path => path !== 'talks')) assert.ok(html.includes(`href="/${path ? path + '/' : ''}"`), `Missing link to ${path}`);
+    assert.ok(!html.includes('href="/talks/"'), 'Talks must no longer be a separate navigation item');
+    if (route === 'publications') assert.ok(html.indexOf('id="publication"') < html.indexOf('id="talks"'), 'Papers precede talks');
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
     assert.ok(html.includes('portfolio-plausible'));
     if (route === 'talks') assert.ok(html.includes('/assets/talk-emotionally-intelligent-ai.png'));

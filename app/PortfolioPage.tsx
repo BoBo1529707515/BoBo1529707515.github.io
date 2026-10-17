@@ -56,7 +56,7 @@ function AppointmentList({ items }: { items: Appointment[] }) {
 import { SiteNavigation, LegacySectionLinks } from '../components/SiteNavigation';
 import { TalkSection } from '../components/TalkSection';
 
-export type PortfolioSection = 'research' | 'talks' | 'tools' | 'experience' | 'publications' | 'future';
+export type PortfolioSection = 'research' | 'tools' | 'experience' | 'publications' | 'future';
 export default function PortfolioPage({ section = 'research' }: { section?: PortfolioSection }) {
   return (
     <div className="site-shell">
@@ -208,7 +208,6 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
         </section>
 
         </>}
-        {section === 'talks' && <TalkSection />}
         {section === 'tools' && <>
         <section className="section methods-section" id="neuroengineering">
           <div className="section-heading compact"><div><h2 data-lang="en">Hands-on experimental work.</h2><h2 data-lang="zh">实验与硬件能力。</h2></div></div>
@@ -238,6 +237,7 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
         </section>
 
         }
+        {section === 'publications' && <TalkSection />}
         {section === 'experience' && <>
         <section className="section breadth-section" id="collaborations">
           <div className="section-heading compact">
