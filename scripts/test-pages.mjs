@@ -45,6 +45,10 @@ test('overview images open details, with an explicit external-tool exception', (
 });
 test('collaboration summaries and future plans use consistent presentation', () => {
   const experience = readFileSync('docs/experience/index.html', 'utf8');
+  assert.ok(experience.includes('Illinois Institute of Technology (IIT)'));
+  assert.ok(experience.includes('REMOTE RESEARCH COLLABORATION'));
+  assert.ok(experience.includes('伊利诺伊理工学院（IIT）'));
+  assert.ok(experience.includes('远程科研合作'));
   assert.equal((experience.match(/class="text-details-trigger"/g) || []).length, 4);
   assert.ok(!experience.includes('class="breadth-figure'));
   const future = readFileSync('docs/future/index.html', 'utf8');

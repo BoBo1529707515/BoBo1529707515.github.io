@@ -431,17 +431,17 @@ export const coreProjects: ResearchProject[] = [
 
 export const researchTracks: ResearchTrack[] = [
   {
-    code: 'BCI',
-    codeZh: '脑机接口',
-    lab: 'TIML Lab · Prof. Ren Wang',
-    labZh: 'TIML 实验室 · 王韧教授',
+    code: 'BCI · REMOTE RESEARCH COLLABORATION',
+    codeZh: '脑机接口 · 远程科研合作',
+    lab: 'Illinois Institute of Technology (IIT) · TIML Lab · Prof. Ren Wang',
+    labZh: '伊利诺伊理工学院（IIT）· TIML 实验室 · 王韧教授',
     title: 'Reliable cross-subject EEG-fNIRS learning',
     titleZh: '跨被试 EEG-fNIRS 学习与可靠融合',
     summary: 'Cross-subject multimodal decoding with few-shot adaptation, probability calibration, and expert fusion, in collaboration with Prof. Ren Wang.',
     summaryZh: '与王韧教授合作，结合少样本适应、概率校准与专家融合，研究跨被试多模态脑信号解码。',
     description:
-      'With Prof. Ren Wang, I develop participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. In a separate collaboration, we co-author ReGround, my first-author manuscript on experience reuse under changing authority, under review at ICLR 2027.',
-    descriptionZh: '我与王韧教授合作开展跨被试多模态解码，研究被试隔离评估、少样本适应、概率校准与异构专家融合。在另一项合作中，我们共同撰写 ReGround，研究权限变化后的经验重用；该稿件由我担任第一作者，目前在 ICLR 2027 审稿。',
+      'In a remote research collaboration with Prof. Ren Wang at the TIML Lab, Illinois Institute of Technology (IIT), I develop participant-disjoint evaluation, few-shot adaptation, probability calibration, and heterogeneous expert fusion for robust multimodal decoding. In a separate collaboration, we co-author ReGround, my first-author manuscript on experience reuse under changing authority, under review at ICLR 2027.',
+    descriptionZh: '我与伊利诺伊理工学院（IIT）TIML 实验室的王韧教授开展远程科研合作，研究跨被试多模态解码中的被试隔离评估、少样本适应、概率校准与异构专家融合。在另一项合作中，我们共同撰写 ReGround，研究权限变化后的经验重用；该稿件由我担任第一作者，目前在 ICLR 2027 审稿。',
   },
   {
     code: 'WESTLAKE · CROSS-LAB AI',
