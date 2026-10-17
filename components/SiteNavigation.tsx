@@ -5,9 +5,9 @@ import type { PortfolioSection } from '../app/PortfolioPage';
 
 const pages = [
   { id: 'research', href: '/', en: 'Research', zh: '代表研究' },
-  { id: 'tools', href: '/tools/', en: 'Lab & tools', zh: '实验与工具' },
   { id: 'experience', href: '/experience/', en: 'Experience', zh: '合作与经历' },
   { id: 'publications', href: '/publications/', en: 'Publications & talks', zh: '论文与演讲' },
+  { id: 'tools', href: '/tools/', en: 'Lab & tools', zh: '实验与工具' },
   { id: 'future', href: '/future/', en: 'Plans & ideas', zh: '未来计划与有趣想法' },
 ];
 
