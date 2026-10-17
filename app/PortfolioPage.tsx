@@ -276,11 +276,13 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
 
         <section className="section circuit-tool-section" id="circuit-explorer" aria-labelledby="circuit-tool-title">
           <div className="circuit-tool-heading">
+            <div>
             <p className="eyebrow accent"><span data-lang="en">RESEARCH TOOL · OPEN FOR TRIAL</span><span data-lang="zh">科研工具 · 欢迎试用</span></p>
             <h2 id="circuit-tool-title"><span data-lang="en">Neural circuit explorer.</span><span data-lang="zh">环路可视化数据库。</span></h2>
+            </div>
             <p className="circuit-tool-award"><span data-lang="en">Westlake University AI MAKER Competition<br />First Prize · Best Practical Application Award</span><span data-lang="zh">西湖大学 AI MAKER 大赛<br />一等奖 · 最佳实用奖</span></p>
-            <a className="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/" target="_blank" rel="noreferrer" aria-label="Try the neural circuit explorer"><Image src="/assets/circuit-explorer-interface.png" alt="Neural circuit explorer interface showing brain-region connections and cell-type information" width={1822} height={913} loading="lazy" /><span><span data-lang="en">Explore the interactive circuit database ↗</span><span data-lang="zh">点击试用交互式环路数据库 ↗</span></span></a>
           </div>
+          <a className="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/" target="_blank" rel="noreferrer" aria-label="Try the neural circuit explorer"><Image src="/assets/circuit-explorer-interface.png" alt="Neural circuit explorer interface showing brain-region connections and cell-type information" width={1822} height={913} loading="lazy" /></a>
           <div className="circuit-tool-copy">
             <p data-lang="en">Co-developed with PhD student Yitong Xia using Claude Code, this database brings together projection data, cell-type information, and functional evidence from 3,000+ circuit papers spanning roughly the past 15 years. It includes AI-assisted evidence screening and a DeepSeek-powered chat interface.</p>
             <p data-lang="zh">我与博士生夏一桐共同使用 Claude Code 搭建，整合了投射数据、细胞类型信息，以及近 15 年 3,000 余篇环路论文中的功能验证证据，并加入 AI 辅助证据筛查和 DeepSeek 对话功能。</p>
