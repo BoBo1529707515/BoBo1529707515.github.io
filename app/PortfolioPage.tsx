@@ -163,6 +163,12 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
                   <h3 data-lang="zh">{project.titleZh}</h3>
                   <p className="project-description" data-lang="en">{project.description}</p>
                   <p className="project-description" data-lang="zh">{project.descriptionZh}</p>
+                  {project.id === 'mori' && (
+                    <div className="project-collaboration-note">
+                      <Image src="/assets/rednote-icon.png" alt="" width={28} height={28} unoptimized />
+                      <p><span data-lang="en">I am also collaborating with rednote on the next phase of MORI.</span><span data-lang="zh">同时，我正与小红书合作推进 MORI 项目的下一阶段。</span></p>
+                    </div>
+                  )}
                   {project.image && project.figureDetails && (
                     <FigureLightbox
                       src={project.image}

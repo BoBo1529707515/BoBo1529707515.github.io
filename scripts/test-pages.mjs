@@ -30,6 +30,14 @@ test('talk photograph and CV are present in the static export', () => {
   assert.ok(existsSync('docs/assets/talk-emotionally-intelligent-ai.png'));
   assert.ok(existsSync('docs/Yibo_Yuan_Academic_CV_2026.pdf'));
 });
+
+test('MORI homepage includes the bilingual rednote collaboration update', () => {
+  const home = readFileSync('docs/index.html', 'utf8');
+  assert.ok(home.includes('I am also collaborating with rednote on the next phase of MORI.'));
+  assert.ok(home.includes('同时，我正与小红书合作推进 MORI 项目的下一阶段。'));
+  assert.ok(home.includes('src="/assets/rednote-icon.png"'));
+  assert.ok(existsSync('docs/assets/rednote-icon.png'));
+});
 test('circuit explorer screenshot is available from the tools page', () => {
   assert.ok(existsSync('docs/assets/circuit-explorer-network.png'));
   assert.ok(readFileSync('docs/tools/index.html', 'utf8').includes('class="circuit-tool-preview" href="https://circuit-visualizer-fly.fly.dev/"'));

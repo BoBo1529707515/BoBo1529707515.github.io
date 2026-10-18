@@ -206,6 +206,9 @@ html[data-language='zh'] .figure-reading p[data-lang='zh'] { font-family: Georgi
 .project-body h3, .publication-card h3, .methods-grid h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(25px, 2.7vw, 40px); font-weight: 400; letter-spacing: -.025em; line-height: 1.1; }
 .project-title-zh { margin: 8px 0 0; font-size: 12px; color: var(--accent-dark); }
 .project-description { max-width: 760px; margin: 21px 0 0; font-size: 16px; line-height: 1.72; color: var(--ink-soft); }
+.project-collaboration-note { display: flex; align-items: center; gap: 10px; max-width: 760px; margin-top: 16px; }
+.project-collaboration-note img { flex: 0 0 28px; width: 28px; height: 28px; border-radius: 6px; }
+.project-collaboration-note p { margin: 0; font-size: .9375rem; line-height: 1.65; color: var(--ink-soft); }
 .project-description-zh { max-width: 760px; margin: 8px 0 0; font-size: 11px; line-height: 1.75; color: #8b8376; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 22px 0 0; }
 .tag-row span { padding: 5px 8px; border: 1px solid var(--line); font-size: 9px; color: var(--ink-soft); }
