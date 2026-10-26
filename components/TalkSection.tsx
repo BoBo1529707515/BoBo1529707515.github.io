@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from './StaticImage';
 import { useId, useState } from 'react';
 import { ResearchDialog } from './ResearchDialog';
 import { FigureViewer } from './FigureViewer';

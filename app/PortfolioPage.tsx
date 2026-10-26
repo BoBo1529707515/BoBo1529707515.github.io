@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '../components/StaticImage';
 import { FuturePlans } from '../components/FuturePlans';
 import { ImageDetails } from '../components/ImageDetails';
 import { FigureLightbox } from '../components/FigureLightbox';
@@ -71,7 +71,7 @@ export default function PortfolioPage({ section = 'research' }: { section?: Port
         <div className="profile-inner">
           <a className="wordmark" href="/" aria-label="Back to top">YY<span className="wordmark-dot">.</span></a>
           <div className="portrait-wrap">
-            <Image src="/assets/yibo-yuan.jpg" alt="Portrait of Yibo Yuan" width={480} height={600} priority className="portrait" />
+            <Image src="/assets/yibo-yuan.jpg" alt="Portrait of Yibo Yuan" width={480} height={600} sizes="240px" priority className="portrait" />
           </div>
           <div>
             <p className="eyebrow"><span data-lang="en">RESEARCHER · BUILDER</span><span data-lang="zh">研究者 · 开发者</span></p>

@@ -1,0 +1,711 @@
+{
+  "/ads1299-board-photo.png": {
+    "width": 1299,
+    "height": 891,
+    "originalBytes": 1296774,
+    "variants": [
+      {
+        "src": "/assets/previews/ads1299-board-photo-428b5198e3-480.webp",
+        "width": 480,
+        "bytes": 32806
+      },
+      {
+        "src": "/assets/previews/ads1299-board-photo-428b5198e3-960.webp",
+        "width": 960,
+        "bytes": 72506
+      },
+      {
+        "src": "/assets/previews/ads1299-board-photo-428b5198e3-1299.webp",
+        "width": 1299,
+        "bytes": 100492
+      }
+    ]
+  },
+  "/ads1299-pcb.jpg": {
+    "width": 814,
+    "height": 922,
+    "originalBytes": 192773,
+    "variants": [
+      {
+        "src": "/assets/previews/ads1299-pcb-da0d64fbd0-480.webp",
+        "width": 480,
+        "bytes": 69142
+      },
+      {
+        "src": "/assets/previews/ads1299-pcb-da0d64fbd0-814.webp",
+        "width": 814,
+        "bytes": 157550
+      }
+    ]
+  },
+  "/assets/circuit-explorer-interface.png": {
+    "width": 1822,
+    "height": 913,
+    "originalBytes": 575067,
+    "variants": [
+      {
+        "src": "/assets/previews/circuit-explorer-interface-70c8c8ec4b-480.webp",
+        "width": 480,
+        "bytes": 19394
+      },
+      {
+        "src": "/assets/previews/circuit-explorer-interface-70c8c8ec4b-960.webp",
+        "width": 960,
+        "bytes": 60614
+      },
+      {
+        "src": "/assets/previews/circuit-explorer-interface-70c8c8ec4b-1600.webp",
+        "width": 1600,
+        "bytes": 130406
+      },
+      {
+        "src": "/assets/previews/circuit-explorer-interface-70c8c8ec4b-1822.webp",
+        "width": 1822,
+        "bytes": 152614
+      }
+    ]
+  },
+  "/assets/circuit-explorer-network.png": {
+    "width": 1007,
+    "height": 790,
+    "originalBytes": 381500,
+    "variants": [
+      {
+        "src": "/assets/previews/circuit-explorer-network-3732714120-480.webp",
+        "width": 480,
+        "bytes": 23134
+      },
+      {
+        "src": "/assets/previews/circuit-explorer-network-3732714120-960.webp",
+        "width": 960,
+        "bytes": 63122
+      },
+      {
+        "src": "/assets/previews/circuit-explorer-network-3732714120-1007.webp",
+        "width": 1007,
+        "bytes": 67104
+      }
+    ]
+  },
+  "/assets/medical-engineering-innovators-logo.png": {
+    "width": 472,
+    "height": 122,
+    "originalBytes": 51253,
+    "variants": [
+      {
+        "src": "/assets/previews/medical-engineering-innovators-logo-15a707cf68-472.webp",
+        "width": 472,
+        "bytes": 21598
+      }
+    ]
+  },
+  "/assets/mori-relational-power-overview.png": {
+    "width": 4320,
+    "height": 1452,
+    "originalBytes": 4147741,
+    "variants": [
+      {
+        "src": "/assets/previews/mori-relational-power-overview-d60f71da23-480.webp",
+        "width": 480,
+        "bytes": 8704
+      },
+      {
+        "src": "/assets/previews/mori-relational-power-overview-d60f71da23-960.webp",
+        "width": 960,
+        "bytes": 25784
+      },
+      {
+        "src": "/assets/previews/mori-relational-power-overview-d60f71da23-1600.webp",
+        "width": 1600,
+        "bytes": 51054
+      },
+      {
+        "src": "/assets/previews/mori-relational-power-overview-d60f71da23-2400.webp",
+        "width": 2400,
+        "bytes": 85568
+      }
+    ]
+  },
+  "/assets/mori-study-design.png": {
+    "width": 2000,
+    "height": 867,
+    "originalBytes": 1169285,
+    "variants": [
+      {
+        "src": "/assets/previews/mori-study-design-23f0ae8c6e-480.webp",
+        "width": 480,
+        "bytes": 11962
+      },
+      {
+        "src": "/assets/previews/mori-study-design-23f0ae8c6e-960.webp",
+        "width": 960,
+        "bytes": 29286
+      },
+      {
+        "src": "/assets/previews/mori-study-design-23f0ae8c6e-1600.webp",
+        "width": 1600,
+        "bytes": 55216
+      },
+      {
+        "src": "/assets/previews/mori-study-design-23f0ae8c6e-2000.webp",
+        "width": 2000,
+        "bytes": 70128
+      }
+    ]
+  },
+  "/assets/mpn-two-photon-calcium-imaging.png": {
+    "width": 1320,
+    "height": 873,
+    "originalBytes": 1065272,
+    "variants": [
+      {
+        "src": "/assets/previews/mpn-two-photon-calcium-imaging-96be8c444d-480.webp",
+        "width": 480,
+        "bytes": 22390
+      },
+      {
+        "src": "/assets/previews/mpn-two-photon-calcium-imaging-96be8c444d-960.webp",
+        "width": 960,
+        "bytes": 72040
+      },
+      {
+        "src": "/assets/previews/mpn-two-photon-calcium-imaging-96be8c444d-1320.webp",
+        "width": 1320,
+        "bytes": 106608
+      }
+    ]
+  },
+  "/assets/nature-mpn-opponent-populations.png": {
+    "width": 883,
+    "height": 742,
+    "originalBytes": 630861,
+    "variants": [
+      {
+        "src": "/assets/previews/nature-mpn-opponent-populations-e496ca4138-480.webp",
+        "width": 480,
+        "bytes": 56462
+      },
+      {
+        "src": "/assets/previews/nature-mpn-opponent-populations-e496ca4138-883.webp",
+        "width": 883,
+        "bytes": 146690
+      }
+    ]
+  },
+  "/assets/planned-mpn-miniscope-configuration.png": {
+    "width": 483,
+    "height": 420,
+    "originalBytes": 67939,
+    "variants": [
+      {
+        "src": "/assets/previews/planned-mpn-miniscope-configuration-f3411fac0d-480.webp",
+        "width": 480,
+        "bytes": 17466
+      },
+      {
+        "src": "/assets/previews/planned-mpn-miniscope-configuration-f3411fac0d-483.webp",
+        "width": 483,
+        "bytes": 17240
+      }
+    ]
+  },
+  "/assets/reground-framework.webp": {
+    "width": 7096,
+    "height": 3548,
+    "originalBytes": 7386762,
+    "variants": [
+      {
+        "src": "/assets/previews/reground-framework-1026b42385-480.webp",
+        "width": 480,
+        "bytes": 30068
+      },
+      {
+        "src": "/assets/previews/reground-framework-1026b42385-960.webp",
+        "width": 960,
+        "bytes": 85776
+      },
+      {
+        "src": "/assets/previews/reground-framework-1026b42385-1600.webp",
+        "width": 1600,
+        "bytes": 177848
+      },
+      {
+        "src": "/assets/previews/reground-framework-1026b42385-2400.webp",
+        "width": 2400,
+        "bytes": 294038
+      }
+    ]
+  },
+  "/assets/robotic-mouse-pilot-interaction.png": {
+    "width": 384,
+    "height": 339,
+    "originalBytes": 106388,
+    "variants": [
+      {
+        "src": "/assets/previews/robotic-mouse-pilot-interaction-f3c16c6011-384.webp",
+        "width": 384,
+        "bytes": 9742
+      }
+    ]
+  },
+  "/assets/robotic-mouse-prototype.png": {
+    "width": 2000,
+    "height": 1125,
+    "originalBytes": 2411692,
+    "variants": [
+      {
+        "src": "/assets/previews/robotic-mouse-prototype-4359b6c4ca-480.webp",
+        "width": 480,
+        "bytes": 16426
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-prototype-4359b6c4ca-960.webp",
+        "width": 960,
+        "bytes": 46126
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-prototype-4359b6c4ca-1600.webp",
+        "width": 1600,
+        "bytes": 87070
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-prototype-4359b6c4ca-2000.webp",
+        "width": 2000,
+        "bytes": 110530
+      }
+    ]
+  },
+  "/assets/robotic-mouse-skin-interaction.png": {
+    "width": 533,
+    "height": 457,
+    "originalBytes": 203847,
+    "variants": [
+      {
+        "src": "/assets/previews/robotic-mouse-skin-interaction-bfdc0fc140-480.webp",
+        "width": 480,
+        "bytes": 11692
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-skin-interaction-bfdc0fc140-533.webp",
+        "width": 533,
+        "bytes": 14238
+      }
+    ]
+  },
+  "/assets/robotic-mouse-system.png": {
+    "width": 800,
+    "height": 450,
+    "originalBytes": 262655,
+    "variants": [
+      {
+        "src": "/assets/previews/robotic-mouse-system-eefb7cc694-480.webp",
+        "width": 480,
+        "bytes": 17990
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-system-eefb7cc694-800.webp",
+        "width": 800,
+        "bytes": 36386
+      }
+    ]
+  },
+  "/assets/robotic-mouse.jpg": {
+    "width": 2534,
+    "height": 1425,
+    "originalBytes": 135156,
+    "variants": [
+      {
+        "src": "/assets/previews/robotic-mouse-2aa516401a-480.webp",
+        "width": 480,
+        "bytes": 7714
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-2aa516401a-960.webp",
+        "width": 960,
+        "bytes": 20414
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-2aa516401a-1600.webp",
+        "width": 1600,
+        "bytes": 41216
+      },
+      {
+        "src": "/assets/previews/robotic-mouse-2aa516401a-2400.webp",
+        "width": 2400,
+        "bytes": 72482
+      }
+    ]
+  },
+  "/assets/social-card.png": {
+    "width": 1200,
+    "height": 630,
+    "originalBytes": 1181084,
+    "variants": [
+      {
+        "src": "/assets/previews/social-card-975b6fa978-480.webp",
+        "width": 480,
+        "bytes": 13390
+      },
+      {
+        "src": "/assets/previews/social-card-975b6fa978-960.webp",
+        "width": 960,
+        "bytes": 49304
+      },
+      {
+        "src": "/assets/previews/social-card-975b6fa978-1200.webp",
+        "width": 1200,
+        "bytes": 74730
+      }
+    ]
+  },
+  "/assets/social-need-neural-state.png": {
+    "width": 1990,
+    "height": 984,
+    "originalBytes": 450753,
+    "variants": [
+      {
+        "src": "/assets/previews/social-need-neural-state-2e1ae0048e-480.webp",
+        "width": 480,
+        "bytes": 13700
+      },
+      {
+        "src": "/assets/previews/social-need-neural-state-2e1ae0048e-960.webp",
+        "width": 960,
+        "bytes": 36680
+      },
+      {
+        "src": "/assets/previews/social-need-neural-state-2e1ae0048e-1600.webp",
+        "width": 1600,
+        "bytes": 71084
+      },
+      {
+        "src": "/assets/previews/social-need-neural-state-2e1ae0048e-1990.webp",
+        "width": 1990,
+        "bytes": 91330
+      }
+    ]
+  },
+  "/assets/social-need-state-trajectory-day3.png": {
+    "width": 886,
+    "height": 825,
+    "originalBytes": 295932,
+    "variants": [
+      {
+        "src": "/assets/previews/social-need-state-trajectory-day3-f1361d01a2-480.webp",
+        "width": 480,
+        "bytes": 26390
+      },
+      {
+        "src": "/assets/previews/social-need-state-trajectory-day3-f1361d01a2-886.webp",
+        "width": 886,
+        "bytes": 55860
+      }
+    ]
+  },
+  "/assets/tailin-wu-lab-logo.png": {
+    "width": 2172,
+    "height": 724,
+    "originalBytes": 302047,
+    "variants": [
+      {
+        "src": "/assets/previews/tailin-wu-lab-logo-2d266d242a-480.webp",
+        "width": 480,
+        "bytes": 8278
+      },
+      {
+        "src": "/assets/previews/tailin-wu-lab-logo-2d266d242a-960.webp",
+        "width": 960,
+        "bytes": 21174
+      },
+      {
+        "src": "/assets/previews/tailin-wu-lab-logo-2d266d242a-1600.webp",
+        "width": 1600,
+        "bytes": 43346
+      },
+      {
+        "src": "/assets/previews/tailin-wu-lab-logo-2d266d242a-2172.webp",
+        "width": 2172,
+        "bytes": 67196
+      }
+    ]
+  },
+  "/assets/tailin-wu-phase-gradient.png": {
+    "width": 962,
+    "height": 641,
+    "originalBytes": 673348,
+    "variants": [
+      {
+        "src": "/assets/previews/tailin-wu-phase-gradient-f43dd16a98-480.webp",
+        "width": 480,
+        "bytes": 41170
+      },
+      {
+        "src": "/assets/previews/tailin-wu-phase-gradient-f43dd16a98-960.webp",
+        "width": 960,
+        "bytes": 111210
+      },
+      {
+        "src": "/assets/previews/tailin-wu-phase-gradient-f43dd16a98-962.webp",
+        "width": 962,
+        "bytes": 112234
+      }
+    ]
+  },
+  "/assets/talk-2036-audience.png": {
+    "width": 1921,
+    "height": 1280,
+    "originalBytes": 3714813,
+    "variants": [
+      {
+        "src": "/assets/previews/talk-2036-audience-75247c110b-480.webp",
+        "width": 480,
+        "bytes": 50904
+      },
+      {
+        "src": "/assets/previews/talk-2036-audience-75247c110b-960.webp",
+        "width": 960,
+        "bytes": 146736
+      },
+      {
+        "src": "/assets/previews/talk-2036-audience-75247c110b-1600.webp",
+        "width": 1600,
+        "bytes": 302008
+      },
+      {
+        "src": "/assets/previews/talk-2036-audience-75247c110b-1921.webp",
+        "width": 1921,
+        "bytes": 395026
+      }
+    ]
+  },
+  "/assets/talk-2036-neuroai.png": {
+    "width": 1600,
+    "height": 1066,
+    "originalBytes": 1788989,
+    "variants": [
+      {
+        "src": "/assets/previews/talk-2036-neuroai-a502771c98-480.webp",
+        "width": 480,
+        "bytes": 27800
+      },
+      {
+        "src": "/assets/previews/talk-2036-neuroai-a502771c98-960.webp",
+        "width": 960,
+        "bytes": 79520
+      },
+      {
+        "src": "/assets/previews/talk-2036-neuroai-a502771c98-1600.webp",
+        "width": 1600,
+        "bytes": 171930
+      }
+    ]
+  },
+  "/assets/talk-2036-world-models.png": {
+    "width": 1920,
+    "height": 1279,
+    "originalBytes": 2424983,
+    "variants": [
+      {
+        "src": "/assets/previews/talk-2036-world-models-3f2c3193e5-480.webp",
+        "width": 480,
+        "bytes": 27754
+      },
+      {
+        "src": "/assets/previews/talk-2036-world-models-3f2c3193e5-960.webp",
+        "width": 960,
+        "bytes": 76330
+      },
+      {
+        "src": "/assets/previews/talk-2036-world-models-3f2c3193e5-1600.webp",
+        "width": 1600,
+        "bytes": 151114
+      },
+      {
+        "src": "/assets/previews/talk-2036-world-models-3f2c3193e5-1920.webp",
+        "width": 1920,
+        "bytes": 186056
+      }
+    ]
+  },
+  "/assets/talk-2036-yibo-stage.png": {
+    "width": 1920,
+    "height": 1279,
+    "originalBytes": 1428555,
+    "variants": [
+      {
+        "src": "/assets/previews/talk-2036-yibo-stage-d79d6795d8-480.webp",
+        "width": 480,
+        "bytes": 18382
+      },
+      {
+        "src": "/assets/previews/talk-2036-yibo-stage-d79d6795d8-960.webp",
+        "width": 960,
+        "bytes": 43038
+      },
+      {
+        "src": "/assets/previews/talk-2036-yibo-stage-d79d6795d8-1600.webp",
+        "width": 1600,
+        "bytes": 75518
+      },
+      {
+        "src": "/assets/previews/talk-2036-yibo-stage-d79d6795d8-1920.webp",
+        "width": 1920,
+        "bytes": 92442
+      }
+    ]
+  },
+  "/assets/talk-emotionally-intelligent-ai.png": {
+    "width": 1600,
+    "height": 1066,
+    "originalBytes": 1172345,
+    "variants": [
+      {
+        "src": "/assets/previews/talk-emotionally-intelligent-ai-c6cd76cbb9-480.webp",
+        "width": 480,
+        "bytes": 19020
+      },
+      {
+        "src": "/assets/previews/talk-emotionally-intelligent-ai-c6cd76cbb9-960.webp",
+        "width": 960,
+        "bytes": 45094
+      },
+      {
+        "src": "/assets/previews/talk-emotionally-intelligent-ai-c6cd76cbb9-1600.webp",
+        "width": 1600,
+        "bytes": 79114
+      }
+    ]
+  },
+  "/assets/xjtu-first-affiliated-hospital-logo.png": {
+    "width": 2172,
+    "height": 724,
+    "originalBytes": 456280,
+    "variants": [
+      {
+        "src": "/assets/previews/xjtu-first-affiliated-hospital-logo-f0c4ed2575-480.webp",
+        "width": 480,
+        "bytes": 19276
+      },
+      {
+        "src": "/assets/previews/xjtu-first-affiliated-hospital-logo-f0c4ed2575-960.webp",
+        "width": 960,
+        "bytes": 50562
+      },
+      {
+        "src": "/assets/previews/xjtu-first-affiliated-hospital-logo-f0c4ed2575-1600.webp",
+        "width": 1600,
+        "bytes": 103738
+      },
+      {
+        "src": "/assets/previews/xjtu-first-affiliated-hospital-logo-f0c4ed2575-2172.webp",
+        "width": 2172,
+        "bytes": 161894
+      }
+    ]
+  },
+  "/assets/xjtu-logo.png": {
+    "width": 2935,
+    "height": 786,
+    "originalBytes": 261042,
+    "variants": [
+      {
+        "src": "/assets/previews/xjtu-logo-f93d753588-480.webp",
+        "width": 480,
+        "bytes": 34128
+      },
+      {
+        "src": "/assets/previews/xjtu-logo-f93d753588-960.webp",
+        "width": 960,
+        "bytes": 86036
+      },
+      {
+        "src": "/assets/previews/xjtu-logo-f93d753588-1600.webp",
+        "width": 1600,
+        "bytes": 163834
+      },
+      {
+        "src": "/assets/previews/xjtu-logo-f93d753588-2400.webp",
+        "width": 2400,
+        "bytes": 273652
+      }
+    ]
+  },
+  "/assets/yibo-yuan.jpg": {
+    "width": 1279,
+    "height": 1706,
+    "originalBytes": 618786,
+    "variants": [
+      {
+        "src": "/assets/previews/yibo-yuan-c844bd00b4-480.webp",
+        "width": 480,
+        "bytes": 26394
+      },
+      {
+        "src": "/assets/previews/yibo-yuan-c844bd00b4-960.webp",
+        "width": 960,
+        "bytes": 72938
+      },
+      {
+        "src": "/assets/previews/yibo-yuan-c844bd00b4-1279.webp",
+        "width": 1279,
+        "bytes": 105258
+      }
+    ]
+  },
+  "/assets/zhentec-logo.png": {
+    "width": 2022,
+    "height": 778,
+    "originalBytes": 637018,
+    "variants": [
+      {
+        "src": "/assets/previews/zhentec-logo-5e26b4e5ac-480.webp",
+        "width": 480,
+        "bytes": 20450
+      },
+      {
+        "src": "/assets/previews/zhentec-logo-5e26b4e5ac-960.webp",
+        "width": 960,
+        "bytes": 45662
+      },
+      {
+        "src": "/assets/previews/zhentec-logo-5e26b4e5ac-1600.webp",
+        "width": 1600,
+        "bytes": 94088
+      },
+      {
+        "src": "/assets/previews/zhentec-logo-5e26b4e5ac-2022.webp",
+        "width": 2022,
+        "bytes": 126372
+      }
+    ]
+  },
+  "/thesis-ad5933-board.jpeg": {
+    "width": 649,
+    "height": 531,
+    "originalBytes": 124826,
+    "variants": [
+      {
+        "src": "/assets/previews/thesis-ad5933-board-a48a6d75e1-480.webp",
+        "width": 480,
+        "bytes": 37550
+      },
+      {
+        "src": "/assets/previews/thesis-ad5933-board-a48a6d75e1-649.webp",
+        "width": 649,
+        "bytes": 56280
+      }
+    ]
+  },
+  "/usb-isolation-reference.png": {
+    "width": 449,
+    "height": 225,
+    "originalBytes": 60100,
+    "variants": [
+      {
+        "src": "/assets/previews/usb-isolation-reference-86b472ed82-449.webp",
+        "width": 449,
+        "bytes": 17610
+      }
+    ]
+  }
+}
