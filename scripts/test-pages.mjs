@@ -22,7 +22,7 @@ for (const [route, ids] of Object.entries(expected)) {
     if (route === 'publications' || route === 'talks') assert.ok(html.indexOf('id="talks"') < html.indexOf('id="publication"'), 'Talks precede papers');
     if (route === 'experience') assert.ok(html.indexOf('id="experience"') < html.indexOf('id="collaborations"'), 'Earlier experience precedes collaborations');
     assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
-    assert.ok(html.includes('portfolio-plausible'));
+    assert.ok(html.includes('portfolio-umami'));
     if (route === 'talks') assert.ok(html.includes('/assets/previews/talk-emotionally-intelligent-ai-'));
   });
 }

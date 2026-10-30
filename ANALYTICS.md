@@ -1,5 +1,20 @@
 # Portfolio analytics
 
+## Current integration: Umami Cloud (2026-10-31)
+
+The active provider is now Umami Cloud, public website ID `010718ab-ecb8-4f32-8ef0-61779516a97f`.
+Sign in at https://cloud.umami.is and select the portfolio. Keep the dashboard private.
+The events and timing definitions listed below still apply; Plausible-specific setup instructions below are historical only.
+The initial head defines `portfolioBeforeSend` before loading the deferred Umami script.
+It filters event names, routes, properties and referrers, and blocks all events for opt-out, DNT, GPC and local previews.
+The old `plausible_ignore` preference is deliberately retained to preserve existing exclusions.
+No session replay, form capture, or distinct IDs are enabled. Unknown payload types are blocked.
+Plausible is no longer loaded; historical statistics remain in that account and are not automatically migrated.
+Export old data before its deletion. Do not count mocked unit-test events as production verification.
+After deployment, confirm a real visit and project-open event in the authenticated Umami dashboard.
+
+## Archived Plausible configuration (before 2026-10-31)
+
 Provider: Plausible. The site-specific script is public installation code, not an API credential. No private dashboard credentials are stored in this repository.
 
 ## Dashboard setup

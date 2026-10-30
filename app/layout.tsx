@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { analyticsHeadCode, ANALYTICS_SCRIPT } from '../lib/site-analytics.mjs';
+import { analyticsHeadCode, ANALYTICS_SCRIPT, ANALYTICS_WEBSITE_ID, ANALYTICS_HOST } from '../lib/site-analytics.mjs';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script id="portfolio-analytics-config" dangerouslySetInnerHTML={{ __html: analyticsHeadCode() }} />
-        <script id="portfolio-plausible" async src={ANALYTICS_SCRIPT} referrerPolicy="origin" />
+        <script id="portfolio-umami" defer src={ANALYTICS_SCRIPT} data-website-id={ANALYTICS_WEBSITE_ID} data-domains={ANALYTICS_HOST} data-before-send="portfolioBeforeSend" data-do-not-track="true" data-exclude-hash="true" referrerPolicy="origin" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
